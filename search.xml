@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>信息安全</title>
+      <link href="/2022/11/27/2020-12-22-security/"/>
+      <url>/2022/11/27/2020-12-22-security/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。</p></blockquote><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>定义：信息安全一般指信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意原因的影响而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现<strong>业务连续性</strong>。信息安全的根本目的是<strong>使信息不受内部、外部、自然等因素的威胁</strong>。</p><p>计算机系统安全：为数据处理系统建立和采用的技术和 管理的安全保护，保护计算机硬件、软件和数 据不因偶然和恶意的原因遭到破坏、更改和泄露。</p><p>基本属性：机密性、完整性、可用性</p><p>扩展属性：真实性、不可否认性、可控性</p><p>信息安全保障：采用技术、管理、工程等综合手段，保护信息和信息系统，使其能够安全运行的防护性行为。</p><p>APT攻击：即高级可持续威胁攻击,也称为定向威胁攻击，指某组织对特定对象展开的持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p><p><img src="https://i.loli.net/2020/12/22/v621q4hcsdYkXJQ.png" alt="image-20201222211631762"></p><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p><strong>PKI</strong>公钥基础设施是一个包括硬件、软件、人员、策略和规程的集合，用来实现基于公钥密码体制的密钥和证书的产生、管理、存储、分发和撤销等功能。PKI体系是计算机软硬件、权威机构及应用系统的结合。它为实施电子商务、电子政务、办公自动化等提供了基本的安全服务，从而使那些彼此不认识或距离很远的用户能通过信任链安全地交流。</p><p>访问控制主要包括主体、客体和控制策略三个要素:</p><p>1.主体是指提出访问资源具体请求的实体</p><p>2.客体是指被访问资源的实体</p><p>3.控制策略是指主体对客体的相关访问规则的集合</p><img src="https://i.loli.net/2020/12/24/WSo3ne9d4KDHquL.png" alt="image-20201224184633144" style="zoom: 50%;" div align="left"/><p>数字证书：</p><p>由第三方可信机构（一般是证书服务器）颁发的数字证书，可以证明身份的可信度。</p><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>网络嗅探是通过截获、分析网络中传输的数据而获取有用信息的行为。</p><p>网络钓鱼是指攻击者利用伪造的网站或欺骗性的电子邮件进行的网络诈骗活动。</p><p>VPN：在公用网络上建立专用网络，进行加密通讯。</p><p>防火墙：计算机网络中所说的防火墙，是指设置在不同网络(如:可信任的内网和外网或专用网与不可信的共用网)之间的一系列包括软硬件;在内的部件组合。它在内网和外网之间构建一道保护屏障，网络内部和外部之间的所有数据流必须经过防火墙，只有符合安全标准的数据流才能通过防火墙。</p><p>恶意代码是指故意编制或设置的、对网络或系统会产生威胁和潜在威胁的计算机代码。主要包括病毒、木马和蠕虫等。</p><p>端口扫描：对计算机端口发送信息，然后根据返回端口状态来分析目标计算机的端口是否打开或者可用，为下一步攻击入侵做好准备。</p><p>邮件通信：</p><img src="https://i.loli.net/2020/12/26/vO2EBYpTfPJcZDS.png" alt="image-20201226152838072" style="zoom: 67%;" />   <p>B&#x2F;S和C&#x2F;S架构：</p><p>B&#x2F;S结构即浏览器和服务器结构。它是随着Internet技术的兴起，对C&#x2F;S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。</p><p>C&#x2F;S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。</p><p> 说白了，BS架构就是浏览器应用，CS架构就是客户端应用，当然应用需要服务器配合，像腾讯就是以C&#x2F;S结构起家的，其旗下的QQ这一软件就是典型的C&#x2F;S结构应用，像Facebook就是以B&#x2F;S为结构的。B&#x2F;S结构的好处就是方便，不跨平台性好，真正的实现了一次开发，处处运行。C&#x2F;S结构以其稳定安全著称，降低了通讯代价，但是实现起来麻烦，需要开发服务器和客户端两套系统并且在不同的平台移植起来非常麻烦。所以现在大多是以C&#x2F;S模式来开发。</p><p>移动终端面临的威胁：</p><p>1.伪基站攻击。以自己为中心冒充基站，向周围手机发送垃圾短信，并且短信中包含恶意链接的情况。<br>2.二维码扫描。二维码扫描可能带来如下风险:手机病毒、木马程序。</p><p>容灾：容灾系统是指在相隔较远的异地，建立两套或多套功能相同的IT系统，互相之间可以进行健康状态监视和功能切换，当一处系统因意外（如火灾、地震等）停止工作时，整个应用系统可以切换到另一处，使得该系统功能可以继续正常工作。容灾技术是系统的高可用性技术的一个组成部分，容灾系统更加强调处理外界环境对系统的影响，特别是灾难性事件对整个IT节点的影响，提供节点级别的系统恢复功能。</p><p>灾备：灾难备援，它是指利用科学的技术手段和方法，提前建立系统化的数据应急方式，以应对灾难的发生。其内容包括数据备份和系统备份，业务连续规划、人员架构、通信保障、危机公关，灾难恢复规划、灾难恢复预案、业务恢复预案、紧急事件响应、第三方合作机构和供应链危机管理等等。</p><p>实际工作中的备份策略：</p><ul><li>执行完全备份</li><li>经常进行增量备份</li><li>定期执行差异备份</li></ul><p>操作系统的功能：</p><p>1、进程管理。主要bai是对处理机du进行管理。    </p><p>2、存储管理。主zhi要是对内存的dao分配、保护和扩充。    </p><p>3、设备管理。对所有输人、输出设备的管理。   </p><p>4、文件管理。主要涉及文件的逻辑组织和物理组织，目录的结构和管理。  </p><p>5、作业管理。为用户提供一个友好的环境，方便用户组织自己的工作流程。  </p><p>信息安全问题产生的根源：信息系统的复杂性会造成系统本身的安全缺陷。</p><p>信息安全应急响应管理过程：1.准备 2.检测 3.遏制 4.根除 5.恢复 6.跟踪</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录前端学习--HTML</title>
+      <link href="/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/"/>
+      <url>/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/</url>
+      
+        <content type="html"><![CDATA[<h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>先学习基础部分，即web三件套</p><ul><li>HTML负责结构，网页想要表达的内容由html书写。</li><li>CSS负责样式，网页的美与丑由它来控制。</li><li>JS负责交互，用户和网页产生的互动由它来控制。</li></ul><p>然后学习框架，即“大前端开发”</p><ul><li>vue</li><li>React</li><li>angular</li></ul><p>另外学习其他知识</p><ul><li>浏览器</li><li>网络</li><li>webpack</li></ul><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><blockquote><p>超文本标记语言（HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> * @Author: h4m5t</span></span><br><span class="line"><span class="comment"> * @Date: 2021-01-21 10:11:09</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-01-21 20:23:30</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--编码以及屏幕自适应--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;测试&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--网页自动跳转--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;https://dydhzj.xyz&quot;&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;tupian&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 表示在新的标签页 打开页面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://dydhzj.xyz&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>这是我的博客链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>语义与呈现分离</strong></p><p>是一句常见的熟语、一种设计哲学，同时也是在多种出版技术纪律中应用的一种方法学，涉及到信息检索、模板处理、网页设计、网页程序设计、文字处理、桌面出版、模型驱动开发等出版领域。其为关注点分离这个更加宽泛的哲学的特例。一篇文档的实际内容和意义，与这篇文档呈现给读者的方式，是相互独立的。</p><ul><li>HTML 负责内容结构和含义，内容呈现交给 CSS</li></ul><p><strong>HTML语义化的优点</strong></p><ol><li>便于浏览器解析器解析</li><li>便于搜索引擎解析</li><li>在没有css的情况下，也以一种文档格式显式，并且是容易阅读的</li><li>结构良好，更容易将网站分块；便于阅读，开发和后期维护</li></ol><h4 id="1-文档与元数据元素"><a href="#1-文档与元数据元素" class="headerlink" title="1. 文档与元数据元素"></a>1. 文档与元数据元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">base</td><td align="left">相对 URL 基础</td><td align="left">元数据</td></tr><tr><td align="left">body</td><td align="left">HTML 文档内容</td><td align="left">无</td></tr><tr><td align="left">DOCTYPE</td><td align="left">HTML 开始</td><td align="left">无</td></tr><tr><td align="left">head</td><td align="left">HTML 文档元数据</td><td align="left">无</td></tr><tr><td align="left">html</td><td align="left">HTML 文档 html 部分</td><td align="left">无</td></tr><tr><td align="left">link</td><td align="left">外部链接的关系</td><td align="left">元数据</td></tr><tr><td align="left">meta</td><td align="left">文档信息</td><td align="left">元数据</td></tr><tr><td align="left">noscript</td><td align="left">禁用脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">script</td><td align="left">脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">style</td><td align="left">CSS 样式</td><td align="left">元数据</td></tr><tr><td align="left">title</td><td align="left">文档标题</td><td align="left">元数据</td></tr></tbody></table><h4 id="2-文本元素"><a href="#2-文本元素" class="headerlink" title="2. 文本元素"></a>2. 文本元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">a</td><td align="left">超链接</td><td align="left">短语、流</td></tr><tr><td align="left">abbr</td><td align="left">缩略语</td><td align="left">短语</td></tr><tr><td align="left">b</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">br</td><td align="left">换行</td><td align="left">短语</td></tr><tr><td align="left">cite</td><td align="left">其他作品标题</td><td align="left">短语</td></tr><tr><td align="left">code</td><td align="left">代码片段</td><td align="left">短语</td></tr><tr><td align="left">del</td><td align="left">文字删除线</td><td align="left">短语、流</td></tr><tr><td align="left">dfn</td><td align="left">术语定义</td><td align="left">短语</td></tr><tr><td align="left">em</td><td align="left">强调标记</td><td align="left">短语</td></tr><tr><td align="left">i</td><td align="left">与周边不同的文字</td><td align="left">短语</td></tr><tr><td align="left">ins</td><td align="left">加入文档的文字</td><td align="left">短语、流</td></tr><tr><td align="left">kbd</td><td align="left">用户输入的内容</td><td align="left">短语</td></tr><tr><td align="left">mark</td><td align="left">标记</td><td align="left">短语</td></tr><tr><td align="left">q</td><td align="left">引用他处的内容</td><td align="left">短语</td></tr><tr><td align="left">rp</td><td align="left">ruby 标记括号</td><td align="left">短语</td></tr><tr><td align="left">rt</td><td align="left">ruby 标记注音符号</td><td align="left">短语</td></tr><tr><td align="left">ruby</td><td align="left">位于表意文字上方或者右方的注音符号</td><td align="left">短语</td></tr><tr><td align="left">s</td><td align="left">表示内容不再准确</td><td align="left">短语</td></tr><tr><td align="left">samp</td><td align="left">计算机输出的内容</td><td align="left">短语</td></tr><tr><td align="left">small</td><td align="left">小号字体</td><td align="left">短语</td></tr><tr><td align="left">span</td><td align="left">同样元素</td><td align="left">短语</td></tr><tr><td align="left">strong</td><td align="left">重要内容</td><td align="left">短语</td></tr><tr><td align="left">sub</td><td align="left">下标</td><td align="left">短语</td></tr><tr><td align="left">sup</td><td align="left">上标</td><td align="left">短语</td></tr><tr><td align="left">time</td><td align="left">时间</td><td align="left">短语</td></tr><tr><td align="left">u</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">var</td><td align="left">计算机中的变量</td><td align="left">短语</td></tr><tr><td align="left">wbr</td><td align="left">安全换行的地方</td><td align="left">短语</td></tr></tbody></table><h4 id="3-内容"><a href="#3-内容" class="headerlink" title="3. 内容"></a>3. 内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">blockquote</td><td align="left">引用的大段内容</td><td align="left">流</td></tr><tr><td align="left">dd</td><td align="left">dl 元素中，表示定义</td><td align="left">无</td></tr><tr><td align="left">div</td><td align="left">通用元素，与 span 对应</td><td align="left">流</td></tr><tr><td align="left">dl</td><td align="left">术语定义的说明列表</td><td align="left">流</td></tr><tr><td align="left">dt</td><td align="left">dl 元素中，表示术语</td><td align="left">无</td></tr><tr><td align="left">figcaption</td><td align="left">figure 元素的标题</td><td align="left">无</td></tr><tr><td align="left">figure</td><td align="left">图片</td><td align="left">流</td></tr><tr><td align="left">hr</td><td align="left">段落级别的主题转换</td><td align="left">流</td></tr><tr><td align="left">li</td><td align="left">ul、ol、menu 元素中，表示列表项</td><td align="left">无</td></tr><tr><td align="left">ol</td><td align="left">有序列表</td><td align="left">流</td></tr><tr><td align="left">p</td><td align="left">段落</td><td align="left">流</td></tr><tr><td align="left">pre</td><td align="left">格式应被保留的内容</td><td align="left">流</td></tr><tr><td align="left">ul</td><td align="left">无序列表</td><td align="left">流</td></tr></tbody></table><h4 id="4-划分内容"><a href="#4-划分内容" class="headerlink" title="4. 划分内容"></a>4. 划分内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">address</td><td align="left">文档或者 article 的联系信息</td><td align="left">流</td></tr><tr><td align="left">article</td><td align="left">作品信息</td><td align="left">流</td></tr><tr><td align="left">aside</td><td align="left">周边牵涉内容</td><td align="left">流</td></tr><tr><td align="left">details</td><td align="left">区域，展开获取细节</td><td align="left">流</td></tr><tr><td align="left">footer</td><td align="left">尾部</td><td align="left">流</td></tr><tr><td align="left">h1-h6</td><td align="left">标题</td><td align="left">流</td></tr><tr><td align="left">header</td><td align="left">首部</td><td align="left"></td></tr><tr><td align="left">hgroup</td><td align="left">一组标题组织，形成目录</td><td align="left">流</td></tr><tr><td align="left">nav</td><td align="left">导航元素</td><td align="left">流</td></tr><tr><td align="left">section</td><td align="left">部分流</td><td align="left"></td></tr><tr><td align="left">summary</td><td align="left">details 元素中，表示该元素标题</td><td align="left">无</td></tr></tbody></table><h4 id="5-制表"><a href="#5-制表" class="headerlink" title="5. 制表"></a>5. 制表</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">caption</td><td align="left">表格标题</td><td align="left">无</td></tr><tr><td align="left">col</td><td align="left">列</td><td align="left">无</td></tr><tr><td align="left">colgroup</td><td align="left">一组列</td><td align="left">无</td></tr><tr><td align="left">table</td><td align="left">表格</td><td align="left">无</td></tr><tr><td align="left">tbody</td><td align="left">表格主体</td><td align="left">无</td></tr><tr><td align="left">td</td><td align="left">单元格</td><td align="left">无</td></tr><tr><td align="left">tfoot</td><td align="left">表脚</td><td align="left">无</td></tr><tr><td align="left">th</td><td align="left">表头表脚单元格</td><td align="left">无</td></tr><tr><td align="left">thead</td><td align="left">表头</td><td align="left">无</td></tr><tr><td align="left">tr</td><td align="left">一行单元格</td><td align="left">无</td></tr></tbody></table><h4 id="6-表单"><a href="#6-表单" class="headerlink" title="6. 表单"></a>6. 表单</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">button</td><td align="left">按钮</td><td align="left">短语</td></tr><tr><td align="left">datalist</td><td align="left">建议列表</td><td align="left">流</td></tr><tr><td align="left">fieldset</td><td align="left">一组表单元素</td><td align="left">流</td></tr><tr><td align="left">form</td><td align="left">表单</td><td align="left">流</td></tr><tr><td align="left">input</td><td align="left">输入</td><td align="left">短语</td></tr><tr><td align="left">keygen</td><td align="left">生成公私钥</td><td align="left">短语</td></tr><tr><td align="left">label</td><td align="left">表单说明标签</td><td align="left">短语</td></tr><tr><td align="left">legend</td><td align="left">fieldset 元素说明标签</td><td align="left">无</td></tr><tr><td align="left">optgroup</td><td align="left">一组相关的 option 元素</td><td align="left">无</td></tr><tr><td align="left">option</td><td align="left">用户选择的可选项</td><td align="left">无</td></tr><tr><td align="left">output</td><td align="left">计算结果</td><td align="left">短语</td></tr><tr><td align="left">select</td><td align="left">用户选择固定项</td><td align="left">短语</td></tr><tr><td align="left">textarea</td><td align="left">多行输入</td><td align="left">短语</td></tr></tbody></table><h4 id="7-嵌入内容"><a href="#7-嵌入内容" class="headerlink" title="7. 嵌入内容"></a>7. 嵌入内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">area</td><td align="left">客户端分区响应区域</td><td align="left">短语</td></tr><tr><td align="left">audio</td><td align="left">音频</td><td align="left">无</td></tr><tr><td align="left">canvas</td><td align="left">画布</td><td align="left">短语、流</td></tr><tr><td align="left">embed</td><td align="left">用插件嵌入内容</td><td align="left">短语</td></tr><tr><td align="left">iframe</td><td align="left">嵌入另一个文档</td><td align="left">短语</td></tr><tr><td align="left">img</td><td align="left">图片</td><td align="left">短语</td></tr><tr><td align="left">map</td><td align="left">客户端分区响应</td><td align="left">短语、流</td></tr><tr><td align="left">meter</td><td align="left">许可值范围背景中的图形表示</td><td align="left">短语</td></tr><tr><td align="left">object</td><td align="left">生成上下文与客户端分区响应图</td><td align="left">短语、流</td></tr><tr><td align="left">param</td><td align="left">通过 obj 元素传给插件的参数</td><td align="left">无</td></tr><tr><td align="left">progress</td><td align="left">进度</td><td align="left">短语</td></tr><tr><td align="left">source</td><td align="left">媒体资源</td><td align="left">无</td></tr><tr><td align="left">svg</td><td align="left">结构化矢量内容</td><td align="left">无</td></tr><tr><td align="left">track</td><td align="left">媒体附加轨道（如字幕）</td><td align="left">无</td></tr><tr><td align="left">video</td><td align="left">视频</td><td align="left">无</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows快捷键</title>
+      <link href="/2022/11/27/2020-10-26-Win10/"/>
+      <url>/2022/11/27/2020-10-26-Win10/</url>
+      
+        <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Win10 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑客术语解释</title>
+      <link href="/2022/11/27/2020-10-28-hack/"/>
+      <url>/2022/11/27/2020-10-28-hack/</url>
+      
+        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记第一次挖矿</title>
+      <link href="/2022/11/27/2020-11-4-dig/"/>
+      <url>/2022/11/27/2020-11-4-dig/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>云安全</title>
+      <link href="/2022/11/27/2020-12-18-security/"/>
+      <url>/2022/11/27/2020-12-18-security/</url>
+      
+        <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> 云安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git</title>
+      <link href="/2022/11/27/2020-10-25-git/"/>
+      <url>/2022/11/27/2020-10-25-git/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-git-clone"><a href="#1-git-clone" class="headerlink" title="1.git clone"></a>1.git clone</h3><p>将远程仓库克隆到本地，包括此仓库的版本变化信息。</p><p>不需要进行<code>git init</code>操作</p><p>方法：https或SSH</p><h3 id="2-git-pull"><a href="#2-git-pull" class="headerlink" title="2.git pull"></a>2.git pull</h3><p>拉取远程更新到本地仓库，相当于从远程仓库或许最新版，然后与本地的分支合并。</p><p><code>git pull = git fetch + git merge</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Desktop </tag>
+            
+            <tag> Git </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chrome快捷键</title>
+      <link href="/2022/11/27/2020-10-26-Chrome/"/>
+      <url>/2022/11/27/2020-10-26-Chrome/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>解决Win10桌面图标小箭头问题</title>
+      <link href="/2022/11/27/2020-10-22-error/"/>
+      <url>/2022/11/27/2020-10-22-error/</url>
+      
+        <content type="html"><![CDATA[<p>桌面的图标左下角总是有个小箭头，看着烦，想去掉，用网上的方法，删去了几个注册表的值。</p><p>果然，注册表还是不能随便删的，结果任务栏的程序却无法正常打开。</p><div align=left><img src="https://iknow-pic.cdn.bcebos.com/10dfa9ec8a136327f7307de19d8fa0ec09fac707" width="  "></div><p><strong>解决方法：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">win+R,输入regedit，分别在</span><br><span class="line">HKEY_CLASSES_ROOT\piffile</span><br><span class="line">HKEY_CLASSES_ROOT\InternetShortcut</span><br><span class="line">HKEY_CLASSES_ROOT\lnkfile</span><br><span class="line">中新建bai→字符串值，命名为duIsShortcut</span><br><span class="line">方法二：</span><br><span class="line">taskkill /f /im explorer.exe</span><br><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f</span><br><span class="line">reg add &quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f</span><br><span class="line">reg add &quot;HKEY_CLASSES_ROOT\lnkfile&quot; /v IsShortcut /t reg_sz /f</span><br><span class="line">reg add &quot;HEKY_CLASSES_ROOT\piffile&quot; /v IsShortcut /t reg_sz /f</span><br><span class="line">start explorer</span><br><span class="line">保存为.bat格式双击运行。</span><br></pre></td></tr></table></figure><p><strong>去除桌面图标小箭头：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">如果还需要除去小箭头用下面的命令，用这个方法就可以避免错误了</span><br><span class="line">新建一个文本文件，粘贴后另存为.bat文件，然后以管理员身份打开</span><br><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;%systemroot%\system32\imageres.dll,197&quot; /t reg_sz /f</span><br><span class="line">taskkill /f /im explorer.exe</span><br><span class="line">attrib -s -r -h &quot;%userprofile%\AppData\Local\iconcache.db&quot;</span><br><span class="line">del &quot;%userprofile%\AppData\Local\iconcache.db&quot; /f /q</span><br><span class="line">start explorer</span><br><span class="line">pause</span><br></pre></td></tr></table></figure><p><strong>温馨提示：注册表很重要，不要随便删除哦！</strong></p><p><strong>2022&#x2F;5&#x2F;22 更新</strong></p><p>最近更新了windows11系统，小箭头又出来了，百度上的方法都不管用，最后靠微软官方解决的。方法如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.右键“开始”菜单，找到“运行”，输入命令 regedit ，打开“注册表编辑器”</span><br><span class="line"></span><br><span class="line">2.在“注册表编辑器”左侧窗口，按照以下路径找到对应项</span><br><span class="line"></span><br><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons</span><br><span class="line"></span><br><span class="line">如果在 Explorer 下面没有 Shell Icons 这一项，可以直接在 Explorer 项上点击鼠标右键，选择“新建”→“项”，项的名字定为 Shell Icons 。</span><br><span class="line"></span><br><span class="line">3.选中“Shell Icons”，在右侧窗口中点击鼠标右键，选择“新建”→“字符串值”，将“字符串”的名字设置为“29”。</span><br><span class="line"></span><br><span class="line">4.双击新建的字符串“29”，在“数值数据”中输入“C:\WINDOWS\system32\imageres.dll,197”。</span><br><span class="line"></span><br><span class="line">如果你不确定系统安装在哪个硬盘分区，也可以输入“%systemroot%\system32\imageres.dll,197”，以 %systemroot% 的变量路径自动定位系统位置。</span><br><span class="line"></span><br><span class="line">5.关闭注册表编辑器，重新启动电脑即可</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Win10 </tag>
+            
+            <tag> Desktop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>渗透Metasploitable2</title>
+      <link href="/2022/11/27/2021-3-17-kali/"/>
+      <url>/2022/11/27/2021-3-17-kali/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Metasploitable2是一款很好的渗透测试靶机</p></blockquote><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>攻击机:kali    IP:192.168.211.140</p><p>目标主机:Metasploitable2   IP:192.168.211.132</p><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>1.使用命令msfconsole进入msf控制台</p><img src="https://i.loli.net/2021/03/17/xhgMnCZvJ3AlQyw.png" alt="image-20210317192744736" style="zoom:67%;" /><p>2.使用Nmap扫描,查看目标系统开放端口和服务.</p><img src="https://i.loli.net/2021/03/17/rKnzR1EZijmV7aH.png" alt="image-20210317193125963" style="zoom:67%;" /><p>3.根据扫描结果选择合适的exploit和payload</p><p>此次使用Samba3.0存在的漏洞进行攻击</p><p>**提示:**在rank栏选择great&#x2F;excellent的模块,会有很好效果,成功率更高.</p><img src="https://i.loli.net/2021/03/17/wyxbWKE4mLqVclX.png" alt="image-20210317193350796" style="zoom:67%;" /><p>4.使用攻击模块</p><p>选择exploit&#x2F;multi&#x2F;samba&#x2F;usermap_script</p><p>提示:使用info+模块 查看说明</p><img src="https://i.loli.net/2021/03/17/oZJirFMjk5HC3h6.png" alt="image-20210317194342573" style="zoom:67%;" /><p>show payloads,查看可用攻击载荷.</p><p>5.设置攻击载荷</p><p>set PAYLOAD cmd&#x2F;unix&#x2F;reverse</p><p>设置目标机IP及端口</p><p>设置攻击机IP</p><p><strong>注意</strong>:此处的端口号是漏洞服务对应的端口号,在Nmap那一步可以看到.</p><p>show options可以查看payload的配置,Required为不可缺参数</p><img src="https://i.loli.net/2021/03/17/7uTQKxsf6aHDdLp.png" alt="image-20210317195047700" style="zoom:67%;" /><p>6.使用expolit命令进行攻击</p><img src="https://i.loli.net/2021/03/17/T1SDBs5F8KPjOWi.png" alt="image-20210317195453218" style="zoom:67%;" /><p>已成功获取目标主机shell !</p><p>可以使用命令 uname -a 进行验证.</p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><ul><li>进一步获取目标系统信息</li><li>关闭目标系统杀毒软件</li><li>利用已攻陷的主机做为跳板&#x2F;肉鸡</li><li>后渗透（权限提升、横向提权、纵向提权）</li><li>留下后门</li><li>痕迹清除</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode15 - 3sum</title>
+      <link href="/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/"/>
+      <url>/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>3sum跟之前的2sum有点像,但难度更大一些</p></blockquote><p><a href="https://leetcode-cn.com/problems/3sum/">leetcode.15</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 :"></a>题目描述 :</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</span><br><span class="line"></span><br><span class="line">Notice that the solution set must not contain duplicate triplets.</span><br></pre></td></tr></table></figure><p>范围<code>0 &lt;= nums.length &lt;= 3000</code></p><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>枚举所有方法,时间复杂度n^3,会超时</p><h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>排序</p><p>哈希法(2等1)</p><p>循环i,j 此时 t&#x3D;0-nums[i]-nums[j]</p><p>根据哈希,判断t是否在数组中出现过</p><p><strong>注意:需要去重</strong></p><h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3:"></a>方法3:</h3><p>排序</p><p>双指针(1等2)</p><p>t&#x3D;0-nums[i]-nums[j]</p><p>思路:</p><p>固定i指针,j,k分别在两端,交替向中间靠拢(比较t)</p><p><strong>注意:去重</strong></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment">#双指针移动</span></span><br><span class="line">        <span class="comment">#i为定指针</span></span><br><span class="line">        <span class="comment">#j,k为移动指针</span></span><br><span class="line">        <span class="comment">#首先要排序</span></span><br><span class="line">        nums.sort()        </span><br><span class="line">        lens=<span class="built_in">len</span>(nums)</span><br><span class="line">        </span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(lens):</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#要求j,k位置的和</span></span><br><span class="line">            <span class="comment">#对第一个位置要特殊判断</span></span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">and</span> nums[i]==nums[i-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            j=i+<span class="number">1</span></span><br><span class="line">            k=lens-<span class="number">1</span></span><br><span class="line">            tmp=<span class="number">0</span>-nums[i]</span><br><span class="line">            <span class="keyword">while</span>(j&lt;k):</span><br><span class="line">                arr=[]</span><br><span class="line">                <span class="keyword">if</span> nums[j]+nums[k]&gt;tmp:</span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> nums[j]+nums[k]&lt;tmp:</span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment">#添加数组元素的另一种方法:</span></span><br><span class="line">                    <span class="comment">#res.append([nums[i],nums[L],nums[R]])</span></span><br><span class="line">                    arr.append(nums[i])</span><br><span class="line">                    arr.append(nums[j])</span><br><span class="line">                    arr.append(nums[k])</span><br><span class="line">                    </span><br><span class="line">                    res.append(arr)</span><br><span class="line">                    <span class="comment">#此处直接去重</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[j]==nums[j+<span class="number">1</span>]):</span><br><span class="line">                        j=j+<span class="number">1</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[k]==nums[k-<span class="number">1</span>]):</span><br><span class="line">                        k=k-<span class="number">1</span></span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res                     </span><br></pre></td></tr></table></figure><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>此题题目简单,但是需要考虑的东西也比较细.</p><ul><li>去重</li><li>hash及set的使用</li><li>双指针</li><li>剪枝</li><li>对首位的特殊判断</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TCP/IP协议脆弱性分析</title>
+      <link href="/2022/11/27/2021-3-19-TCPIP/"/>
+      <url>/2022/11/27/2021-3-19-TCPIP/</url>
+      
+        <content type="html"><![CDATA[<h3 id="TCP-x2F-IP协议簇"><a href="#TCP-x2F-IP协议簇" class="headerlink" title="TCP&#x2F;IP协议簇"></a>TCP&#x2F;IP协议簇</h3><p>TCP&#x2F;IP提供了点对点链接的机制，将资料应该如何封装、寻址、传输、路由以及在目的地如何接收，都加以标准化。它将软件通信过程抽象化为四个抽象层，采取协议堆栈的方式，分别实现出不同通信协议。协议族下的各种协议，依其功能不同，分别归属到这四个层次结构之中，常视为是简化的七层OSI模型。</p><p>TCP（传输控制协议）和IP（网际协议）</p><p>TCP&#x2F;IP 意味着 TCP 和 IP 在一起协同工作。</p><p>TCP 负责应用软件（比如您的浏览器）和网络软件之间的通信。</p><p>IP 负责计算机之间的通信。</p><p>TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</p><p>IP 负责将包发送至接受者。</p><h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><p>1.链路层攻击</p><p>在TCP&#x2F;IP网络中，链路层这一层次的复杂程度是最高的。其中最常见的攻击方式通常是网络嗅探组成的TCP&#x2F;IP协议的以太网。当前，我国应用较为广泛的局域网是以太网，且其共享信道利用率非常高。以太网卡有两种主要的工作方式，一种是一般工作方式，另一种是较特殊的混杂方式。这一情况下，很可能由于被攻击的原因而造成信息丢失情况，且攻击者可以通过数据分析来获取账户、密码等多方面的关键数据信息。</p><p>2.ARP欺骗</p><p>ARP（地址解析协议）是根据IP地址获取物理地址的一个TCP&#x2F;IP协议。通常情况下，在IP数据包发送过程中会存在一个子网或者多个子网主机利用网络级别第一层，而ARP则充当源主机第一个查询工具，在未找到IP地址相对应的物理地址时，将主机和IP地址相关的物理地址信息发送给主机。与此同时，源主机将包括自身IP地址和ARP检测的应答发送给目的主机。如果ARP识别链接错误，这样的话ARP直接应用可疑信息，那么可疑信息就会很容易进入目标主机当中。ARP协议没有状态，不管有没有收到请求，主机会将任何受到的ARP相应自动缓存。如果信息中带有病毒，采用ARP欺骗就会导致网络信息安全泄露。因此，在ARP识别环节，应加大保护，建立更多的识别关卡，不能只简单通过IP名进行识别，还需充分参考IP相关性质等。</p><p>3.ICMP欺骗</p><p>ICMP协议也是因特网控制报文协议，主要用在主机与路由器之间进行控制信息传递。通过这一协议可对网络是否通畅、主机是否可达、路由是否可用等信息进行控制。一旦出现差错，数据包会利用主机进行即时发送，并自动反回描述错误的信息。该协议在网络安全当中是十分重要的协议。但由于自身特点的原因，其极易受到入侵，通常而言，目标主机在长期发送大量ICMP数据包的情况下，会造成目标主机占用大量CPU资源，最终造成系统瘫痪。</p><p>4.IP欺骗</p><p>在传输层还存在网络安全问题。如在网络安全领域中，IP欺骗就是隐藏自己的有效手段，主要是通过将自身IP地址进行伪造，并向目标主机发送恶意的请求，攻击主机，而主机却因为IP地址被隐藏而无法准确确认攻击源。或者通过获取目标主机信任而趁机窃取相关的机密信息。在DOS攻击中往往会使用IP欺骗，这是因为数据包地址来源较广泛，无法进行有效过滤，从而使IP基本防御的有效性大幅度下降。此外，在ICMP传输通道，由于ICMP是IP层的组成部分之一，在IP软件中任何端口向ICMP发送一个PING文件，借此用作申请，申请文件传输是否被允许，而ICMP会做出应答，这一命令可检测消息的合法性。所有申请传输的数据基本上传输层都会同意，造成这一情况的原因主要是PING软件编程无法智能识别出恶意信息，一般网络安全防护系统与防火墙会自动默认PING存在，从而忽视其可能带来的安全风险。</p><p>5.DNS欺骗</p><p>对于因特网而言，IP地址与域名均是一一对应的，这两者之间的转换工作，被称为域名解析。而DNS就是域名解析的服务器。DNS欺骗指的是攻击方冒充域名服务器的行为，使用DNS欺骗能将错误DNS信息提供给目标主机。所以说，通过DNS欺骗可误导用户进入非法服务器，让用户相信诈骗IP。另外，PTP网络上接口接受到不属于主机的数据，这也是应用层存在的安全问题，一些木马病毒可趁机入侵，造成数据泄露，从而引发网络安全问题。</p><h3 id="脆弱性分析"><a href="#脆弱性分析" class="headerlink" title="脆弱性分析"></a>脆弱性分析</h3><p>1.不能提供可靠的身份验证</p><p>2.不能有效防止信息泄露</p><p>3.没有提供可靠的信息完整性验证</p><p>4.无法控制资源占有和分配</p><h3 id="攻击方法"><a href="#攻击方法" class="headerlink" title="攻击方法"></a>攻击方法</h3><ul><li>IP欺骗</li><li>TCP会话劫持</li><li>SYN Flooding</li><li>死亡之ping</li><li>RST和FIN攻击</li></ul><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>真正防御针对网络协议脆弱性的攻击，需要从管理、技术、政策等多方面来配合。希望随着网络安全技术的提高和IPsec的逐步完善，解决现存的协议脆弱性问题。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li>百度&#x2F;维基百科</li><li>菜鸟TCP&#x2F;IP教程</li><li>典型的TCP&#x2F;IP协议脆弱性及常见攻击方法分析（空军工程大学学报）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>云蜜罐</title>
+      <link href="/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
+      <url>/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在公众号上看到一篇云蜜罐的文章，记录一下</p></blockquote><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NzA3Nzg2MA==&mid=2649850797&idx=1&sn=613b99fb34f8981ac9443751350c162a&chksm=beda55a689addcb0a419a3f125dcc2c10f34f914de3a94d19f29fd41a83884ca7a549629b452&mpshare=1&scene=23&srcid=0310ZUYFGHI200bvmbf8Xeym&sharer_sharetime=1615365828620&sharer_shareid=6667ab5df2c656171aa24aeecfcd6fe5#rd">知道创宇</a></p><p><a href="https://github.com/paralax/awesome-honeypots/blob/master/README_CN.md">优秀蜜罐有哪些</a></p><h3 id="“云蜜罐”是什么？"><a href="#“云蜜罐”是什么？" class="headerlink" title="“云蜜罐”是什么？"></a>“云蜜罐”是什么？</h3><p><strong>无需软硬件，无需云主机，不需占用任何客户资源，云端实现快捷部署，并在域名接入功能上取得了突破</strong>。</p><h3 id="与传统蜜罐有何不同"><a href="#与传统蜜罐有何不同" class="headerlink" title="与传统蜜罐有何不同"></a>与传统蜜罐有何不同</h3><p>与传统蜜罐相比，“云蜜罐”除去部署方式上的不同，还有一大优势在于云端部署<strong>不需占用任何客户端资源，不会对现有的业务造成任何影响</strong>。同时，云端“一键部署”快捷安全，尤其适用于网站防御方面。在即将到来的网络攻防实战演练中，防守方一旦发现预先进行了网络防护的网站有被攻击迹象，比起被动挨打，还可以选择<strong>通过快捷部署“云蜜罐”作为一种紧急应对方式，感知攻击威胁、记录攻击痕迹、争取溯源反制</strong>。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为域名暴破攻击提供“定制陷阱”的服务</strong>。</p><p><strong>“云蜜罐”智能子域名推荐系统会根据录入的根域名，自动生成高敏感子域名，在攻击者使用子域名暴破攻击的必经之路上设置陷阱，提高攻击捕获可能性</strong>，在一定程度上减轻真实资产的流量压力以及防止黑客进一步入侵。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>V&amp;N-CTF</title>
+      <link href="/2022/11/27/2021-3-14-VN/"/>
+      <url>/2022/11/27/2021-3-14-VN/</url>
+      
+        <content type="html"><![CDATA[<h3 id="web游戏题"><a href="#web游戏题" class="headerlink" title="web游戏题"></a>web游戏题</h3><p>提示：通关就有flag</p><p>尝试修改start_level，但是无法直接开始第10关</p><p>尝试修改死亡后reset的next_level，然后去送死，按下Esc,就是第二关。</p><p>却发现boss很难打，于是又修改人物参数：血量、飞镖数量等。</p><p><img src="https://i.loli.net/2021/03/14/8WzIQXblDZR3Nng.png" alt="image-20210314235011044"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Reset</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// load local storage</span></span><br><span class="line">    playerData = <span class="keyword">new</span> <span class="title class_">PlayerData</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>)</span><br><span class="line">        playerData.<span class="property">coins</span> = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>)</span><br><span class="line">        warpLevel = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>)</span><br><span class="line">        speedRunBestTime = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>, <span class="number">10</span>);</span><br><span class="line">    nextLevel = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/03/14/fcKorsJpBRiPVH3.png" alt="image-20210314235140421"></p><p>打败BOSS,获得flag。</p><p>这游戏挺好玩！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>舆情分析-人物画像</title>
+      <link href="/2022/11/27/2021-3-16-NLP/"/>
+      <url>/2022/11/27/2021-3-16-NLP/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>最近在做舆情分析的课题,稍微记录一下.</p></blockquote><h3 id="所需技术"><a href="#所需技术" class="headerlink" title="所需技术"></a>所需技术</h3><ul><li>爬虫</li><li>话题分析</li><li>人物画像</li><li>命名实体识别</li><li>意见抽取</li><li>情感分类</li><li>文本分类</li></ul><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>课题:境外涉华人物画像</p><ul><li><p>数量：不少于100</p></li><li><p>国家&#x2F;地区：美日澳印、欧洲、东南亚、俄罗斯、港台</p></li><li><p>领域：智库、军情、政治、法律、高科技（人工智能、芯片、通信、电子、材料、太空、航天等）、演艺、人文、知名大学毕业生</p></li><li><p>实时跟踪社交媒体动态（Twitter、Facebook、Line、Linkedin）</p></li><li><p>社交情况及社交指数</p></li><li><p>人格分析：大五人格</p></li><li><p>涉华言论（文本、音视频）、热点话题及其情感极性</p></li><li><p>对华好感指数</p></li></ul><h3 id="预期成果"><a href="#预期成果" class="headerlink" title="预期成果"></a>预期成果</h3><p>实时跟踪twitter, facebook等社交媒体动态，生成境外涉华人物画像。人物涉及多个国家地区，并分析相应人物的社交指数，大五人格，以及对华好感指数等，并对其涉华言论的情感极性进行深入分析。</p><p>通过可视化，建立图形化界面等技术，从公共社交媒体上利用爬虫爬取公开的涉华人物的相关信息动态，完成预期的目标任务，做成一个能够从公开媒体上爬取并分析信息情报的平台雏形，具有相当的实用价值。</p><h3 id="初步模型"><a href="#初步模型" class="headerlink" title="初步模型"></a>初步模型</h3><img src="https://i.loli.net/2021/03/18/uXe1no9hW6JNyDj.png" align="left" alt="未命名文件" style="zoom: 80%;" /><h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="数据爬取及处理"><a href="#数据爬取及处理" class="headerlink" title="数据爬取及处理"></a>数据爬取及处理</h4><h4 id="社交指数分析"><a href="#社交指数分析" class="headerlink" title="社交指数分析"></a>社交指数分析</h4><p><img src="https://i.loli.net/2021/03/18/mD2n8yhNLQdfwig.png" alt="image-20210318100300846"></p><p><img src="https://i.loli.net/2021/03/18/Jl8Nrj1uORhQSF9.png" alt="image-20210318100319880"></p><h4 id="涉华言论情感分析"><a href="#涉华言论情感分析" class="headerlink" title="涉华言论情感分析"></a>涉华言论情感分析</h4><h4 id="人格分析"><a href="#人格分析" class="headerlink" title="人格分析"></a>人格分析</h4><p>大五人格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开放性（openness）</span><br><span class="line">  具有想象、审美、情感丰富、求异、创造、智能等特质。</span><br><span class="line">责任心（conscientiousness）：</span><br><span class="line">  显示胜任、公正、条理、尽职、成就、自律、谨慎、克制等特点。</span><br><span class="line">外倾性（extraversion）：</span><br><span class="line">  表现出热情、社交、果断、活跃、冒险、乐观等特质。</span><br><span class="line">宜人性（agreeableness）：</span><br><span class="line">  具有信任、利他、直率、依从、谦虚、移情等特质。</span><br><span class="line">神经质性（neuroticism）：</span><br><span class="line">  难以平衡焦虑、敌对、压抑、自我意识、冲动、脆弱等情绪的特质，即不具有保持情绪稳定的能力。</span><br></pre></td></tr></table></figure><h4 id="对华好感指数"><a href="#对华好感指数" class="headerlink" title="对华好感指数"></a>对华好感指数</h4><p>在不同领域探索对华好感指数</p><p><img src="https://i.loli.net/2021/03/18/5oacYN6hOZgif8w.png" alt="image-20210318100623093"></p><h4 id="热点话题抽取"><a href="#热点话题抽取" class="headerlink" title="热点话题抽取"></a>热点话题抽取</h4><p><img src="https://i.loli.net/2021/03/18/XBmGutHdZTwyj5K.png" alt="image-20210318100532182"></p><p>PS:此项目小组合作完成 , 源代码暂不公开</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>XXE漏洞</title>
+      <link href="/2022/11/27/2021-3-12-XXE/"/>
+      <url>/2022/11/27/2021-3-12-XXE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>外部实体注入(XML External Entity XML)。当允许引用外部实体时，通过构造恶意内容，就可能导致任意文件读取、系统命令执行、内网端口探测、攻击内网网站等危害。</p><h3 id="XXE的利用"><a href="#XXE的利用" class="headerlink" title="XXE的利用"></a>XXE的利用</h3><ul><li>读取本地敏感文件</li><li>内网主机探测</li><li>主机端口探测</li><li>盲注</li><li>文件上传</li><li>钓鱼</li></ul><h3 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h3><p>先知社区有一篇关于XXE的文章：</p><p><a href="https://xz.aliyun.com/t/3357#toc-17">XXE漏洞及利用</a></p><img src="https://i.loli.net/2021/03/12/LJMZdOSA71DbTB8.png" alt="img" style="zoom: 67%;" /><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span> </span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">updateProfile</span> [<span class="meta">&lt;!ENTITY <span class="keyword">file</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///c:/windows/win.ini&quot;</span>&gt;</span> ]&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">updateProfile</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Joe<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">lastname</span>&gt;</span><span class="symbol">&amp;file;</span><span class="tag">&lt;/<span class="name">lastname</span>&gt;</span>  </span><br><span class="line">    ... </span><br><span class="line"><span class="tag">&lt;/<span class="name">updateProfile</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h3><ul><li>禁止引用外部实体</li><li>过滤用户提交的XML数据</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 漏洞 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mytest</title>
+      <link href="/2022/11/27/mytest/"/>
+      <url>/2022/11/27/mytest/</url>
+      
+        <content type="html"><![CDATA[<p>nihh</p><p>你您</p><p>test</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/11/26/hello-world/"/>
+      <url>/2022/11/26/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
