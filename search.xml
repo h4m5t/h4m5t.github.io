@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>ttt</title>
+      <link href="/2022/11/30/ttt/"/>
+      <url>/2022/11/30/ttt/</url>
+      
+        <content type="html"><![CDATA[<p>TT</p><p>Test</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>post</title>
+      <link href="/2022/11/30/post/"/>
+      <url>/2022/11/30/post/</url>
+      
+        <content type="html"><![CDATA[<p>c</p><p>测试</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>企业渗透1</title>
       <link href="/2022/11/30/2021-5-1-%E6%B8%97%E9%80%8F1/"/>
       <url>/2022/11/30/2021-5-1-%E6%B8%97%E9%80%8F1/</url>
@@ -268,36 +294,9 @@
       
         <tags>
             
-            <tag> Win10 </tag>
-            
             <tag> Desktop </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>渗透Metasploitable2</title>
-      <link href="/2022/11/27/2021-3-17-kali/"/>
-      <url>/2022/11/27/2021-3-17-kali/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>Metasploitable2是一款很好的渗透测试靶机</p></blockquote><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>攻击机:kali    IP:192.168.211.140</p><p>目标主机:Metasploitable2   IP:192.168.211.132</p><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>1.使用命令msfconsole进入msf控制台</p><img src="https://i.loli.net/2021/03/17/xhgMnCZvJ3AlQyw.png" alt="image-20210317192744736" style="zoom:67%;" /><p>2.使用Nmap扫描,查看目标系统开放端口和服务.</p><img src="https://i.loli.net/2021/03/17/rKnzR1EZijmV7aH.png" alt="image-20210317193125963" style="zoom:67%;" /><p>3.根据扫描结果选择合适的exploit和payload</p><p>此次使用Samba3.0存在的漏洞进行攻击</p><p>**提示:**在rank栏选择great&#x2F;excellent的模块,会有很好效果,成功率更高.</p><img src="https://i.loli.net/2021/03/17/wyxbWKE4mLqVclX.png" alt="image-20210317193350796" style="zoom:67%;" /><p>4.使用攻击模块</p><p>选择exploit&#x2F;multi&#x2F;samba&#x2F;usermap_script</p><p>提示:使用info+模块 查看说明</p><img src="https://i.loli.net/2021/03/17/oZJirFMjk5HC3h6.png" alt="image-20210317194342573" style="zoom:67%;" /><p>show payloads,查看可用攻击载荷.</p><p>5.设置攻击载荷</p><p>set PAYLOAD cmd&#x2F;unix&#x2F;reverse</p><p>设置目标机IP及端口</p><p>设置攻击机IP</p><p><strong>注意</strong>:此处的端口号是漏洞服务对应的端口号,在Nmap那一步可以看到.</p><p>show options可以查看payload的配置,Required为不可缺参数</p><img src="https://i.loli.net/2021/03/17/7uTQKxsf6aHDdLp.png" alt="image-20210317195047700" style="zoom:67%;" /><p>6.使用expolit命令进行攻击</p><img src="https://i.loli.net/2021/03/17/T1SDBs5F8KPjOWi.png" alt="image-20210317195453218" style="zoom:67%;" /><p>已成功获取目标主机shell !</p><p>可以使用命令 uname -a 进行验证.</p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><ul><li>进一步获取目标系统信息</li><li>关闭目标系统杀毒软件</li><li>利用已攻陷的主机做为跳板&#x2F;肉鸡</li><li>后渗透（权限提升、横向提权、纵向提权）</li><li>留下后门</li><li>痕迹清除</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 渗透 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 渗透 </tag>
-            
-            <tag> 漏洞 </tag>
+            <tag> Win10 </tag>
             
         </tags>
       
@@ -358,6 +357,52 @@
     
     
     <entry>
+      <title>渗透Metasploitable2</title>
+      <link href="/2022/11/27/2021-3-17-kali/"/>
+      <url>/2022/11/27/2021-3-17-kali/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Metasploitable2是一款很好的渗透测试靶机</p></blockquote><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>攻击机:kali    IP:192.168.211.140</p><p>目标主机:Metasploitable2   IP:192.168.211.132</p><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>1.使用命令msfconsole进入msf控制台</p><img src="https://i.loli.net/2021/03/17/xhgMnCZvJ3AlQyw.png" alt="image-20210317192744736" style="zoom:67%;" /><p>2.使用Nmap扫描,查看目标系统开放端口和服务.</p><img src="https://i.loli.net/2021/03/17/rKnzR1EZijmV7aH.png" alt="image-20210317193125963" style="zoom:67%;" /><p>3.根据扫描结果选择合适的exploit和payload</p><p>此次使用Samba3.0存在的漏洞进行攻击</p><p>**提示:**在rank栏选择great&#x2F;excellent的模块,会有很好效果,成功率更高.</p><img src="https://i.loli.net/2021/03/17/wyxbWKE4mLqVclX.png" alt="image-20210317193350796" style="zoom:67%;" /><p>4.使用攻击模块</p><p>选择exploit&#x2F;multi&#x2F;samba&#x2F;usermap_script</p><p>提示:使用info+模块 查看说明</p><img src="https://i.loli.net/2021/03/17/oZJirFMjk5HC3h6.png" alt="image-20210317194342573" style="zoom:67%;" /><p>show payloads,查看可用攻击载荷.</p><p>5.设置攻击载荷</p><p>set PAYLOAD cmd&#x2F;unix&#x2F;reverse</p><p>设置目标机IP及端口</p><p>设置攻击机IP</p><p><strong>注意</strong>:此处的端口号是漏洞服务对应的端口号,在Nmap那一步可以看到.</p><p>show options可以查看payload的配置,Required为不可缺参数</p><img src="https://i.loli.net/2021/03/17/7uTQKxsf6aHDdLp.png" alt="image-20210317195047700" style="zoom:67%;" /><p>6.使用expolit命令进行攻击</p><img src="https://i.loli.net/2021/03/17/T1SDBs5F8KPjOWi.png" alt="image-20210317195453218" style="zoom:67%;" /><p>已成功获取目标主机shell !</p><p>可以使用命令 uname -a 进行验证.</p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><ul><li>进一步获取目标系统信息</li><li>关闭目标系统杀毒软件</li><li>利用已攻陷的主机做为跳板&#x2F;肉鸡</li><li>后渗透（权限提升、横向提权、纵向提权）</li><li>留下后门</li><li>痕迹清除</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>云蜜罐</title>
+      <link href="/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
+      <url>/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在公众号上看到一篇云蜜罐的文章，记录一下</p></blockquote><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NzA3Nzg2MA==&mid=2649850797&idx=1&sn=613b99fb34f8981ac9443751350c162a&chksm=beda55a689addcb0a419a3f125dcc2c10f34f914de3a94d19f29fd41a83884ca7a549629b452&mpshare=1&scene=23&srcid=0310ZUYFGHI200bvmbf8Xeym&sharer_sharetime=1615365828620&sharer_shareid=6667ab5df2c656171aa24aeecfcd6fe5#rd">知道创宇</a></p><p><a href="https://github.com/paralax/awesome-honeypots/blob/master/README_CN.md">优秀蜜罐有哪些</a></p><h3 id="“云蜜罐”是什么？"><a href="#“云蜜罐”是什么？" class="headerlink" title="“云蜜罐”是什么？"></a>“云蜜罐”是什么？</h3><p><strong>无需软硬件，无需云主机，不需占用任何客户资源，云端实现快捷部署，并在域名接入功能上取得了突破</strong>。</p><h3 id="与传统蜜罐有何不同"><a href="#与传统蜜罐有何不同" class="headerlink" title="与传统蜜罐有何不同"></a>与传统蜜罐有何不同</h3><p>与传统蜜罐相比，“云蜜罐”除去部署方式上的不同，还有一大优势在于云端部署<strong>不需占用任何客户端资源，不会对现有的业务造成任何影响</strong>。同时，云端“一键部署”快捷安全，尤其适用于网站防御方面。在即将到来的网络攻防实战演练中，防守方一旦发现预先进行了网络防护的网站有被攻击迹象，比起被动挨打，还可以选择<strong>通过快捷部署“云蜜罐”作为一种紧急应对方式，感知攻击威胁、记录攻击痕迹、争取溯源反制</strong>。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为域名暴破攻击提供“定制陷阱”的服务</strong>。</p><p><strong>“云蜜罐”智能子域名推荐系统会根据录入的根域名，自动生成高敏感子域名，在攻击者使用子域名暴破攻击的必经之路上设置陷阱，提高攻击捕获可能性</strong>，在一定程度上减轻真实资产的流量压力以及防止黑客进一步入侵。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>V&amp;N-CTF</title>
       <link href="/2022/11/27/2021-3-14-VN/"/>
       <url>/2022/11/27/2021-3-14-VN/</url>
@@ -387,25 +432,6 @@
       <categories>
           
           <category> blog </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>云蜜罐</title>
-      <link href="/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
-      <url>/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>在公众号上看到一篇云蜜罐的文章，记录一下</p></blockquote><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NzA3Nzg2MA==&mid=2649850797&idx=1&sn=613b99fb34f8981ac9443751350c162a&chksm=beda55a689addcb0a419a3f125dcc2c10f34f914de3a94d19f29fd41a83884ca7a549629b452&mpshare=1&scene=23&srcid=0310ZUYFGHI200bvmbf8Xeym&sharer_sharetime=1615365828620&sharer_shareid=6667ab5df2c656171aa24aeecfcd6fe5#rd">知道创宇</a></p><p><a href="https://github.com/paralax/awesome-honeypots/blob/master/README_CN.md">优秀蜜罐有哪些</a></p><h3 id="“云蜜罐”是什么？"><a href="#“云蜜罐”是什么？" class="headerlink" title="“云蜜罐”是什么？"></a>“云蜜罐”是什么？</h3><p><strong>无需软硬件，无需云主机，不需占用任何客户资源，云端实现快捷部署，并在域名接入功能上取得了突破</strong>。</p><h3 id="与传统蜜罐有何不同"><a href="#与传统蜜罐有何不同" class="headerlink" title="与传统蜜罐有何不同"></a>与传统蜜罐有何不同</h3><p>与传统蜜罐相比，“云蜜罐”除去部署方式上的不同，还有一大优势在于云端部署<strong>不需占用任何客户端资源，不会对现有的业务造成任何影响</strong>。同时，云端“一键部署”快捷安全，尤其适用于网站防御方面。在即将到来的网络攻防实战演练中，防守方一旦发现预先进行了网络防护的网站有被攻击迹象，比起被动挨打，还可以选择<strong>通过快捷部署“云蜜罐”作为一种紧急应对方式，感知攻击威胁、记录攻击痕迹、争取溯源反制</strong>。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为域名暴破攻击提供“定制陷阱”的服务</strong>。</p><p><strong>“云蜜罐”智能子域名推荐系统会根据录入的根域名，自动生成高敏感子域名，在攻击者使用子域名暴破攻击的必经之路上设置陷阱，提高攻击捕获可能性</strong>，在一定程度上减轻真实资产的流量压力以及防止黑客进一步入侵。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
           
       </categories>
       
