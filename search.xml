@@ -158,11 +158,11 @@
     
     
     <entry>
-      <title>记第一次挖矿</title>
-      <link href="/2022/11/27/2020-11-4-dig/"/>
-      <url>/2022/11/27/2020-11-4-dig/</url>
+      <title>黑客术语解释</title>
+      <link href="/2022/11/27/2020-10-28-hack/"/>
+      <url>/2022/11/27/2020-10-28-hack/</url>
       
-        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
       
       
       <categories>
@@ -183,11 +183,11 @@
     
     
     <entry>
-      <title>黑客术语解释</title>
-      <link href="/2022/11/27/2020-10-28-hack/"/>
-      <url>/2022/11/27/2020-10-28-hack/</url>
+      <title>记第一次挖矿</title>
+      <link href="/2022/11/27/2020-11-4-dig/"/>
+      <url>/2022/11/27/2020-11-4-dig/</url>
       
-        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
       
       
       <categories>
@@ -237,31 +237,6 @@
     
     
     <entry>
-      <title>Chrome快捷键</title>
-      <link href="/2022/11/27/2020-10-26-Chrome/"/>
-      <url>/2022/11/27/2020-10-26-Chrome/</url>
-      
-        <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> blog </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Chrome </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Git</title>
       <link href="/2022/11/27/2020-10-25-git/"/>
       <url>/2022/11/27/2020-10-25-git/</url>
@@ -291,6 +266,31 @@
     
     
     <entry>
+      <title>Chrome快捷键</title>
+      <link href="/2022/11/27/2020-10-26-Chrome/"/>
+      <url>/2022/11/27/2020-10-26-Chrome/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决Win10桌面图标小箭头问题</title>
       <link href="/2022/11/27/2020-10-22-error/"/>
       <url>/2022/11/27/2020-10-22-error/</url>
@@ -307,36 +307,9 @@
       
         <tags>
             
-            <tag> Win10 </tag>
-            
             <tag> Desktop </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>leetcode15 - 3sum</title>
-      <link href="/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/"/>
-      <url>/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>3sum跟之前的2sum有点像,但难度更大一些</p></blockquote><p><a href="https://leetcode-cn.com/problems/3sum/">leetcode.15</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 :"></a>题目描述 :</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</span><br><span class="line"></span><br><span class="line">Notice that the solution set must not contain duplicate triplets.</span><br></pre></td></tr></table></figure><p>范围<code>0 &lt;= nums.length &lt;= 3000</code></p><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>枚举所有方法,时间复杂度n^3,会超时</p><h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>排序</p><p>哈希法(2等1)</p><p>循环i,j 此时 t&#x3D;0-nums[i]-nums[j]</p><p>根据哈希,判断t是否在数组中出现过</p><p><strong>注意:需要去重</strong></p><h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3:"></a>方法3:</h3><p>排序</p><p>双指针(1等2)</p><p>t&#x3D;0-nums[i]-nums[j]</p><p>思路:</p><p>固定i指针,j,k分别在两端,交替向中间靠拢(比较t)</p><p><strong>注意:去重</strong></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment">#双指针移动</span></span><br><span class="line">        <span class="comment">#i为定指针</span></span><br><span class="line">        <span class="comment">#j,k为移动指针</span></span><br><span class="line">        <span class="comment">#首先要排序</span></span><br><span class="line">        nums.sort()        </span><br><span class="line">        lens=<span class="built_in">len</span>(nums)</span><br><span class="line">        </span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(lens):</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#要求j,k位置的和</span></span><br><span class="line">            <span class="comment">#对第一个位置要特殊判断</span></span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">and</span> nums[i]==nums[i-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            j=i+<span class="number">1</span></span><br><span class="line">            k=lens-<span class="number">1</span></span><br><span class="line">            tmp=<span class="number">0</span>-nums[i]</span><br><span class="line">            <span class="keyword">while</span>(j&lt;k):</span><br><span class="line">                arr=[]</span><br><span class="line">                <span class="keyword">if</span> nums[j]+nums[k]&gt;tmp:</span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> nums[j]+nums[k]&lt;tmp:</span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment">#添加数组元素的另一种方法:</span></span><br><span class="line">                    <span class="comment">#res.append([nums[i],nums[L],nums[R]])</span></span><br><span class="line">                    arr.append(nums[i])</span><br><span class="line">                    arr.append(nums[j])</span><br><span class="line">                    arr.append(nums[k])</span><br><span class="line">                    </span><br><span class="line">                    res.append(arr)</span><br><span class="line">                    <span class="comment">#此处直接去重</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[j]==nums[j+<span class="number">1</span>]):</span><br><span class="line">                        j=j+<span class="number">1</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[k]==nums[k-<span class="number">1</span>]):</span><br><span class="line">                        k=k-<span class="number">1</span></span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res                     </span><br></pre></td></tr></table></figure><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>此题题目简单,但是需要考虑的东西也比较细.</p><ul><li>去重</li><li>hash及set的使用</li><li>双指针</li><li>剪枝</li><li>对首位的特殊判断</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> leetcode </tag>
-            
-            <tag> 算法 </tag>
+            <tag> Win10 </tag>
             
         </tags>
       
@@ -364,6 +337,33 @@
             <tag> 渗透 </tag>
             
             <tag> 漏洞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode15 - 3sum</title>
+      <link href="/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/"/>
+      <url>/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>3sum跟之前的2sum有点像,但难度更大一些</p></blockquote><p><a href="https://leetcode-cn.com/problems/3sum/">leetcode.15</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述 :"></a>题目描述 :</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</span><br><span class="line"></span><br><span class="line">Notice that the solution set must not contain duplicate triplets.</span><br></pre></td></tr></table></figure><p>范围<code>0 &lt;= nums.length &lt;= 3000</code></p><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>枚举所有方法,时间复杂度n^3,会超时</p><h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>排序</p><p>哈希法(2等1)</p><p>循环i,j 此时 t&#x3D;0-nums[i]-nums[j]</p><p>根据哈希,判断t是否在数组中出现过</p><p><strong>注意:需要去重</strong></p><h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3:"></a>方法3:</h3><p>排序</p><p>双指针(1等2)</p><p>t&#x3D;0-nums[i]-nums[j]</p><p>思路:</p><p>固定i指针,j,k分别在两端,交替向中间靠拢(比较t)</p><p><strong>注意:去重</strong></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="comment">#双指针移动</span></span><br><span class="line">        <span class="comment">#i为定指针</span></span><br><span class="line">        <span class="comment">#j,k为移动指针</span></span><br><span class="line">        <span class="comment">#首先要排序</span></span><br><span class="line">        nums.sort()        </span><br><span class="line">        lens=<span class="built_in">len</span>(nums)</span><br><span class="line">        </span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(lens):</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#要求j,k位置的和</span></span><br><span class="line">            <span class="comment">#对第一个位置要特殊判断</span></span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">and</span> nums[i]==nums[i-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            j=i+<span class="number">1</span></span><br><span class="line">            k=lens-<span class="number">1</span></span><br><span class="line">            tmp=<span class="number">0</span>-nums[i]</span><br><span class="line">            <span class="keyword">while</span>(j&lt;k):</span><br><span class="line">                arr=[]</span><br><span class="line">                <span class="keyword">if</span> nums[j]+nums[k]&gt;tmp:</span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> nums[j]+nums[k]&lt;tmp:</span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment">#添加数组元素的另一种方法:</span></span><br><span class="line">                    <span class="comment">#res.append([nums[i],nums[L],nums[R]])</span></span><br><span class="line">                    arr.append(nums[i])</span><br><span class="line">                    arr.append(nums[j])</span><br><span class="line">                    arr.append(nums[k])</span><br><span class="line">                    </span><br><span class="line">                    res.append(arr)</span><br><span class="line">                    <span class="comment">#此处直接去重</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[j]==nums[j+<span class="number">1</span>]):</span><br><span class="line">                        j=j+<span class="number">1</span></span><br><span class="line">                    <span class="keyword">while</span>((j&lt;k) <span class="keyword">and</span> nums[k]==nums[k-<span class="number">1</span>]):</span><br><span class="line">                        k=k-<span class="number">1</span></span><br><span class="line">                    k=k-<span class="number">1</span></span><br><span class="line">                    j=j+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res                     </span><br></pre></td></tr></table></figure><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>此题题目简单,但是需要考虑的东西也比较细.</p><ul><li>去重</li><li>hash及set的使用</li><li>双指针</li><li>剪枝</li><li>对首位的特殊判断</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
