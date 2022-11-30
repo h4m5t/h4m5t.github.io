@@ -158,11 +158,11 @@
     
     
     <entry>
-      <title>黑客术语解释</title>
-      <link href="/2022/11/27/2020-10-28-hack/"/>
-      <url>/2022/11/27/2020-10-28-hack/</url>
+      <title>记第一次挖矿</title>
+      <link href="/2022/11/27/2020-11-4-dig/"/>
+      <url>/2022/11/27/2020-11-4-dig/</url>
       
-        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
       
       
       <categories>
@@ -183,11 +183,11 @@
     
     
     <entry>
-      <title>记第一次挖矿</title>
-      <link href="/2022/11/27/2020-11-4-dig/"/>
-      <url>/2022/11/27/2020-11-4-dig/</url>
+      <title>黑客术语解释</title>
+      <link href="/2022/11/27/2020-10-28-hack/"/>
+      <url>/2022/11/27/2020-10-28-hack/</url>
       
-        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
       
       
       <categories>
@@ -307,9 +307,9 @@
       
         <tags>
             
-            <tag> Desktop </tag>
-            
             <tag> Win10 </tag>
+            
+            <tag> Desktop </tag>
             
         </tags>
       
@@ -416,25 +416,6 @@
     
     
     <entry>
-      <title>舆情分析-人物画像</title>
-      <link href="/2022/11/27/2021-3-16-NLP/"/>
-      <url>/2022/11/27/2021-3-16-NLP/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>最近在做舆情分析的课题,稍微记录一下.</p></blockquote><h3 id="所需技术"><a href="#所需技术" class="headerlink" title="所需技术"></a>所需技术</h3><ul><li>爬虫</li><li>话题分析</li><li>人物画像</li><li>命名实体识别</li><li>意见抽取</li><li>情感分类</li><li>文本分类</li></ul><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>课题:境外涉华人物画像</p><ul><li><p>数量：不少于100</p></li><li><p>国家&#x2F;地区：美日澳印、欧洲、东南亚、俄罗斯、港台</p></li><li><p>领域：智库、军情、政治、法律、高科技（人工智能、芯片、通信、电子、材料、太空、航天等）、演艺、人文、知名大学毕业生</p></li><li><p>实时跟踪社交媒体动态（Twitter、Facebook、Line、Linkedin）</p></li><li><p>社交情况及社交指数</p></li><li><p>人格分析：大五人格</p></li><li><p>涉华言论（文本、音视频）、热点话题及其情感极性</p></li><li><p>对华好感指数</p></li></ul><h3 id="预期成果"><a href="#预期成果" class="headerlink" title="预期成果"></a>预期成果</h3><p>实时跟踪twitter, facebook等社交媒体动态，生成境外涉华人物画像。人物涉及多个国家地区，并分析相应人物的社交指数，大五人格，以及对华好感指数等，并对其涉华言论的情感极性进行深入分析。</p><p>通过可视化，建立图形化界面等技术，从公共社交媒体上利用爬虫爬取公开的涉华人物的相关信息动态，完成预期的目标任务，做成一个能够从公开媒体上爬取并分析信息情报的平台雏形，具有相当的实用价值。</p><h3 id="初步模型"><a href="#初步模型" class="headerlink" title="初步模型"></a>初步模型</h3><img src="https://i.loli.net/2021/03/18/uXe1no9hW6JNyDj.png" align="left" alt="未命名文件" style="zoom: 80%;" /><h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="数据爬取及处理"><a href="#数据爬取及处理" class="headerlink" title="数据爬取及处理"></a>数据爬取及处理</h4><h4 id="社交指数分析"><a href="#社交指数分析" class="headerlink" title="社交指数分析"></a>社交指数分析</h4><p><img src="https://i.loli.net/2021/03/18/mD2n8yhNLQdfwig.png" alt="image-20210318100300846"></p><p><img src="https://i.loli.net/2021/03/18/Jl8Nrj1uORhQSF9.png" alt="image-20210318100319880"></p><h4 id="涉华言论情感分析"><a href="#涉华言论情感分析" class="headerlink" title="涉华言论情感分析"></a>涉华言论情感分析</h4><h4 id="人格分析"><a href="#人格分析" class="headerlink" title="人格分析"></a>人格分析</h4><p>大五人格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开放性（openness）</span><br><span class="line">  具有想象、审美、情感丰富、求异、创造、智能等特质。</span><br><span class="line">责任心（conscientiousness）：</span><br><span class="line">  显示胜任、公正、条理、尽职、成就、自律、谨慎、克制等特点。</span><br><span class="line">外倾性（extraversion）：</span><br><span class="line">  表现出热情、社交、果断、活跃、冒险、乐观等特质。</span><br><span class="line">宜人性（agreeableness）：</span><br><span class="line">  具有信任、利他、直率、依从、谦虚、移情等特质。</span><br><span class="line">神经质性（neuroticism）：</span><br><span class="line">  难以平衡焦虑、敌对、压抑、自我意识、冲动、脆弱等情绪的特质，即不具有保持情绪稳定的能力。</span><br></pre></td></tr></table></figure><h4 id="对华好感指数"><a href="#对华好感指数" class="headerlink" title="对华好感指数"></a>对华好感指数</h4><p>在不同领域探索对华好感指数</p><p><img src="https://i.loli.net/2021/03/18/5oacYN6hOZgif8w.png" alt="image-20210318100623093"></p><h4 id="热点话题抽取"><a href="#热点话题抽取" class="headerlink" title="热点话题抽取"></a>热点话题抽取</h4><p><img src="https://i.loli.net/2021/03/18/XBmGutHdZTwyj5K.png" alt="image-20210318100532182"></p><p>PS:此项目小组合作完成 , 源代码暂不公开</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> blog </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>V&amp;N-CTF</title>
       <link href="/2022/11/27/2021-3-14-VN/"/>
       <url>/2022/11/27/2021-3-14-VN/</url>
@@ -445,6 +426,25 @@
       <categories>
           
           <category> CTF </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>舆情分析-人物画像</title>
+      <link href="/2022/11/27/2021-3-16-NLP/"/>
+      <url>/2022/11/27/2021-3-16-NLP/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>最近在做舆情分析的课题,稍微记录一下.</p></blockquote><h3 id="所需技术"><a href="#所需技术" class="headerlink" title="所需技术"></a>所需技术</h3><ul><li>爬虫</li><li>话题分析</li><li>人物画像</li><li>命名实体识别</li><li>意见抽取</li><li>情感分类</li><li>文本分类</li></ul><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>课题:境外涉华人物画像</p><ul><li><p>数量：不少于100</p></li><li><p>国家&#x2F;地区：美日澳印、欧洲、东南亚、俄罗斯、港台</p></li><li><p>领域：智库、军情、政治、法律、高科技（人工智能、芯片、通信、电子、材料、太空、航天等）、演艺、人文、知名大学毕业生</p></li><li><p>实时跟踪社交媒体动态（Twitter、Facebook、Line、Linkedin）</p></li><li><p>社交情况及社交指数</p></li><li><p>人格分析：大五人格</p></li><li><p>涉华言论（文本、音视频）、热点话题及其情感极性</p></li><li><p>对华好感指数</p></li></ul><h3 id="预期成果"><a href="#预期成果" class="headerlink" title="预期成果"></a>预期成果</h3><p>实时跟踪twitter, facebook等社交媒体动态，生成境外涉华人物画像。人物涉及多个国家地区，并分析相应人物的社交指数，大五人格，以及对华好感指数等，并对其涉华言论的情感极性进行深入分析。</p><p>通过可视化，建立图形化界面等技术，从公共社交媒体上利用爬虫爬取公开的涉华人物的相关信息动态，完成预期的目标任务，做成一个能够从公开媒体上爬取并分析信息情报的平台雏形，具有相当的实用价值。</p><h3 id="初步模型"><a href="#初步模型" class="headerlink" title="初步模型"></a>初步模型</h3><img src="https://i.loli.net/2021/03/18/uXe1no9hW6JNyDj.png" align="left" alt="未命名文件" style="zoom: 80%;" /><h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="数据爬取及处理"><a href="#数据爬取及处理" class="headerlink" title="数据爬取及处理"></a>数据爬取及处理</h4><h4 id="社交指数分析"><a href="#社交指数分析" class="headerlink" title="社交指数分析"></a>社交指数分析</h4><p><img src="https://i.loli.net/2021/03/18/mD2n8yhNLQdfwig.png" alt="image-20210318100300846"></p><p><img src="https://i.loli.net/2021/03/18/Jl8Nrj1uORhQSF9.png" alt="image-20210318100319880"></p><h4 id="涉华言论情感分析"><a href="#涉华言论情感分析" class="headerlink" title="涉华言论情感分析"></a>涉华言论情感分析</h4><h4 id="人格分析"><a href="#人格分析" class="headerlink" title="人格分析"></a>人格分析</h4><p>大五人格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开放性（openness）</span><br><span class="line">  具有想象、审美、情感丰富、求异、创造、智能等特质。</span><br><span class="line">责任心（conscientiousness）：</span><br><span class="line">  显示胜任、公正、条理、尽职、成就、自律、谨慎、克制等特点。</span><br><span class="line">外倾性（extraversion）：</span><br><span class="line">  表现出热情、社交、果断、活跃、冒险、乐观等特质。</span><br><span class="line">宜人性（agreeableness）：</span><br><span class="line">  具有信任、利他、直率、依从、谦虚、移情等特质。</span><br><span class="line">神经质性（neuroticism）：</span><br><span class="line">  难以平衡焦虑、敌对、压抑、自我意识、冲动、脆弱等情绪的特质，即不具有保持情绪稳定的能力。</span><br></pre></td></tr></table></figure><h4 id="对华好感指数"><a href="#对华好感指数" class="headerlink" title="对华好感指数"></a>对华好感指数</h4><p>在不同领域探索对华好感指数</p><p><img src="https://i.loli.net/2021/03/18/5oacYN6hOZgif8w.png" alt="image-20210318100623093"></p><h4 id="热点话题抽取"><a href="#热点话题抽取" class="headerlink" title="热点话题抽取"></a>热点话题抽取</h4><p><img src="https://i.loli.net/2021/03/18/XBmGutHdZTwyj5K.png" alt="image-20210318100532182"></p><p>PS:此项目小组合作完成 , 源代码暂不公开</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
           
       </categories>
       
