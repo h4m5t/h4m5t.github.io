@@ -144,33 +144,6 @@
   </entry>
   
   <entry>
-    <title>信息安全</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-12-22-security/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-12-22-security/</id>
-    <published>2022-11-26T17:01:43.732Z</published>
-    <updated>2021-01-04T03:08:03.043Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。</p></blockquote><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>定义：信息安全一般指信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意原因的影响而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现<strong>业务连续性</strong>。信息安全的根本目的是<strong>使信息不受内部、外部、自然等因素的威胁</strong>。</p><p>计算机系统安全：为数据处理系统建立和采用的技术和 管理的安全保护，保护计算机硬件、软件和数 据不因偶然和恶意的原因遭到破坏、更改和泄露。</p><p>基本属性：机密性、完整性、可用性</p><p>扩展属性：真实性、不可否认性、可控性</p><p>信息安全保障：采用技术、管理、工程等综合手段，保护信息和信息系统，使其能够安全运行的防护性行为。</p><p>APT攻击：即高级可持续威胁攻击,也称为定向威胁攻击，指某组织对特定对象展开的持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p><p><img src="https://i.loli.net/2020/12/22/v621q4hcsdYkXJQ.png" alt="image-20201222211631762"></p><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p><strong>PKI</strong>公钥基础设施是一个包括硬件、软件、人员、策略和规程的集合，用来实现基于公钥密码体制的密钥和证书的产生、管理、存储、分发和撤销等功能。PKI体系是计算机软硬件、权威机构及应用系统的结合。它为实施电子商务、电子政务、办公自动化等提供了基本的安全服务，从而使那些彼此不认识或距离很远的用户能通过信任链安全地交流。</p><p>访问控制主要包括主体、客体和控制策略三个要素:</p><p>1.主体是指提出访问资源具体请求的实体</p><p>2.客体是指被访问资源的实体</p><p>3.控制策略是指主体对客体的相关访问规则的集合</p><img src="https://i.loli.net/2020/12/24/WSo3ne9d4KDHquL.png" alt="image-20201224184633144" style="zoom: 50%;" div align="left"/><p>数字证书：</p><p>由第三方可信机构（一般是证书服务器）颁发的数字证书，可以证明身份的可信度。</p><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>网络嗅探是通过截获、分析网络中传输的数据而获取有用信息的行为。</p><p>网络钓鱼是指攻击者利用伪造的网站或欺骗性的电子邮件进行的网络诈骗活动。</p><p>VPN：在公用网络上建立专用网络，进行加密通讯。</p><p>防火墙：计算机网络中所说的防火墙，是指设置在不同网络(如:可信任的内网和外网或专用网与不可信的共用网)之间的一系列包括软硬件;在内的部件组合。它在内网和外网之间构建一道保护屏障，网络内部和外部之间的所有数据流必须经过防火墙，只有符合安全标准的数据流才能通过防火墙。</p><p>恶意代码是指故意编制或设置的、对网络或系统会产生威胁和潜在威胁的计算机代码。主要包括病毒、木马和蠕虫等。</p><p>端口扫描：对计算机端口发送信息，然后根据返回端口状态来分析目标计算机的端口是否打开或者可用，为下一步攻击入侵做好准备。</p><p>邮件通信：</p><img src="https://i.loli.net/2020/12/26/vO2EBYpTfPJcZDS.png" alt="image-20201226152838072" style="zoom: 67%;" />   <p>B&#x2F;S和C&#x2F;S架构：</p><p>B&#x2F;S结构即浏览器和服务器结构。它是随着Internet技术的兴起，对C&#x2F;S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。</p><p>C&#x2F;S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。</p><p> 说白了，BS架构就是浏览器应用，CS架构就是客户端应用，当然应用需要服务器配合，像腾讯就是以C&#x2F;S结构起家的，其旗下的QQ这一软件就是典型的C&#x2F;S结构应用，像Facebook就是以B&#x2F;S为结构的。B&#x2F;S结构的好处就是方便，不跨平台性好，真正的实现了一次开发，处处运行。C&#x2F;S结构以其稳定安全著称，降低了通讯代价，但是实现起来麻烦，需要开发服务器和客户端两套系统并且在不同的平台移植起来非常麻烦。所以现在大多是以C&#x2F;S模式来开发。</p><p>移动终端面临的威胁：</p><p>1.伪基站攻击。以自己为中心冒充基站，向周围手机发送垃圾短信，并且短信中包含恶意链接的情况。<br>2.二维码扫描。二维码扫描可能带来如下风险:手机病毒、木马程序。</p><p>容灾：容灾系统是指在相隔较远的异地，建立两套或多套功能相同的IT系统，互相之间可以进行健康状态监视和功能切换，当一处系统因意外（如火灾、地震等）停止工作时，整个应用系统可以切换到另一处，使得该系统功能可以继续正常工作。容灾技术是系统的高可用性技术的一个组成部分，容灾系统更加强调处理外界环境对系统的影响，特别是灾难性事件对整个IT节点的影响，提供节点级别的系统恢复功能。</p><p>灾备：灾难备援，它是指利用科学的技术手段和方法，提前建立系统化的数据应急方式，以应对灾难的发生。其内容包括数据备份和系统备份，业务连续规划、人员架构、通信保障、危机公关，灾难恢复规划、灾难恢复预案、业务恢复预案、紧急事件响应、第三方合作机构和供应链危机管理等等。</p><p>实际工作中的备份策略：</p><ul><li>执行完全备份</li><li>经常进行增量备份</li><li>定期执行差异备份</li></ul><p>操作系统的功能：</p><p>1、进程管理。主要bai是对处理机du进行管理。    </p><p>2、存储管理。主zhi要是对内存的dao分配、保护和扩充。    </p><p>3、设备管理。对所有输人、输出设备的管理。   </p><p>4、文件管理。主要涉及文件的逻辑组织和物理组织，目录的结构和管理。  </p><p>5、作业管理。为用户提供一个友好的环境，方便用户组织自己的工作流程。  </p><p>信息安全问题产生的根源：信息系统的复杂性会造成系统本身的安全缺陷。</p><p>信息安全应急响应管理过程：1.准备 2.检测 3.遏制 4.根除 5.恢复 6.跟踪</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h3&gt;&lt;p</summary>
-      
-    
-    
-    
-    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="信息安全" scheme="http://h4m5t.github.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>记录前端学习--HTML</title>
     <link href="http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/"/>
     <id>http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/</id>
@@ -200,82 +173,29 @@
   </entry>
   
   <entry>
-    <title>Windows快捷键</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-10-26-Win10/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-10-26-Win10/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2020-12-18T02:42:17.147Z</updated>
+    <title>信息安全</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-12-22-security/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-12-22-security/</id>
+    <published>2022-11-26T17:01:43.732Z</published>
+    <updated>2021-01-04T03:08:03.043Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;win10快捷键&quot;&gt;&lt;a href=&quot;#win10快捷键&quot; class=&quot;headerlink&quot; title=&quot;win10快捷键&quot;&gt;&lt;/a&gt;win10快捷键&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;win+E  打开我的电脑&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;win+D </summary>
-      
-    
-    
-    
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
-    
-    
-    <category term="Win10" scheme="http://h4m5t.github.io/tags/Win10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记第一次挖矿</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2020-11-04T17:07:14.809Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。</p></blockquote><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>定义：信息安全一般指信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意原因的影响而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现<strong>业务连续性</strong>。信息安全的根本目的是<strong>使信息不受内部、外部、自然等因素的威胁</strong>。</p><p>计算机系统安全：为数据处理系统建立和采用的技术和 管理的安全保护，保护计算机硬件、软件和数 据不因偶然和恶意的原因遭到破坏、更改和泄露。</p><p>基本属性：机密性、完整性、可用性</p><p>扩展属性：真实性、不可否认性、可控性</p><p>信息安全保障：采用技术、管理、工程等综合手段，保护信息和信息系统，使其能够安全运行的防护性行为。</p><p>APT攻击：即高级可持续威胁攻击,也称为定向威胁攻击，指某组织对特定对象展开的持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p><p><img src="https://i.loli.net/2020/12/22/v621q4hcsdYkXJQ.png" alt="image-20201222211631762"></p><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p><strong>PKI</strong>公钥基础设施是一个包括硬件、软件、人员、策略和规程的集合，用来实现基于公钥密码体制的密钥和证书的产生、管理、存储、分发和撤销等功能。PKI体系是计算机软硬件、权威机构及应用系统的结合。它为实施电子商务、电子政务、办公自动化等提供了基本的安全服务，从而使那些彼此不认识或距离很远的用户能通过信任链安全地交流。</p><p>访问控制主要包括主体、客体和控制策略三个要素:</p><p>1.主体是指提出访问资源具体请求的实体</p><p>2.客体是指被访问资源的实体</p><p>3.控制策略是指主体对客体的相关访问规则的集合</p><img src="https://i.loli.net/2020/12/24/WSo3ne9d4KDHquL.png" alt="image-20201224184633144" style="zoom: 50%;" div align="left"/><p>数字证书：</p><p>由第三方可信机构（一般是证书服务器）颁发的数字证书，可以证明身份的可信度。</p><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>网络嗅探是通过截获、分析网络中传输的数据而获取有用信息的行为。</p><p>网络钓鱼是指攻击者利用伪造的网站或欺骗性的电子邮件进行的网络诈骗活动。</p><p>VPN：在公用网络上建立专用网络，进行加密通讯。</p><p>防火墙：计算机网络中所说的防火墙，是指设置在不同网络(如:可信任的内网和外网或专用网与不可信的共用网)之间的一系列包括软硬件;在内的部件组合。它在内网和外网之间构建一道保护屏障，网络内部和外部之间的所有数据流必须经过防火墙，只有符合安全标准的数据流才能通过防火墙。</p><p>恶意代码是指故意编制或设置的、对网络或系统会产生威胁和潜在威胁的计算机代码。主要包括病毒、木马和蠕虫等。</p><p>端口扫描：对计算机端口发送信息，然后根据返回端口状态来分析目标计算机的端口是否打开或者可用，为下一步攻击入侵做好准备。</p><p>邮件通信：</p><img src="https://i.loli.net/2020/12/26/vO2EBYpTfPJcZDS.png" alt="image-20201226152838072" style="zoom: 67%;" />   <p>B&#x2F;S和C&#x2F;S架构：</p><p>B&#x2F;S结构即浏览器和服务器结构。它是随着Internet技术的兴起，对C&#x2F;S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。</p><p>C&#x2F;S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。</p><p> 说白了，BS架构就是浏览器应用，CS架构就是客户端应用，当然应用需要服务器配合，像腾讯就是以C&#x2F;S结构起家的，其旗下的QQ这一软件就是典型的C&#x2F;S结构应用，像Facebook就是以B&#x2F;S为结构的。B&#x2F;S结构的好处就是方便，不跨平台性好，真正的实现了一次开发，处处运行。C&#x2F;S结构以其稳定安全著称，降低了通讯代价，但是实现起来麻烦，需要开发服务器和客户端两套系统并且在不同的平台移植起来非常麻烦。所以现在大多是以C&#x2F;S模式来开发。</p><p>移动终端面临的威胁：</p><p>1.伪基站攻击。以自己为中心冒充基站，向周围手机发送垃圾短信，并且短信中包含恶意链接的情况。<br>2.二维码扫描。二维码扫描可能带来如下风险:手机病毒、木马程序。</p><p>容灾：容灾系统是指在相隔较远的异地，建立两套或多套功能相同的IT系统，互相之间可以进行健康状态监视和功能切换，当一处系统因意外（如火灾、地震等）停止工作时，整个应用系统可以切换到另一处，使得该系统功能可以继续正常工作。容灾技术是系统的高可用性技术的一个组成部分，容灾系统更加强调处理外界环境对系统的影响，特别是灾难性事件对整个IT节点的影响，提供节点级别的系统恢复功能。</p><p>灾备：灾难备援，它是指利用科学的技术手段和方法，提前建立系统化的数据应急方式，以应对灾难的发生。其内容包括数据备份和系统备份，业务连续规划、人员架构、通信保障、危机公关，灾难恢复规划、灾难恢复预案、业务恢复预案、紧急事件响应、第三方合作机构和供应链危机管理等等。</p><p>实际工作中的备份策略：</p><ul><li>执行完全备份</li><li>经常进行增量备份</li><li>定期执行差异备份</li></ul><p>操作系统的功能：</p><p>1、进程管理。主要bai是对处理机du进行管理。    </p><p>2、存储管理。主zhi要是对内存的dao分配、保护和扩充。    </p><p>3、设备管理。对所有输人、输出设备的管理。   </p><p>4、文件管理。主要涉及文件的逻辑组织和物理组织，目录的结构和管理。  </p><p>5、作业管理。为用户提供一个友好的环境，方便用户组织自己的工作流程。  </p><p>信息安全问题产生的根源：信息系统的复杂性会造成系统本身的安全缺陷。</p><p>信息安全应急响应管理过程：1.准备 2.检测 3.遏制 4.根除 5.恢复 6.跟踪</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
-&lt;p&gt;在我写下</summary>
-      
-    
-    
-    
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
-    
-    
-    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>黑客术语解释</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-10-28-hack/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-10-28-hack/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2021-03-10T10:42:38.334Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;黑客术语&quot;&gt;&lt;a href=&quot;#黑客术语&quot; class=&quot;headerlink&quot; title=&quot;黑客术语&quot;&gt;&lt;/a&gt;黑客术语&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;解释一下常见的术语&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;肉鸡：僵尸主机（英语：Z</summary>
+&lt;h3 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h3&gt;&lt;p</summary>
       
     
     
     
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
+    <category term="信息安全" scheme="http://h4m5t.github.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -308,21 +228,19 @@
   </entry>
   
   <entry>
-    <title>Chrome快捷键</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-10-26-Chrome/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-10-26-Chrome/</id>
-    <published>2022-11-26T17:01:43.703Z</published>
-    <updated>2020-10-26T11:53:22.768Z</updated>
+    <title>记第一次挖矿</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2020-11-04T17:07:14.809Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;Chorme快捷键&quot;&gt;&lt;a href=&quot;#Chorme快捷键&quot; class=&quot;headerlink&quot; title=&quot;Chorme快捷键&quot;&gt;&lt;/a&gt;Chorme快捷键&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;新建标签页：Ctrl + T&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;重</summary>
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
+&lt;p&gt;在我写下</summary>
       
     
     
@@ -330,7 +248,62 @@
     <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
     
     
-    <category term="Chrome" scheme="http://h4m5t.github.io/tags/Chrome/"/>
+    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows快捷键</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-10-26-Win10/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-10-26-Win10/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2020-12-18T02:42:17.147Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;win10快捷键&quot;&gt;&lt;a href=&quot;#win10快捷键&quot; class=&quot;headerlink&quot; title=&quot;win10快捷键&quot;&gt;&lt;/a&gt;win10快捷键&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;win+E  打开我的电脑&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;win+D </summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+    <category term="Win10" scheme="http://h4m5t.github.io/tags/Win10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>黑客术语解释</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-10-28-hack/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-10-28-hack/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2021-03-10T10:42:38.334Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;黑客术语&quot;&gt;&lt;a href=&quot;#黑客术语&quot; class=&quot;headerlink&quot; title=&quot;黑客术语&quot;&gt;&lt;/a&gt;黑客术语&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;解释一下常见的术语&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;肉鸡：僵尸主机（英语：Z</summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
     
   </entry>
   
@@ -360,6 +333,33 @@
     <category term="Git" scheme="http://h4m5t.github.io/tags/Git/"/>
     
     <category term="GitHub" scheme="http://h4m5t.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome快捷键</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-10-26-Chrome/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-10-26-Chrome/</id>
+    <published>2022-11-26T17:01:43.703Z</published>
+    <updated>2020-10-26T11:53:22.768Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Chorme快捷键&quot;&gt;&lt;a href=&quot;#Chorme快捷键&quot; class=&quot;headerlink&quot; title=&quot;Chorme快捷键&quot;&gt;&lt;/a&gt;Chorme快捷键&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;新建标签页：Ctrl + T&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重</summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+    <category term="Chrome" scheme="http://h4m5t.github.io/tags/Chrome/"/>
     
   </entry>
   
@@ -421,30 +421,6 @@
   </entry>
   
   <entry>
-    <title>TCP/IP协议脆弱性分析</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2021-3-19-TCPIP/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2021-3-19-TCPIP/</id>
-    <published>2022-11-26T16:35:34.785Z</published>
-    <updated>2021-03-19T02:27:13.190Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="TCP-x2F-IP协议簇"><a href="#TCP-x2F-IP协议簇" class="headerlink" title="TCP&#x2F;IP协议簇"></a>TCP&#x2F;IP协议簇</h3><p>TCP&#x2F;IP提供了点对点链接的机制，将资料应该如何封装、寻址、传输、路由以及在目的地如何接收，都加以标准化。它将软件通信过程抽象化为四个抽象层，采取协议堆栈的方式，分别实现出不同通信协议。协议族下的各种协议，依其功能不同，分别归属到这四个层次结构之中，常视为是简化的七层OSI模型。</p><p>TCP（传输控制协议）和IP（网际协议）</p><p>TCP&#x2F;IP 意味着 TCP 和 IP 在一起协同工作。</p><p>TCP 负责应用软件（比如您的浏览器）和网络软件之间的通信。</p><p>IP 负责计算机之间的通信。</p><p>TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</p><p>IP 负责将包发送至接受者。</p><h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><p>1.链路层攻击</p><p>在TCP&#x2F;IP网络中，链路层这一层次的复杂程度是最高的。其中最常见的攻击方式通常是网络嗅探组成的TCP&#x2F;IP协议的以太网。当前，我国应用较为广泛的局域网是以太网，且其共享信道利用率非常高。以太网卡有两种主要的工作方式，一种是一般工作方式，另一种是较特殊的混杂方式。这一情况下，很可能由于被攻击的原因而造成信息丢失情况，且攻击者可以通过数据分析来获取账户、密码等多方面的关键数据信息。</p><p>2.ARP欺骗</p><p>ARP（地址解析协议）是根据IP地址获取物理地址的一个TCP&#x2F;IP协议。通常情况下，在IP数据包发送过程中会存在一个子网或者多个子网主机利用网络级别第一层，而ARP则充当源主机第一个查询工具，在未找到IP地址相对应的物理地址时，将主机和IP地址相关的物理地址信息发送给主机。与此同时，源主机将包括自身IP地址和ARP检测的应答发送给目的主机。如果ARP识别链接错误，这样的话ARP直接应用可疑信息，那么可疑信息就会很容易进入目标主机当中。ARP协议没有状态，不管有没有收到请求，主机会将任何受到的ARP相应自动缓存。如果信息中带有病毒，采用ARP欺骗就会导致网络信息安全泄露。因此，在ARP识别环节，应加大保护，建立更多的识别关卡，不能只简单通过IP名进行识别，还需充分参考IP相关性质等。</p><p>3.ICMP欺骗</p><p>ICMP协议也是因特网控制报文协议，主要用在主机与路由器之间进行控制信息传递。通过这一协议可对网络是否通畅、主机是否可达、路由是否可用等信息进行控制。一旦出现差错，数据包会利用主机进行即时发送，并自动反回描述错误的信息。该协议在网络安全当中是十分重要的协议。但由于自身特点的原因，其极易受到入侵，通常而言，目标主机在长期发送大量ICMP数据包的情况下，会造成目标主机占用大量CPU资源，最终造成系统瘫痪。</p><p>4.IP欺骗</p><p>在传输层还存在网络安全问题。如在网络安全领域中，IP欺骗就是隐藏自己的有效手段，主要是通过将自身IP地址进行伪造，并向目标主机发送恶意的请求，攻击主机，而主机却因为IP地址被隐藏而无法准确确认攻击源。或者通过获取目标主机信任而趁机窃取相关的机密信息。在DOS攻击中往往会使用IP欺骗，这是因为数据包地址来源较广泛，无法进行有效过滤，从而使IP基本防御的有效性大幅度下降。此外，在ICMP传输通道，由于ICMP是IP层的组成部分之一，在IP软件中任何端口向ICMP发送一个PING文件，借此用作申请，申请文件传输是否被允许，而ICMP会做出应答，这一命令可检测消息的合法性。所有申请传输的数据基本上传输层都会同意，造成这一情况的原因主要是PING软件编程无法智能识别出恶意信息，一般网络安全防护系统与防火墙会自动默认PING存在，从而忽视其可能带来的安全风险。</p><p>5.DNS欺骗</p><p>对于因特网而言，IP地址与域名均是一一对应的，这两者之间的转换工作，被称为域名解析。而DNS就是域名解析的服务器。DNS欺骗指的是攻击方冒充域名服务器的行为，使用DNS欺骗能将错误DNS信息提供给目标主机。所以说，通过DNS欺骗可误导用户进入非法服务器，让用户相信诈骗IP。另外，PTP网络上接口接受到不属于主机的数据，这也是应用层存在的安全问题，一些木马病毒可趁机入侵，造成数据泄露，从而引发网络安全问题。</p><h3 id="脆弱性分析"><a href="#脆弱性分析" class="headerlink" title="脆弱性分析"></a>脆弱性分析</h3><p>1.不能提供可靠的身份验证</p><p>2.不能有效防止信息泄露</p><p>3.没有提供可靠的信息完整性验证</p><p>4.无法控制资源占有和分配</p><h3 id="攻击方法"><a href="#攻击方法" class="headerlink" title="攻击方法"></a>攻击方法</h3><ul><li>IP欺骗</li><li>TCP会话劫持</li><li>SYN Flooding</li><li>死亡之ping</li><li>RST和FIN攻击</li></ul><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>真正防御针对网络协议脆弱性的攻击，需要从管理、技术、政策等多方面来配合。希望随着网络安全技术的提高和IPsec的逐步完善，解决现存的协议脆弱性问题。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li>百度&#x2F;维基百科</li><li>菜鸟TCP&#x2F;IP教程</li><li>典型的TCP&#x2F;IP协议脆弱性及常见攻击方法分析（空军工程大学学报）</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;TCP-x2F-IP协议簇&quot;&gt;&lt;a href=&quot;#TCP-x2F-IP协议簇&quot; class=&quot;headerlink&quot; title=&quot;TCP&amp;#x2F;IP协议簇&quot;&gt;&lt;/a&gt;TCP&amp;#x2F;IP协议簇&lt;/h3&gt;&lt;p&gt;TCP&amp;#x2F;IP提供了点对点链接的机制，将</summary>
-      
-    
-    
-    
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
-    
-    
-    <category term="安全" scheme="http://h4m5t.github.io/tags/%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>leetcode15 - 3sum</title>
     <link href="http://h4m5t.github.io/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/"/>
     <id>http://h4m5t.github.io/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/</id>
@@ -475,26 +451,26 @@
   </entry>
   
   <entry>
-    <title>V&amp;N-CTF</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2021-3-14-VN/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2021-3-14-VN/</id>
-    <published>2022-11-26T16:35:34.771Z</published>
-    <updated>2021-03-14T15:54:49.844Z</updated>
+    <title>TCP/IP协议脆弱性分析</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2021-3-19-TCPIP/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2021-3-19-TCPIP/</id>
+    <published>2022-11-26T16:35:34.785Z</published>
+    <updated>2021-03-19T02:27:13.190Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="web游戏题"><a href="#web游戏题" class="headerlink" title="web游戏题"></a>web游戏题</h3><p>提示：通关就有flag</p><p>尝试修改start_level，但是无法直接开始第10关</p><p>尝试修改死亡后reset的next_level，然后去送死，按下Esc,就是第二关。</p><p>却发现boss很难打，于是又修改人物参数：血量、飞镖数量等。</p><p><img src="https://i.loli.net/2021/03/14/8WzIQXblDZR3Nng.png" alt="image-20210314235011044"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Reset</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// load local storage</span></span><br><span class="line">    playerData = <span class="keyword">new</span> <span class="title class_">PlayerData</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>)</span><br><span class="line">        playerData.<span class="property">coins</span> = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>)</span><br><span class="line">        warpLevel = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>)</span><br><span class="line">        speedRunBestTime = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>, <span class="number">10</span>);</span><br><span class="line">    nextLevel = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/03/14/fcKorsJpBRiPVH3.png" alt="image-20210314235140421"></p><p>打败BOSS,获得flag。</p><p>这游戏挺好玩！</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="TCP-x2F-IP协议簇"><a href="#TCP-x2F-IP协议簇" class="headerlink" title="TCP&#x2F;IP协议簇"></a>TCP&#x2F;IP协议簇</h3><p>TCP&#x2F;IP提供了点对点链接的机制，将资料应该如何封装、寻址、传输、路由以及在目的地如何接收，都加以标准化。它将软件通信过程抽象化为四个抽象层，采取协议堆栈的方式，分别实现出不同通信协议。协议族下的各种协议，依其功能不同，分别归属到这四个层次结构之中，常视为是简化的七层OSI模型。</p><p>TCP（传输控制协议）和IP（网际协议）</p><p>TCP&#x2F;IP 意味着 TCP 和 IP 在一起协同工作。</p><p>TCP 负责应用软件（比如您的浏览器）和网络软件之间的通信。</p><p>IP 负责计算机之间的通信。</p><p>TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</p><p>IP 负责将包发送至接受者。</p><h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><p>1.链路层攻击</p><p>在TCP&#x2F;IP网络中，链路层这一层次的复杂程度是最高的。其中最常见的攻击方式通常是网络嗅探组成的TCP&#x2F;IP协议的以太网。当前，我国应用较为广泛的局域网是以太网，且其共享信道利用率非常高。以太网卡有两种主要的工作方式，一种是一般工作方式，另一种是较特殊的混杂方式。这一情况下，很可能由于被攻击的原因而造成信息丢失情况，且攻击者可以通过数据分析来获取账户、密码等多方面的关键数据信息。</p><p>2.ARP欺骗</p><p>ARP（地址解析协议）是根据IP地址获取物理地址的一个TCP&#x2F;IP协议。通常情况下，在IP数据包发送过程中会存在一个子网或者多个子网主机利用网络级别第一层，而ARP则充当源主机第一个查询工具，在未找到IP地址相对应的物理地址时，将主机和IP地址相关的物理地址信息发送给主机。与此同时，源主机将包括自身IP地址和ARP检测的应答发送给目的主机。如果ARP识别链接错误，这样的话ARP直接应用可疑信息，那么可疑信息就会很容易进入目标主机当中。ARP协议没有状态，不管有没有收到请求，主机会将任何受到的ARP相应自动缓存。如果信息中带有病毒，采用ARP欺骗就会导致网络信息安全泄露。因此，在ARP识别环节，应加大保护，建立更多的识别关卡，不能只简单通过IP名进行识别，还需充分参考IP相关性质等。</p><p>3.ICMP欺骗</p><p>ICMP协议也是因特网控制报文协议，主要用在主机与路由器之间进行控制信息传递。通过这一协议可对网络是否通畅、主机是否可达、路由是否可用等信息进行控制。一旦出现差错，数据包会利用主机进行即时发送，并自动反回描述错误的信息。该协议在网络安全当中是十分重要的协议。但由于自身特点的原因，其极易受到入侵，通常而言，目标主机在长期发送大量ICMP数据包的情况下，会造成目标主机占用大量CPU资源，最终造成系统瘫痪。</p><p>4.IP欺骗</p><p>在传输层还存在网络安全问题。如在网络安全领域中，IP欺骗就是隐藏自己的有效手段，主要是通过将自身IP地址进行伪造，并向目标主机发送恶意的请求，攻击主机，而主机却因为IP地址被隐藏而无法准确确认攻击源。或者通过获取目标主机信任而趁机窃取相关的机密信息。在DOS攻击中往往会使用IP欺骗，这是因为数据包地址来源较广泛，无法进行有效过滤，从而使IP基本防御的有效性大幅度下降。此外，在ICMP传输通道，由于ICMP是IP层的组成部分之一，在IP软件中任何端口向ICMP发送一个PING文件，借此用作申请，申请文件传输是否被允许，而ICMP会做出应答，这一命令可检测消息的合法性。所有申请传输的数据基本上传输层都会同意，造成这一情况的原因主要是PING软件编程无法智能识别出恶意信息，一般网络安全防护系统与防火墙会自动默认PING存在，从而忽视其可能带来的安全风险。</p><p>5.DNS欺骗</p><p>对于因特网而言，IP地址与域名均是一一对应的，这两者之间的转换工作，被称为域名解析。而DNS就是域名解析的服务器。DNS欺骗指的是攻击方冒充域名服务器的行为，使用DNS欺骗能将错误DNS信息提供给目标主机。所以说，通过DNS欺骗可误导用户进入非法服务器，让用户相信诈骗IP。另外，PTP网络上接口接受到不属于主机的数据，这也是应用层存在的安全问题，一些木马病毒可趁机入侵，造成数据泄露，从而引发网络安全问题。</p><h3 id="脆弱性分析"><a href="#脆弱性分析" class="headerlink" title="脆弱性分析"></a>脆弱性分析</h3><p>1.不能提供可靠的身份验证</p><p>2.不能有效防止信息泄露</p><p>3.没有提供可靠的信息完整性验证</p><p>4.无法控制资源占有和分配</p><h3 id="攻击方法"><a href="#攻击方法" class="headerlink" title="攻击方法"></a>攻击方法</h3><ul><li>IP欺骗</li><li>TCP会话劫持</li><li>SYN Flooding</li><li>死亡之ping</li><li>RST和FIN攻击</li></ul><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>真正防御针对网络协议脆弱性的攻击，需要从管理、技术、政策等多方面来配合。希望随着网络安全技术的提高和IPsec的逐步完善，解决现存的协议脆弱性问题。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li>百度&#x2F;维基百科</li><li>菜鸟TCP&#x2F;IP教程</li><li>典型的TCP&#x2F;IP协议脆弱性及常见攻击方法分析（空军工程大学学报）</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;web游戏题&quot;&gt;&lt;a href=&quot;#web游戏题&quot; class=&quot;headerlink&quot; title=&quot;web游戏题&quot;&gt;&lt;/a&gt;web游戏题&lt;/h3&gt;&lt;p&gt;提示：通关就有flag&lt;/p&gt;
-&lt;p&gt;尝试修改start_level，但是无法直接开始第10关&lt;/p&gt;
-&lt;p</summary>
+    <summary type="html">&lt;h3 id=&quot;TCP-x2F-IP协议簇&quot;&gt;&lt;a href=&quot;#TCP-x2F-IP协议簇&quot; class=&quot;headerlink&quot; title=&quot;TCP&amp;#x2F;IP协议簇&quot;&gt;&lt;/a&gt;TCP&amp;#x2F;IP协议簇&lt;/h3&gt;&lt;p&gt;TCP&amp;#x2F;IP提供了点对点链接的机制，将</summary>
       
     
     
     
-    <category term="CTF" scheme="http://h4m5t.github.io/categories/CTF/"/>
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
     
+    
+    <category term="安全" scheme="http://h4m5t.github.io/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -519,6 +495,30 @@
     
     
     <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>V&amp;N-CTF</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2021-3-14-VN/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2021-3-14-VN/</id>
+    <published>2022-11-26T16:35:34.771Z</published>
+    <updated>2021-03-14T15:54:49.844Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="web游戏题"><a href="#web游戏题" class="headerlink" title="web游戏题"></a>web游戏题</h3><p>提示：通关就有flag</p><p>尝试修改start_level，但是无法直接开始第10关</p><p>尝试修改死亡后reset的next_level，然后去送死，按下Esc,就是第二关。</p><p>却发现boss很难打，于是又修改人物参数：血量、飞镖数量等。</p><p><img src="https://i.loli.net/2021/03/14/8WzIQXblDZR3Nng.png" alt="image-20210314235011044"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Reset</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// load local storage</span></span><br><span class="line">    playerData = <span class="keyword">new</span> <span class="title class_">PlayerData</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>)</span><br><span class="line">        playerData.<span class="property">coins</span> = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>)</span><br><span class="line">        warpLevel = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>)</span><br><span class="line">        speedRunBestTime = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>, <span class="number">10</span>);</span><br><span class="line">    nextLevel = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/03/14/fcKorsJpBRiPVH3.png" alt="image-20210314235140421"></p><p>打败BOSS,获得flag。</p><p>这游戏挺好玩！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;web游戏题&quot;&gt;&lt;a href=&quot;#web游戏题&quot; class=&quot;headerlink&quot; title=&quot;web游戏题&quot;&gt;&lt;/a&gt;web游戏题&lt;/h3&gt;&lt;p&gt;提示：通关就有flag&lt;/p&gt;
+&lt;p&gt;尝试修改start_level，但是无法直接开始第10关&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    <category term="CTF" scheme="http://h4m5t.github.io/categories/CTF/"/>
     
     
   </entry>
