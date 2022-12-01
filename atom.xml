@@ -144,33 +144,6 @@
   </entry>
   
   <entry>
-    <title>信息安全</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-12-22-security/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-12-22-security/</id>
-    <published>2022-11-26T17:01:43.732Z</published>
-    <updated>2021-01-04T03:08:03.043Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。</p></blockquote><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>定义：信息安全一般指信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意原因的影响而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现<strong>业务连续性</strong>。信息安全的根本目的是<strong>使信息不受内部、外部、自然等因素的威胁</strong>。</p><p>计算机系统安全：为数据处理系统建立和采用的技术和 管理的安全保护，保护计算机硬件、软件和数 据不因偶然和恶意的原因遭到破坏、更改和泄露。</p><p>基本属性：机密性、完整性、可用性</p><p>扩展属性：真实性、不可否认性、可控性</p><p>信息安全保障：采用技术、管理、工程等综合手段，保护信息和信息系统，使其能够安全运行的防护性行为。</p><p>APT攻击：即高级可持续威胁攻击,也称为定向威胁攻击，指某组织对特定对象展开的持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p><p><img src="https://i.loli.net/2020/12/22/v621q4hcsdYkXJQ.png" alt="image-20201222211631762"></p><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p><strong>PKI</strong>公钥基础设施是一个包括硬件、软件、人员、策略和规程的集合，用来实现基于公钥密码体制的密钥和证书的产生、管理、存储、分发和撤销等功能。PKI体系是计算机软硬件、权威机构及应用系统的结合。它为实施电子商务、电子政务、办公自动化等提供了基本的安全服务，从而使那些彼此不认识或距离很远的用户能通过信任链安全地交流。</p><p>访问控制主要包括主体、客体和控制策略三个要素:</p><p>1.主体是指提出访问资源具体请求的实体</p><p>2.客体是指被访问资源的实体</p><p>3.控制策略是指主体对客体的相关访问规则的集合</p><img src="https://i.loli.net/2020/12/24/WSo3ne9d4KDHquL.png" alt="image-20201224184633144" style="zoom: 50%;" div align="left"/><p>数字证书：</p><p>由第三方可信机构（一般是证书服务器）颁发的数字证书，可以证明身份的可信度。</p><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>网络嗅探是通过截获、分析网络中传输的数据而获取有用信息的行为。</p><p>网络钓鱼是指攻击者利用伪造的网站或欺骗性的电子邮件进行的网络诈骗活动。</p><p>VPN：在公用网络上建立专用网络，进行加密通讯。</p><p>防火墙：计算机网络中所说的防火墙，是指设置在不同网络(如:可信任的内网和外网或专用网与不可信的共用网)之间的一系列包括软硬件;在内的部件组合。它在内网和外网之间构建一道保护屏障，网络内部和外部之间的所有数据流必须经过防火墙，只有符合安全标准的数据流才能通过防火墙。</p><p>恶意代码是指故意编制或设置的、对网络或系统会产生威胁和潜在威胁的计算机代码。主要包括病毒、木马和蠕虫等。</p><p>端口扫描：对计算机端口发送信息，然后根据返回端口状态来分析目标计算机的端口是否打开或者可用，为下一步攻击入侵做好准备。</p><p>邮件通信：</p><img src="https://i.loli.net/2020/12/26/vO2EBYpTfPJcZDS.png" alt="image-20201226152838072" style="zoom: 67%;" />   <p>B&#x2F;S和C&#x2F;S架构：</p><p>B&#x2F;S结构即浏览器和服务器结构。它是随着Internet技术的兴起，对C&#x2F;S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。</p><p>C&#x2F;S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。</p><p> 说白了，BS架构就是浏览器应用，CS架构就是客户端应用，当然应用需要服务器配合，像腾讯就是以C&#x2F;S结构起家的，其旗下的QQ这一软件就是典型的C&#x2F;S结构应用，像Facebook就是以B&#x2F;S为结构的。B&#x2F;S结构的好处就是方便，不跨平台性好，真正的实现了一次开发，处处运行。C&#x2F;S结构以其稳定安全著称，降低了通讯代价，但是实现起来麻烦，需要开发服务器和客户端两套系统并且在不同的平台移植起来非常麻烦。所以现在大多是以C&#x2F;S模式来开发。</p><p>移动终端面临的威胁：</p><p>1.伪基站攻击。以自己为中心冒充基站，向周围手机发送垃圾短信，并且短信中包含恶意链接的情况。<br>2.二维码扫描。二维码扫描可能带来如下风险:手机病毒、木马程序。</p><p>容灾：容灾系统是指在相隔较远的异地，建立两套或多套功能相同的IT系统，互相之间可以进行健康状态监视和功能切换，当一处系统因意外（如火灾、地震等）停止工作时，整个应用系统可以切换到另一处，使得该系统功能可以继续正常工作。容灾技术是系统的高可用性技术的一个组成部分，容灾系统更加强调处理外界环境对系统的影响，特别是灾难性事件对整个IT节点的影响，提供节点级别的系统恢复功能。</p><p>灾备：灾难备援，它是指利用科学的技术手段和方法，提前建立系统化的数据应急方式，以应对灾难的发生。其内容包括数据备份和系统备份，业务连续规划、人员架构、通信保障、危机公关，灾难恢复规划、灾难恢复预案、业务恢复预案、紧急事件响应、第三方合作机构和供应链危机管理等等。</p><p>实际工作中的备份策略：</p><ul><li>执行完全备份</li><li>经常进行增量备份</li><li>定期执行差异备份</li></ul><p>操作系统的功能：</p><p>1、进程管理。主要bai是对处理机du进行管理。    </p><p>2、存储管理。主zhi要是对内存的dao分配、保护和扩充。    </p><p>3、设备管理。对所有输人、输出设备的管理。   </p><p>4、文件管理。主要涉及文件的逻辑组织和物理组织，目录的结构和管理。  </p><p>5、作业管理。为用户提供一个友好的环境，方便用户组织自己的工作流程。  </p><p>信息安全问题产生的根源：信息系统的复杂性会造成系统本身的安全缺陷。</p><p>信息安全应急响应管理过程：1.准备 2.检测 3.遏制 4.根除 5.恢复 6.跟踪</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h3&gt;&lt;p</summary>
-      
-    
-    
-    
-    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="信息安全" scheme="http://h4m5t.github.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>记录前端学习--HTML</title>
     <link href="http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/"/>
     <id>http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/</id>
@@ -200,27 +173,29 @@
   </entry>
   
   <entry>
-    <title>记第一次挖矿</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2020-11-04T17:07:14.809Z</updated>
+    <title>信息安全</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-12-22-security/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-12-22-security/</id>
+    <published>2022-11-26T17:01:43.732Z</published>
+    <updated>2021-01-04T03:08:03.043Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。</p></blockquote><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>定义：信息安全一般指信息系统(包括硬件、软件、数据、人、物理环境及其基础设施)受到保护，不受偶然的或者恶意原因的影响而遭到破坏、更改、泄露，系统连续可靠正常地运行，信息服务不中断，最终实现<strong>业务连续性</strong>。信息安全的根本目的是<strong>使信息不受内部、外部、自然等因素的威胁</strong>。</p><p>计算机系统安全：为数据处理系统建立和采用的技术和 管理的安全保护，保护计算机硬件、软件和数 据不因偶然和恶意的原因遭到破坏、更改和泄露。</p><p>基本属性：机密性、完整性、可用性</p><p>扩展属性：真实性、不可否认性、可控性</p><p>信息安全保障：采用技术、管理、工程等综合手段，保护信息和信息系统，使其能够安全运行的防护性行为。</p><p>APT攻击：即高级可持续威胁攻击,也称为定向威胁攻击，指某组织对特定对象展开的持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p><p><img src="https://i.loli.net/2020/12/22/v621q4hcsdYkXJQ.png" alt="image-20201222211631762"></p><h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><p><strong>PKI</strong>公钥基础设施是一个包括硬件、软件、人员、策略和规程的集合，用来实现基于公钥密码体制的密钥和证书的产生、管理、存储、分发和撤销等功能。PKI体系是计算机软硬件、权威机构及应用系统的结合。它为实施电子商务、电子政务、办公自动化等提供了基本的安全服务，从而使那些彼此不认识或距离很远的用户能通过信任链安全地交流。</p><p>访问控制主要包括主体、客体和控制策略三个要素:</p><p>1.主体是指提出访问资源具体请求的实体</p><p>2.客体是指被访问资源的实体</p><p>3.控制策略是指主体对客体的相关访问规则的集合</p><img src="https://i.loli.net/2020/12/24/WSo3ne9d4KDHquL.png" alt="image-20201224184633144" style="zoom: 50%;" div align="left"/><p>数字证书：</p><p>由第三方可信机构（一般是证书服务器）颁发的数字证书，可以证明身份的可信度。</p><h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><p>网络嗅探是通过截获、分析网络中传输的数据而获取有用信息的行为。</p><p>网络钓鱼是指攻击者利用伪造的网站或欺骗性的电子邮件进行的网络诈骗活动。</p><p>VPN：在公用网络上建立专用网络，进行加密通讯。</p><p>防火墙：计算机网络中所说的防火墙，是指设置在不同网络(如:可信任的内网和外网或专用网与不可信的共用网)之间的一系列包括软硬件;在内的部件组合。它在内网和外网之间构建一道保护屏障，网络内部和外部之间的所有数据流必须经过防火墙，只有符合安全标准的数据流才能通过防火墙。</p><p>恶意代码是指故意编制或设置的、对网络或系统会产生威胁和潜在威胁的计算机代码。主要包括病毒、木马和蠕虫等。</p><p>端口扫描：对计算机端口发送信息，然后根据返回端口状态来分析目标计算机的端口是否打开或者可用，为下一步攻击入侵做好准备。</p><p>邮件通信：</p><img src="https://i.loli.net/2020/12/26/vO2EBYpTfPJcZDS.png" alt="image-20201226152838072" style="zoom: 67%;" />   <p>B&#x2F;S和C&#x2F;S架构：</p><p>B&#x2F;S结构即浏览器和服务器结构。它是随着Internet技术的兴起，对C&#x2F;S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。</p><p>C&#x2F;S 结构，即大家熟知的客户机和服务器结构。它是软件系统体系结构，通过它可以充分利用两端硬件环境的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通讯开销。</p><p> 说白了，BS架构就是浏览器应用，CS架构就是客户端应用，当然应用需要服务器配合，像腾讯就是以C&#x2F;S结构起家的，其旗下的QQ这一软件就是典型的C&#x2F;S结构应用，像Facebook就是以B&#x2F;S为结构的。B&#x2F;S结构的好处就是方便，不跨平台性好，真正的实现了一次开发，处处运行。C&#x2F;S结构以其稳定安全著称，降低了通讯代价，但是实现起来麻烦，需要开发服务器和客户端两套系统并且在不同的平台移植起来非常麻烦。所以现在大多是以C&#x2F;S模式来开发。</p><p>移动终端面临的威胁：</p><p>1.伪基站攻击。以自己为中心冒充基站，向周围手机发送垃圾短信，并且短信中包含恶意链接的情况。<br>2.二维码扫描。二维码扫描可能带来如下风险:手机病毒、木马程序。</p><p>容灾：容灾系统是指在相隔较远的异地，建立两套或多套功能相同的IT系统，互相之间可以进行健康状态监视和功能切换，当一处系统因意外（如火灾、地震等）停止工作时，整个应用系统可以切换到另一处，使得该系统功能可以继续正常工作。容灾技术是系统的高可用性技术的一个组成部分，容灾系统更加强调处理外界环境对系统的影响，特别是灾难性事件对整个IT节点的影响，提供节点级别的系统恢复功能。</p><p>灾备：灾难备援，它是指利用科学的技术手段和方法，提前建立系统化的数据应急方式，以应对灾难的发生。其内容包括数据备份和系统备份，业务连续规划、人员架构、通信保障、危机公关，灾难恢复规划、灾难恢复预案、业务恢复预案、紧急事件响应、第三方合作机构和供应链危机管理等等。</p><p>实际工作中的备份策略：</p><ul><li>执行完全备份</li><li>经常进行增量备份</li><li>定期执行差异备份</li></ul><p>操作系统的功能：</p><p>1、进程管理。主要bai是对处理机du进行管理。    </p><p>2、存储管理。主zhi要是对内存的dao分配、保护和扩充。    </p><p>3、设备管理。对所有输人、输出设备的管理。   </p><p>4、文件管理。主要涉及文件的逻辑组织和物理组织，目录的结构和管理。  </p><p>5、作业管理。为用户提供一个友好的环境，方便用户组织自己的工作流程。  </p><p>信息安全问题产生的根源：信息系统的复杂性会造成系统本身的安全缺陷。</p><p>信息安全应急响应管理过程：1.准备 2.检测 3.遏制 4.根除 5.恢复 6.跟踪</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
-&lt;p&gt;在我写下</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近复习信息系统安全，以及备考NISP，做一些简单的知识点总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h3&gt;&lt;p</summary>
       
     
     
     
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
+    <category term="信息安全" scheme="http://h4m5t.github.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -252,30 +227,27 @@
   </entry>
   
   <entry>
-    <title>云安全</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-12-18-security/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-12-18-security/</id>
+    <title>记第一次挖矿</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
     <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2021-04-05T14:29:21.544Z</updated>
+    <updated>2020-11-04T17:07:14.809Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;阿里云安全助理工程师-ACA&quot;&gt;&lt;a href=&quot;#阿里云安全助理工程师-ACA&quot; class=&quot;headerlink&quot; title=&quot;阿里云安全助理工程师(ACA)&quot;&gt;&lt;/a&gt;阿里云安全助理工程师(ACA)&lt;/h3&gt;&lt;p&gt;斥资600大洋，学习了阿里云的云安全AC</summary>
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
+&lt;p&gt;在我写下</summary>
       
     
     
     
-    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
     
     
-    <category term="云计算" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-    <category term="大数据" scheme="http://h4m5t.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="云安全" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E5%AE%89%E5%85%A8/"/>
+    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
     
   </entry>
   
@@ -304,6 +276,34 @@
     
     
     <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>云安全</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-12-18-security/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-12-18-security/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2021-04-05T14:29:21.544Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;阿里云安全助理工程师-ACA&quot;&gt;&lt;a href=&quot;#阿里云安全助理工程师-ACA&quot; class=&quot;headerlink&quot; title=&quot;阿里云安全助理工程师(ACA)&quot;&gt;&lt;/a&gt;阿里云安全助理工程师(ACA)&lt;/h3&gt;&lt;p&gt;斥资600大洋，学习了阿里云的云安全AC</summary>
+      
+    
+    
+    
+    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="云计算" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="大数据" scheme="http://h4m5t.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="云安全" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -475,32 +475,6 @@
   </entry>
   
   <entry>
-    <title>舆情分析-人物画像</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/</id>
-    <published>2022-11-26T16:35:34.771Z</published>
-    <updated>2021-03-18T08:02:39.689Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>最近在做舆情分析的课题,稍微记录一下.</p></blockquote><h3 id="所需技术"><a href="#所需技术" class="headerlink" title="所需技术"></a>所需技术</h3><ul><li>爬虫</li><li>话题分析</li><li>人物画像</li><li>命名实体识别</li><li>意见抽取</li><li>情感分类</li><li>文本分类</li></ul><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>课题:境外涉华人物画像</p><ul><li><p>数量：不少于100</p></li><li><p>国家&#x2F;地区：美日澳印、欧洲、东南亚、俄罗斯、港台</p></li><li><p>领域：智库、军情、政治、法律、高科技（人工智能、芯片、通信、电子、材料、太空、航天等）、演艺、人文、知名大学毕业生</p></li><li><p>实时跟踪社交媒体动态（Twitter、Facebook、Line、Linkedin）</p></li><li><p>社交情况及社交指数</p></li><li><p>人格分析：大五人格</p></li><li><p>涉华言论（文本、音视频）、热点话题及其情感极性</p></li><li><p>对华好感指数</p></li></ul><h3 id="预期成果"><a href="#预期成果" class="headerlink" title="预期成果"></a>预期成果</h3><p>实时跟踪twitter, facebook等社交媒体动态，生成境外涉华人物画像。人物涉及多个国家地区，并分析相应人物的社交指数，大五人格，以及对华好感指数等，并对其涉华言论的情感极性进行深入分析。</p><p>通过可视化，建立图形化界面等技术，从公共社交媒体上利用爬虫爬取公开的涉华人物的相关信息动态，完成预期的目标任务，做成一个能够从公开媒体上爬取并分析信息情报的平台雏形，具有相当的实用价值。</p><h3 id="初步模型"><a href="#初步模型" class="headerlink" title="初步模型"></a>初步模型</h3><img src="https://i.loli.net/2021/03/18/uXe1no9hW6JNyDj.png" align="left" alt="未命名文件" style="zoom: 80%;" /><h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="数据爬取及处理"><a href="#数据爬取及处理" class="headerlink" title="数据爬取及处理"></a>数据爬取及处理</h4><h4 id="社交指数分析"><a href="#社交指数分析" class="headerlink" title="社交指数分析"></a>社交指数分析</h4><p><img src="https://i.loli.net/2021/03/18/mD2n8yhNLQdfwig.png" alt="image-20210318100300846"></p><p><img src="https://i.loli.net/2021/03/18/Jl8Nrj1uORhQSF9.png" alt="image-20210318100319880"></p><h4 id="涉华言论情感分析"><a href="#涉华言论情感分析" class="headerlink" title="涉华言论情感分析"></a>涉华言论情感分析</h4><h4 id="人格分析"><a href="#人格分析" class="headerlink" title="人格分析"></a>人格分析</h4><p>大五人格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开放性（openness）</span><br><span class="line">  具有想象、审美、情感丰富、求异、创造、智能等特质。</span><br><span class="line">责任心（conscientiousness）：</span><br><span class="line">  显示胜任、公正、条理、尽职、成就、自律、谨慎、克制等特点。</span><br><span class="line">外倾性（extraversion）：</span><br><span class="line">  表现出热情、社交、果断、活跃、冒险、乐观等特质。</span><br><span class="line">宜人性（agreeableness）：</span><br><span class="line">  具有信任、利他、直率、依从、谦虚、移情等特质。</span><br><span class="line">神经质性（neuroticism）：</span><br><span class="line">  难以平衡焦虑、敌对、压抑、自我意识、冲动、脆弱等情绪的特质，即不具有保持情绪稳定的能力。</span><br></pre></td></tr></table></figure><h4 id="对华好感指数"><a href="#对华好感指数" class="headerlink" title="对华好感指数"></a>对华好感指数</h4><p>在不同领域探索对华好感指数</p><p><img src="https://i.loli.net/2021/03/18/5oacYN6hOZgif8w.png" alt="image-20210318100623093"></p><h4 id="热点话题抽取"><a href="#热点话题抽取" class="headerlink" title="热点话题抽取"></a>热点话题抽取</h4><p><img src="https://i.loli.net/2021/03/18/XBmGutHdZTwyj5K.png" alt="image-20210318100532182"></p><p>PS:此项目小组合作完成 , 源代码暂不公开</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;最近在做舆情分析的课题,稍微记录一下.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;所需技术&quot;&gt;&lt;a href=&quot;#所需技术&quot; class=&quot;headerlink&quot; title=&quot;所需技术&quot;&gt;&lt;/a&gt;所需技术&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;爬虫</summary>
-      
-    
-    
-    
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>云蜜罐</title>
     <link href="http://h4m5t.github.io/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
     <id>http://h4m5t.github.io/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</id>
@@ -545,6 +519,32 @@
     
     
     <category term="CTF" scheme="http://h4m5t.github.io/categories/CTF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>舆情分析-人物画像</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/</id>
+    <published>2022-11-26T16:35:34.771Z</published>
+    <updated>2021-03-18T08:02:39.689Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>最近在做舆情分析的课题,稍微记录一下.</p></blockquote><h3 id="所需技术"><a href="#所需技术" class="headerlink" title="所需技术"></a>所需技术</h3><ul><li>爬虫</li><li>话题分析</li><li>人物画像</li><li>命名实体识别</li><li>意见抽取</li><li>情感分类</li><li>文本分类</li></ul><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>课题:境外涉华人物画像</p><ul><li><p>数量：不少于100</p></li><li><p>国家&#x2F;地区：美日澳印、欧洲、东南亚、俄罗斯、港台</p></li><li><p>领域：智库、军情、政治、法律、高科技（人工智能、芯片、通信、电子、材料、太空、航天等）、演艺、人文、知名大学毕业生</p></li><li><p>实时跟踪社交媒体动态（Twitter、Facebook、Line、Linkedin）</p></li><li><p>社交情况及社交指数</p></li><li><p>人格分析：大五人格</p></li><li><p>涉华言论（文本、音视频）、热点话题及其情感极性</p></li><li><p>对华好感指数</p></li></ul><h3 id="预期成果"><a href="#预期成果" class="headerlink" title="预期成果"></a>预期成果</h3><p>实时跟踪twitter, facebook等社交媒体动态，生成境外涉华人物画像。人物涉及多个国家地区，并分析相应人物的社交指数，大五人格，以及对华好感指数等，并对其涉华言论的情感极性进行深入分析。</p><p>通过可视化，建立图形化界面等技术，从公共社交媒体上利用爬虫爬取公开的涉华人物的相关信息动态，完成预期的目标任务，做成一个能够从公开媒体上爬取并分析信息情报的平台雏形，具有相当的实用价值。</p><h3 id="初步模型"><a href="#初步模型" class="headerlink" title="初步模型"></a>初步模型</h3><img src="https://i.loli.net/2021/03/18/uXe1no9hW6JNyDj.png" align="left" alt="未命名文件" style="zoom: 80%;" /><h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="数据爬取及处理"><a href="#数据爬取及处理" class="headerlink" title="数据爬取及处理"></a>数据爬取及处理</h4><h4 id="社交指数分析"><a href="#社交指数分析" class="headerlink" title="社交指数分析"></a>社交指数分析</h4><p><img src="https://i.loli.net/2021/03/18/mD2n8yhNLQdfwig.png" alt="image-20210318100300846"></p><p><img src="https://i.loli.net/2021/03/18/Jl8Nrj1uORhQSF9.png" alt="image-20210318100319880"></p><h4 id="涉华言论情感分析"><a href="#涉华言论情感分析" class="headerlink" title="涉华言论情感分析"></a>涉华言论情感分析</h4><h4 id="人格分析"><a href="#人格分析" class="headerlink" title="人格分析"></a>人格分析</h4><p>大五人格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">开放性（openness）</span><br><span class="line">  具有想象、审美、情感丰富、求异、创造、智能等特质。</span><br><span class="line">责任心（conscientiousness）：</span><br><span class="line">  显示胜任、公正、条理、尽职、成就、自律、谨慎、克制等特点。</span><br><span class="line">外倾性（extraversion）：</span><br><span class="line">  表现出热情、社交、果断、活跃、冒险、乐观等特质。</span><br><span class="line">宜人性（agreeableness）：</span><br><span class="line">  具有信任、利他、直率、依从、谦虚、移情等特质。</span><br><span class="line">神经质性（neuroticism）：</span><br><span class="line">  难以平衡焦虑、敌对、压抑、自我意识、冲动、脆弱等情绪的特质，即不具有保持情绪稳定的能力。</span><br></pre></td></tr></table></figure><h4 id="对华好感指数"><a href="#对华好感指数" class="headerlink" title="对华好感指数"></a>对华好感指数</h4><p>在不同领域探索对华好感指数</p><p><img src="https://i.loli.net/2021/03/18/5oacYN6hOZgif8w.png" alt="image-20210318100623093"></p><h4 id="热点话题抽取"><a href="#热点话题抽取" class="headerlink" title="热点话题抽取"></a>热点话题抽取</h4><p><img src="https://i.loli.net/2021/03/18/XBmGutHdZTwyj5K.png" alt="image-20210318100532182"></p><p>PS:此项目小组合作完成 , 源代码暂不公开</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近在做舆情分析的课题,稍微记录一下.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;所需技术&quot;&gt;&lt;a href=&quot;#所需技术&quot; class=&quot;headerlink&quot; title=&quot;所需技术&quot;&gt;&lt;/a&gt;所需技术&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;爬虫</summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
     
     
   </entry>
