@@ -146,56 +146,6 @@
     
     
     <entry>
-      <title>Windows快捷键</title>
-      <link href="/2022/11/27/2020-10-26-Win10/"/>
-      <url>/2022/11/27/2020-10-26-Win10/</url>
-      
-        <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> blog </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Win10 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>黑客术语解释</title>
-      <link href="/2022/11/27/2020-10-28-hack/"/>
-      <url>/2022/11/27/2020-10-28-hack/</url>
-      
-        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> blog </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hack </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>记第一次挖矿</title>
       <link href="/2022/11/27/2020-11-4-dig/"/>
       <url>/2022/11/27/2020-11-4-dig/</url>
@@ -213,6 +163,31 @@
         <tags>
             
             <tag> hack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows快捷键</title>
+      <link href="/2022/11/27/2020-10-26-Win10/"/>
+      <url>/2022/11/27/2020-10-26-Win10/</url>
+      
+        <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Win10 </tag>
             
         </tags>
       
@@ -250,11 +225,11 @@
     
     
     <entry>
-      <title>Chrome快捷键</title>
-      <link href="/2022/11/27/2020-10-26-Chrome/"/>
-      <url>/2022/11/27/2020-10-26-Chrome/</url>
+      <title>黑客术语解释</title>
+      <link href="/2022/11/27/2020-10-28-hack/"/>
+      <url>/2022/11/27/2020-10-28-hack/</url>
       
-        <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="黑客术语"><a href="#黑客术语" class="headerlink" title="黑客术语"></a>黑客术语</h3><blockquote><p>解释一下常见的术语</p></blockquote><ul><li>肉鸡：僵尸主机（英语：Zombie computer）是指接入互联网受恶意软件感染后，受控于黑客的电脑。其可以随时按照黑客的命令与控制指令展开拒绝服务（DoS）攻击或发送垃圾信息。通常，一部被侵占的电脑只是僵尸网络里面众多中的一个，会被用来去运行一连串的或远程控制的恶意程序。一般电脑的拥有者都没有察觉到自己的系统已经被“僵尸化”，就仿佛是没有自主意识的僵尸一般。</li><li>Rootkit：Rootkit是指其主要功能为：隐藏其他程序进程的软件，可能是一个或一个以上的软件组合；广义而言，Rootkit也可视为一项技术。在今天，Rootkit一词更多地是指被作为驱动程序，加载到操作系统内核中的恶意软件。因为其代码运行在特权模式之下，从而能造成意料之外的危险。</li><li>IPC$：是共享 “ 命名管道 “ 的资源，它是为了让进程间通信而开放的命名管道，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。</li><li>加壳：在二进制的程序中植入一段代码，在运行的时候优先取得程序的控制权，之后再把控制权交还给原始代码，这样做的目的是隐藏程序真正的OEP。大多数病毒就是基于此原理。</li><li>花指令：花指令是企图隐藏掉不想被逆向工程的代码块(或其它功能)的一种方法, 在真实代码中插入一些垃圾代码的同时还保证原有程序的正确执行, 而程序无法很好地反编译, 难以理解程序内容, 达到混淆视听的效果.</li><li>蜜罐：专指用来侦测或抵御未经授权操作或者是黑客攻击的陷阱，蜜罐通常伪装成看似有利用价值的网络、资料、电脑系统，并故意设置了bug，用来吸引黑客攻击。由于蜜罐事实上并未对网络提供任何有价值的服务，所以任何对蜜罐的尝试都是可疑的。蜜罐中还可能装有监控软件，用以监控黑客入侵后的举动。而更常见的用法是用来吸引网络的计算机病毒入侵，从而获得病毒样本用于研究或破解的计算机，杀毒软件公司会利用这些计算机来监视或获得计算机网络中的病毒样本。</li></ul>]]></content>
       
       
       <categories>
@@ -266,7 +241,7 @@
       
         <tags>
             
-            <tag> Chrome </tag>
+            <tag> hack </tag>
             
         </tags>
       
@@ -296,6 +271,31 @@
             <tag> Git </tag>
             
             <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chrome快捷键</title>
+      <link href="/2022/11/27/2020-10-26-Chrome/"/>
+      <url>/2022/11/27/2020-10-26-Chrome/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Chorme快捷键"><a href="#Chorme快捷键" class="headerlink" title="Chorme快捷键"></a>Chorme快捷键</h3><ul><li><p>新建标签页：Ctrl + T</p></li><li><p>重新打开关闭的标签页：Ctrl + Shift + T</p></li><li><p>新建窗口： Ctrl + N</p></li><li><p>新建无痕窗口：Shift + Ctrl + N</p></li><li><p>打开 Home 页面：Alt + Home</p></li><li><p>同个标签前进 &#x2F; 后退：Alt + Right &#x2F; Alt + Left</p></li><li><p>切换标签页：Ctrl + Tab</p></li><li><p>关闭标签页：Ctrl + W</p></li><li><p>关闭窗口：Alt + F4 &#x2F; Ctrl + Shift + W</p><hr></li><li><p>下载内容：Ctrl + J</p></li><li><p>历史记录：Ctrl + H</p></li><li><p>任务管理器：Shift + Esc</p></li><li><p>清除历史记录：Ctrl + Shift + Del</p></li><li><p>跳转到地址栏：Ctrl + L</p><hr></li><li><p>先下翻页：PgUp</p></li><li><p>向上翻页：PgDn</p></li><li><p>滑动到最顶部：Home</p></li><li><p>滑动到最底部：End</p></li><li><p>调整页面字体大小：Ctrl + ‘’+’’ &#x2F; Ctrl + ‘’-‘’ </p></li><li><p>页面字体恢复默认：Ctrl + 0</p></li><li><p>全屏切换：F11</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
             
         </tags>
       
@@ -410,25 +410,6 @@
     
     
     <entry>
-      <title>云蜜罐</title>
-      <link href="/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
-      <url>/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>在公众号上看到一篇云蜜罐的文章，记录一下</p></blockquote><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NzA3Nzg2MA==&mid=2649850797&idx=1&sn=613b99fb34f8981ac9443751350c162a&chksm=beda55a689addcb0a419a3f125dcc2c10f34f914de3a94d19f29fd41a83884ca7a549629b452&mpshare=1&scene=23&srcid=0310ZUYFGHI200bvmbf8Xeym&sharer_sharetime=1615365828620&sharer_shareid=6667ab5df2c656171aa24aeecfcd6fe5#rd">知道创宇</a></p><p><a href="https://github.com/paralax/awesome-honeypots/blob/master/README_CN.md">优秀蜜罐有哪些</a></p><h3 id="“云蜜罐”是什么？"><a href="#“云蜜罐”是什么？" class="headerlink" title="“云蜜罐”是什么？"></a>“云蜜罐”是什么？</h3><p><strong>无需软硬件，无需云主机，不需占用任何客户资源，云端实现快捷部署，并在域名接入功能上取得了突破</strong>。</p><h3 id="与传统蜜罐有何不同"><a href="#与传统蜜罐有何不同" class="headerlink" title="与传统蜜罐有何不同"></a>与传统蜜罐有何不同</h3><p>与传统蜜罐相比，“云蜜罐”除去部署方式上的不同，还有一大优势在于云端部署<strong>不需占用任何客户端资源，不会对现有的业务造成任何影响</strong>。同时，云端“一键部署”快捷安全，尤其适用于网站防御方面。在即将到来的网络攻防实战演练中，防守方一旦发现预先进行了网络防护的网站有被攻击迹象，比起被动挨打，还可以选择<strong>通过快捷部署“云蜜罐”作为一种紧急应对方式，感知攻击威胁、记录攻击痕迹、争取溯源反制</strong>。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为域名暴破攻击提供“定制陷阱”的服务</strong>。</p><p><strong>“云蜜罐”智能子域名推荐系统会根据录入的根域名，自动生成高敏感子域名，在攻击者使用子域名暴破攻击的必经之路上设置陷阱，提高攻击捕获可能性</strong>，在一定程度上减轻真实资产的流量压力以及防止黑客进一步入侵。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>舆情分析-人物画像</title>
       <link href="/2022/11/27/2021-3-16-NLP/"/>
       <url>/2022/11/27/2021-3-16-NLP/</url>
@@ -439,6 +420,25 @@
       <categories>
           
           <category> blog </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>云蜜罐</title>
+      <link href="/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/"/>
+      <url>/2022/11/27/2021-3-13-%E8%9C%9C%E7%BD%90/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在公众号上看到一篇云蜜罐的文章，记录一下</p></blockquote><p>参考链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NzA3Nzg2MA==&mid=2649850797&idx=1&sn=613b99fb34f8981ac9443751350c162a&chksm=beda55a689addcb0a419a3f125dcc2c10f34f914de3a94d19f29fd41a83884ca7a549629b452&mpshare=1&scene=23&srcid=0310ZUYFGHI200bvmbf8Xeym&sharer_sharetime=1615365828620&sharer_shareid=6667ab5df2c656171aa24aeecfcd6fe5#rd">知道创宇</a></p><p><a href="https://github.com/paralax/awesome-honeypots/blob/master/README_CN.md">优秀蜜罐有哪些</a></p><h3 id="“云蜜罐”是什么？"><a href="#“云蜜罐”是什么？" class="headerlink" title="“云蜜罐”是什么？"></a>“云蜜罐”是什么？</h3><p><strong>无需软硬件，无需云主机，不需占用任何客户资源，云端实现快捷部署，并在域名接入功能上取得了突破</strong>。</p><h3 id="与传统蜜罐有何不同"><a href="#与传统蜜罐有何不同" class="headerlink" title="与传统蜜罐有何不同"></a>与传统蜜罐有何不同</h3><p>与传统蜜罐相比，“云蜜罐”除去部署方式上的不同，还有一大优势在于云端部署<strong>不需占用任何客户端资源，不会对现有的业务造成任何影响</strong>。同时，云端“一键部署”快捷安全，尤其适用于网站防御方面。在即将到来的网络攻防实战演练中，防守方一旦发现预先进行了网络防护的网站有被攻击迹象，比起被动挨打，还可以选择<strong>通过快捷部署“云蜜罐”作为一种紧急应对方式，感知攻击威胁、记录攻击痕迹、争取溯源反制</strong>。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><strong>为域名暴破攻击提供“定制陷阱”的服务</strong>。</p><p><strong>“云蜜罐”智能子域名推荐系统会根据录入的根域名，自动生成高敏感子域名，在攻击者使用子域名暴破攻击的必经之路上设置陷阱，提高攻击捕获可能性</strong>，在一定程度上减轻真实资产的流量压力以及防止黑客进一步入侵。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
           
       </categories>
       
