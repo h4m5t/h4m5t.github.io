@@ -144,35 +144,6 @@
   </entry>
   
   <entry>
-    <title>记录前端学习--HTML</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/</id>
-    <published>2022-11-26T17:01:43.732Z</published>
-    <updated>2021-02-07T02:25:41.042Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>先学习基础部分，即web三件套</p><ul><li>HTML负责结构，网页想要表达的内容由html书写。</li><li>CSS负责样式，网页的美与丑由它来控制。</li><li>JS负责交互，用户和网页产生的互动由它来控制。</li></ul><p>然后学习框架，即“大前端开发”</p><ul><li>vue</li><li>React</li><li>angular</li></ul><p>另外学习其他知识</p><ul><li>浏览器</li><li>网络</li><li>webpack</li></ul><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><blockquote><p>超文本标记语言（HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> * @Author: h4m5t</span></span><br><span class="line"><span class="comment"> * @Date: 2021-01-21 10:11:09</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-01-21 20:23:30</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--编码以及屏幕自适应--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;测试&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--网页自动跳转--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;https://dydhzj.xyz&quot;&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;tupian&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 表示在新的标签页 打开页面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://dydhzj.xyz&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>这是我的博客链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>语义与呈现分离</strong></p><p>是一句常见的熟语、一种设计哲学，同时也是在多种出版技术纪律中应用的一种方法学，涉及到信息检索、模板处理、网页设计、网页程序设计、文字处理、桌面出版、模型驱动开发等出版领域。其为关注点分离这个更加宽泛的哲学的特例。一篇文档的实际内容和意义，与这篇文档呈现给读者的方式，是相互独立的。</p><ul><li>HTML 负责内容结构和含义，内容呈现交给 CSS</li></ul><p><strong>HTML语义化的优点</strong></p><ol><li>便于浏览器解析器解析</li><li>便于搜索引擎解析</li><li>在没有css的情况下，也以一种文档格式显式，并且是容易阅读的</li><li>结构良好，更容易将网站分块；便于阅读，开发和后期维护</li></ol><h4 id="1-文档与元数据元素"><a href="#1-文档与元数据元素" class="headerlink" title="1. 文档与元数据元素"></a>1. 文档与元数据元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">base</td><td align="left">相对 URL 基础</td><td align="left">元数据</td></tr><tr><td align="left">body</td><td align="left">HTML 文档内容</td><td align="left">无</td></tr><tr><td align="left">DOCTYPE</td><td align="left">HTML 开始</td><td align="left">无</td></tr><tr><td align="left">head</td><td align="left">HTML 文档元数据</td><td align="left">无</td></tr><tr><td align="left">html</td><td align="left">HTML 文档 html 部分</td><td align="left">无</td></tr><tr><td align="left">link</td><td align="left">外部链接的关系</td><td align="left">元数据</td></tr><tr><td align="left">meta</td><td align="left">文档信息</td><td align="left">元数据</td></tr><tr><td align="left">noscript</td><td align="left">禁用脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">script</td><td align="left">脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">style</td><td align="left">CSS 样式</td><td align="left">元数据</td></tr><tr><td align="left">title</td><td align="left">文档标题</td><td align="left">元数据</td></tr></tbody></table><h4 id="2-文本元素"><a href="#2-文本元素" class="headerlink" title="2. 文本元素"></a>2. 文本元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">a</td><td align="left">超链接</td><td align="left">短语、流</td></tr><tr><td align="left">abbr</td><td align="left">缩略语</td><td align="left">短语</td></tr><tr><td align="left">b</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">br</td><td align="left">换行</td><td align="left">短语</td></tr><tr><td align="left">cite</td><td align="left">其他作品标题</td><td align="left">短语</td></tr><tr><td align="left">code</td><td align="left">代码片段</td><td align="left">短语</td></tr><tr><td align="left">del</td><td align="left">文字删除线</td><td align="left">短语、流</td></tr><tr><td align="left">dfn</td><td align="left">术语定义</td><td align="left">短语</td></tr><tr><td align="left">em</td><td align="left">强调标记</td><td align="left">短语</td></tr><tr><td align="left">i</td><td align="left">与周边不同的文字</td><td align="left">短语</td></tr><tr><td align="left">ins</td><td align="left">加入文档的文字</td><td align="left">短语、流</td></tr><tr><td align="left">kbd</td><td align="left">用户输入的内容</td><td align="left">短语</td></tr><tr><td align="left">mark</td><td align="left">标记</td><td align="left">短语</td></tr><tr><td align="left">q</td><td align="left">引用他处的内容</td><td align="left">短语</td></tr><tr><td align="left">rp</td><td align="left">ruby 标记括号</td><td align="left">短语</td></tr><tr><td align="left">rt</td><td align="left">ruby 标记注音符号</td><td align="left">短语</td></tr><tr><td align="left">ruby</td><td align="left">位于表意文字上方或者右方的注音符号</td><td align="left">短语</td></tr><tr><td align="left">s</td><td align="left">表示内容不再准确</td><td align="left">短语</td></tr><tr><td align="left">samp</td><td align="left">计算机输出的内容</td><td align="left">短语</td></tr><tr><td align="left">small</td><td align="left">小号字体</td><td align="left">短语</td></tr><tr><td align="left">span</td><td align="left">同样元素</td><td align="left">短语</td></tr><tr><td align="left">strong</td><td align="left">重要内容</td><td align="left">短语</td></tr><tr><td align="left">sub</td><td align="left">下标</td><td align="left">短语</td></tr><tr><td align="left">sup</td><td align="left">上标</td><td align="left">短语</td></tr><tr><td align="left">time</td><td align="left">时间</td><td align="left">短语</td></tr><tr><td align="left">u</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">var</td><td align="left">计算机中的变量</td><td align="left">短语</td></tr><tr><td align="left">wbr</td><td align="left">安全换行的地方</td><td align="left">短语</td></tr></tbody></table><h4 id="3-内容"><a href="#3-内容" class="headerlink" title="3. 内容"></a>3. 内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">blockquote</td><td align="left">引用的大段内容</td><td align="left">流</td></tr><tr><td align="left">dd</td><td align="left">dl 元素中，表示定义</td><td align="left">无</td></tr><tr><td align="left">div</td><td align="left">通用元素，与 span 对应</td><td align="left">流</td></tr><tr><td align="left">dl</td><td align="left">术语定义的说明列表</td><td align="left">流</td></tr><tr><td align="left">dt</td><td align="left">dl 元素中，表示术语</td><td align="left">无</td></tr><tr><td align="left">figcaption</td><td align="left">figure 元素的标题</td><td align="left">无</td></tr><tr><td align="left">figure</td><td align="left">图片</td><td align="left">流</td></tr><tr><td align="left">hr</td><td align="left">段落级别的主题转换</td><td align="left">流</td></tr><tr><td align="left">li</td><td align="left">ul、ol、menu 元素中，表示列表项</td><td align="left">无</td></tr><tr><td align="left">ol</td><td align="left">有序列表</td><td align="left">流</td></tr><tr><td align="left">p</td><td align="left">段落</td><td align="left">流</td></tr><tr><td align="left">pre</td><td align="left">格式应被保留的内容</td><td align="left">流</td></tr><tr><td align="left">ul</td><td align="left">无序列表</td><td align="left">流</td></tr></tbody></table><h4 id="4-划分内容"><a href="#4-划分内容" class="headerlink" title="4. 划分内容"></a>4. 划分内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">address</td><td align="left">文档或者 article 的联系信息</td><td align="left">流</td></tr><tr><td align="left">article</td><td align="left">作品信息</td><td align="left">流</td></tr><tr><td align="left">aside</td><td align="left">周边牵涉内容</td><td align="left">流</td></tr><tr><td align="left">details</td><td align="left">区域，展开获取细节</td><td align="left">流</td></tr><tr><td align="left">footer</td><td align="left">尾部</td><td align="left">流</td></tr><tr><td align="left">h1-h6</td><td align="left">标题</td><td align="left">流</td></tr><tr><td align="left">header</td><td align="left">首部</td><td align="left"></td></tr><tr><td align="left">hgroup</td><td align="left">一组标题组织，形成目录</td><td align="left">流</td></tr><tr><td align="left">nav</td><td align="left">导航元素</td><td align="left">流</td></tr><tr><td align="left">section</td><td align="left">部分流</td><td align="left"></td></tr><tr><td align="left">summary</td><td align="left">details 元素中，表示该元素标题</td><td align="left">无</td></tr></tbody></table><h4 id="5-制表"><a href="#5-制表" class="headerlink" title="5. 制表"></a>5. 制表</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">caption</td><td align="left">表格标题</td><td align="left">无</td></tr><tr><td align="left">col</td><td align="left">列</td><td align="left">无</td></tr><tr><td align="left">colgroup</td><td align="left">一组列</td><td align="left">无</td></tr><tr><td align="left">table</td><td align="left">表格</td><td align="left">无</td></tr><tr><td align="left">tbody</td><td align="left">表格主体</td><td align="left">无</td></tr><tr><td align="left">td</td><td align="left">单元格</td><td align="left">无</td></tr><tr><td align="left">tfoot</td><td align="left">表脚</td><td align="left">无</td></tr><tr><td align="left">th</td><td align="left">表头表脚单元格</td><td align="left">无</td></tr><tr><td align="left">thead</td><td align="left">表头</td><td align="left">无</td></tr><tr><td align="left">tr</td><td align="left">一行单元格</td><td align="left">无</td></tr></tbody></table><h4 id="6-表单"><a href="#6-表单" class="headerlink" title="6. 表单"></a>6. 表单</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">button</td><td align="left">按钮</td><td align="left">短语</td></tr><tr><td align="left">datalist</td><td align="left">建议列表</td><td align="left">流</td></tr><tr><td align="left">fieldset</td><td align="left">一组表单元素</td><td align="left">流</td></tr><tr><td align="left">form</td><td align="left">表单</td><td align="left">流</td></tr><tr><td align="left">input</td><td align="left">输入</td><td align="left">短语</td></tr><tr><td align="left">keygen</td><td align="left">生成公私钥</td><td align="left">短语</td></tr><tr><td align="left">label</td><td align="left">表单说明标签</td><td align="left">短语</td></tr><tr><td align="left">legend</td><td align="left">fieldset 元素说明标签</td><td align="left">无</td></tr><tr><td align="left">optgroup</td><td align="left">一组相关的 option 元素</td><td align="left">无</td></tr><tr><td align="left">option</td><td align="left">用户选择的可选项</td><td align="left">无</td></tr><tr><td align="left">output</td><td align="left">计算结果</td><td align="left">短语</td></tr><tr><td align="left">select</td><td align="left">用户选择固定项</td><td align="left">短语</td></tr><tr><td align="left">textarea</td><td align="left">多行输入</td><td align="left">短语</td></tr></tbody></table><h4 id="7-嵌入内容"><a href="#7-嵌入内容" class="headerlink" title="7. 嵌入内容"></a>7. 嵌入内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">area</td><td align="left">客户端分区响应区域</td><td align="left">短语</td></tr><tr><td align="left">audio</td><td align="left">音频</td><td align="left">无</td></tr><tr><td align="left">canvas</td><td align="left">画布</td><td align="left">短语、流</td></tr><tr><td align="left">embed</td><td align="left">用插件嵌入内容</td><td align="left">短语</td></tr><tr><td align="left">iframe</td><td align="left">嵌入另一个文档</td><td align="left">短语</td></tr><tr><td align="left">img</td><td align="left">图片</td><td align="left">短语</td></tr><tr><td align="left">map</td><td align="left">客户端分区响应</td><td align="left">短语、流</td></tr><tr><td align="left">meter</td><td align="left">许可值范围背景中的图形表示</td><td align="left">短语</td></tr><tr><td align="left">object</td><td align="left">生成上下文与客户端分区响应图</td><td align="left">短语、流</td></tr><tr><td align="left">param</td><td align="left">通过 obj 元素传给插件的参数</td><td align="left">无</td></tr><tr><td align="left">progress</td><td align="left">进度</td><td align="left">短语</td></tr><tr><td align="left">source</td><td align="left">媒体资源</td><td align="left">无</td></tr><tr><td align="left">svg</td><td align="left">结构化矢量内容</td><td align="left">无</td></tr><tr><td align="left">track</td><td align="left">媒体附加轨道（如字幕）</td><td align="left">无</td></tr><tr><td align="left">video</td><td align="left">视频</td><td align="left">无</td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot; title=&quot;学习路线&quot;&gt;&lt;/a&gt;学习路线&lt;/h3&gt;&lt;p&gt;先学习基础部分，即web三件套&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;HTML负责结构，网页想要表达的内容由html书写。&lt;/li&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="http://h4m5t.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="web" scheme="http://h4m5t.github.io/tags/web/"/>
-    
-    <category term="前端" scheme="http://h4m5t.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>信息安全</title>
     <link href="http://h4m5t.github.io/2022/11/27/2020-12-22-security/"/>
     <id>http://h4m5t.github.io/2022/11/27/2020-12-22-security/</id>
@@ -200,55 +171,31 @@
   </entry>
   
   <entry>
-    <title>云安全</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-12-18-security/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-12-18-security/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2021-04-05T14:29:21.544Z</updated>
+    <title>记录前端学习--HTML</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2021-1-21-%E5%89%8D%E7%AB%AFhtml/</id>
+    <published>2022-11-26T17:01:43.732Z</published>
+    <updated>2021-02-07T02:25:41.042Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;阿里云安全助理工程师-ACA&quot;&gt;&lt;a href=&quot;#阿里云安全助理工程师-ACA&quot; class=&quot;headerlink&quot; title=&quot;阿里云安全助理工程师(ACA)&quot;&gt;&lt;/a&gt;阿里云安全助理工程师(ACA)&lt;/h3&gt;&lt;p&gt;斥资600大洋，学习了阿里云的云安全AC</summary>
-      
-    
-    
-    
-    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="云计算" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-    <category term="大数据" scheme="http://h4m5t.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="云安全" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记第一次挖矿</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
-    <published>2022-11-26T17:01:43.716Z</published>
-    <updated>2020-11-04T17:07:14.809Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>先学习基础部分，即web三件套</p><ul><li>HTML负责结构，网页想要表达的内容由html书写。</li><li>CSS负责样式，网页的美与丑由它来控制。</li><li>JS负责交互，用户和网页产生的互动由它来控制。</li></ul><p>然后学习框架，即“大前端开发”</p><ul><li>vue</li><li>React</li><li>angular</li></ul><p>另外学习其他知识</p><ul><li>浏览器</li><li>网络</li><li>webpack</li></ul><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><blockquote><p>超文本标记语言（HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> * @Author: h4m5t</span></span><br><span class="line"><span class="comment"> * @Date: 2021-01-21 10:11:09</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-01-21 20:23:30</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--编码以及屏幕自适应--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;测试&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--网页自动跳转--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;https://dydhzj.xyz&quot;&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;tupian&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 表示在新的标签页 打开页面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://dydhzj.xyz&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>这是我的博客链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>语义与呈现分离</strong></p><p>是一句常见的熟语、一种设计哲学，同时也是在多种出版技术纪律中应用的一种方法学，涉及到信息检索、模板处理、网页设计、网页程序设计、文字处理、桌面出版、模型驱动开发等出版领域。其为关注点分离这个更加宽泛的哲学的特例。一篇文档的实际内容和意义，与这篇文档呈现给读者的方式，是相互独立的。</p><ul><li>HTML 负责内容结构和含义，内容呈现交给 CSS</li></ul><p><strong>HTML语义化的优点</strong></p><ol><li>便于浏览器解析器解析</li><li>便于搜索引擎解析</li><li>在没有css的情况下，也以一种文档格式显式，并且是容易阅读的</li><li>结构良好，更容易将网站分块；便于阅读，开发和后期维护</li></ol><h4 id="1-文档与元数据元素"><a href="#1-文档与元数据元素" class="headerlink" title="1. 文档与元数据元素"></a>1. 文档与元数据元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">base</td><td align="left">相对 URL 基础</td><td align="left">元数据</td></tr><tr><td align="left">body</td><td align="left">HTML 文档内容</td><td align="left">无</td></tr><tr><td align="left">DOCTYPE</td><td align="left">HTML 开始</td><td align="left">无</td></tr><tr><td align="left">head</td><td align="left">HTML 文档元数据</td><td align="left">无</td></tr><tr><td align="left">html</td><td align="left">HTML 文档 html 部分</td><td align="left">无</td></tr><tr><td align="left">link</td><td align="left">外部链接的关系</td><td align="left">元数据</td></tr><tr><td align="left">meta</td><td align="left">文档信息</td><td align="left">元数据</td></tr><tr><td align="left">noscript</td><td align="left">禁用脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">script</td><td align="left">脚本</td><td align="left">元数据、短语</td></tr><tr><td align="left">style</td><td align="left">CSS 样式</td><td align="left">元数据</td></tr><tr><td align="left">title</td><td align="left">文档标题</td><td align="left">元数据</td></tr></tbody></table><h4 id="2-文本元素"><a href="#2-文本元素" class="headerlink" title="2. 文本元素"></a>2. 文本元素</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">a</td><td align="left">超链接</td><td align="left">短语、流</td></tr><tr><td align="left">abbr</td><td align="left">缩略语</td><td align="left">短语</td></tr><tr><td align="left">b</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">br</td><td align="left">换行</td><td align="left">短语</td></tr><tr><td align="left">cite</td><td align="left">其他作品标题</td><td align="left">短语</td></tr><tr><td align="left">code</td><td align="left">代码片段</td><td align="left">短语</td></tr><tr><td align="left">del</td><td align="left">文字删除线</td><td align="left">短语、流</td></tr><tr><td align="left">dfn</td><td align="left">术语定义</td><td align="left">短语</td></tr><tr><td align="left">em</td><td align="left">强调标记</td><td align="left">短语</td></tr><tr><td align="left">i</td><td align="left">与周边不同的文字</td><td align="left">短语</td></tr><tr><td align="left">ins</td><td align="left">加入文档的文字</td><td align="left">短语、流</td></tr><tr><td align="left">kbd</td><td align="left">用户输入的内容</td><td align="left">短语</td></tr><tr><td align="left">mark</td><td align="left">标记</td><td align="left">短语</td></tr><tr><td align="left">q</td><td align="left">引用他处的内容</td><td align="left">短语</td></tr><tr><td align="left">rp</td><td align="left">ruby 标记括号</td><td align="left">短语</td></tr><tr><td align="left">rt</td><td align="left">ruby 标记注音符号</td><td align="left">短语</td></tr><tr><td align="left">ruby</td><td align="left">位于表意文字上方或者右方的注音符号</td><td align="left">短语</td></tr><tr><td align="left">s</td><td align="left">表示内容不再准确</td><td align="left">短语</td></tr><tr><td align="left">samp</td><td align="left">计算机输出的内容</td><td align="left">短语</td></tr><tr><td align="left">small</td><td align="left">小号字体</td><td align="left">短语</td></tr><tr><td align="left">span</td><td align="left">同样元素</td><td align="left">短语</td></tr><tr><td align="left">strong</td><td align="left">重要内容</td><td align="left">短语</td></tr><tr><td align="left">sub</td><td align="left">下标</td><td align="left">短语</td></tr><tr><td align="left">sup</td><td align="left">上标</td><td align="left">短语</td></tr><tr><td align="left">time</td><td align="left">时间</td><td align="left">短语</td></tr><tr><td align="left">u</td><td align="left">非强调标记文字</td><td align="left">短语</td></tr><tr><td align="left">var</td><td align="left">计算机中的变量</td><td align="left">短语</td></tr><tr><td align="left">wbr</td><td align="left">安全换行的地方</td><td align="left">短语</td></tr></tbody></table><h4 id="3-内容"><a href="#3-内容" class="headerlink" title="3. 内容"></a>3. 内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">blockquote</td><td align="left">引用的大段内容</td><td align="left">流</td></tr><tr><td align="left">dd</td><td align="left">dl 元素中，表示定义</td><td align="left">无</td></tr><tr><td align="left">div</td><td align="left">通用元素，与 span 对应</td><td align="left">流</td></tr><tr><td align="left">dl</td><td align="left">术语定义的说明列表</td><td align="left">流</td></tr><tr><td align="left">dt</td><td align="left">dl 元素中，表示术语</td><td align="left">无</td></tr><tr><td align="left">figcaption</td><td align="left">figure 元素的标题</td><td align="left">无</td></tr><tr><td align="left">figure</td><td align="left">图片</td><td align="left">流</td></tr><tr><td align="left">hr</td><td align="left">段落级别的主题转换</td><td align="left">流</td></tr><tr><td align="left">li</td><td align="left">ul、ol、menu 元素中，表示列表项</td><td align="left">无</td></tr><tr><td align="left">ol</td><td align="left">有序列表</td><td align="left">流</td></tr><tr><td align="left">p</td><td align="left">段落</td><td align="left">流</td></tr><tr><td align="left">pre</td><td align="left">格式应被保留的内容</td><td align="left">流</td></tr><tr><td align="left">ul</td><td align="left">无序列表</td><td align="left">流</td></tr></tbody></table><h4 id="4-划分内容"><a href="#4-划分内容" class="headerlink" title="4. 划分内容"></a>4. 划分内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">address</td><td align="left">文档或者 article 的联系信息</td><td align="left">流</td></tr><tr><td align="left">article</td><td align="left">作品信息</td><td align="left">流</td></tr><tr><td align="left">aside</td><td align="left">周边牵涉内容</td><td align="left">流</td></tr><tr><td align="left">details</td><td align="left">区域，展开获取细节</td><td align="left">流</td></tr><tr><td align="left">footer</td><td align="left">尾部</td><td align="left">流</td></tr><tr><td align="left">h1-h6</td><td align="left">标题</td><td align="left">流</td></tr><tr><td align="left">header</td><td align="left">首部</td><td align="left"></td></tr><tr><td align="left">hgroup</td><td align="left">一组标题组织，形成目录</td><td align="left">流</td></tr><tr><td align="left">nav</td><td align="left">导航元素</td><td align="left">流</td></tr><tr><td align="left">section</td><td align="left">部分流</td><td align="left"></td></tr><tr><td align="left">summary</td><td align="left">details 元素中，表示该元素标题</td><td align="left">无</td></tr></tbody></table><h4 id="5-制表"><a href="#5-制表" class="headerlink" title="5. 制表"></a>5. 制表</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">caption</td><td align="left">表格标题</td><td align="left">无</td></tr><tr><td align="left">col</td><td align="left">列</td><td align="left">无</td></tr><tr><td align="left">colgroup</td><td align="left">一组列</td><td align="left">无</td></tr><tr><td align="left">table</td><td align="left">表格</td><td align="left">无</td></tr><tr><td align="left">tbody</td><td align="left">表格主体</td><td align="left">无</td></tr><tr><td align="left">td</td><td align="left">单元格</td><td align="left">无</td></tr><tr><td align="left">tfoot</td><td align="left">表脚</td><td align="left">无</td></tr><tr><td align="left">th</td><td align="left">表头表脚单元格</td><td align="left">无</td></tr><tr><td align="left">thead</td><td align="left">表头</td><td align="left">无</td></tr><tr><td align="left">tr</td><td align="left">一行单元格</td><td align="left">无</td></tr></tbody></table><h4 id="6-表单"><a href="#6-表单" class="headerlink" title="6. 表单"></a>6. 表单</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">button</td><td align="left">按钮</td><td align="left">短语</td></tr><tr><td align="left">datalist</td><td align="left">建议列表</td><td align="left">流</td></tr><tr><td align="left">fieldset</td><td align="left">一组表单元素</td><td align="left">流</td></tr><tr><td align="left">form</td><td align="left">表单</td><td align="left">流</td></tr><tr><td align="left">input</td><td align="left">输入</td><td align="left">短语</td></tr><tr><td align="left">keygen</td><td align="left">生成公私钥</td><td align="left">短语</td></tr><tr><td align="left">label</td><td align="left">表单说明标签</td><td align="left">短语</td></tr><tr><td align="left">legend</td><td align="left">fieldset 元素说明标签</td><td align="left">无</td></tr><tr><td align="left">optgroup</td><td align="left">一组相关的 option 元素</td><td align="left">无</td></tr><tr><td align="left">option</td><td align="left">用户选择的可选项</td><td align="left">无</td></tr><tr><td align="left">output</td><td align="left">计算结果</td><td align="left">短语</td></tr><tr><td align="left">select</td><td align="left">用户选择固定项</td><td align="left">短语</td></tr><tr><td align="left">textarea</td><td align="left">多行输入</td><td align="left">短语</td></tr></tbody></table><h4 id="7-嵌入内容"><a href="#7-嵌入内容" class="headerlink" title="7. 嵌入内容"></a>7. 嵌入内容</h4><table><thead><tr><th align="left">元素</th><th align="left">说明</th><th align="left">类型</th></tr></thead><tbody><tr><td align="left">area</td><td align="left">客户端分区响应区域</td><td align="left">短语</td></tr><tr><td align="left">audio</td><td align="left">音频</td><td align="left">无</td></tr><tr><td align="left">canvas</td><td align="left">画布</td><td align="left">短语、流</td></tr><tr><td align="left">embed</td><td align="left">用插件嵌入内容</td><td align="left">短语</td></tr><tr><td align="left">iframe</td><td align="left">嵌入另一个文档</td><td align="left">短语</td></tr><tr><td align="left">img</td><td align="left">图片</td><td align="left">短语</td></tr><tr><td align="left">map</td><td align="left">客户端分区响应</td><td align="left">短语、流</td></tr><tr><td align="left">meter</td><td align="left">许可值范围背景中的图形表示</td><td align="left">短语</td></tr><tr><td align="left">object</td><td align="left">生成上下文与客户端分区响应图</td><td align="left">短语、流</td></tr><tr><td align="left">param</td><td align="left">通过 obj 元素传给插件的参数</td><td align="left">无</td></tr><tr><td align="left">progress</td><td align="left">进度</td><td align="left">短语</td></tr><tr><td align="left">source</td><td align="left">媒体资源</td><td align="left">无</td></tr><tr><td align="left">svg</td><td align="left">结构化矢量内容</td><td align="left">无</td></tr><tr><td align="left">track</td><td align="left">媒体附加轨道（如字幕）</td><td align="left">无</td></tr><tr><td align="left">video</td><td align="left">视频</td><td align="left">无</td></tr></tbody></table>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
-&lt;p&gt;在我写下</summary>
+    <summary type="html">&lt;h3 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot; title=&quot;学习路线&quot;&gt;&lt;/a&gt;学习路线&lt;/h3&gt;&lt;p&gt;先学习基础部分，即web三件套&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML负责结构，网页想要表达的内容由html书写。&lt;/li&gt;
+&lt;</summary>
       
     
     
     
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    <category term="前端" scheme="http://h4m5t.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
+    <category term="web" scheme="http://h4m5t.github.io/tags/web/"/>
+    
+    <category term="前端" scheme="http://h4m5t.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -308,19 +255,19 @@
   </entry>
   
   <entry>
-    <title>Git</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2020-10-25-git/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2020-10-25-git/</id>
-    <published>2022-11-26T17:01:43.703Z</published>
-    <updated>2020-10-26T11:53:18.024Z</updated>
+    <title>记第一次挖矿</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-11-4-dig/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-11-4-dig/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2020-11-04T17:07:14.809Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-git-clone"><a href="#1-git-clone" class="headerlink" title="1.git clone"></a>1.git clone</h3><p>将远程仓库克隆到本地，包括此仓库的版本变化信息。</p><p>不需要进行<code>git init</code>操作</p><p>方法：https或SSH</p><h3 id="2-git-pull"><a href="#2-git-pull" class="headerlink" title="2.git pull"></a>2.git pull</h3><p>拉取远程更新到本地仓库，相当于从远程仓库或许最新版，然后与本地的分支合并。</p><p><code>git pull = git fetch + git merge</code></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;1-git-clone&quot;&gt;&lt;a href=&quot;#1-git-clone&quot; class=&quot;headerlink&quot; title=&quot;1.git clone&quot;&gt;&lt;/a&gt;1.git clone&lt;/h3&gt;&lt;p&gt;将远程仓库克隆到本地，包括此仓库的版本变化信息。&lt;/p&gt;
-&lt;p&gt;不需</summary>
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。&lt;/p&gt;
+&lt;p&gt;在我写下</summary>
       
     
     
@@ -328,11 +275,35 @@
     <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
     
     
-    <category term="Desktop" scheme="http://h4m5t.github.io/tags/Desktop/"/>
+    <category term="hack" scheme="http://h4m5t.github.io/tags/hack/"/>
     
-    <category term="Git" scheme="http://h4m5t.github.io/tags/Git/"/>
+  </entry>
+  
+  <entry>
+    <title>云安全</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-12-18-security/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-12-18-security/</id>
+    <published>2022-11-26T17:01:43.716Z</published>
+    <updated>2021-04-05T14:29:21.544Z</updated>
     
-    <category term="GitHub" scheme="http://h4m5t.github.io/tags/GitHub/"/>
+    <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;阿里云安全助理工程师-ACA&quot;&gt;&lt;a href=&quot;#阿里云安全助理工程师-ACA&quot; class=&quot;headerlink&quot; title=&quot;阿里云安全助理工程师(ACA)&quot;&gt;&lt;/a&gt;阿里云安全助理工程师(ACA)&lt;/h3&gt;&lt;p&gt;斥资600大洋，学习了阿里云的云安全AC</summary>
+      
+    
+    
+    
+    <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="云计算" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="大数据" scheme="http://h4m5t.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="云安全" scheme="http://h4m5t.github.io/tags/%E4%BA%91%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -360,6 +331,35 @@
     
     
     <category term="Chrome" scheme="http://h4m5t.github.io/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2020-10-25-git/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2020-10-25-git/</id>
+    <published>2022-11-26T17:01:43.703Z</published>
+    <updated>2020-10-26T11:53:18.024Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-git-clone"><a href="#1-git-clone" class="headerlink" title="1.git clone"></a>1.git clone</h3><p>将远程仓库克隆到本地，包括此仓库的版本变化信息。</p><p>不需要进行<code>git init</code>操作</p><p>方法：https或SSH</p><h3 id="2-git-pull"><a href="#2-git-pull" class="headerlink" title="2.git pull"></a>2.git pull</h3><p>拉取远程更新到本地仓库，相当于从远程仓库或许最新版，然后与本地的分支合并。</p><p><code>git pull = git fetch + git merge</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-git-clone&quot;&gt;&lt;a href=&quot;#1-git-clone&quot; class=&quot;headerlink&quot; title=&quot;1.git clone&quot;&gt;&lt;/a&gt;1.git clone&lt;/h3&gt;&lt;p&gt;将远程仓库克隆到本地，包括此仓库的版本变化信息。&lt;/p&gt;
+&lt;p&gt;不需</summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+    <category term="Desktop" scheme="http://h4m5t.github.io/tags/Desktop/"/>
+    
+    <category term="Git" scheme="http://h4m5t.github.io/tags/Git/"/>
+    
+    <category term="GitHub" scheme="http://h4m5t.github.io/tags/GitHub/"/>
     
   </entry>
   
@@ -500,30 +500,6 @@
   </entry>
   
   <entry>
-    <title>V&amp;N-CTF</title>
-    <link href="http://h4m5t.github.io/2022/11/27/2021-3-14-VN/"/>
-    <id>http://h4m5t.github.io/2022/11/27/2021-3-14-VN/</id>
-    <published>2022-11-26T16:35:34.771Z</published>
-    <updated>2021-03-14T15:54:49.844Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="web游戏题"><a href="#web游戏题" class="headerlink" title="web游戏题"></a>web游戏题</h3><p>提示：通关就有flag</p><p>尝试修改start_level，但是无法直接开始第10关</p><p>尝试修改死亡后reset的next_level，然后去送死，按下Esc,就是第二关。</p><p>却发现boss很难打，于是又修改人物参数：血量、飞镖数量等。</p><p><img src="https://i.loli.net/2021/03/14/8WzIQXblDZR3Nng.png" alt="image-20210314235011044"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Reset</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// load local storage</span></span><br><span class="line">    playerData = <span class="keyword">new</span> <span class="title class_">PlayerData</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>)</span><br><span class="line">        playerData.<span class="property">coins</span> = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>)</span><br><span class="line">        warpLevel = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>)</span><br><span class="line">        speedRunBestTime = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>, <span class="number">10</span>);</span><br><span class="line">    nextLevel = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/03/14/fcKorsJpBRiPVH3.png" alt="image-20210314235140421"></p><p>打败BOSS,获得flag。</p><p>这游戏挺好玩！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;web游戏题&quot;&gt;&lt;a href=&quot;#web游戏题&quot; class=&quot;headerlink&quot; title=&quot;web游戏题&quot;&gt;&lt;/a&gt;web游戏题&lt;/h3&gt;&lt;p&gt;提示：通关就有flag&lt;/p&gt;
-&lt;p&gt;尝试修改start_level，但是无法直接开始第10关&lt;/p&gt;
-&lt;p</summary>
-      
-    
-    
-    
-    <category term="CTF" scheme="http://h4m5t.github.io/categories/CTF/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>舆情分析-人物画像</title>
     <link href="http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/"/>
     <id>http://h4m5t.github.io/2022/11/27/2021-3-16-NLP/</id>
@@ -545,6 +521,30 @@
     
     
     <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>V&amp;N-CTF</title>
+    <link href="http://h4m5t.github.io/2022/11/27/2021-3-14-VN/"/>
+    <id>http://h4m5t.github.io/2022/11/27/2021-3-14-VN/</id>
+    <published>2022-11-26T16:35:34.771Z</published>
+    <updated>2021-03-14T15:54:49.844Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="web游戏题"><a href="#web游戏题" class="headerlink" title="web游戏题"></a>web游戏题</h3><p>提示：通关就有flag</p><p>尝试修改start_level，但是无法直接开始第10关</p><p>尝试修改死亡后reset的next_level，然后去送死，按下Esc,就是第二关。</p><p>却发现boss很难打，于是又修改人物参数：血量、飞镖数量等。</p><p><img src="https://i.loli.net/2021/03/14/8WzIQXblDZR3Nng.png" alt="image-20210314235011044"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Reset</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// load local storage</span></span><br><span class="line">    playerData = <span class="keyword">new</span> <span class="title class_">PlayerData</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>)</span><br><span class="line">        playerData.<span class="property">coins</span> = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_coins</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>)</span><br><span class="line">        warpLevel = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_warp</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>)</span><br><span class="line">        speedRunBestTime = <span class="built_in">parseInt</span>(<span class="variable language_">localStorage</span>.<span class="property">kbap_bestTime</span>, <span class="number">10</span>);</span><br><span class="line">    nextLevel = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://i.loli.net/2021/03/14/fcKorsJpBRiPVH3.png" alt="image-20210314235140421"></p><p>打败BOSS,获得flag。</p><p>这游戏挺好玩！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;web游戏题&quot;&gt;&lt;a href=&quot;#web游戏题&quot; class=&quot;headerlink&quot; title=&quot;web游戏题&quot;&gt;&lt;/a&gt;web游戏题&lt;/h3&gt;&lt;p&gt;提示：通关就有flag&lt;/p&gt;
+&lt;p&gt;尝试修改start_level，但是无法直接开始第10关&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    <category term="CTF" scheme="http://h4m5t.github.io/categories/CTF/"/>
     
     
   </entry>
