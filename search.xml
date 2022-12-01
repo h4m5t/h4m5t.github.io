@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>哈哈</title>
+      <link href="/2022/12/01/%E5%93%88%E5%93%88/"/>
+      <url>/2022/12/01/%E5%93%88%E5%93%88/</url>
+      
+        <content type="html"><![CDATA[<p>ss</p><p>加入图片测试：</p><p><img src="/../img/1.jpg" alt="hh"></p><p>touxiang:</p><p><img src="/../img/tou.jpg" alt="touxiang"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello</title>
       <link href="/2022/11/30/hello/"/>
       <url>/2022/11/30/hello/</url>
@@ -158,23 +171,27 @@
     
     
     <entry>
-      <title>记第一次挖矿</title>
-      <link href="/2022/11/27/2020-11-4-dig/"/>
-      <url>/2022/11/27/2020-11-4-dig/</url>
+      <title>云安全</title>
+      <link href="/2022/11/27/2020-12-18-security/"/>
+      <url>/2022/11/27/2020-12-18-security/</url>
       
-        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
       
       
       <categories>
           
-          <category> blog </category>
+          <category> 安全 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> hack </tag>
+            <tag> 云计算 </tag>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> 云安全 </tag>
             
         </tags>
       
@@ -208,27 +225,23 @@
     
     
     <entry>
-      <title>云安全</title>
-      <link href="/2022/11/27/2020-12-18-security/"/>
-      <url>/2022/11/27/2020-12-18-security/</url>
+      <title>记第一次挖矿</title>
+      <link href="/2022/11/27/2020-11-4-dig/"/>
+      <url>/2022/11/27/2020-11-4-dig/</url>
       
-        <content type="html"><![CDATA[<h3 id="阿里云安全助理工程师-ACA"><a href="#阿里云安全助理工程师-ACA" class="headerlink" title="阿里云安全助理工程师(ACA)"></a>阿里云安全助理工程师(ACA)</h3><p>斥资600大洋，学习了阿里云的云安全ACA，50多个课程都认真的听了一遍。感觉老师讲的不错，不是“只会读PPT”的那种。对阿里巴巴的云管理、云使用、云安全、云生态，有点一些了解。<br>当然，考试很简单。也算是考取的第一个专业证书吧，纪念一下。</p><img src="https://i.loli.net/2020/12/22/dqymzXM4V28hA53.png" alt="image-20201222211323725" style="zoom: 50%;" />]]></content>
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很早就听说过比特币，比特币作为一种全新理念的数字货币，在互联网上可谓风起云涌。自2009年始发以来，比特币价格飙升。</p><p>在我写下这篇博文的时候，比特币早已超过一万美元了。</p><p>与日常接触的货币不同，比特币的有限的，在它诞生的那刻就已经决定了。</p><blockquote><p>区块回报每产出21万个区块减半一次，周期大约为4年，最近一次减半在2020年5月12日28，而此种收敛等比数列的和必然是有限的，到2140年时，将不再有新的比特币产生，最终流通中的比特币将总是略低于2100万个。2019年5月12日时，比特币总存量约17,695,512个，实际可流通的量还会因为私钥丢失等因素更加减少。</p></blockquote><p>更有趣的是, 比特币的创始人到目前为止还是世界之谜, 真是太”低调”了.</p><p>当然,用PC来挖比特币是一件很不现实的事情,于是我转向了另一个币种:</p><p><strong>Monero</strong>,俗称门罗币.它是一个很出名的”匿名币”</p><h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><h4 id="首先-需要有一个自己的”钱包”"><a href="#首先-需要有一个自己的”钱包”" class="headerlink" title="首先,需要有一个自己的”钱包”."></a>首先,需要有一个自己的”钱包”.</h4><p>推荐使用官网提供的GUI,当然也可以找一些轻量级的”网页钱包”.</p><p>系统已经默认生成了以4开头的收款地址,可以将它理解为”银行卡卡号”</p><h4 id="找到矿池"><a href="#找到矿池" class="headerlink" title="找到矿池"></a>找到矿池</h4><p>先假设,你是一个淘金者,你想挖金子,可不是想挖就能挖,你肯定先找一个挖金公司,然后打工,付出劳动,获得回报.同理,我们要先找到一个矿池.</p><p>矿池很多,我找了一个国内比较出名:猫池.<code>https://c3pool.com</code></p><h4 id="设置挖矿程序"><a href="#设置挖矿程序" class="headerlink" title="设置挖矿程序"></a>设置挖矿程序</h4><p>挖金子还需要什么呢,哦,对了!我们还缺一把铲子!</p><p>我这里以xmrig作为挖矿程序.<code>https://github.com/xmrig/xmrig</code></p><p>把相应文件下载到服务器,做好配置文件(与选择的矿池有关),准备开挖!</p><p>在矿池页面可以看到,这个服务器的效率是很低的</p><p>于是我尝试在PC上挖矿.效率能达到服务器的十几倍.</p><p>经过连续几个小时的”CPU高强度作业”,终于有了一些收获.</p><p>预估了一下,24小时不间断连续挖一个月,大概能挖到2$的币.</p><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>在互联网世界,还有很多东西是可以探索的.</p><p>从第一次上网,第一次写出<code>hello,world!</code>第一次看<code>Youtube</code>,到”第一次挖矿”</p><p>很多东西,了解多一点,不是坏事.</p><p>但真正的挖矿,还是交给”真正有实力的矿工”去做吧.</p>]]></content>
       
       
       <categories>
           
-          <category> 安全 </category>
+          <category> blog </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 云计算 </tag>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> 云安全 </tag>
+            <tag> hack </tag>
             
         </tags>
       
@@ -318,33 +331,6 @@
     
     
     <entry>
-      <title>渗透Metasploitable2</title>
-      <link href="/2022/11/27/2021-3-17-kali/"/>
-      <url>/2022/11/27/2021-3-17-kali/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>Metasploitable2是一款很好的渗透测试靶机</p></blockquote><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>攻击机:kali    IP:192.168.211.140</p><p>目标主机:Metasploitable2   IP:192.168.211.132</p><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>1.使用命令msfconsole进入msf控制台</p><img src="https://i.loli.net/2021/03/17/xhgMnCZvJ3AlQyw.png" alt="image-20210317192744736" style="zoom:67%;" /><p>2.使用Nmap扫描,查看目标系统开放端口和服务.</p><img src="https://i.loli.net/2021/03/17/rKnzR1EZijmV7aH.png" alt="image-20210317193125963" style="zoom:67%;" /><p>3.根据扫描结果选择合适的exploit和payload</p><p>此次使用Samba3.0存在的漏洞进行攻击</p><p>**提示:**在rank栏选择great&#x2F;excellent的模块,会有很好效果,成功率更高.</p><img src="https://i.loli.net/2021/03/17/wyxbWKE4mLqVclX.png" alt="image-20210317193350796" style="zoom:67%;" /><p>4.使用攻击模块</p><p>选择exploit&#x2F;multi&#x2F;samba&#x2F;usermap_script</p><p>提示:使用info+模块 查看说明</p><img src="https://i.loli.net/2021/03/17/oZJirFMjk5HC3h6.png" alt="image-20210317194342573" style="zoom:67%;" /><p>show payloads,查看可用攻击载荷.</p><p>5.设置攻击载荷</p><p>set PAYLOAD cmd&#x2F;unix&#x2F;reverse</p><p>设置目标机IP及端口</p><p>设置攻击机IP</p><p><strong>注意</strong>:此处的端口号是漏洞服务对应的端口号,在Nmap那一步可以看到.</p><p>show options可以查看payload的配置,Required为不可缺参数</p><img src="https://i.loli.net/2021/03/17/7uTQKxsf6aHDdLp.png" alt="image-20210317195047700" style="zoom:67%;" /><p>6.使用expolit命令进行攻击</p><img src="https://i.loli.net/2021/03/17/T1SDBs5F8KPjOWi.png" alt="image-20210317195453218" style="zoom:67%;" /><p>已成功获取目标主机shell !</p><p>可以使用命令 uname -a 进行验证.</p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><ul><li>进一步获取目标系统信息</li><li>关闭目标系统杀毒软件</li><li>利用已攻陷的主机做为跳板&#x2F;肉鸡</li><li>后渗透（权限提升、横向提权、纵向提权）</li><li>留下后门</li><li>痕迹清除</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 渗透 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 渗透 </tag>
-            
-            <tag> 漏洞 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>leetcode15 - 3sum</title>
       <link href="/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/"/>
       <url>/2022/11/27/2021-3-18-%E7%AE%97%E6%B3%95/</url>
@@ -364,6 +350,33 @@
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>渗透Metasploitable2</title>
+      <link href="/2022/11/27/2021-3-17-kali/"/>
+      <url>/2022/11/27/2021-3-17-kali/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Metasploitable2是一款很好的渗透测试靶机</p></blockquote><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>攻击机:kali    IP:192.168.211.140</p><p>目标主机:Metasploitable2   IP:192.168.211.132</p><h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>1.使用命令msfconsole进入msf控制台</p><img src="https://i.loli.net/2021/03/17/xhgMnCZvJ3AlQyw.png" alt="image-20210317192744736" style="zoom:67%;" /><p>2.使用Nmap扫描,查看目标系统开放端口和服务.</p><img src="https://i.loli.net/2021/03/17/rKnzR1EZijmV7aH.png" alt="image-20210317193125963" style="zoom:67%;" /><p>3.根据扫描结果选择合适的exploit和payload</p><p>此次使用Samba3.0存在的漏洞进行攻击</p><p>**提示:**在rank栏选择great&#x2F;excellent的模块,会有很好效果,成功率更高.</p><img src="https://i.loli.net/2021/03/17/wyxbWKE4mLqVclX.png" alt="image-20210317193350796" style="zoom:67%;" /><p>4.使用攻击模块</p><p>选择exploit&#x2F;multi&#x2F;samba&#x2F;usermap_script</p><p>提示:使用info+模块 查看说明</p><img src="https://i.loli.net/2021/03/17/oZJirFMjk5HC3h6.png" alt="image-20210317194342573" style="zoom:67%;" /><p>show payloads,查看可用攻击载荷.</p><p>5.设置攻击载荷</p><p>set PAYLOAD cmd&#x2F;unix&#x2F;reverse</p><p>设置目标机IP及端口</p><p>设置攻击机IP</p><p><strong>注意</strong>:此处的端口号是漏洞服务对应的端口号,在Nmap那一步可以看到.</p><p>show options可以查看payload的配置,Required为不可缺参数</p><img src="https://i.loli.net/2021/03/17/7uTQKxsf6aHDdLp.png" alt="image-20210317195047700" style="zoom:67%;" /><p>6.使用expolit命令进行攻击</p><img src="https://i.loli.net/2021/03/17/T1SDBs5F8KPjOWi.png" alt="image-20210317195453218" style="zoom:67%;" /><p>已成功获取目标主机shell !</p><p>可以使用命令 uname -a 进行验证.</p><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><ul><li>进一步获取目标系统信息</li><li>关闭目标系统杀毒软件</li><li>利用已攻陷的主机做为跳板&#x2F;肉鸡</li><li>后渗透（权限提升、横向提权、纵向提权）</li><li>留下后门</li><li>痕迹清除</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 漏洞 </tag>
             
         </tags>
       
