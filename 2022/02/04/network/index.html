@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>network-security学习笔记 | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章：网络安全综述网络安全是建立在密码学以及协议设计的基础上的 网络安全的主要任务：  保障网络与系统 安全、可靠、高效、可控、持续地运行和被访问。 保障信息 机密、完整、不可否认、可认证地传输和使用。  ISO-OSI模型。 TCP&#x2F;IP模型  X.800 用一种或多种安全机制来实现安全服务，安全服务致力于抵御安全攻击。 主动攻击：  伪装 重放 篡改 拒绝服务  被动攻击：  窃听">
+<meta property="og:type" content="article">
+<meta property="og:title" content="network-security学习笔记">
+<meta property="og:url" content="http://h4m5t.github.io/2022/02/04/network/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="第一章：网络安全综述网络安全是建立在密码学以及协议设计的基础上的 网络安全的主要任务：  保障网络与系统 安全、可靠、高效、可控、持续地运行和被访问。 保障信息 机密、完整、不可否认、可认证地传输和使用。  ISO-OSI模型。 TCP&#x2F;IP模型  X.800 用一种或多种安全机制来实现安全服务，安全服务致力于抵御安全攻击。 主动攻击：  伪装 重放 篡改 拒绝服务  被动攻击：  窃听">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png">
+<meta property="article:published_time" content="2022-02-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-04T12:02:15.124Z">
+<meta property="article:author" content="h4m5t">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://h4m5t.github.io/2022/02/04/network/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'network-security学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-04 20:02:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">h4m5t's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">network-security学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-03T16:00:00.000Z" title="发表于 2022-02-04 00:00:00">2022-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-04T12:02:15.124Z" title="更新于 2022-12-04 20:02:15">2022-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="network-security学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="第一章：网络安全综述"><a href="#第一章：网络安全综述" class="headerlink" title="第一章：网络安全综述"></a>第一章：网络安全综述</h3><p>网络安全是建立在密码学以及协议设<br>计的基础上的</p>
+<p>网络安全的主要任务：</p>
+<ul>
+<li>保障网络与系统 安全、可靠、高效、可控、持续地运行和被访问。</li>
+<li>保障信息 机密、完整、不可否认、可认证地传输和使用。</li>
+</ul>
+<p>ISO-OSI模型。</p>
+<p>TCP&#x2F;IP模型</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/9dAn3ixbW4Q8vOh.png" alt="image-20210913194224992"></p>
+<p><strong>X.800</strong></p>
+<p>用一种或多种安全机制来实现安全服务，安全服务<br>致力于抵御安全攻击。</p>
+<p>主动攻击：</p>
+<ul>
+<li>伪装</li>
+<li>重放</li>
+<li>篡改</li>
+<li>拒绝服务</li>
+</ul>
+<p>被动攻击：</p>
+<ul>
+<li>窃听</li>
+<li>流量分析</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/3naZDNqwlg9tevy.png" alt="image-20210913194643371"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/XHVR9Zpfa8zgFCj.png" alt="image-20210913194651098"></p>
+<h3 id="第二章：公钥基础设施PKI"><a href="#第二章：公钥基础设施PKI" class="headerlink" title="第二章：公钥基础设施PKI"></a>第二章：公钥基础设施PKI</h3><p>1.公钥基础设施：PKI是一个用非对称密码算法原理和技术来实现并提供安全服务的具有通用性的<strong>安全基础设施</strong>。是一种遵循标准的利用公钥加密技术为电子商务的开展提供安全基础平台的<strong>技术和规范</strong>。能够为所有网络应用提供采用加密和数字签名等密码服务所需要的<strong>密钥和证书管理</strong>。</p>
+<p>2.功能（为什么需要PKI）</p>
+<p>对可信第三方的需要（CA）<br>电子政务、电子商务对信息传输的安全需求，统一标准<br>在收发双方建立信任关系，提供身份认证、数字签名、加密等安全服务<br>收发双方不需要事先共享密钥，通过公钥加密传输会话密钥</p>
+<p>3.证书的基本结构</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/hNSCUm76I4MxOGL.png" alt="image-20210913200921714" style="zoom:50%;" />
+
+
+
+<p>4.组成</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/hNSCUm76I4MxOGL.png" alt="image-20210913201019930" style="zoom:50%;" />
+
+
+
+<p>5.密钥备份和恢复系统：</p>
+<ul>
+<li>签名密钥对：签名私钥相当于日常生活中的印章效力，为保证其唯一性、抗<br>否认性，<strong>签名私钥不作备份</strong>。签名密钥的生命期较长。</li>
+<li>加密密钥对：加密密钥通常用于分发会话密钥，为防止密钥丢失时无法解密<br>数据，<strong>解密密钥应进行备份</strong>。这种密钥应频繁更换。</li>
+</ul>
+<p>6.交叉认证：</p>
+<p>多个PKI独立地运行，相互之间应建立信任关系</p>
+<p>对等CA互相签发</p>
+<p>7.PKI服务</p>
+<ul>
+<li>认证</li>
+<li>完整性</li>
+<li>保密性</li>
+<li>不可否认性服务</li>
+<li>公证服务</li>
+</ul>
+<p>8.常用的密码技术</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/zK7PNpDgb36ZJiy.png" alt="image-20210913200849982"></p>
+<p>机密性：数据加密（数字信封）</p>
+<p>信息发送端用接收端的公钥，将一个通信密钥(即对称密钥)给予加密，生成一个数字信封。接收端用自己的私钥打开数字信封，获取该对称密钥SK，用它来解读收到的信息。</p>
+<p>身份认证：数字签名</p>
+<p>对待发的数据首先生成一段数据摘要，再采用己方私钥基于非对称加密算法进行加密，结果附在原文上一起发送，接受方对其进行验证，判断原文真伪。这种数字签名适用于对大文件的处理，对于那些小文件的数据签名，则不预先做数据摘要，而直接将原文进行非对称加密处理。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/8ME9BfWIjDJYOec.png" alt="image-20210913203234717"></p>
+<p>完整性：数字签名+MAC</p>
+<p>不可否认性：数字签名+时间戳</p>
+<p>由于非对称密码的运算复杂、加&#x2F;解密速度慢，因此信息的加密采用对称密码<br>算法，其会话密钥的分发采用非对称密码算法，即采用收方的公钥对会话密<br>钥进行加密。</p>
+<p>报文检验码（消息认证码MAC）</p>
+<p>9.PKI功能操作</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/qRikpxLtbmevSK4.png" alt="image-20210913203710477"></p>
+<p>初始化</p>
+<ul>
+<li>终端实体注册</li>
+<li>密钥对产生（用户产生，CA产生，其他可信第三方产生）</li>
+<li>证书创建</li>
+<li>证书分发</li>
+<li>密钥备份</li>
+</ul>
+<p>10.生命周期</p>
+<ul>
+<li>证书获取</li>
+<li>证书验证——确定一个证书的有效性</li>
+<li>密钥恢复——对终端用户因为某种原因而丢失的<strong>加密密钥</strong>可以恢复，从CA或信任第三方处恢复</li>
+<li>密钥更新——当一个合法的密钥对将过期时，进行新的公&#x2F;私钥的自动产生和相应证书的颁发</li>
+</ul>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/jKIqVLdBDf9mErN.png" alt="image-20210913205553051" style="zoom:80%;" />
+
+
+
+
+
+<p>11.信任CA结构</p>
+<ul>
+<li>层次模型</li>
+<li>分布式信任结构模型</li>
+<li>桥式结构</li>
+<li>混合结构</li>
+</ul>
+<p>层次模型：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/bMj6Ot8GCWT1H4x.png" alt="image-20210913205835921"></p>
+<p>分布式模型：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/cbVHQY2hKjUoXiq.png" alt="image-20210913210007417"></p>
+<p>12.证书链</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/yCGjYx7pRMuhIqd.png" alt="image-20210913205905995"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/pvflzX9OgAWV6xQ.png" alt="image-20210913210043066"></p>
+<p>13.X.509</p>
+<p>为了解决X.500目录中的身份鉴别和访问控制问题而设计的。同时本身也采用目录的形式进行管理和访问。</p>
+<p>14.主要内容</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/DLVSdZAvPF1WGuw.png" alt="image-20210913210603513"></p>
+<p>15.CA</p>
+<p>PKI核心实体认证机构CA，为各个实体颁发电子证书，对实体身份信息和相应公钥数据进行数字签名，用以捆绑该实体的公钥和身份，以证明各实体在网上身份的真实性；并负责在交易中检验和管理证书.</p>
+<p>功能</p>
+<ul>
+<li>证书申请</li>
+<li>证书审批</li>
+<li>证书颁发</li>
+<li>证书撤销</li>
+<li>证书更新</li>
+<li>证书废止列表管理</li>
+<li>证书的归档</li>
+<li>CA自身的维护管理</li>
+<li>CA自身密钥管理</li>
+</ul>
+<h3 id="第三章：IPSec-AH和ESP"><a href="#第三章：IPSec-AH和ESP" class="headerlink" title="第三章：IPSec-AH和ESP"></a>第三章：IPSec-AH和ESP</h3><p>1.IPv4和IPv6</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/o1dMQ9qNkyS3hbL.png" alt="image-20210914224817924" style="zoom: 67%;" />
+
+
+
+<p>2.安全组合SA</p>
+<p>为使通信双方的认证&#x2F;加密算法及其参数、密钥的一致，相互间建立的联系被称为安全组合或安全关联（Security Association）</p>
+<p>SA是单向的，在双向通信时要建立两个SA</p>
+<p>安全关联数据库（SAD）</p>
+<p>安全策略数据库（SPD）</p>
+<p>SA由一个三元组唯一地标识，该三元组为安全参数索引SPI、一个<br>用于输出处理的目的IP地址和协议（如AH或ESP）</p>
+<p>3.认证头标AH</p>
+<ul>
+<li>AH协议提供无连接的完整性、数据源认证和抗重放保护服务</li>
+<li>不提供保密性服务</li>
+<li>AH使用消息认证码（MAC）对IP进行认证</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/BWHeyNro9dh3YxD.png" alt="image-20210915000523376"></p>
+<p>序列号的使用：防止重放。</p>
+<p>认证头标：完整性校验。</p>
+<p>AH外出处理和进入处理</p>
+<p>4.封装安全载荷ESP</p>
+<ul>
+<li>ESP提供数据保密、抗重播服务、无连接完整<br>性（可选）</li>
+<li>ESP大都采用对称密码体制加密数据</li>
+<li>ESP使用消息认证码（MAC）提供认证服务</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/dKOposuE4BMUtGT.png" alt="image-20210915001552673"></p>
+<p>填充的目的：</p>
+<ul>
+<li>加密算法要求明文为某个数目字节的整数倍；</li>
+<li>32位对齐；</li>
+<li>隐藏实际载荷长度，提供流量保密性</li>
+</ul>
+<p>ESP外出处理，进入处理。</p>
+<p>5.传输模式和隧道模式</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/ykhDB23V76WCEoF.png" alt="image-20210915003245428"></p>
+<p>6.IPsec和NAT</p>
+<p>IPsec优点：</p>
+<ul>
+<li>对边界所有流量强制实现安全性，内部网络无需关注开销；</li>
+<li>对上层协议、终端用户透明、</li>
+<li>构建安全的虚拟专用网</li>
+</ul>
+<p>具有AH头标或ESP头标的的IP分组不能穿越NAT和NATPT</p>
+<p>7.IPSec隧道模式的应用-VPN</p>
+<p>VPN 的种类、功能</p>
+<p>8.IPsec的实现</p>
+<p>IPSec VPN 的处理流程</p>
+<h3 id="第四章：IPSec-IKE"><a href="#第四章：IPSec-IKE" class="headerlink" title="第四章：IPSec-IKE"></a>第四章：IPSec-IKE</h3><p>因特网密钥交换协议，是一个以受保护的方式<strong>动态协商IPsec SA</strong>的协议。</p>
+<p>功能：使用某种<strong>长期密钥</strong>进行双向认证并建立<strong>会话密钥</strong></p>
+<p>主模式，野蛮模式。</p>
+<p> IKEv1， IKEv2</p>
+<h3 id="第五章：SSL-x2F-TLS基本协议"><a href="#第五章：SSL-x2F-TLS基本协议" class="headerlink" title="第五章：SSL&#x2F;TLS基本协议"></a>第五章：SSL&#x2F;TLS基本协议</h3><p>SSL （Secure Socket Layer）是一种在TCP协议之上为两个端实体（End Entity）之间提供安全通道的协议。</p>
+<p>具有保护传输数据以及识别通信实体的功能。安全通道是透明的，独立于应用层；传输层采用TCP，提供可靠业务</p>
+<p>SSL功能：</p>
+<ul>
+<li>客户对服务器的身份认证</li>
+<li>服务器对客户的身份认证</li>
+<li>建立服务器与客户之间安全的数据通道</li>
+</ul>
+<p>SSL工作原理：</p>
+<ul>
+<li>采用握手协议建立客户与服务器之间的安全通道，该协议包括双方的相互认证，交换密钥参数</li>
+<li>采用告警协议向对端指示其安全错误</li>
+<li>采用改变密码规格协议告知改变密码参数</li>
+<li>采用记录协议封装以上三种协议或应用层数据</li>
+</ul>
+<h3 id="第六章：防火墙与NAT"><a href="#第六章：防火墙与NAT" class="headerlink" title="第六章：防火墙与NAT"></a>第六章：防火墙与NAT</h3><p>1.定义 防火墙是位于两个(或多个)网络间，实施网间访问控制的一组组件的集合</p>
+<p>防火墙 &#x3D; 硬件 + 软件 + 控制策略</p>
+<p>设计目标：</p>
+<ul>
+<li>内部和外部之间的所有网络数据流必须经过防火墙；</li>
+<li>只有符合安全政策的数据流才能通过防火墙；</li>
+<li>防火墙自身能抗攻击；</li>
+</ul>
+<p>防火墙的必要性：</p>
+<ul>
+<li>保护内部不受来自Internet的攻击</li>
+<li>创建安全域</li>
+<li>强化机构安全策略</li>
+</ul>
+<p>防火墙的要求（两个要求存在矛盾性）：</p>
+<ul>
+<li>保障内部网安全</li>
+<li>保证内部网同外部网的连通</li>
+</ul>
+<p>2.分类</p>
+<p>包过滤型防火墙</p>
+<p>针对包过滤型防火墙的攻击</p>
+<p>状态检测型防火墙（参见百度百科）</p>
+<p>状态检测防火墙在网络层有一个检查引擎截获数据包并抽取出与应用层状态有关的信息，并以此为依据决定对该连接是接受还是拒绝。</p>
+<p>应用级网关型防火墙</p>
+<p>代理服务型防火墙</p>
+<p>复合型防火墙</p>
+<p>安全缺省策略：</p>
+<ul>
+<li><p>一切未被禁止的就是允许的</p>
+</li>
+<li><p>一切未被允许的就是禁止的（RFC2979推荐）</p>
+</li>
+</ul>
+<p>3.功能</p>
+<ul>
+<li>访问控制：隔断、过滤、代理</li>
+<li>加密</li>
+<li>授权认证</li>
+<li>地址翻译（NAT）</li>
+<li>VPN</li>
+<li>负载均衡</li>
+<li>内容安全：病毒扫描(特征码)、URL扫描、HTTP过滤</li>
+<li>日志记帐、审计报警</li>
+</ul>
+<p>4.NAT 基本原理、作用</p>
+<p>Network Address Translation</p>
+<p>NAT技术可以在路由器(边界)、防火墙上实现内外地址的翻译工作</p>
+<p>类型：</p>
+<ul>
+<li>源网络地址转换（Source NAT，缩写为SNAT），即IP伪装（masquerade）</li>
+<li>目的网络地址转换（Destination NAT，缩写为DNAT）</li>
+</ul>
+<p>作用：</p>
+<p>SNAT</p>
+<ul>
+<li>复用内部的全局地址，解缓IP地址不足的压力</li>
+<li>向外部网络隐藏内部网络的IP地址</li>
+</ul>
+<p>DNAT</p>
+<ul>
+<li>在实现SNAT的环境下进行有效的服务访问</li>
+<li>流量均衡</li>
+</ul>
+<p>NAT工作原理：</p>
+<p>SNAT工作原理</p>
+<p>实现方式：</p>
+<ul>
+<li>静态NAT（一一对应）</li>
+<li>动态NAT（多对多）</li>
+<li>过载（一对多）</li>
+</ul>
+<h3 id="第七章：虚拟专用网VPN"><a href="#第七章：虚拟专用网VPN" class="headerlink" title="第七章：虚拟专用网VPN"></a>第七章：虚拟专用网VPN</h3><p>所需技术：</p>
+<ul>
+<li>隧道技术</li>
+<li>加解密技术</li>
+<li>密钥管理技术</li>
+<li>认证技术</li>
+<li>访问控制</li>
+</ul>
+<p>分类：</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/V4UZSWYbT3NICLO.png" alt="image-20210916203559024" style="zoom: 50%;" />
+
+<p>IPSec VPN </p>
+<ul>
+<li>AH 协议提供信息源验证和完整性保证；</li>
+<li>ESP 协议提供信息源验证、机密性和完整性保证；</li>
+<li>IKE提供密钥协商</li>
+</ul>
+<h3 id="第八章：应用层安全协议"><a href="#第八章：应用层安全协议" class="headerlink" title="第八章：应用层安全协议"></a>第八章：应用层安全协议</h3><p>电子邮件安全协议：</p>
+<ul>
+<li>PEM</li>
+<li>S&#x2F;MIME</li>
+<li>PGP</li>
+<li>SMTP</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/vBzk5jb3mchOQW9.png" alt="image-20210916204440621"></p>
+<p>签名、压缩、加密</p>
+<p>若超过标准长度，则PGP自动对报文分段，接收端再重组。</p>
+<p>PGP虽然采用公钥密码体系，但不是基于PKI证书体系</p>
+<p>S&#x2F;MIME使用X.509证书，它的密钥管理方案介于严格的X.509证书层次结构和PGP信任网之间</p>
+<p>SSH</p>
+<p>HTTPS((http over SSL)</p>
+<p>安全电子交易协议SET（Secure Electronic Transaction）</p>
+<p>SET提供了消费者、商家和银行之间的认证，确保了网上交易数据的保密性，数据的完整性以及交易的不可抵赖性。</p>
+<p>SET采用公钥密码体制，遵循X.509数字证书标准</p>
+<p>双重数字签名</p>
+<h3 id="第九章：无线局域网安全"><a href="#第九章：无线局域网安全" class="headerlink" title="第九章：无线局域网安全"></a>第九章：无线局域网安全</h3><p>1.无线网络的分类</p>
+<ul>
+<li>无线广域网（WWAN）</li>
+<li>无线城域网（WMAN）</li>
+<li>无线局域网（WLAN）Wireless Local Area Network</li>
+<li>无线个人网（WPAN）</li>
+</ul>
+<p>2.WLAN建立的方式</p>
+<ul>
+<li>Ad-hoc Mode</li>
+<li>Infrastructure Mode</li>
+</ul>
+<p>3.WLAN的安全需求</p>
+<p>WLAN安全机制</p>
+<ul>
+<li>用户认证</li>
+<li>用户授权</li>
+<li>数据安全</li>
+</ul>
+<p>802.11 的安全机制</p>
+<ul>
+<li>身份认证</li>
+<li>数据机密性</li>
+<li>数据完整性</li>
+</ul>
+<p>WEP协议（有线等效保密协议）</p>
+<p>功能：访问控制，数据保密性</p>
+<p>802.11的安全增强</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/TXoBc2NfMj16ls7.png" alt="image-20210917091147265" style="zoom:67%;" />
+
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/SWRCJfDHQzj5VEN.png" alt="image-20210917092310657" style="zoom:67%;" />
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>安全机制实现安全服务，安全服务抵御安全攻击。</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/XkBRKT8uEWjYpnN.png" alt="image-20211217161559825" style="zoom:67%;" />
+
+<p>防火墙设计目标：</p>
+<ul>
+<li>内部和外部之间的所有网络数据流必须经过防火墙；</li>
+<li>只有符合安全政策的数据流才能通过防火墙；</li>
+<li>防火墙自身能抗攻击；</li>
+</ul>
+<p>防火墙的控制能力：</p>
+<ul>
+<li>服务控制</li>
+<li>方向控制</li>
+<li>用户控制</li>
+<li>行为控制</li>
+</ul>
+<p>包过滤防火墙在（网络层）上进行检测，在（路由器）上实现。</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/1i7PEv6InzcfU9h.png" alt="image-20211219145112895" style="zoom:67%;" />
+
+<p>IKE的功能：使用某种<strong>长期密钥</strong>进行双向认证并建立<strong>会话密钥</strong></p>
+<p>IKE是一个是一个以受保护的方式<strong>动态协商IPsec SA</strong>的协议</p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/7vSJnH9fz1mwtFy.png" alt="image-20211219154048173" style="zoom:67%;" />
+
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/F1E85HSVDLQMobq.png" alt="image-20211219160229356" style="zoom:67%;" />
+
+<p>选择符。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/tAloZHvfS6DFyTq.png" alt="image-20211219161713558"></p>
+<p>电子邮件安全协议</p>
+<ul>
+<li>PEM</li>
+<li>S&#x2F;MIME</li>
+<li>PGP</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/ob7WaATp9jD5OBJ.png" alt="image-20211219165020483"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/aZBoRKhuwN5xQvr.png" alt="image-20211219181615499"></p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/TJRdrDHY1jazyQM.png" alt="image-20211219184746390" style="zoom: 50%;" />
+
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/ONRy2mrbdkYZuIa.png" alt="image-20211219190204120" style="zoom:67%;" />
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/mxIhQ7VDeK31Wda.png" alt="image-20211219191438417"></p>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/MpsmP5i9QUWXTA2.png" alt="image-20211219200652506" style="zoom:67%;" />
+
+<p>WEP：有线等效保密协议</p>
+<p>WEP功能：</p>
+<ul>
+<li>访问控制</li>
+<li>数据保密性</li>
+</ul>
+<img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/yu2oqjXaIC6dmQE.png" alt="image-20211220155923021" style="zoom:67%;" />
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://s2.loli.net/2022/02/04/HLapO6CK7EF8kUd.png" alt="image-20211220163158572"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2022/02/04/network/">http://h4m5t.github.io/2022/02/04/network/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/14/rsa/"><img class="prev-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Attacks on the RSA Cryptosystem</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/22/DVWA/"><img class="next-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">DVWA靶场记录</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">h4m5t</div><div class="author-info__description">人生得意需尽欢</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://twitter.com/Baidu_Inc" target="_blank" title="Baidu"><i class="fab fa-twitter"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">welcome!~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%BB%BC%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">第一章：网络安全综述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E5%85%AC%E9%92%A5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BDPKI"><span class="toc-number">2.</span> <span class="toc-text">第二章：公钥基础设施PKI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9AIPSec-AH%E5%92%8CESP"><span class="toc-number">3.</span> <span class="toc-text">第三章：IPSec-AH和ESP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9AIPSec-IKE"><span class="toc-number">4.</span> <span class="toc-text">第四章：IPSec-IKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%9ASSL-x2F-TLS%E5%9F%BA%E6%9C%AC%E5%8D%8F%E8%AE%AE"><span class="toc-number">5.</span> <span class="toc-text">第五章：SSL&#x2F;TLS基本协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E9%98%B2%E7%81%AB%E5%A2%99%E4%B8%8ENAT"><span class="toc-number">6.</span> <span class="toc-text">第六章：防火墙与NAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9A%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91VPN"><span class="toc-number">7.</span> <span class="toc-text">第七章：虚拟专用网VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%9A%E5%BA%94%E7%94%A8%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">8.</span> <span class="toc-text">第八章：应用层安全协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%9A%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91%E5%AE%89%E5%85%A8"><span class="toc-number">9.</span> <span class="toc-text">第九章：无线局域网安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">10.</span> <span class="toc-text">其他</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/hello-world/" title="Hello World"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/12/31/hello-world/" title="Hello World">Hello World</a><time datetime="2022-12-30T16:00:00.000Z" title="发表于 2022-12-31 00:00:00">2022-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/dier2/" title="dier2"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dier2"/></a><div class="content"><a class="title" href="/2022/12/04/dier2/" title="dier2">dier2</a><time datetime="2022-12-04T11:53:38.000Z" title="发表于 2022-12-04 19:53:38">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/tes1/" title="tes1"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tes1"/></a><div class="content"><a class="title" href="/2022/12/04/tes1/" title="tes1">tes1</a><time datetime="2022-12-04T11:40:22.000Z" title="发表于 2022-12-04 19:40:22">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片测试"/></a><div class="content"><a class="title" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试">图片测试</a><time datetime="2022-12-01T14:12:21.000Z" title="发表于 2022-12-01 22:12:21">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python安全开发"/></a><div class="content"><a class="title" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发">python安全开发</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By h4m5t</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

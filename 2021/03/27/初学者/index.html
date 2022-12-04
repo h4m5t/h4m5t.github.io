@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>渗透测试初学者笔记 | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学校图书馆借了一本书《渗透测试完全初学者指南》，讲的很基础，对初学者很友好，略作笔记。  第五章-信息收集开源情报 Netcraft whois DNS侦察 nslookup host 区域传输   邮件地址 Maltego  端口扫描 手动 nmap  第六章-漏洞检测 Nmap Nessus 扫描策略 进行扫描 漏洞评级 扫描器的必要性 导出结果   Nmap脚本引擎（NSE）(&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渗透测试初学者笔记">
+<meta property="og:url" content="http://h4m5t.github.io/2021/03/27/%E5%88%9D%E5%AD%A6%E8%80%85/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="学校图书馆借了一本书《渗透测试完全初学者指南》，讲的很基础，对初学者很友好，略作笔记。  第五章-信息收集开源情报 Netcraft whois DNS侦察 nslookup host 区域传输   邮件地址 Maltego  端口扫描 手动 nmap  第六章-漏洞检测 Nmap Nessus 扫描策略 进行扫描 漏洞评级 扫描器的必要性 导出结果   Nmap脚本引擎（NSE）(&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png">
+<meta property="article:published_time" content="2021-03-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-04T11:57:39.553Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="渗透">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://h4m5t.github.io/2021/03/27/%E5%88%9D%E5%AD%A6%E8%80%85/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '渗透测试初学者笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-04 19:57:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">h4m5t's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">渗透测试初学者笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-26T16:00:00.000Z" title="发表于 2021-03-27 00:00:00">2021-03-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-04T11:57:39.553Z" title="更新于 2022-12-04 19:57:39">2022-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">508</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="渗透测试初学者笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>学校图书馆借了一本书《渗透测试完全初学者指南》，讲的很基础，对初学者很友好，略作笔记。</p>
+</blockquote>
+<h3 id="第五章-信息收集"><a href="#第五章-信息收集" class="headerlink" title="第五章-信息收集"></a>第五章-信息收集</h3><h4 id="开源情报"><a href="#开源情报" class="headerlink" title="开源情报"></a>开源情报</h4><ul>
+<li>Netcraft</li>
+<li>whois</li>
+<li>DNS侦察<ul>
+<li>nslookup</li>
+<li>host</li>
+<li>区域传输</li>
+</ul>
+</li>
+<li>邮件地址</li>
+<li>Maltego</li>
+</ul>
+<h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><ul>
+<li>手动</li>
+<li>nmap</li>
+</ul>
+<h3 id="第六章-漏洞检测"><a href="#第六章-漏洞检测" class="headerlink" title="第六章-漏洞检测"></a>第六章-漏洞检测</h3><ul>
+<li>Nmap</li>
+<li>Nessus<ul>
+<li>扫描策略</li>
+<li>进行扫描</li>
+<li>漏洞评级</li>
+<li>扫描器的必要性</li>
+<li>导出结果</li>
+</ul>
+</li>
+<li>Nmap脚本引擎（NSE）(&#x2F;usr&#x2F;share&#x2F;nmap&#x2F;scripts)</li>
+<li>metasploit</li>
+<li>nikto</li>
+<li>人工分析</li>
+</ul>
+<h3 id="第七章-流量捕获"><a href="#第七章-流量捕获" class="headerlink" title="第七章-流量捕获"></a>第七章-流量捕获</h3><ul>
+<li>Wireshark</li>
+<li>ARP缓存攻击</li>
+<li>DNS缓存攻击</li>
+<li>SSL攻击</li>
+<li>SSL Stripping</li>
+</ul>
+<h3 id="第八章-漏洞利用"><a href="#第八章-漏洞利用" class="headerlink" title="第八章-漏洞利用"></a>第八章-漏洞利用</h3><ul>
+<li>MS-08-067</li>
+<li>WebDAV</li>
+<li>phpMyAdmin</li>
+<li>下载敏感文件</li>
+<li>第三方软件漏洞</li>
+<li>攻击第三方Web应用</li>
+<li>攻击系统服务缺陷</li>
+<li>攻击开源NFS漏洞</li>
+</ul>
+<h3 id="第九章-密码攻击"><a href="#第九章-密码攻击" class="headerlink" title="第九章-密码攻击"></a>第九章-密码攻击</h3><ul>
+<li>密码管理</li>
+<li>在线密码攻击<ul>
+<li>字典</li>
+<li>Hydra</li>
+</ul>
+</li>
+<li>离线密码攻击<ul>
+<li>还原Windows SAM哈希值</li>
+<li>提取哈希</li>
+<li>LM\NTLM算法</li>
+<li>破解 linux密码</li>
+<li>破解配置文件密码</li>
+<li>彩虹表</li>
+<li>在线密码破解</li>
+<li>Windows Credential Editor提取内存中的密码明文</li>
+</ul>
+</li>
+</ul>
+<h3 id="第十章-客户端攻击"><a href="#第十章-客户端攻击" class="headerlink" title="第十章-客户端攻击"></a>第十章-客户端攻击</h3><ul>
+<li>metasploit</li>
+<li>浏览器漏洞</li>
+<li>PDF漏洞</li>
+<li>Java漏洞</li>
+<li>Brower_autopwn</li>
+<li>Winamp</li>
+</ul>
+<h3 id="第十一章-社会工程学"><a href="#第十一章-社会工程学" class="headerlink" title="第十一章-社会工程学"></a>第十一章-社会工程学</h3><ul>
+<li>SET</li>
+<li>鱼叉式钓鱼攻击</li>
+<li>web攻击</li>
+<li>群发邮件攻击</li>
+<li>组合攻击</li>
+</ul>
+<h3 id="第十二章-免杀"><a href="#第十二章-免杀" class="headerlink" title="第十二章-免杀"></a>第十二章-免杀</h3><ul>
+<li>杀毒软件原理</li>
+<li>规避杀毒软件</li>
+</ul>
+<h3 id="第十三章-深度渗透"><a href="#第十三章-深度渗透" class="headerlink" title="第十三章-深度渗透"></a>第十三章-深度渗透</h3><ul>
+<li>Meterpreter</li>
+<li>本地权限提升</li>
+<li>本地信息收集</li>
+<li>横向移动</li>
+<li>跳板</li>
+<li>持久化</li>
+</ul>
+<h3 id="第十四章-Web应用测试"><a href="#第十四章-Web应用测试" class="headerlink" title="第十四章-Web应用测试"></a>第十四章-Web应用测试</h3><ul>
+<li>Burp</li>
+<li>SQL注入</li>
+<li>Xpath注入</li>
+<li>本地文件包含</li>
+<li>远程文件包含</li>
+<li>命令执行</li>
+<li>跨站脚本</li>
+<li>跨站请求伪造</li>
+</ul>
+<h3 id="第十五章-攻击无线网络"><a href="#第十五章-攻击无线网络" class="headerlink" title="第十五章-攻击无线网络"></a>第十五章-攻击无线网络</h3><h3 id="第十六章-缓冲区溢出"><a href="#第十六章-缓冲区溢出" class="headerlink" title="第十六章-缓冲区溢出"></a>第十六章-缓冲区溢出</h3><h3 id="第十八章-SEH覆盖"><a href="#第十八章-SEH覆盖" class="headerlink" title="第十八章-SEH覆盖"></a>第十八章-SEH覆盖</h3><h3 id="第十九章-其他"><a href="#第十九章-其他" class="headerlink" title="第十九章-其他"></a>第十九章-其他</h3><ul>
+<li>模糊测试</li>
+<li>移植代码</li>
+<li>MSF模块编写</li>
+<li>攻击缓解</li>
+</ul>
+<h3 id="第十九章-智能收集渗透"><a href="#第十九章-智能收集渗透" class="headerlink" title="第十九章-智能收集渗透"></a>第十九章-智能收集渗透</h3><ul>
+<li>移动设备攻击向量</li>
+<li>智能手机渗透框架</li>
+<li>远程攻击</li>
+<li>客户端攻击</li>
+<li>恶意应用程序</li>
+<li>移动平台渗透</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2021/03/27/%E5%88%9D%E5%AD%A6%E8%80%85/">http://h4m5t.github.io/2021/03/27/%E5%88%9D%E5%AD%A6%E8%80%85/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></div><div class="post_share"><div class="social-share" data-image="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/03/30/360/"><img class="prev-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">360安全工程师面试（实习）</div></div></a></div><div class="next-post pull-right"><a href="/2021/03/26/meituan/"><img class="next-cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">美团安全工程师面试（实习）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/02/16/%E7%BA%A2%E9%98%9F/" title="红队和渗透测试"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-16</div><div class="title">红队和渗透测试</div></div></a></div><div><a href="/2021/02/21/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" title="渗透测试之信息收集"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-21</div><div class="title">渗透测试之信息收集</div></div></a></div><div><a href="/2021/03/17/kali/" title="渗透Metasploitable2"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-17</div><div class="title">渗透Metasploitable2</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">h4m5t</div><div class="author-info__description">人生得意需尽欢</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="https://twitter.com/Baidu_Inc" target="_blank" title="Baidu"><i class="fab fa-twitter"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">welcome!~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">第五章-信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5"><span class="toc-number">1.1.</span> <span class="toc-text">开源情报</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-number">1.2.</span> <span class="toc-text">端口扫描</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B"><span class="toc-number">2.</span> <span class="toc-text">第六章-漏洞检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E9%87%8F%E6%8D%95%E8%8E%B7"><span class="toc-number">3.</span> <span class="toc-text">第七章-流量捕获</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">第八章-漏洞利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%AF%86%E7%A0%81%E6%94%BB%E5%87%BB"><span class="toc-number">5.</span> <span class="toc-text">第九章-密码攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%94%BB%E5%87%BB"><span class="toc-number">6.</span> <span class="toc-text">第十章-客户端攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6"><span class="toc-number">7.</span> <span class="toc-text">第十一章-社会工程学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E5%85%8D%E6%9D%80"><span class="toc-number">8.</span> <span class="toc-text">第十二章-免杀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E6%B7%B1%E5%BA%A6%E6%B8%97%E9%80%8F"><span class="toc-number">9.</span> <span class="toc-text">第十三章-深度渗透</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-Web%E5%BA%94%E7%94%A8%E6%B5%8B%E8%AF%95"><span class="toc-number">10.</span> <span class="toc-text">第十四章-Web应用测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E6%94%BB%E5%87%BB%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-number">11.</span> <span class="toc-text">第十五章-攻击无线网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA"><span class="toc-number">12.</span> <span class="toc-text">第十六章-缓冲区溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-SEH%E8%A6%86%E7%9B%96"><span class="toc-number">13.</span> <span class="toc-text">第十八章-SEH覆盖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E5%85%B6%E4%BB%96"><span class="toc-number">14.</span> <span class="toc-text">第十九章-其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0-%E6%99%BA%E8%83%BD%E6%94%B6%E9%9B%86%E6%B8%97%E9%80%8F"><span class="toc-number">15.</span> <span class="toc-text">第十九章-智能收集渗透</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/hello-world/" title="Hello World"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/12/31/hello-world/" title="Hello World">Hello World</a><time datetime="2022-12-30T16:00:00.000Z" title="发表于 2022-12-31 00:00:00">2022-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/dier2/" title="dier2"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dier2"/></a><div class="content"><a class="title" href="/2022/12/04/dier2/" title="dier2">dier2</a><time datetime="2022-12-04T11:53:38.000Z" title="发表于 2022-12-04 19:53:38">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/04/tes1/" title="tes1"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tes1"/></a><div class="content"><a class="title" href="/2022/12/04/tes1/" title="tes1">tes1</a><time datetime="2022-12-04T11:40:22.000Z" title="发表于 2022-12-04 19:40:22">2022-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片测试"/></a><div class="content"><a class="title" href="/2022/12/01/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/" title="图片测试">图片测试</a><time datetime="2022-12-01T14:12:21.000Z" title="发表于 2022-12-01 22:12:21">2022-12-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发"><img src= "/img/loading.gif" data-lazy-src="https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python安全开发"/></a><div class="content"><a class="title" href="/2022/08/23/%E6%98%A5%E6%8B%9B/" title="python安全开发">python安全开发</a><time datetime="2022-08-22T16:00:00.000Z" title="发表于 2022-08-23 00:00:00">2022-08-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://fastly.jsdelivr.net/gh/jerryc127/CDN/img/material-4.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By h4m5t</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
