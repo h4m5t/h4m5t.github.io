@@ -2,7 +2,14 @@
 
 > 记录一些博客配置和使用方面的问题。
 
+生成和推送
+
+```
+hexo clean && hexo g && hexo d
+```
+
 提交的文件没有README.md
+
 ```
 skip_render: README.md # 不把README.md解析为html
 ```
