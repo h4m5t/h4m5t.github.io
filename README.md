@@ -1,4 +1,5 @@
 # My Blog
+github-pages + Hexo + Butterfly theme
 
 > 记录一些博客配置和使用方面的问题。
 
