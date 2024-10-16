@@ -1,0 +1,797 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记录前端学习--HTML | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="学习路线先学习基础部分，即web三件套  HTML负责结构，网页想要表达的内容由html书写。 CSS负责样式，网页的美与丑由它来控制。 JS负责交互，用户和网页产生的互动由它来控制。  然后学习框架，即“大前端开发”  vue React angular  另外学习其他知识  浏览器 网络 webpack  HTML 超文本标记语言（HyperText Markup Language，简称：HT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录前端学习--HTML">
+<meta property="og:url" content="http://h4m5t.github.io/2021/01/20/%E5%89%8D%E7%AB%AFhtml/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="学习路线先学习基础部分，即web三件套  HTML负责结构，网页想要表达的内容由html书写。 CSS负责样式，网页的美与丑由它来控制。 JS负责交互，用户和网页产生的互动由它来控制。  然后学习框架，即“大前端开发”  vue React angular  另外学习其他知识  浏览器 网络 webpack  HTML 超文本标记语言（HyperText Markup Language，简称：HT">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp">
+<meta property="article:published_time" content="2021-01-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-16T10:32:40.000Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp"><link rel="shortcut icon" href="/img/icon-H.png"><link rel="canonical" href="http://h4m5t.github.io/2021/01/20/%E5%89%8D%E7%AB%AFhtml/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记录前端学习--HTML',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-16 18:32:40'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="h4m5t's Blog"><span class="site-name">h4m5t's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">记录前端学习--HTML</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-20T16:00:00.000Z" title="发表于 2021-01-21 00:00:00">2021-01-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-16T10:32:40.000Z" title="更新于 2024-10-16 18:32:40">2024-10-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="记录前端学习--HTML"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h3><p>先学习基础部分，即web三件套</p>
+<ul>
+<li>HTML负责结构，网页想要表达的内容由html书写。</li>
+<li>CSS负责样式，网页的美与丑由它来控制。</li>
+<li>JS负责交互，用户和网页产生的互动由它来控制。</li>
+</ul>
+<p>然后学习框架，即“大前端开发”</p>
+<ul>
+<li>vue</li>
+<li>React</li>
+<li>angular</li>
+</ul>
+<p>另外学习其他知识</p>
+<ul>
+<li>浏览器</li>
+<li>网络</li>
+<li>webpack</li>
+</ul>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><blockquote>
+<p>超文本标记语言（HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> * @Author: h4m5t</span></span><br><span class="line"><span class="comment"> * @Date: 2021-01-21 10:11:09</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2021-01-21 20:23:30</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个程序<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--编码以及屏幕自适应--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;测试&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--网页自动跳转--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;https://dydhzj.xyz&quot;&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;tupian&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 表示在新的标签页 打开页面--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://dydhzj.xyz&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>这是我的博客链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>语义与呈现分离</strong></p>
+<p>是一句常见的熟语、一种设计哲学，同时也是在多种出版技术纪律中应用的一种方法学，涉及到信息检索、模板处理、网页设计、网页程序设计、文字处理、桌面出版、模型驱动开发等出版领域。其为关注点分离这个更加宽泛的哲学的特例。一篇文档的实际内容和意义，与这篇文档呈现给读者的方式，是相互独立的。</p>
+<ul>
+<li>HTML 负责内容结构和含义，内容呈现交给 CSS</li>
+</ul>
+<p><strong>HTML语义化的优点</strong></p>
+<ol>
+<li>便于浏览器解析器解析</li>
+<li>便于搜索引擎解析</li>
+<li>在没有css的情况下，也以一种文档格式显式，并且是容易阅读的</li>
+<li>结构良好，更容易将网站分块；便于阅读，开发和后期维护</li>
+</ol>
+<h4 id="1-文档与元数据元素"><a href="#1-文档与元数据元素" class="headerlink" title="1. 文档与元数据元素"></a>1. 文档与元数据元素</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">base</td>
+<td align="left">相对 URL 基础</td>
+<td align="left">元数据</td>
+</tr>
+<tr>
+<td align="left">body</td>
+<td align="left">HTML 文档内容</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">DOCTYPE</td>
+<td align="left">HTML 开始</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">head</td>
+<td align="left">HTML 文档元数据</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">html</td>
+<td align="left">HTML 文档 html 部分</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">link</td>
+<td align="left">外部链接的关系</td>
+<td align="left">元数据</td>
+</tr>
+<tr>
+<td align="left">meta</td>
+<td align="left">文档信息</td>
+<td align="left">元数据</td>
+</tr>
+<tr>
+<td align="left">noscript</td>
+<td align="left">禁用脚本</td>
+<td align="left">元数据、短语</td>
+</tr>
+<tr>
+<td align="left">script</td>
+<td align="left">脚本</td>
+<td align="left">元数据、短语</td>
+</tr>
+<tr>
+<td align="left">style</td>
+<td align="left">CSS 样式</td>
+<td align="left">元数据</td>
+</tr>
+<tr>
+<td align="left">title</td>
+<td align="left">文档标题</td>
+<td align="left">元数据</td>
+</tr>
+</tbody></table>
+<h4 id="2-文本元素"><a href="#2-文本元素" class="headerlink" title="2. 文本元素"></a>2. 文本元素</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">a</td>
+<td align="left">超链接</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">abbr</td>
+<td align="left">缩略语</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">b</td>
+<td align="left">非强调标记文字</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">br</td>
+<td align="left">换行</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">cite</td>
+<td align="left">其他作品标题</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">code</td>
+<td align="left">代码片段</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">del</td>
+<td align="left">文字删除线</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">dfn</td>
+<td align="left">术语定义</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">em</td>
+<td align="left">强调标记</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">i</td>
+<td align="left">与周边不同的文字</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">ins</td>
+<td align="left">加入文档的文字</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">kbd</td>
+<td align="left">用户输入的内容</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">mark</td>
+<td align="left">标记</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">q</td>
+<td align="left">引用他处的内容</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">rp</td>
+<td align="left">ruby 标记括号</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">rt</td>
+<td align="left">ruby 标记注音符号</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">ruby</td>
+<td align="left">位于表意文字上方或者右方的注音符号</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">表示内容不再准确</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">samp</td>
+<td align="left">计算机输出的内容</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">small</td>
+<td align="left">小号字体</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">span</td>
+<td align="left">同样元素</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">strong</td>
+<td align="left">重要内容</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">sub</td>
+<td align="left">下标</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">sup</td>
+<td align="left">上标</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="left">时间</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td align="left">非强调标记文字</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">var</td>
+<td align="left">计算机中的变量</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">wbr</td>
+<td align="left">安全换行的地方</td>
+<td align="left">短语</td>
+</tr>
+</tbody></table>
+<h4 id="3-内容"><a href="#3-内容" class="headerlink" title="3. 内容"></a>3. 内容</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">blockquote</td>
+<td align="left">引用的大段内容</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td align="left">dl 元素中，表示定义</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">div</td>
+<td align="left">通用元素，与 span 对应</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">dl</td>
+<td align="left">术语定义的说明列表</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">dt</td>
+<td align="left">dl 元素中，表示术语</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">figcaption</td>
+<td align="left">figure 元素的标题</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">figure</td>
+<td align="left">图片</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">hr</td>
+<td align="left">段落级别的主题转换</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">li</td>
+<td align="left">ul、ol、menu 元素中，表示列表项</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">ol</td>
+<td align="left">有序列表</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">p</td>
+<td align="left">段落</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">pre</td>
+<td align="left">格式应被保留的内容</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">ul</td>
+<td align="left">无序列表</td>
+<td align="left">流</td>
+</tr>
+</tbody></table>
+<h4 id="4-划分内容"><a href="#4-划分内容" class="headerlink" title="4. 划分内容"></a>4. 划分内容</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">address</td>
+<td align="left">文档或者 article 的联系信息</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">article</td>
+<td align="left">作品信息</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">aside</td>
+<td align="left">周边牵涉内容</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">details</td>
+<td align="left">区域，展开获取细节</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">footer</td>
+<td align="left">尾部</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">h1-h6</td>
+<td align="left">标题</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">header</td>
+<td align="left">首部</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">hgroup</td>
+<td align="left">一组标题组织，形成目录</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">nav</td>
+<td align="left">导航元素</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">section</td>
+<td align="left">部分流</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">summary</td>
+<td align="left">details 元素中，表示该元素标题</td>
+<td align="left">无</td>
+</tr>
+</tbody></table>
+<h4 id="5-制表"><a href="#5-制表" class="headerlink" title="5. 制表"></a>5. 制表</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">caption</td>
+<td align="left">表格标题</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">col</td>
+<td align="left">列</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">colgroup</td>
+<td align="left">一组列</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">table</td>
+<td align="left">表格</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">tbody</td>
+<td align="left">表格主体</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">td</td>
+<td align="left">单元格</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">tfoot</td>
+<td align="left">表脚</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">th</td>
+<td align="left">表头表脚单元格</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">thead</td>
+<td align="left">表头</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">tr</td>
+<td align="left">一行单元格</td>
+<td align="left">无</td>
+</tr>
+</tbody></table>
+<h4 id="6-表单"><a href="#6-表单" class="headerlink" title="6. 表单"></a>6. 表单</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">button</td>
+<td align="left">按钮</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">datalist</td>
+<td align="left">建议列表</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">fieldset</td>
+<td align="left">一组表单元素</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">form</td>
+<td align="left">表单</td>
+<td align="left">流</td>
+</tr>
+<tr>
+<td align="left">input</td>
+<td align="left">输入</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">keygen</td>
+<td align="left">生成公私钥</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">表单说明标签</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">legend</td>
+<td align="left">fieldset 元素说明标签</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">optgroup</td>
+<td align="left">一组相关的 option 元素</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">option</td>
+<td align="left">用户选择的可选项</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">output</td>
+<td align="left">计算结果</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">select</td>
+<td align="left">用户选择固定项</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">textarea</td>
+<td align="left">多行输入</td>
+<td align="left">短语</td>
+</tr>
+</tbody></table>
+<h4 id="7-嵌入内容"><a href="#7-嵌入内容" class="headerlink" title="7. 嵌入内容"></a>7. 嵌入内容</h4><table>
+<thead>
+<tr>
+<th align="left">元素</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">area</td>
+<td align="left">客户端分区响应区域</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">audio</td>
+<td align="left">音频</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">canvas</td>
+<td align="left">画布</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">embed</td>
+<td align="left">用插件嵌入内容</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">iframe</td>
+<td align="left">嵌入另一个文档</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">img</td>
+<td align="left">图片</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">map</td>
+<td align="left">客户端分区响应</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">meter</td>
+<td align="left">许可值范围背景中的图形表示</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">object</td>
+<td align="left">生成上下文与客户端分区响应图</td>
+<td align="left">短语、流</td>
+</tr>
+<tr>
+<td align="left">param</td>
+<td align="left">通过 obj 元素传给插件的参数</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">progress</td>
+<td align="left">进度</td>
+<td align="left">短语</td>
+</tr>
+<tr>
+<td align="left">source</td>
+<td align="left">媒体资源</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">svg</td>
+<td align="left">结构化矢量内容</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">track</td>
+<td align="left">媒体附加轨道（如字幕）</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">video</td>
+<td align="left">视频</td>
+<td align="left">无</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2021/01/20/%E5%89%8D%E7%AB%AFhtml/">http://h4m5t.github.io/2021/01/20/%E5%89%8D%E7%AB%AFhtml/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/web/">web</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/21/linux/" title="常用的linux命令"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_12.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">常用的linux命令</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/21/security/" title="信息安全"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://s3.bmp.ovh/imgs/2022/12/22/e7cba97d12685d35.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">信息安全</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/02/06/%E5%89%8D%E7%AB%AFCSS/" title="记录前端学习--CSS"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/022.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-07</div><div class="title">记录前端学习--CSS</div></div></a></div><div><a href="/2021/02/09/%E5%89%8D%E7%AB%AFJS/" title="记录前端学习--JavaScript"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-10</div><div class="title">记录前端学习--JavaScript</div></div></a></div><div><a href="/2021/01/26/Web%E5%AE%89%E5%85%A8/" title="web安全学习路线"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/014.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-27</div><div class="title">web安全学习路线</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">h4m5t</div><div class="author-info__description">人生得意需尽欢</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! <br> 安全技术交流群753267126 <br> 网安考研交流群244768497 <br></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="toc-number">1.</span> <span class="toc-text">学习路线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-number">2.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%96%87%E6%A1%A3%E4%B8%8E%E5%85%83%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0"><span class="toc-number">2.1.</span> <span class="toc-text">1. 文档与元数据元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%96%87%E6%9C%AC%E5%85%83%E7%B4%A0"><span class="toc-number">2.2.</span> <span class="toc-text">2. 文本元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.</span> <span class="toc-text">3. 内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%92%E5%88%86%E5%86%85%E5%AE%B9"><span class="toc-number">2.4.</span> <span class="toc-text">4. 划分内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%B6%E8%A1%A8"><span class="toc-number">2.5.</span> <span class="toc-text">5. 制表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%A1%A8%E5%8D%95"><span class="toc-number">2.6.</span> <span class="toc-text">6. 表单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%B5%8C%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-number">2.7.</span> <span class="toc-text">7. 嵌入内容</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/USYD-CTF/" title="USYD_CTF">USYD_CTF</a><time datetime="2024-10-07T16:35:10.000Z" title="发表于 2024-10-08 00:35:10">2024-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/30/HTB-Invalidated/" title="HTB_Invalidated">HTB_Invalidated</a><time datetime="2024-09-30T06:00:01.000Z" title="发表于 2024-09-30 14:00:01">2024-09-30</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By h4m5t</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

