@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>h4m5t's Blog - love is good</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生得意需尽欢">
+<meta property="og:type" content="website">
+<meta property="og:title" content="h4m5t&#39;s Blog">
+<meta property="og:url" content="http://h4m5t.github.io/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="人生得意需尽欢">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://h4m5t.github.io/img/touxiang.jpg">
+<meta property="article:author" content="h4m5t">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://h4m5t.github.io/img/touxiang.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "h4m5t's Blog",
+  "url": "http://h4m5t.github.io/"
+}</script><link rel="shortcut icon" href="/img/icon-H.png"><link rel="canonical" href="http://h4m5t.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'h4m5t\'s Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/wallhaven-39mdy3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">h4m5t's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">h4m5t's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客更新记录 - stylus乌龙事件"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件">博客更新记录 - stylus乌龙事件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-07-24T02:31:59.000Z" title="发表于 2025-07-24 10:31:59">2025-07-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/blog/">blog</a></span></div><div class="content"> 最近对博客进行了一次较大规模的更新，将整个系统从 Hexo 6 升级到了 Hexo 7，同时升级了 Butterfly 主题和相关依赖包。这个过程中遇到了不少问题，还有碰巧遇到stylus乌龙事件，在此记录整个更新过程和解决方案。  更新概览本次更新涉及的主要组件：  Hexo 框架：6.3.0 → 7.3.0 Butterfly 主题：升级到最新版本 Node.js 环境：16 → 18 数学公式支持：配置 MathJax 图表支持：配置 Mermaid  问题1：GitHub Actions 工作流报错问题描述升级后，GitHub Actions 自动部署工作流开始报错，检查发现是 Node.js 版本过低导致的。 解决方案修改 hexo-deploy-github-pages-action 中的 Dockerfile，将 Node.js 版本从 16 升级到 18： 1FROM node:18  这个简单的修改就解决了工作流问题。 问题2：软件供应链问题 - Stylus 包不可用问题描述在升级依赖包时遇到了令人啼笑皆非的问题： 1234npm list# 显示多个包版本...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI智能体工作流和MCP配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置">AI智能体工作流和MCP配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-07-23T07:38:59.000Z" title="发表于 2025-07-23 15:38:59">2025-07-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI/">AI</a></span></div><div class="content">智能体技术概述在AI技术快速发展的背景下，智能体（Agent）已成为连接大语言模型与实际业务场景的重要桥梁。智能体不仅能够理解自然语言，还能够通过工具调用、任务推理和步骤拆解来完成复杂的自动化任务。 从技术角度来看，智能体的核心能力包括：  任务理解与分解：将复杂任务拆解为可执行的子步骤 工具调用：集成外部API、数据库、文件系统等资源 推理决策：根据上下文信息做出合理的决策和行动 学习适应：通过反馈不断优化执行策略  在实际应用中，智能体特别适合处理”重复度高、机械化程度高”的工作，如文档检核、批量任务处理、自动化测试执行等场景。这些应用不仅能显著提高工作效率，还能降低人工操作的错误率。 主流智能体开发平台对比Dify：开源企业级解决方案Dify是一款完全开源的LLM应用开发平台，基于Apache 2.0协议。其技术架构包括：  后端：Python（Flask） 前端：Next.js   数据库：PostgreSQL + 向量数据库  核心优势：  支持完全私有化部署，满足数据安全要求 提供可视化工作流编辑器，降低开发门槛 支持多种应用类型：聊天助手、Agent、工作流等 开放...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/014.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Buffer Overflow Attack"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span></div><div class="content">Buffer Overflow AttackBuffer overflow vulnerabilities are among the most notorious and exploited weaknesses in software security. They allow attackers to overwrite critical areas of memory, such as the return address (eip), enabling the execution of arbitrary code. In this blog post, we’ll walk through a practical demonstration of exploiting a buffer overflow vulnerability using GDB (GNU Debugger) to overwrite eip and redirect program execution to a target function.  Environment SetupBefore d...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Telstra_Cybersecurity"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span></div><div class="content">Telstra Cybersecurity Job SimulationAbouthttps://www.theforage.com/simulations/telstra/cybersecurity-cyyo GitHub repository: https://github.com/h4m5t/Telstra_Cybersecurity Telstra is Australia’s largest telecommunications company, offering services like mobile phones, internet, and data solutions to millions of customers nationwide. Known for its reliability and innovation, Telstra connects people and businesses, ensuring smooth and effective communication. The Telstra Cybersecurity Job Simul...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/10/12/apps/" title="移动应用的静态动态分析"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="移动应用的静态动态分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E5%85%A8/">安全</a></span></div><div class="content">移动应用的静态动态分析一、环境准备1. 安装Android Studio首先，安装最新版本的 Android Studio，它将提供模拟器和相关的开发工具。 2. 安装apktoolapktool 是一款用于反编译和重新编译APK文件的实用工具。可以通过以下方式安装： 1brew install apktool  3. 配置adb环境在Android Studio中已包含 android-platform-tools，但需要配置环境变量以便在终端中使用 adb 命令。 编辑 ~/.zshrc（或 ~/.bashrc）文件，添加以下内容： 1export PATH=$PATH:~/Library/Android/sdk/platform-tools/  保存后，运行 source ~/.zshrc（或 source ~/.bashrc）使配置生效。 二、检查APK的证书信息使用 jarsigner 工具可以快速查看APK的签名证书信息。执行以下命令： 1jarsigner -verify -verbose -certs ./app2.apk | grep Signed  示例输出：...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/10/07/USYD-CTF/" title="USYD_CTF"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="USYD_CTF"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/10/07/USYD-CTF/" title="USYD_CTF">USYD_CTF</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-07T16:35:10.000Z" title="发表于 2024-10-08 00:35:10">2024-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span></div><div class="content"> 2024校园赛  MiscSigning一个证书请求文件mycsr.csr 1234567891011121314151617-----BEGIN CERTIFICATE REQUEST-----MIICuDCCAaACAQAwczELMAkGA1UEBhMCQVUxDDAKBgNVBAgMA05TVzEPMA0GA1UEBwwGU3lkbmV5MSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxIjAgBgNVBAMMGUZMQUd7WTBVXzRSM19EMDFOR19HUjM0VH0wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDUI2qGUQU61JJaWto2Qo6bd+kAnCGPiqF9rpKbdyvYEsAWDAkQJl1F0caD70eqdzTJRP93vqEwMe7+nQrMJNE/SkuBKJlBIcapoF4N5s5WFviU+FxlecLEHuAY/U9nXmiCMKAreh9TFTZZwOhhMEvyHv8gaBivsc77fTKNokN7jKRW+s+hGUkjdz...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/30/HTB-Invalidated/" title="HTB_Invalidated"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTB_Invalidated"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/30/HTB-Invalidated/" title="HTB_Invalidated">HTB_Invalidated</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-30T06:00:01.000Z" title="发表于 2024-09-30 14:00:01">2024-09-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HTB/">HTB</a></span></div><div class="content">信息收集123456789101112131415161718┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Invalidated]└─# nmap -sC -sV $(cat ip.txt)Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-30 23:26 AESTNmap scan report for invalidated.htb (10.129.233.58)Host is up (0.015s latency).Not shown: 998 closed tcp ports (reset)PORT   STATE SERVICE VERSION22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)| ssh-hostkey: |   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)|_  256 64:...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/29/HTB_Rental/" title="HTB_Rental"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTB_Rental"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/29/HTB_Rental/" title="HTB_Rental">HTB_Rental</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-29T10:46:17.000Z" title="发表于 2024-09-29 18:46:17">2024-09-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HTB/">HTB</a></span></div><div class="content">信息收集端口扫描 1234567891011121314151617181920212223┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Rental]└─# nmap -sC -sV $(cat ip.txt)Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-29 19:58 AESTNmap scan report for 10.129.96.12Host is up (0.010s latency).Not shown: 998 closed tcp ports (reset)PORT   STATE SERVICE VERSION22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)| ssh-hostkey: |   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)|   256 b7:89:6c:0b:2...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/09/26/Tmux/" title="Tmux"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tmux"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/26/Tmux/" title="Tmux">Tmux</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-26T19:18:14.000Z" title="发表于 2024-09-27 03:18:14">2024-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/blog/">blog</a></span></div><div class="content">高效使用 tmux：快捷键指南在现代开发环境中，高效的终端管理工具对于提升工作效率至关重要。tmux正是这样一个强大的工具，它允许用户在单一终端窗口中创建、管理和切换多个会话（Sessions）、窗口（Windows）和窗格（Panes）。通过 tmux，可以轻松地并行处理多个任务，而无需频繁切换终端窗口或标签。这不仅优化了工作流程，还使得终端操作更加灵活和便捷。 关系图示以下是 会话（Sessions）、窗口（Windows） 和 窗格（Panes） 之间的关系：  一、基本前缀键在 tmux 中，所有快捷键操作通常以前缀键开始。默认的前缀键是 Ctrl + B。需要先按下 Ctrl + B，然后再按下指定的键来执行相应的操作。 二、会话管理快捷键1. 创建新会话 命令：1tmux new -s 会话名 例如：1tmux new -s dev  操作：创建一个名为 dev 的新会话。  2. 删除会话 命令：1tmux kill-session -t 会话名 例如：1tmux kill-session -t dev  操作：删除名为 dev 的会话。  3. 连接到已有的会话 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/09/18/HTB_Help/" title="HTB_Help"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/img/HTB.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTB_Help"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/09/18/HTB_Help/" title="HTB_Help">HTB_Help</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-18T15:42:30.000Z" title="发表于 2024-09-18 23:42:30">2024-09-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HTB/">HTB</a></span></div><div class="content">信息收集123456789101112131415161718192021222324┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]└─# echo &quot;10.129.230.159&quot; &gt; ip.txt                                                                                   ┌──(root@kali)-[/home/h4m5t/Desktop/HTB/Help]└─# nmap -sC -sV $(cat ip.txt)Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-22 01:33 AESTNmap scan report for 10.129.230.159Host is up (0.012s latency).Not shown: 997 closed tcp ports (reset)PORT     STATE SERVICE VERSION22/tc...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">h4m5t</div><div class="author-info-description">人生得意需尽欢</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! <br>      
+安全技术交流群753267126 <br>   
+网安考研交流群244768497 <br>   
+</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件">博客更新记录 - stylus乌龙事件</a><time datetime="2025-07-24T02:31:59.000Z" title="发表于 2025-07-24 10:31:59">2025-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置">AI智能体工作流和MCP配置</a><time datetime="2025-07-23T07:38:59.000Z" title="发表于 2025-07-23 15:38:59">2025-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTB/"><span class="card-category-list-name">HTB</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Incident-Review/"><span class="card-category-list-name">Incident Review</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/blog/"><span class="card-category-list-name">blog</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/web/"><span class="card-category-list-name">web</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%89%E5%85%A8/"><span class="card-category-list-name">安全</span><span class="card-category-list-count">17</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Win10/" style="font-size: 1.2em; color: rgb(50, 50, 50);">Win10</a><a href="/tags/Desktop/" style="font-size: 1.2em; color: rgb(159, 50, 136);">Desktop</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(50, 74, 66);">Git</a><a href="/tags/GitHub/" style="font-size: 1.15em; color: rgb(105, 125, 155);">GitHub</a><a href="/tags/Chrome/" style="font-size: 1.15em; color: rgb(179, 117, 50);">Chrome</a><a href="/tags/hack/" style="font-size: 1.2em; color: rgb(158, 185, 50);">hack</a><a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" style="font-size: 1.15em; color: rgb(50, 50, 50);">云计算</a><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 1.15em; color: rgb(155, 129, 50);">大数据</a><a href="/tags/%E4%BA%91%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(87, 125, 147);">云安全</a><a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(87, 50, 50);">信息安全</a><a href="/tags/web/" style="font-size: 1.45em; color: rgb(56, 194, 92);">web</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.25em; color: rgb(50, 50, 195);">前端</a><a href="/tags/CTF/" style="font-size: 1.3em; color: rgb(176, 124, 50);">CTF</a><a href="/tags/linux/" style="font-size: 1.15em; color: rgb(50, 185, 55);">linux</a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.4em; color: rgb(137, 50, 95);">安全</a><a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 1.3em; color: rgb(120, 50, 158);">漏洞</a><a href="/tags/Other/" style="font-size: 1.15em; color: rgb(50, 154, 50);">Other</a><a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 1.35em; color: rgb(59, 152, 100);">渗透</a><a href="/tags/python/" style="font-size: 1.15em; color: rgb(55, 50, 82);">python</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.2em; color: rgb(62, 50, 184);">算法</a><a href="/tags/leetcode/" style="font-size: 1.15em; color: rgb(50, 172, 124);">leetcode</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.35em; color: rgb(149, 198, 50);">面试</a><a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.2em; color: rgb(145, 68, 59);">密码学</a><a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 1.15em; color: rgb(182, 193, 79);">数论</a><a href="/tags/blog/" style="font-size: 1.3em; color: rgb(63, 53, 94);">blog</a><a href="/tags/Github/" style="font-size: 1.15em; color: rgb(197, 50, 120);">Github</a><a href="/tags/SIEM/" style="font-size: 1.15em; color: rgb(50, 105, 56);">SIEM</a><a href="/tags/SOC/" style="font-size: 1.15em; color: rgb(136, 126, 50);">SOC</a><a href="/tags/WAF/" style="font-size: 1.15em; color: rgb(72, 103, 133);">WAF</a><a href="/tags/ChatGPT/" style="font-size: 1.15em; color: rgb(50, 162, 131);">ChatGPT</a><a href="/tags/HTB/" style="font-size: 1.35em; color: rgb(53, 158, 62);">HTB</a><a href="/tags/Incident-Review/" style="font-size: 1.15em; color: rgb(50, 121, 187);">Incident Review</a><a href="/tags/Android/" style="font-size: 1.15em; color: rgb(50, 50, 69);">Android</a><a href="/tags/AI/" style="font-size: 1.15em; color: rgb(107, 57, 82);">AI</a><a href="/tags/MCP/" style="font-size: 1.15em; color: rgb(133, 66, 50);">MCP</a><a href="/tags/Dify/" style="font-size: 1.15em; color: rgb(66, 190, 99);">Dify</a><a href="/tags/LLM/" style="font-size: 1.15em; color: rgb(117, 50, 182);">LLM</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              2025年07月
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              2024年10月
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              2024年09月
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/11/">
+            <span class="card-archive-list-date">
+              2023年11月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/09/">
+            <span class="card-archive-list-date">
+              2023年09月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/06/">
+            <span class="card-archive-list-date">
+              2023年06月
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/05/">
+            <span class="card-archive-list-date">
+              2023年05月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/01/">
+            <span class="card-archive-list-date">
+              2023年01月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/12/">
+            <span class="card-archive-list-date">
+              2022年12月
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/08/">
+            <span class="card-archive-list-date">
+              2022年08月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/03/">
+            <span class="card-archive-list-date">
+              2022年03月
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/02/">
+            <span class="card-archive-list-date">
+              2022年02月
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">89</div></div><div class="webinfo-item"><div class="item-name">运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-11-29T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">100.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-07-28T01:15:46.052Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/wallhaven-39mdy3.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2020 - 2025 By h4m5t</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, {"startDelay":300,"typeSpeed":150,"backSpeed":50,"loop":true}))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["人生得意须尽欢，莫使金樽空对月。","醉后不知天在水，满船清梦压星河。"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["人生得意须尽欢，莫使金樽空对月。","醉后不知天在水，满船清梦压星河。"])
+}
+typedJSFn.run(subtitleType)</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

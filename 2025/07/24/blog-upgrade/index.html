@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>博客更新记录 - stylus乌龙事件 | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近对博客进行了一次较大规模的更新，将整个系统从 Hexo 6 升级到了 Hexo 7，同时升级了 Butterfly 主题和相关依赖包。这个过程中遇到了不少问题，还有碰巧遇到stylus乌龙事件，在此记录整个更新过程和解决方案。  更新概览本次更新涉及的主要组件：  Hexo 框架：6.3.0 → 7.3.0 Butterfly 主题：升级到最新版本 Node.js 环境：16 → 18 数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客更新记录 - stylus乌龙事件">
+<meta property="og:url" content="http://h4m5t.github.io/2025/07/24/blog-upgrade/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="最近对博客进行了一次较大规模的更新，将整个系统从 Hexo 6 升级到了 Hexo 7，同时升级了 Butterfly 主题和相关依赖包。这个过程中遇到了不少问题，还有碰巧遇到stylus乌龙事件，在此记录整个更新过程和解决方案。  更新概览本次更新涉及的主要组件：  Hexo 框架：6.3.0 → 7.3.0 Butterfly 主题：升级到最新版本 Node.js 环境：16 → 18 数学">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tt3.pages.dev/img/de/de_8.jpg">
+<meta property="article:published_time" content="2025-07-24T02:31:59.000Z">
+<meta property="article:modified_time" content="2025-07-28T01:14:58.000Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tt3.pages.dev/img/de/de_8.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "博客更新记录 - stylus乌龙事件",
+  "url": "http://h4m5t.github.io/2025/07/24/blog-upgrade/",
+  "image": "https://tt3.pages.dev/img/de/de_8.jpg",
+  "datePublished": "2025-07-24T02:31:59.000Z",
+  "dateModified": "2025-07-28T01:14:58.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "h4m5t",
+      "url": "http://h4m5t.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/icon-H.png"><link rel="canonical" href="http://h4m5t.github.io/2025/07/24/blog-upgrade/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客更新记录 - stylus乌龙事件',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://tt3.pages.dev/img/de/de_8.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">h4m5t's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">博客更新记录 - stylus乌龙事件</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">博客更新记录 - stylus乌龙事件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-24T02:31:59.000Z" title="发表于 2025-07-24 10:31:59">2025-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-28T01:14:58.000Z" title="更新于 2025-07-28 09:14:58">2025-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/blog/">blog</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>最近对博客进行了一次较大规模的更新，将整个系统从 Hexo 6 升级到了 Hexo 7，同时升级了 Butterfly 主题和相关依赖包。这个过程中遇到了不少问题，还有碰巧遇到stylus乌龙事件，在此记录整个更新过程和解决方案。</p>
+</blockquote>
+<h2 id="更新概览"><a href="#更新概览" class="headerlink" title="更新概览"></a>更新概览</h2><p>本次更新涉及的主要组件：</p>
+<ul>
+<li><strong>Hexo 框架</strong>：6.3.0 → 7.3.0</li>
+<li><strong>Butterfly 主题</strong>：升级到最新版本</li>
+<li><strong>Node.js 环境</strong>：16 → 18</li>
+<li><strong>数学公式支持</strong>：配置 MathJax</li>
+<li><strong>图表支持</strong>：配置 Mermaid</li>
+</ul>
+<h2 id="问题1：GitHub-Actions-工作流报错"><a href="#问题1：GitHub-Actions-工作流报错" class="headerlink" title="问题1：GitHub Actions 工作流报错"></a>问题1：GitHub Actions 工作流报错</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>升级后，GitHub Actions 自动部署工作流开始报错，检查发现是 Node.js 版本过低导致的。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>修改 <code>hexo-deploy-github-pages-action</code> 中的 Dockerfile，将 Node.js 版本从 16 升级到 18：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">18</span></span><br></pre></td></tr></table></figure>
+
+<p>这个简单的修改就解决了工作流问题。</p>
+<h2 id="问题2：软件供应链问题-Stylus-包不可用"><a href="#问题2：软件供应链问题-Stylus-包不可用" class="headerlink" title="问题2：软件供应链问题 - Stylus 包不可用"></a>问题2：软件供应链问题 - Stylus 包不可用</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>在升级依赖包时遇到了令人啼笑皆非的问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm list</span><br><span class="line"><span class="comment"># 显示多个包版本冲突</span></span><br><span class="line"><span class="comment"># hexo@6.3.0 invalid: &quot;^7.3.0&quot; from the root project</span></span><br><span class="line"><span class="comment"># stylus 相关包无法正常安装</span></span><br></pre></td></tr></table></figure>
+
+<p>初始以为是配置问题，但经过排查发现这是一个<strong>史诗级乌龙事件</strong>。</p>
+<p><strong>真相揭露</strong>：NPM 官方安全团队错误地将前端 CSS 预处理器 <code>stylus</code> 与 ChromeOS 的物理触控笔工具搞混了！</p>
+<p>这个荒谬的误封事件源于 CVE-2025-6044，该漏洞报告的是 ChromeOS 设备上物理触控笔的安全问题，但 NPM 的自动化安全系统错误地将同名的前端 CSS 预处理器库也一并封禁。</p>
+<p>让我们来看看这个绝世乌龙：</p>
+<p><strong>真正有漏洞的 “Stylus”</strong>：</p>
+<ul>
+<li>ChromeOS 设备上的物理触控笔工具</li>
+<li>需要物理接触设备才能攻击</li>
+<li>与前端开发完全无关</li>
+</ul>
+<p><strong>被误杀的 “stylus”</strong>：</p>
+<ul>
+<li>前端开发者广泛使用的 CSS 预处理器</li>
+<li>纯软件库，连 UI 都没有</li>
+<li>被全球数百万项目依赖</li>
+</ul>
+<p>这就好比因为苹果公司出了安全问题，就把超市里的苹果都下架了一样荒谬。</p>
+<h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><ol>
+<li><strong>检查包依赖关系</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm view hexo-renderer-stylus@3.0.0 dependencies</span><br><span class="line"><span class="comment"># &#123; nib: &#x27;^1.2.0&#x27;, stylus: &#x27;^0.59.0&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line">npm view hexo-renderer-stylus@3.0.1 dependencies  </span><br><span class="line"><span class="comment"># &#123; nib: &#x27;^1.2.0&#x27;, stylus: &#x27;^0.62.0&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>查看可用版本</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm view stylus versions</span><br><span class="line"><span class="comment"># 发现官方 npm 仓库中的 stylus 包被移除</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>参考解决方案</strong>：<br> 根据 <a target="_blank" rel="noopener" href="https://github.com/stylus/stylus/issues/2938">GitHub Issue</a> 的讨论，这是一个已知问题。</li>
+</ol>
+<h3 id="临时解决方案"><a href="#临时解决方案" class="headerlink" title="临时解决方案"></a>临时解决方案</h3><p>采用从 GitHub 直接安装的临时解决方案：</p>
+<ol>
+<li><strong>清理环境</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 node_modules 和 lock 文件</span></span><br><span class="line"><span class="built_in">rm</span> -rf node_modules package-lock.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理 npm 缓存</span></span><br><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>从 GitHub 安装 Stylus</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install github:stylus/stylus#0.62.0</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>安装其他依赖</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>在 package.json 中使用 GitHub 源</strong>：</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;github:stylus/stylus#0.62.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="后续更新：Stylus-包已恢复"><a href="#后续更新：Stylus-包已恢复" class="headerlink" title="后续更新：Stylus 包已恢复"></a>后续更新：Stylus 包已恢复</h3><p>值得庆幸的是，经过社区的努力和维护者的申诉，Stylus 包已经恢复正常使用。如果你之前采用了 GitHub 直接安装的临时方案，可以按照以下步骤切换回官方版本：</p>
+<h4 id="步骤-1-从-package-json-中移除-GitHub-依赖"><a href="#步骤-1-从-package-json-中移除-GitHub-依赖" class="headerlink" title="步骤 1: 从 package.json 中移除 GitHub 依赖"></a><strong>步骤 1: 从 <code>package.json</code> 中移除 GitHub 依赖</strong></h4><ol>
+<li><p>打开你的 <code>package.json</code> 文件。</p>
+</li>
+<li><p>在 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;</span><br></pre></td></tr></table></figure>
+
+<p> 中找到以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;github:stylus/stylus#0.64.0&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除这一行，修改后的部分应如下所示：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^7.3.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-deployer-git&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-archive&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-feed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^3.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-index&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-search&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.4.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-generator-tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-renderer-ejs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-renderer-marked&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^7.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-renderer-pug&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^3.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-renderer-stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^3.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^3.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-theme-landscape&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.1.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo-wordcount&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^6.0.1&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="步骤-2-删除-node-modules-和-package-lock-json"><a href="#步骤-2-删除-node-modules-和-package-lock-json" class="headerlink" title="步骤 2: 删除 node_modules 和 package-lock.json"></a><strong>步骤 2: 删除 <code>node_modules</code> 和 <code>package-lock.json</code></strong></h4><p>为了确保所有依赖关系正确重新处理，删除现有的依赖和 <code>package-lock.json</code> 文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf node_modules package-lock.json</span><br></pre></td></tr></table></figure>
+
+<h4 id="步骤-3-重新安装依赖"><a href="#步骤-3-重新安装依赖" class="headerlink" title="步骤 3: 重新安装依赖"></a><strong>步骤 3: 重新安装依赖</strong></h4><p>在项目根目录运行以下命令，重新安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意</strong>：如果 <code>hexo-renderer-stylus</code> 插件依赖 <code>stylus</code>，它会自动安装需要的 <code>stylus</code> 版本，无需手动安装。这样可以确保你的项目依赖关系干净且正确。</p>
+</blockquote>
+<h2 id="问题3：依赖版本升级"><a href="#问题3：依赖版本升级" class="headerlink" title="问题3：依赖版本升级"></a>问题3：依赖版本升级</h2><h3 id="升级过程"><a href="#升级过程" class="headerlink" title="升级过程"></a>升级过程</h3><p>使用工具批量升级依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装升级工具</span></span><br><span class="line"><span class="built_in">sudo</span> npm i -g npm-check-updates</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查并更新 package.json</span></span><br><span class="line">ncu -u</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新安装</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终依赖版本"><a href="#最终依赖版本" class="headerlink" title="最终依赖版本"></a>最终依赖版本</h3><p>升级前的依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── hexo@6.3.0</span><br><span class="line">├── hexo-deployer-git@3.0.0</span><br><span class="line">├── hexo-renderer-marked@6.3.0</span><br><span class="line">├── hexo-renderer-stylus@3.0.0</span><br><span class="line">└── ...</span><br></pre></td></tr></table></figure>
+
+<p>升级后的目标版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── hexo@7.3.0</span><br><span class="line">├── hexo-deployer-git@4.0.0</span><br><span class="line">├── hexo-renderer-marked@7.0.1</span><br><span class="line">├── hexo-renderer-stylus@3.0.1</span><br><span class="line">└── ...</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题升级：Butterfly-更新"><a href="#主题升级：Butterfly-更新" class="headerlink" title="主题升级：Butterfly 更新"></a>主题升级：Butterfly 更新</h2><h3 id="升级方法"><a href="#升级方法" class="headerlink" title="升级方法"></a>升级方法</h3><ol>
+<li><strong>下载最新版本</strong>：从 GitHub 下载 Butterfly 最新版本</li>
+<li><strong>覆盖主题文件夹</strong>：保留原配置文件</li>
+<li><strong>配置文件迁移</strong>：使用 Claude 协助合并新旧配置</li>
+</ol>
+<h3 id="配置文件更新"><a href="#配置文件更新" class="headerlink" title="配置文件更新"></a>配置文件更新</h3><p>新版本 Butterfly 的配置结构有较大变化，主要更新包括：</p>
+<ul>
+<li><strong>新的配置节点结构</strong>：<code>nav</code>、<code>code_blocks</code>、<code>search</code>、<code>share</code>、<code>chat</code> 等</li>
+<li><strong>新增功能配置</strong>：<code>index_layout</code>、<code>series</code>、<code>abcjs</code>、<code>chartjs</code>、<code>umami_analytics</code> 等</li>
+<li><strong>保留个人配置</strong>：社交链接、图片路径、侧边栏设置等</li>
+<li><strong>更新过时配置项</strong>：名称和格式标准化</li>
+</ul>
+<h2 id="新功能配置"><a href="#新功能配置" class="headerlink" title="新功能配置"></a>新功能配置</h2><h3 id="1-Mermaid-图表支持"><a href="#1-Mermaid-图表支持" class="headerlink" title="1. Mermaid 图表支持"></a>1. Mermaid 图表支持</h3><p>由于 Butterfly 5.0.0 已内置 Mermaid 支持，移除了第三方插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-filter-mermaid-diagrams</span><br></pre></td></tr></table></figure>
+
+<p><strong>Hexo 配置</strong> (<code>_config.yml</code>)：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">exclude_languages:</span> [<span class="string">&#x27;mermaid&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">exclude_languages:</span> [<span class="string">&#x27;mermaid&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Butterfly 配置</strong>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">code_write:</span> <span class="literal">true</span>  <span class="comment"># 支持代码块方式写 Mermaid</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">dark</span></span><br></pre></td></tr></table></figure>
+
+<p>现在可以直接使用代码块语法：</p>
+<pre><code class="highlight mermaid">graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;</code></pre>
+
+<h3 id="2-LaTeX-数学公式支持"><a href="#2-LaTeX-数学公式支持" class="headerlink" title="2. LaTeX 数学公式支持"></a>2. LaTeX 数学公式支持</h3><p>配置 MathJax 支持：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">mathjax</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">false</span>  <span class="comment"># 按需加载，在文章中设置 mathjax: true</span></span><br><span class="line">  <span class="attr">hide_scrollbar:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enableMenu:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="string">none</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用方法</strong>：</p>
+<ol>
+<li>在需要数学公式的文章 Front Matter 中添加：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">示例文章</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在文章中直接使用 LaTeX 语法：</li>
+</ol>
+<p>$$E &#x3D; mc^2$$</p>
+<p>$$<br>\int_{-\infty}^{\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
+<h3 id="3-优化图片引用"><a href="#3-优化图片引用" class="headerlink" title="3. 优化图片引用"></a>3. 优化图片引用</h3><p>Typora中开启插入自动复制图片（本地&#x2F;在线图片都可插入）。将图片自动保存到同名文件夹下<code>./$&#123;filename&#125;</code>。</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="http://edulinks.cn/2020/03/14/20200314-write-hexo-with-typora/">http://edulinks.cn/2020/03/14/20200314-write-hexo-with-typora/</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
+
+<p>这样，就可以直接用Typora Markdown兼容的格式加入图片。更方便本地查看和博客部署。<br>注意，配置中需要开启<code>post_asset_folder: true</code></p>
+<p>假设文章路径如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./source/_posts</span><br><span class="line">├── demo.md</span><br><span class="line">└── demo</span><br><span class="line">    ├── a.jpg</span><br><span class="line">    └── cover.jpg</span><br></pre></td></tr></table></figure>
+
+<p>图片引用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">方式1: 由插件hexo-renderer-marked实现</span><br><span class="line">![一张示例图片](a.jpg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方式2: 由插件hexo-image-link实现</span><br><span class="line">![一张示例图片](demo/a.jpg)</span><br></pre></td></tr></table></figure>
+
+<img src= "/img/loading.gif" data-lazy-src="/2025/07/24/blog-upgrade/image-20250724175326333.png" class="" title="image-20250724175326333">
+
+<img src= "/img/loading.gif" data-lazy-src="/2025/07/24/blog-upgrade/image-20250724180402723.png"  alt="image-20250724180402723" style="zoom:50%;" />
+
+
+
+<p><img src= "/img/loading.gif" data-lazy-src="/2025/07/24/blog-upgrade/mypic.jpg" alt="mypic"></p>
+<h2 id="部署测试"><a href="#部署测试" class="headerlink" title="部署测试"></a>部署测试</h2><p>在推送到生产环境前，务必进行本地测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清理缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>确认无误后再使用 GitHub Actions 部署到公网。</p>
+<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><h3 id="1-供应链安全的思考"><a href="#1-供应链安全的思考" class="headerlink" title="1. 供应链安全的思考"></a>1. 供应链安全的思考</h3><p>这次 Stylus 误封事件给我们带来了深刻的反思：</p>
+<h4 id="问题的本质"><a href="#问题的本质" class="headerlink" title="问题的本质"></a><strong>问题的本质</strong></h4><ul>
+<li><strong>过度依赖中心化平台</strong>：整个前端生态过度依赖 NPM 这个单点</li>
+<li><strong>自动化判断的局限性</strong>：AI 和自动化工具容易出现判断错误</li>
+<li><strong>申诉机制的缺失</strong>：维护者在遇到问题时申诉无门，只能在社交媒体求助</li>
+</ul>
+<h4 id="脆弱的现代前端生态"><a href="#脆弱的现代前端生态" class="headerlink" title="脆弱的现代前端生态"></a><strong>脆弱的现代前端生态</strong></h4><p>现代前端项目动辄数百个依赖，每个依赖都是潜在的故障点。这次事件暴露了几个关键问题：</p>
+<ul>
+<li><strong>依赖树过于复杂</strong>：一个小包出问题可能导致整个项目无法构建</li>
+<li><strong>缺乏有效的备份机制</strong>：大多数项目完全依赖官方源</li>
+<li><strong>风险意识不足</strong>：很少有团队考虑关键依赖的备用方案</li>
+</ul>
+<h4 id="建议的改进措施"><a href="#建议的改进措施" class="headerlink" title="建议的改进措施"></a><strong>建议的改进措施</strong></h4><p><strong>短期应对</strong>：</p>
+<ul>
+<li><strong>建立私有镜像</strong>：公司&#x2F;团队应该建立 NPM 私有镜像</li>
+<li><strong>锁定关键依赖</strong>：使用 <code>package-lock.json</code> 确保版本一致性</li>
+<li><strong>多源备份</strong>：为关键依赖配置多个下载源</li>
+</ul>
+<p><strong>长期规划</strong>：</p>
+<ul>
+<li><strong>推动去中心化</strong>：支持更多元化的包管理生态</li>
+<li><strong>改善治理机制</strong>：推动 NPM 建立更透明的决策流程</li>
+<li><strong>支持开源维护者</strong>：给予更多资金和技术支持</li>
+</ul>
+<h3 id="2-版本升级策略"><a href="#2-版本升级策略" class="headerlink" title="2. 版本升级策略"></a>2. 版本升级策略</h3><ul>
+<li><strong>渐进式升级</strong>：避免一次性升级过多组件</li>
+<li><strong>本地测试充分</strong>：确保功能正常后再部署</li>
+<li><strong>配置备份</strong>：保留原始配置文件</li>
+</ul>
+<h3 id="3-工具使用"><a href="#3-工具使用" class="headerlink" title="3. 工具使用"></a>3. 工具使用</h3><ul>
+<li><strong>npm-check-updates</strong>：批量检查依赖更新</li>
+<li><strong>GitHub 直接安装</strong>：应急解决方案</li>
+<li><strong>AI 辅助配置</strong>：利用 Claude 等工具协助配置迁移</li>
+</ul>
+<h3 id="4-社区的力量"><a href="#4-社区的力量" class="headerlink" title="4. 社区的力量"></a>4. 社区的力量</h3><p>这次事件也让我们看到了开源社区的温暖：</p>
+<ul>
+<li><strong>互助精神</strong>：开发者们积极分享解决方案</li>
+<li><strong>维护者的责任感</strong>：@iChenLei 虽然无辜但仍为用户道歉</li>
+<li><strong>集体智慧</strong>：社区快速找到了多种临时解决方案</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>经过这次大更新，博客系统现在运行在更新的技术栈上，支持了 Mermaid 图表和 LaTeX 数学公式等新功能。虽然过程中经历了一场史诗级的乌龙事件，但也让我们对软件供应链安全有了更深刻的认识。</p>
+<p>在享受开源生态便利的同时，也要时刻关注安全问题，做好应对准备。同时，开源社区的自我修复能力也是值得信赖的，大多数问题都会在社区的努力下得到及时解决。希望这篇记录能帮助遇到类似问题的朋友快速解决问题。</p>
+<p>这次经历提醒我们：</p>
+<ul>
+<li><strong>技术的脆弱性</strong>：看似强大的技术栈可能因为一个荒谬的错误而瘫痪</li>
+<li><strong>社区的重要性</strong>：在官方渠道失效时，社区是我们最重要的支撑</li>
+<li><strong>居安思危的必要性</strong>：平时就应该考虑备用方案，而不是等问题出现才手忙脚乱</li>
+</ul>
+<p><strong>软件正在吞噬世界，但谁来守护软件？</strong></p>
+<p>也许这些”灾难”正是推动我们建设更健壮、更去中心化生态系统的催化剂。希望这篇记录能帮助遇到类似问题的朋友，也希望我们的生态系统能在这些挫折中变得更加成熟和可靠。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2025/07/24/blog-upgrade/">http://h4m5t.github.io/2025/07/24/blog-upgrade/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blog/">blog</a></div><div class="post-share"><div class="social-share" data-image="https://tt3.pages.dev/img/de/de_8.jpg" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">AI智能体工作流和MCP配置</div></div><div class="info-2"><div class="info-item-1">智能体技术概述在AI技术快速发展的背景下，智能体（Agent）已成为连接大语言模型与实际业务场景的重要桥梁。智能体不仅能够理解自然语言，还能够通过工具调用、任务推理和步骤拆解来完成复杂的自动化任务。 从技术角度来看，智能体的核心能力包括：  任务理解与分解：将复杂任务拆解为可执行的子步骤 工具调用：集成外部API、数据库、文件系统等资源 推理决策：根据上下文信息做出合理的决策和行动 学习适应：通过反馈不断优化执行策略  在实际应用中，智能体特别适合处理”重复度高、机械化程度高”的工作，如文档检核、批量任务处理、自动化测试执行等场景。这些应用不仅能显著提高工作效率，还能降低人工操作的错误率。 主流智能体开发平台对比Dify：开源企业级解决方案Dify是一款完全开源的LLM应用开发平台，基于Apache 2.0协议。其技术架构包括：  后端：Python（Flask） 前端：Next.js   数据库：PostgreSQL + 向量数据库  核心优势：  支持完全私有化部署，满足数据安全要求 提供可视化工作流编辑器，降低开发门槛 支持多种应用类型：聊天助手、Agent、工作流等 开放...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2022/12/04/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" title="博客迁移"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/019.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-04</div><div class="info-item-2">博客迁移</div></div><div class="info-2"><div class="info-item-1"> 为什么迁移博客之前的博客用了快三年，有一些小问题，另外发现有些图片失效了，甚至给我换了广告，不能忍。 而且速度很慢，准备换个框架，整体迁移一下。 以前用的是Jekyll，一个小众主题，很简洁，有语言翻译功能，手机端做的也不错。但是可扩展性差，用的人少，功能不完善。 需求当前需求：  支持RSS  支持外链，GitHub，知乎等  支持查看运行时间，访问总次数。  支持归档，时间倒序排列。  支持转发到微信，qq，Twitter  相关文章推荐  写公告   长远需求：  评论 弹出聊天框 插入广告 支持打赏  寻找框架主题主流静态框架有三种： Tab1Tab2Tab3HexoHugoJekyll    最终决定用hexo 框架：https://github.com/hexojs/hexo 主题：butterfly 此框架国内用的多，有问题方便查找，主题功能完善，看了别人的demo,特别惊艳。 可以满足我需要的所有需求。 缺点是不方便多端编辑，需要在本地生成之后上传所有文件。不像之前的Jekyll，只上传一个md文件就够了。 迁移进度  框架迁移  post迁移  调整格式为he...</div></div></div></a><a class="pagination-related" href="/2022/12/30/hello-hexo/" title="hexo博客部署"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-31</div><div class="info-item-2">hexo博客部署</div></div><div class="info-2"><div class="info-item-1">HexoWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Clean1$ hexo clean  Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment Actions自动化部署Hexo自动化工作流总是遇到问题，...</div></div></div></a><a class="pagination-related" href="/2023/11/05/wechatGPT/" title="ChatGPT 接入微信实践"><img class="cover" src= "/img/loading.gif" data-lazy-src="/2023/11/05/wechatGPT/GPTlogo.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-05</div><div class="info-item-2">ChatGPT 接入微信实践</div></div><div class="info-2"><div class="info-item-1">ChatGPT 接入微信实践安装方法参考：https://github.com/zhayujie/chatgpt-on-wechat 12345git clone https://github.com/zhayujie/chatgpt-on-wechatcd chatgpt-on-wechat/pip3 install -r requirements.txtpip3 install -r requirements-optional.txt  修改配置文件： 12cp config-template.json config.jsonvim config.json  123456789101112131415161718192021222324252627282930313233343536&#123;  &quot;open_ai_api_key&quot;: &quot;sk-&quot;,  &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,  &quot;channel_type&quot;: &quot;wx&quot;,  &quo...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">h4m5t</div><div class="author-info-description">人生得意需尽欢</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! <br>      
+安全技术交流群753267126 <br>   
+网安考研交流群244768497 <br>   
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%A6%82%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">更新概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%981%EF%BC%9AGitHub-Actions-%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%8A%A5%E9%94%99"><span class="toc-number">2.</span> <span class="toc-text">问题1：GitHub Actions 工作流报错</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%982%EF%BC%9A%E8%BD%AF%E4%BB%B6%E4%BE%9B%E5%BA%94%E9%93%BE%E9%97%AE%E9%A2%98-Stylus-%E5%8C%85%E4%B8%8D%E5%8F%AF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">问题2：软件供应链问题 - Stylus 包不可用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-1"><span class="toc-number">3.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E6%9F%A5%E8%BF%87%E7%A8%8B"><span class="toc-number">3.2.</span> <span class="toc-text">排查过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.3.</span> <span class="toc-text">临时解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%9AStylus-%E5%8C%85%E5%B7%B2%E6%81%A2%E5%A4%8D"><span class="toc-number">3.4.</span> <span class="toc-text">后续更新：Stylus 包已恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1-%E4%BB%8E-package-json-%E4%B8%AD%E7%A7%BB%E9%99%A4-GitHub-%E4%BE%9D%E8%B5%96"><span class="toc-number">3.4.1.</span> <span class="toc-text">步骤 1: 从 package.json 中移除 GitHub 依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2-%E5%88%A0%E9%99%A4-node-modules-%E5%92%8C-package-lock-json"><span class="toc-number">3.4.2.</span> <span class="toc-text">步骤 2: 删除 node_modules 和 package-lock.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">3.4.3.</span> <span class="toc-text">步骤 3: 重新安装依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%983%EF%BC%9A%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7"><span class="toc-number">4.</span> <span class="toc-text">问题3：依赖版本升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E8%BF%87%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">升级过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC"><span class="toc-number">4.2.</span> <span class="toc-text">最终依赖版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%8D%87%E7%BA%A7%EF%BC%9AButterfly-%E6%9B%B4%E6%96%B0"><span class="toc-number">5.</span> <span class="toc-text">主题升级：Butterfly 更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">升级方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0"><span class="toc-number">5.2.</span> <span class="toc-text">配置文件更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">新功能配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Mermaid-%E5%9B%BE%E8%A1%A8%E6%94%AF%E6%8C%81"><span class="toc-number">6.1.</span> <span class="toc-text">1. Mermaid 图表支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LaTeX-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%94%AF%E6%8C%81"><span class="toc-number">6.2.</span> <span class="toc-text">2. LaTeX 数学公式支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BC%98%E5%8C%96%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8"><span class="toc-number">6.3.</span> <span class="toc-text">3. 优化图片引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95"><span class="toc-number">7.</span> <span class="toc-text">部署测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">经验总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BE%9B%E5%BA%94%E9%93%BE%E5%AE%89%E5%85%A8%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">8.1.</span> <span class="toc-text">1. 供应链安全的思考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">8.1.1.</span> <span class="toc-text">问题的本质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%86%E5%BC%B1%E7%9A%84%E7%8E%B0%E4%BB%A3%E5%89%8D%E7%AB%AF%E7%94%9F%E6%80%81"><span class="toc-number">8.1.2.</span> <span class="toc-text">脆弱的现代前端生态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE%E7%9A%84%E6%94%B9%E8%BF%9B%E6%8E%AA%E6%96%BD"><span class="toc-number">8.1.3.</span> <span class="toc-text">建议的改进措施</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E7%AD%96%E7%95%A5"><span class="toc-number">8.2.</span> <span class="toc-text">2. 版本升级策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8"><span class="toc-number">8.3.</span> <span class="toc-text">3. 工具使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%A4%BE%E5%8C%BA%E7%9A%84%E5%8A%9B%E9%87%8F"><span class="toc-number">8.4.</span> <span class="toc-text">4. 社区的力量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">9.</span> <span class="toc-text">结语</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件">博客更新记录 - stylus乌龙事件</a><time datetime="2025-07-24T02:31:59.000Z" title="发表于 2025-07-24 10:31:59">2025-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置">AI智能体工作流和MCP配置</a><time datetime="2025-07-23T07:38:59.000Z" title="发表于 2025-07-23 15:38:59">2025-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://tt3.pages.dev/img/de/de_8.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2020 - 2025 By h4m5t</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AI智能体工作流和MCP配置 | h4m5t's Blog</title><meta name="author" content="h4m5t"><meta name="copyright" content="h4m5t"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="智能体技术概述在AI技术快速发展的背景下，智能体（Agent）已成为连接大语言模型与实际业务场景的重要桥梁。智能体不仅能够理解自然语言，还能够通过工具调用、任务推理和步骤拆解来完成复杂的自动化任务。 从技术角度来看，智能体的核心能力包括：  任务理解与分解：将复杂任务拆解为可执行的子步骤 工具调用：集成外部API、数据库、文件系统等资源 推理决策：根据上下文信息做出合理的决策和行动 学习适应：通过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI智能体工作流和MCP配置">
+<meta property="og:url" content="http://h4m5t.github.io/2025/07/23/AI-Agent/index.html">
+<meta property="og:site_name" content="h4m5t&#39;s Blog">
+<meta property="og:description" content="智能体技术概述在AI技术快速发展的背景下，智能体（Agent）已成为连接大语言模型与实际业务场景的重要桥梁。智能体不仅能够理解自然语言，还能够通过工具调用、任务推理和步骤拆解来完成复杂的自动化任务。 从技术角度来看，智能体的核心能力包括：  任务理解与分解：将复杂任务拆解为可执行的子步骤 工具调用：集成外部API、数据库、文件系统等资源 推理决策：根据上下文信息做出合理的决策和行动 学习适应：通过">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tt3.pages.dev/img/de/de_3.jpg">
+<meta property="article:published_time" content="2025-07-23T07:38:59.000Z">
+<meta property="article:modified_time" content="2025-07-28T01:14:58.000Z">
+<meta property="article:author" content="h4m5t">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="MCP">
+<meta property="article:tag" content="Dify">
+<meta property="article:tag" content="LLM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tt3.pages.dev/img/de/de_3.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI智能体工作流和MCP配置",
+  "url": "http://h4m5t.github.io/2025/07/23/AI-Agent/",
+  "image": "https://tt3.pages.dev/img/de/de_3.jpg",
+  "datePublished": "2025-07-23T07:38:59.000Z",
+  "dateModified": "2025-07-28T01:14:58.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "h4m5t",
+      "url": "http://h4m5t.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/icon-H.png"><link rel="canonical" href="http://h4m5t.github.io/2025/07/23/AI-Agent/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AI智能体工作流和MCP配置',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="h4m5t's Blog" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://tt3.pages.dev/img/de/de_3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">h4m5t's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">AI智能体工作流和MCP配置</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">AI智能体工作流和MCP配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-23T07:38:59.000Z" title="发表于 2025-07-23 15:38:59">2025-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-28T01:14:58.000Z" title="更新于 2025-07-28 09:14:58">2025-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI/">AI</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">7.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>28分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="智能体技术概述"><a href="#智能体技术概述" class="headerlink" title="智能体技术概述"></a>智能体技术概述</h2><p>在AI技术快速发展的背景下，智能体（Agent）已成为连接大语言模型与实际业务场景的重要桥梁。智能体不仅能够理解自然语言，还能够通过工具调用、任务推理和步骤拆解来完成复杂的自动化任务。</p>
+<p>从技术角度来看，智能体的核心能力包括：</p>
+<ul>
+<li><strong>任务理解与分解</strong>：将复杂任务拆解为可执行的子步骤</li>
+<li><strong>工具调用</strong>：集成外部API、数据库、文件系统等资源</li>
+<li><strong>推理决策</strong>：根据上下文信息做出合理的决策和行动</li>
+<li><strong>学习适应</strong>：通过反馈不断优化执行策略</li>
+</ul>
+<p>在实际应用中，智能体特别适合处理”重复度高、机械化程度高”的工作，如文档检核、批量任务处理、自动化测试执行等场景。这些应用不仅能显著提高工作效率，还能降低人工操作的错误率。</p>
+<h2 id="主流智能体开发平台对比"><a href="#主流智能体开发平台对比" class="headerlink" title="主流智能体开发平台对比"></a>主流智能体开发平台对比</h2><h3 id="Dify：开源企业级解决方案"><a href="#Dify：开源企业级解决方案" class="headerlink" title="Dify：开源企业级解决方案"></a>Dify：开源企业级解决方案</h3><p>Dify是一款完全开源的LLM应用开发平台，基于Apache 2.0协议。其技术架构包括：</p>
+<ul>
+<li><strong>后端</strong>：Python（Flask）</li>
+<li><strong>前端</strong>：Next.js  </li>
+<li><strong>数据库</strong>：PostgreSQL + 向量数据库</li>
+</ul>
+<p><strong>核心优势：</strong></p>
+<ul>
+<li>支持完全私有化部署，满足数据安全要求</li>
+<li>提供可视化工作流编辑器，降低开发门槛</li>
+<li>支持多种应用类型：聊天助手、Agent、工作流等</li>
+<li>开放式插件架构，可深度定制</li>
+<li>支持多家大模型接入（OpenAI、Claude、国产模型等）</li>
+</ul>
+<h4 id="Dify详细安装部署"><a href="#Dify详细安装部署" class="headerlink" title="Dify详细安装部署"></a>Dify详细安装部署</h4><p><strong>1. 基础环境准备</strong></p>
+<p>首先确保系统已安装Docker和Docker Compose：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查Docker版本</span></span><br><span class="line">docker --version</span><br><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 快速部署步骤</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆项目代码</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/langgenius/dify.git</span><br><span class="line"><span class="built_in">cd</span> dify/docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制环境配置文件</span></span><br><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动所有服务</span></span><br><span class="line">docker compose up -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查服务状态</span></span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 重要环境变量配置</strong></p>
+<p>编辑 <code>.env</code> 文件，配置关键参数：</p>
+<p><strong>4. 系统初始化</strong></p>
+<p>部署完成后访问初始化页面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地环境</span></span><br><span class="line">http://localhost/install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务器环境</span></span><br><span class="line">http://your_server_ip/install</span><br></pre></td></tr></table></figure>
+
+<p>创建管理员账户并完成基础配置。</p>
+<h4 id="Dify系统更新升级"><a href="#Dify系统更新升级" class="headerlink" title="Dify系统更新升级"></a>Dify系统更新升级</h4><p><strong>1. 备份重要数据</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line"><span class="built_in">cd</span> dify/docker</span><br><span class="line">docker compose down</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份数据库</span></span><br><span class="line">docker compose <span class="built_in">exec</span> postgres pg_dump -U postgres dify &gt; backup_$(<span class="built_in">date</span> +%Y%m%d).sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份卷数据</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -r /var/lib/docker/volumes/docker_app_storage ./backup_storage_$(<span class="built_in">date</span> +%Y%m%d)</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -r /var/lib/docker/volumes/docker_db_data ./backup_db_$(<span class="built_in">date</span> +%Y%m%d)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 更新代码和镜像</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取最新代码</span></span><br><span class="line">git pull origin main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载最新镜像</span></span><br><span class="line">docker compose pull</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新启动服务</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 数据库迁移</strong></p>
+<p>系统数据存储位置：dify&#x2F;docker&#x2F;volumes</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://docs.dify.ai/en/getting-started/install-self-hosted/docker-compose#upgrade-dify">https://docs.dify.ai/en/getting-started/install-self-hosted/docker-compose#upgrade-dify</a></p>
+<h4 id="离线插件打包与安装"><a href="#离线插件打包与安装" class="headerlink" title="离线插件打包与安装"></a>离线插件打包与安装</h4><p>在内网环境中，插件安装需要特殊处理。离线安装插件也需要从互联网拉取一些pipy包，因此内网安装失败。</p>
+<p>需要手动打包纯离线插件。</p>
+<p><strong>1. 插件重新打包工具</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载插件打包工具</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/junjiem/dify-plugin-repackaging.git</span><br><span class="line"><span class="built_in">cd</span> dify-plugin-repackaging</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给脚本执行权限</span></span><br><span class="line"><span class="built_in">chmod</span> +x plugin_repackaging.sh</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 打包不同架构插件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x86_64架构打包</span></span><br><span class="line">./plugin_repackaging.sh -p manylinux2014_x86_64 -s linux-amd64 <span class="built_in">local</span> _temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># ARM架构打包（适用于M1/M2 Mac或ARM服务器）</span></span><br><span class="line">./plugin_repackaging.sh -p manylinux2014_aarch64 -s linux-arm64 <span class="built_in">local</span> _temp</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 常见问题排查</strong></p>
+<p><strong>问题1：插件签名验证失败</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">错误信息：PluginDaemonBadRequestError: plugin verification has been enabled, </span><br><span class="line">and the plugin you want to install has a bad signature</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在docker/.env配置文件添加</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;FORCE_VERIFYING_SIGNATURE=false&quot;</span> &gt;&gt; docker/.env</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line"><span class="built_in">cd</span> docker</span><br><span class="line">docker compose down</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p><strong>问题2：架构不匹配错误</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误信息：Because gevent==25.5.1 has no wheels with a matching platform tag</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前系统架构</span></span><br><span class="line"><span class="built_in">uname</span> -m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对不同架构重新打包</span></span><br><span class="line"><span class="comment"># x86_64系统使用：</span></span><br><span class="line">./plugin_repackaging.sh -p manylinux2014_x86_64 -s linux-amd64 <span class="built_in">local</span> _temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># aarch64系统使用：</span></span><br><span class="line">./plugin_repackaging.sh -p manylinux2014_aarch64 -s linux-arm64 <span class="built_in">local</span> _temp</span><br></pre></td></tr></table></figure>
+
+<p><strong>问题3：查看详细错误日志</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看插件守护进程日志</span></span><br><span class="line">docker logs -f docker-plugin_daemon-1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看API服务日志</span></span><br><span class="line">docker logs -f docker-api-1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看工作进程日志</span></span><br><span class="line">docker logs -f docker-worker-1</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 插件安装验证</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查插件是否安装成功</span></span><br><span class="line"><span class="comment"># 有些插件（如OpenRouter）不会显示在工具列表，但会在模型配置中出现</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过API检查插件状态</span></span><br><span class="line">curl -X GET <span class="string">&quot;http://localhost/console/api/workspaces/current/tool-providers&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_ACCESS_TOKEN&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参考链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/junjiem/dify-plugin-repackaging">https://github.com/junjiem/dify-plugin-repackaging</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lebenito030/dify-plugin-repackaging">https://github.com/lebenito030/dify-plugin-repackaging</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/f80407515/article/details/147240740">https://blog.csdn.net/f80407515/article/details/147240740</a></p>
+<p><a target="_blank" rel="noopener" href="https://blogs.lebenito.net/posts/Blind-Do/4a33641693af7111">https://blogs.lebenito.net/posts/Blind-Do/4a33641693af7111</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xjl456852/p/18865586">https://www.cnblogs.com/xjl456852/p/18865586</a></p>
+<h3 id="扣子（Coze）：字节生态智能体平台"><a href="#扣子（Coze）：字节生态智能体平台" class="headerlink" title="扣子（Coze）：字节生态智能体平台"></a>扣子（Coze）：字节生态智能体平台</h3><p>扣子是字节跳动推出的商业化AI Bot构建平台，主要特点：</p>
+<ul>
+<li>完整的UI组件 + 低代码工作流 + AI大模型</li>
+<li>便于与飞书生态集成</li>
+<li>主要支持豆包和DeepSeek模型</li>
+<li>云服务为主，不支持私有化部署</li>
+</ul>
+<p><strong>技术限制：</strong></p>
+<ul>
+<li>代码节点仅支持有限的第三方依赖（JavaScript：dayjs、lodash；Python：requests_async、numpy）</li>
+<li>无法导入其他第三方包，限制了功能扩展能力</li>
+</ul>
+<p><strong>适用场景：</strong></p>
+<ul>
+<li>快速上线，无需大量技术投入</li>
+<li>主要构建对话类Bot应用</li>
+<li>与字节生态有集成需求的场景</li>
+</ul>
+<blockquote>
+<p>最新消息：字节出了开源社区版的coze, <a target="_blank" rel="noopener" href="https://github.com/coze-dev/coze-studio">https://github.com/coze-dev/coze-studio</a></p>
+</blockquote>
+<h3 id="HiAgent：企业级私有化方案"><a href="#HiAgent：企业级私有化方案" class="headerlink" title="HiAgent：企业级私有化方案"></a>HiAgent：企业级私有化方案</h3><p>HiAgent是字节旗下火山引擎推出的企业AI中台，专注于大型企业的私有化部署需求：</p>
+<ul>
+<li>支持本地部署和定制化开发</li>
+<li>提供完整的企业级解决方案</li>
+<li>适合大型企业和高校等机构使用</li>
+</ul>
+<p><strong>选择建议：</strong></p>
+<ol>
+<li><strong>数据安全优先</strong>：选择Dify或HiAgent的私有化部署</li>
+<li><strong>快速验证</strong>：使用扣子进行原型开发和功能验证  </li>
+<li><strong>企业级应用</strong>：考虑HiAgent的商业化解决方案</li>
+</ol>
+<h2 id="大语言模型与本地部署"><a href="#大语言模型与本地部署" class="headerlink" title="大语言模型与本地部署"></a>大语言模型与本地部署</h2><h3 id="DeepSeek系列模型"><a href="#DeepSeek系列模型" class="headerlink" title="DeepSeek系列模型"></a>DeepSeek系列模型</h3><p>DeepSeek V3作为当前领先的开源大模型，具有以下特点：</p>
+<ul>
+<li><strong>参数规模</strong>：671B总参数，37B激活参数</li>
+<li><strong>上下文长度</strong>：128K token</li>
+<li><strong>模型能力</strong>：支持推理、代码生成、多语言处理</li>
+</ul>
+<p>DeepSeek R1专注于推理能力优化，特别适合需要逻辑推理的智能体任务。</p>
+<h3 id="本地模型部署方案"><a href="#本地模型部署方案" class="headerlink" title="本地模型部署方案"></a>本地模型部署方案</h3><h4 id="Ollama详细部署指南"><a href="#Ollama详细部署指南" class="headerlink" title="Ollama详细部署指南"></a>Ollama详细部署指南</h4><p><strong>1. Ollama安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Linux/macOS 一键安装</span></span><br><span class="line">curl -fsSL https://ollama.ai/install.sh | sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者手动下载安装</span></span><br><span class="line"><span class="comment"># macOS</span></span><br><span class="line">curl -L https://ollama.ai/download/ollama-darwin -o ollama</span><br><span class="line"><span class="built_in">chmod</span> +x ollama</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> ollama /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linux</span></span><br><span class="line">curl -L https://ollama.ai/download/ollama-linux-amd64 -o ollama</span><br><span class="line"><span class="built_in">chmod</span> +x ollama</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> ollama /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="comment"># 下载 https://ollama.ai/download/ollama-windows-amd64.exe</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 镜像源配置（重要）</strong></p>
+<p>国内用户建议配置镜像源以提高下载速度：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建配置目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.ollama</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法1：创建配置文件</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; ~/.ollama/config.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;registry&quot;: &#123;</span></span><br><span class="line"><span class="string">        &quot;mirrors&quot;: &#123;</span></span><br><span class="line"><span class="string">            &quot;registry.ollama.ai&quot;: &quot;https://ollama.modelscope.cn&quot;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>可用镜像源列表：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 魔搭社区（推荐）</span></span><br><span class="line">https://ollama.modelscope.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 阿里云镜像</span></span><br><span class="line">https://registry.ollama.ai</span><br><span class="line"></span><br><span class="line"><span class="comment"># DeepSeek官方镜像</span></span><br><span class="line">https://ollama.deepseek.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浙江大学镜像站</span></span><br><span class="line">https://ollama.zju.edu.cn</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法2：环境变量配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时设置</span></span><br><span class="line"><span class="built_in">export</span> OLLAMA_HOST=0.0.0.0:11434</span><br><span class="line"><span class="built_in">export</span> OLLAMA_REGISTRY_MIRROR=https://ollama.modelscope.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 永久设置</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export OLLAMA_HOST=0.0.0.0:11434&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export OLLAMA_REGISTRY_MIRROR=https://ollama.modelscope.cn&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 模型管理命令详解</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看可用模型</span></span><br><span class="line">ollama list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载并运行模型</span></span><br><span class="line">ollama run deepseek-r1:7b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 仅下载模型（不运行）</span></span><br><span class="line">ollama pull llama3.2:1b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看正在运行的模型</span></span><br><span class="line">ollama ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止指定模型</span></span><br><span class="line">ollama stop deepseek-r1:7b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除模型</span></span><br><span class="line">ollama <span class="built_in">rm</span> llama3.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看模型详细信息</span></span><br><span class="line">ollama show deepseek-r1:7b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制模型（创建别名）</span></span><br><span class="line">ollama <span class="built_in">cp</span> deepseek-r1:7b my-deepseek</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 高级配置选项</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置并发加载模型数量</span></span><br><span class="line"><span class="built_in">export</span> OLLAMA_MAX_LOADED_MODELS=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置模型存储路径</span></span><br><span class="line"><span class="built_in">export</span> OLLAMA_MODELS=/path/to/your/models</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置GPU使用</span></span><br><span class="line"><span class="built_in">export</span> OLLAMA_NUM_GPU=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置内存限制</span></span><br><span class="line"><span class="built_in">export</span> OLLAMA_MAX_VRAM=8GB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务（后台运行）</span></span><br><span class="line">ollama serve</span><br></pre></td></tr></table></figure>
+
+<p><strong>5. 推荐轻量级模型</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>大小</th>
+<th>参数量</th>
+<th>运行命令</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DeepSeek-R1</td>
+<td>4.7GB</td>
+<td>7B</td>
+<td><code>ollama run deepseek-r1:7b</code></td>
+<td>推理、代码生成</td>
+</tr>
+<tr>
+<td>Llama 3.2</td>
+<td>1.3GB</td>
+<td>1B</td>
+<td><code>ollama run llama3.2:1b</code></td>
+<td>轻量级对话</td>
+</tr>
+<tr>
+<td>Llama 3.2</td>
+<td>2.0GB</td>
+<td>3B</td>
+<td><code>ollama run llama3.2:3b</code></td>
+<td>平衡性能</td>
+</tr>
+<tr>
+<td>Qwen2.5</td>
+<td>1.5GB</td>
+<td>1.5B</td>
+<td><code>ollama run qwen2.5:1.5b</code></td>
+<td>中文优化</td>
+</tr>
+<tr>
+<td>Gemma 2</td>
+<td>1.6GB</td>
+<td>2B</td>
+<td><code>ollama run gemma2:2b</code></td>
+<td>Google模型</td>
+</tr>
+</tbody></table>
+<h4 id="Open-WebUI前端部署"><a href="#Open-WebUI前端部署" class="headerlink" title="Open WebUI前端部署"></a>Open WebUI前端部署</h4><p><strong>1. Docker部署（推荐）</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础部署</span></span><br><span class="line">docker run -d -p 3000:8080 \</span><br><span class="line">  --add-host=host.docker.internal:host-gateway \</span><br><span class="line">  -v open-webui:/app/backend/data \</span><br><span class="line">  --name open-webui \</span><br><span class="line">  --restart always \</span><br><span class="line">  ghcr.io/open-webui/open-webui:main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证部署</span></span><br><span class="line">docker ps | grep open-webui</span><br><span class="line">docker logs open-webui</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 功能配置</strong></p>
+<p>首次访问需要创建管理员账户，然后可以配置：</p>
+<ul>
+<li><strong>模型管理</strong>：添加&#x2F;删除可用模型</li>
+<li><strong>用户权限</strong>：设置用户访问级别</li>
+<li><strong>插件扩展</strong>：安装各种功能插件</li>
+<li><strong>Arena模式</strong>：随机选择模型进行对比测试</li>
+</ul>
+<p><strong>Arena Model</strong>  1.竞技场模型<br>The Arena Model randomly selects from a pool of available models, making sure the evaluation is fair and unbiased. This helps in removing a potential flaw in manual comparison: ecological validity – ensuring you don’t knowingly or unknowingly favor one model.<br>Arena 模型会从众多可用模型中随机选择，确保评估公平公正。这有助于消除人工比较中的潜在缺陷： 生态效度 ——确保您不会有意或无意地偏向某个模型。</p>
+<h4 id="Dify集成Ollama配置"><a href="#Dify集成Ollama配置" class="headerlink" title="Dify集成Ollama配置"></a>Dify集成Ollama配置</h4><p><strong>1. 在Dify中添加Ollama模型</strong></p>
+<p>进入Dify管理后台 → 模型供应商 → 添加模型：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模型供应商：Ollama</span></span><br><span class="line"><span class="comment"># 基础URL：http://host.docker.internal:11434</span></span><br><span class="line"><span class="comment"># 模型名称：deepseek-r1:7b</span></span><br><span class="line"><span class="comment"># 模型类型：LLM</span></span><br><span class="line"><span class="comment"># 启用对话：是</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. Docker网络配置注意事项</strong></p>
+<p>如果Dify和Ollama都运行在Docker中，需要确保网络连通：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查Docker网络</span></span><br><span class="line">docker network <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建自定义网络（可选）</span></span><br><span class="line">docker network create ollama-network</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Ollama时加入网络</span></span><br><span class="line">docker run -d --name ollama \</span><br><span class="line">  --network ollama-network \</span><br><span class="line">  -p 11434:11434 \</span><br><span class="line">  -v ollama:/root/.ollama \</span><br><span class="line">  ollama/ollama</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在Dify中使用容器名访问</span></span><br><span class="line"><span class="comment"># 基础URL：http://ollama:11434</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 性能优化配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># GPU支持（NVIDIA）</span></span><br><span class="line">docker run -d --gpus all \</span><br><span class="line">  --name ollama \</span><br><span class="line">  -p 11434:11434 \</span><br><span class="line">  -v ollama:/root/.ollama \</span><br><span class="line">  ollama/ollama</span><br><span class="line"></span><br><span class="line"><span class="comment"># 内存限制</span></span><br><span class="line">docker run -d --name ollama \</span><br><span class="line">  --memory=8g \</span><br><span class="line">  --cpus=<span class="string">&quot;4.0&quot;</span> \</span><br><span class="line">  -p 11434:11434 \</span><br><span class="line">  -v ollama:/root/.ollama \</span><br><span class="line">  ollama/ollama</span><br></pre></td></tr></table></figure>
+
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ollama/ollama">Ollama官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/open-webui/open-webui">Open WebUI项目</a></li>
+<li><a target="_blank" rel="noopener" href="https://modelscope.cn/docs/ollama">魔搭社区Ollama镜像</a></li>
+<li><a target="_blank" rel="noopener" href="https://ollama.ai/library">Ollama模型库</a></li>
+</ul>
+<h2 id="RAG与知识库构建"><a href="#RAG与知识库构建" class="headerlink" title="RAG与知识库构建"></a>RAG与知识库构建</h2><h3 id="RAG技术原理"><a href="#RAG技术原理" class="headerlink" title="RAG技术原理"></a>RAG技术原理</h3><ul>
+<li><strong>检索（Retrieval）</strong>：从外部知识库中查找相关信息</li>
+<li><strong>增强（Augmented）</strong>：用检索到的信息增强AI模型的知识</li>
+<li><strong>生成（Generation）</strong>：基于增强后的信息生成回答</li>
+</ul>
+<p>RAG（Retrieval-Augmented Generation）结合了信息检索和文本生成技术，解决了以下核心问题：</p>
+<ul>
+<li>AI模型知识截止时间限制</li>
+<li>专业领域知识缺乏</li>
+<li>避免模型”幻觉”现象</li>
+<li>提供可追溯的信息来源</li>
+</ul>
+<p><strong>基本工作流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户问题 → 向量化 → 相似性搜索 → 检索相关文档 → 组合提示词 → LLM生成答案</span><br></pre></td></tr></table></figure>
+
+<h3 id="知识库构建实践"><a href="#知识库构建实践" class="headerlink" title="知识库构建实践"></a>知识库构建实践</h3><p><strong>文档处理流程：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文本分块</span></span><br><span class="line"><span class="keyword">from</span> langchain.text_splitter <span class="keyword">import</span> RecursiveCharacterTextSplitter</span><br><span class="line">text_splitter = RecursiveCharacterTextSplitter(</span><br><span class="line">    chunk_size=<span class="number">1000</span>,</span><br><span class="line">    chunk_overlap=<span class="number">200</span></span><br><span class="line">)</span><br><span class="line">chunks = text_splitter.split_documents(documents)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向量化存储</span></span><br><span class="line"><span class="keyword">from</span> langchain.embeddings <span class="keyword">import</span> OpenAIEmbeddings</span><br><span class="line"><span class="keyword">from</span> langchain.vectorstores <span class="keyword">import</span> Chroma</span><br><span class="line">embeddings = OpenAIEmbeddings()</span><br><span class="line">vectorstore = Chroma.from_documents(</span><br><span class="line">    documents=chunks,</span><br><span class="line">    embedding=embeddings</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>MaxKB知识库系统</strong></p>
+<p>MaxKB是企业级AI助手，支持RAG检索增强生成：</p>
+<ul>
+<li>支持多种文档格式：TXT、Markdown、PDF、HTML、DOC、CSV</li>
+<li>支持同步Notion文档和网页内容</li>
+<li>提供工作流编排和MCP工具调用能力</li>
+<li>广泛应用于智能客服、企业知识库问答等场景</li>
+</ul>
+<p><strong>部署配置：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name=maxkb --restart=always -p 8080:8080 \</span><br><span class="line">  -v ~/.maxkb:/var/lib/postgresql/data \</span><br><span class="line">  -v ~/.python-packages:/opt/maxkb/app/sandbox/python-packages \</span><br><span class="line">  registry.fit2cloud.com/maxkb/maxkb</span><br></pre></td></tr></table></figure>
+
+<h3 id="向量数据库技术"><a href="#向量数据库技术" class="headerlink" title="向量数据库技术"></a>向量数据库技术</h3><p><strong>Milvus向量数据库</strong>为AI应用提供高性能向量检索能力：</p>
+<ul>
+<li>专门为GenAI应用设计的开源向量数据库</li>
+<li>支持高速搜索和扩展到数十亿个向量</li>
+<li>基于Approximate Nearest Neighbor（ANN）算法进行语义相似性搜索</li>
+</ul>
+<p>向量嵌入技术将非结构化数据转换为数值表示，在多维空间中相似的概念会被放置得更近，从而实现语义搜索而非仅仅是关键词匹配。</p>
+<h2 id="智能体应用架构设计"><a href="#智能体应用架构设计" class="headerlink" title="智能体应用架构设计"></a>智能体应用架构设计</h2><h3 id="应用类型与选择"><a href="#应用类型与选择" class="headerlink" title="应用类型与选择"></a>应用类型与选择</h3><p>Dify支持多种应用类型，各有不同的适用场景：</p>
+<table>
+<thead>
+<tr>
+<th>应用类型</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>聊天助手</strong></td>
+<td>基于LLM的对话式交互</td>
+<td>客服机器人、咨询问答</td>
+</tr>
+<tr>
+<td><strong>文本生成</strong></td>
+<td>单次生成类任务</td>
+<td>内容创作、文本分类、翻译</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>任务分解、推理思考、工具调用</td>
+<td>复杂业务流程自动化</td>
+</tr>
+<tr>
+<td><strong>对话流</strong></td>
+<td>多轮对话，具有记忆功能</td>
+<td>智能助手、个人顾问</td>
+</tr>
+<tr>
+<td><strong>工作流</strong></td>
+<td>自动化批处理</td>
+<td>文档处理、数据分析</td>
+</tr>
+</tbody></table>
+<h3 id="Agent执行模式"><a href="#Agent执行模式" class="headerlink" title="Agent执行模式"></a>Agent执行模式</h3><p><strong>Function Calling模式</strong></p>
+<ul>
+<li>基于OpenAI的Function Calling规范</li>
+<li>AI模型直接识别需要调用的工具</li>
+<li>一次性决定工具调用参数</li>
+<li>适合确定性任务执行</li>
+</ul>
+<p><strong>ReAct模式（Reasoning + Acting）</strong></p>
+<ul>
+<li>推理与行动的循环模式</li>
+<li>模型逐步思考，逐步行动</li>
+<li>支持多轮工具调用和中间推理</li>
+<li>适合复杂的多步骤任务</li>
+</ul>
+<h3 id="文件处理架构"><a href="#文件处理架构" class="headerlink" title="文件处理架构"></a>文件处理架构</h3><p>在智能体应用中，文件处理是一个重要环节。需要注意的是：</p>
+<ul>
+<li><strong>LLM无法直接读取文件</strong>，需要通过文档提取器转换为文本</li>
+<li>支持多种文件格式：Word、Excel、PDF、Markdown等</li>
+<li>可以通过开始节点添加文件变量，或者在附加功能中开启文件上传</li>
+</ul>
+<p><strong>文档提取流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件上传 → 文档提取器 → 文本变量 → LLM处理 → 结果输出</span><br></pre></td></tr></table></figure>
+
+<h2 id="MCP协议与工具集成"><a href="#MCP协议与工具集成" class="headerlink" title="MCP协议与工具集成"></a>MCP协议与工具集成</h2><h3 id="MCP协议概述"><a href="#MCP协议概述" class="headerlink" title="MCP协议概述"></a>MCP协议概述</h3><p>Model Context Protocol（模型上下文协议）是由Anthropic开发的开源协议，为AI模型提供安全、标准化的外部资源访问方式。</p>
+<p><strong>核心特点：</strong></p>
+<ul>
+<li>让AI模型安全地访问外部数据和工具</li>
+<li>提供统一的接口标准</li>
+<li>支持动态上下文扩展</li>
+<li>保障数据安全和隐私</li>
+</ul>
+<p><strong>传输方式：</strong></p>
+<ul>
+<li>HTTP with SSE（Server-Sent Events）</li>
+<li>Streamable HTTP：支持流式数据传输</li>
+</ul>
+<p><strong>MCP协议：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://modelcontextprotocol.io/introduction">https://modelcontextprotocol.io/introduction</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/np/mcp-protocol.html">https://www.runoob.com/np/mcp-protocol.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yzfly/Awesome-MCP-ZH">https://github.com/yzfly/Awesome-MCP-ZH</a></p>
+<p>常用的MCP client: Claude Desktop, AI 应用，Dify, Vscode , Cursor等。</p>
+<h3 id="MCP服务器部署"><a href="#MCP服务器部署" class="headerlink" title="MCP服务器部署"></a>MCP服务器部署</h3><p><strong>Chrome MCP Server</strong></p>
+<p>Chrome MCP Server将浏览器功能暴露给AI助手，实现浏览器自动化：</p>
+<p>环境要求：</p>
+<ul>
+<li>Node.js &gt;&#x3D; 18.19.0</li>
+<li>Chrome&#x2F;Chromium浏览器</li>
+</ul>
+<p>安装步骤：</p>
+<ol>
+<li>下载Chrome扩展并安装到浏览器</li>
+<li>全局安装bridge：<code>npm install -g mcp-chrome-bridge</code></li>
+<li>配置Claude Desktop连接</li>
+</ol>
+<p><strong>配置示例：</strong></p>
+<p>连接方式1:</p>
+<p><strong>使用streamable http的方式连接</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;mcpServers&quot;: &#123;</span><br><span class="line">    &quot;chrome-mcp-server&quot;: &#123;</span><br><span class="line">      &quot;type&quot;: &quot;streamableHttp&quot;,</span><br><span class="line">      &quot;url&quot;: &quot;http://127.0.0.1:12306/mcp&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>连接方式2:</p>
+<p><strong>使用stdio的方式连接</strong></p>
+<p>比如客户端Claude Desktop暂时仅支持stdio连接方式。</p>
+<p>找到插件的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Application Support/Claude/ npm list -g mcp-chrome-bridge</span><br><span class="line">/opt/homebrew/lib</span><br><span class="line">└── mcp-chrome-bridge@1.0.29</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/homebrew/lib/node_modules/mcp-chrome-bridge/dist/mcp/mcp-server-stdio.js</span><br></pre></td></tr></table></figure>
+
+<p>在Claude Desktop中配置MCP Server</p>
+<p>点击settings, Developer, 点击配置，会自动创建配置文件。</p>
+<p>配置文件位置：<code>~/Library/Application Support/Claude/claude_desktop_config.json</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;mcpServers&quot;: &#123;</span><br><span class="line">    &quot;chrome-mcp-stdio&quot;: &#123;</span><br><span class="line">      &quot;command&quot;: &quot;npx&quot;,</span><br><span class="line">      &quot;args&quot;: [</span><br><span class="line">        &quot;node&quot;,</span><br><span class="line">        &quot;/opt/homebrew/lib/node_modules/mcp-chrome-bridge/dist/mcp/mcp-server-stdio.js&quot;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启Claude Desktop，现在就可以在Claude Desktop中直接调用浏览器进行操作了！</p>
+<p><strong>Playwright MCP</strong></p>
+<p>Playwright MCP提供了更强大的浏览器自动化能力：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @playwright/mcp@latest</span><br></pre></td></tr></table></figure>
+
+<p><strong>在Dify中集成MCP：</strong></p>
+<p>启动服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx @playwright/mcp@latest --port 8931</span><br></pre></td></tr></table></figure>
+
+<p>注意，需要配置IP地址为电脑本地IP，而不是127.0.0.1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;  &quot;server_name&quot;: &#123;    &quot;url&quot;: &quot;http://192.168.64.1:8931/sse&quot;,    &quot;headers&quot;: &#123;&#125;, &quot;timeout&quot;: 50,    &quot;sse_read_timeout&quot;: 50  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在Claude Desktop中配置：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;mcpServers&quot;: &#123;</span><br><span class="line">    &quot;playwright&quot;: &#123;</span><br><span class="line">      &quot;command&quot;: &quot;npx&quot;,</span><br><span class="line">      &quot;args&quot;: [</span><br><span class="line">        &quot;@playwright/mcp@latest&quot;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以和之前的配置文件合并：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;mcpServers&quot;:</span> &#123;</span><br><span class="line">    <span class="attr">&quot;chrome-mcp-stdio&quot;:</span> &#123;</span><br><span class="line">      <span class="attr">&quot;command&quot;:</span> <span class="string">&quot;npx&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;args&quot;:</span> [</span><br><span class="line">        <span class="string">&quot;node&quot;</span>,</span><br><span class="line">        <span class="string">&quot;/opt/homebrew/lib/node_modules/mcp-chrome-bridge/dist/mcp/mcp-server-stdio.js&quot;</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;playwright&quot;:</span> &#123;</span><br><span class="line">      <span class="attr">&quot;command&quot;:</span> <span class="string">&quot;npx&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;args&quot;:</span> [</span><br><span class="line">        <span class="string">&quot;@playwright/mcp@latest&quot;</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Dify集成MCP"><a href="#Dify集成MCP" class="headerlink" title="Dify集成MCP"></a>Dify集成MCP</h3><p>注意，可以在Dify中使用MCP插件，或者先配置MCP服务器（1.6.0以上）。</p>
+<p>如果报错，可以选择其他Agent策略。有些可能有问题，不能正常使用。建议选择官方的Dify Agent 策略。</p>
+<p>然后可以直接调用工具，或者在Agent中添加工具。</p>
+<h3 id="其他MCP工具"><a href="#其他MCP工具" class="headerlink" title="其他MCP工具"></a>其他MCP工具</h3><p><a target="_blank" rel="noopener" href="https://modelcontextprotocol.io/examples">https://modelcontextprotocol.io/examples</a></p>
+<ul>
+<li><strong>filesystem-MCP</strong>：本地文件系统访问</li>
+<li><strong>MarkItDown-MCP</strong>：文档格式转换</li>
+<li><strong>firecrawl-mcp-server</strong>：网页爬取</li>
+</ul>
+<h2 id="实践案例：测试助手智能体"><a href="#实践案例：测试助手智能体" class="headerlink" title="实践案例：测试助手智能体"></a>实践案例：测试助手智能体</h2><h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><p>针对测试管理、执行工作中重复度高、机械化程度高的工作开发智能体，主要包括：</p>
+<ul>
+<li>文档检核智能体</li>
+<li>批量任务处理智能体</li>
+<li>自动化测试任务执行智能体</li>
+</ul>
+<h3 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h3><p><strong>智能体架构层次：</strong></p>
+<pre><code class="highlight mermaid">graph LR
+    subgraph &quot;用户交互层&quot;
+        U1[测试经理用户]
+        U2[文件上传界面]
+        U3[参数输入表单]
+    end
+    
+    subgraph &quot;智能体层&quot;
+        S1[测试报告核验助手]
+        S2[对话管理]
+        S3[文件处理]
+    end
+    
+    subgraph &quot;工作流层&quot;
+        W1[测试报告核验工作流]
+    end
+    
+    subgraph &quot;节点执行层&quot;
+        N1[文档提取器节点]
+        N2[代码执行节点]
+        N3[HTTP请求节点]
+        N4[LLM验证节点]
+    end
+    
+    subgraph &quot;外部系统层&quot;
+        E1[测试管理平台API]
+        E2[VP系统API]
+        E3[DeepSeek大模型]
+    end</code></pre>
+
+<h3 id="工作流设计"><a href="#工作流设计" class="headerlink" title="工作流设计"></a>工作流设计</h3><p><strong>数据流处理：</strong></p>
+<ol>
+<li><p><strong>输入层</strong>：</p>
+<ul>
+<li>业务需求编号和名称</li>
+<li>测试报告文件</li>
+<li>测试案例文件</li>
+<li>背景内容</li>
+</ul>
+</li>
+<li><p><strong>数据提取层</strong>：</p>
+<ul>
+<li>文档提取器：处理Word&#x2F;Excel文档</li>
+<li>代码执行：提取文件元信息</li>
+<li>HTTP请求：查询外部系统数据</li>
+</ul>
+</li>
+<li><p><strong>验证层</strong>：</p>
+<ul>
+<li>LLM验证文件名规范</li>
+<li>LLM验证报告内容完整性</li>
+<li>LLM验证案例数据一致性</li>
+</ul>
+</li>
+<li><p><strong>分析层</strong>：</p>
+<ul>
+<li>交叉验证分析</li>
+<li>数据一致性检查</li>
+</ul>
+</li>
+<li><p><strong>输出层</strong>：</p>
+<ul>
+<li>生成结构化验证报告</li>
+<li>提供问题清单和改进建议</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据库集成实践"><a href="#数据库集成实践" class="headerlink" title="数据库集成实践"></a>数据库集成实践</h3><p>在工作流中，可能需要查询外部数据库。</p>
+<p><strong>MySQL连接配置：</strong></p>
+<p>由于Dify运行在Docker环境中，需要特殊的网络配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">主机地址: host.docker.internal</span><br><span class="line">端口: 3306</span><br><span class="line">数据库名: dify_test</span><br><span class="line">用户名: dify</span><br><span class="line">密码: dify123</span><br></pre></td></tr></table></figure>
+
+<p><strong>连接字符串格式：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql+pymysql://dify:dify123@host.docker.internal:3306/dify_test</span><br></pre></td></tr></table></figure>
+
+<p>这种架构设计确保了智能体能够：</p>
+<ul>
+<li>自动处理多种格式的测试文档</li>
+<li>与外部测试管理系统无缝集成</li>
+<li>提供准确的验证结果和改进建议</li>
+<li>支持批量处理和规模化应用</li>
+</ul>
+<h2 id="AI编程助手与开发工具"><a href="#AI编程助手与开发工具" class="headerlink" title="AI编程助手与开发工具"></a>AI编程助手与开发工具</h2><h3 id="主流编程助手工具"><a href="#主流编程助手工具" class="headerlink" title="主流编程助手工具"></a>主流编程助手工具</h3><p>在智能体开发过程中，AI编程助手能够显著提高开发效率：</p>
+<h4 id="Claude-Code详细配置"><a href="#Claude-Code详细配置" class="headerlink" title="Claude Code详细配置"></a>Claude Code详细配置</h4><p><strong>1. 安装配置</strong></p>
+<p>Claude Code是Anthropic推出的官方CLI工具，需要API Key支持：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Claude Code</span></span><br><span class="line">npm install -g @anthropic-ai/claude-code</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置API Key</span></span><br><span class="line"><span class="built_in">export</span> ANTHROPIC_API_KEY=<span class="string">&quot;your-api-key-here&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者在配置文件中设置</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export ANTHROPIC_API_KEY=&quot;your-api-key-here&quot;&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 网络代理配置（国内必需）</strong></p>
+<p>国内用户需要配置代理才能正常使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法1：环境变量配置</span></span><br><span class="line"><span class="built_in">export</span> HTTP_PROXY=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> HTTPS_PROXY=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> ALL_PROXY=http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法2：通过代理软件运行</span></span><br><span class="line"><span class="comment"># 确保代理软件（如Clash、V2Ray等）运行在7890端口</span></span><br><span class="line">claude</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法3：使用proxychains（Linux/macOS）</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install proxychains4  <span class="comment"># Ubuntu/Debian</span></span><br><span class="line">brew install proxychains-ng        <span class="comment"># macOS</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑配置文件 /etc/proxychains.conf 或 ~/.proxychains/proxychains.conf</span></span><br><span class="line"><span class="comment"># 添加：socks5 127.0.0.1 7890</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用代理运行</span></span><br><span class="line">proxychains4 claude</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 主要功能特点</strong></p>
+<ul>
+<li><strong>大型代码库分析</strong>：支持超过100万token上下文长度</li>
+<li><strong>多模态应用生成</strong>：通过PDF或草图快速生成应用程序原型</li>
+<li><strong>自动化运维任务</strong>：Git操作、PR查询、代码迁移计划制定</li>
+<li><strong>集成外部工具</strong>：通过MCP服务器连接各种工具</li>
+<li><strong>联网搜索支持</strong>：获取最新信息</li>
+</ul>
+<h4 id="Gemini-CLI部署配置"><a href="#Gemini-CLI部署配置" class="headerlink" title="Gemini CLI部署配置"></a>Gemini CLI部署配置</h4><p><strong>1. 安装与配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Gemini CLI</span></span><br><span class="line">npm install -g @google/gemini-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置API Key</span></span><br><span class="line"><span class="built_in">export</span> GEMINI_API_KEY=<span class="string">&quot;YOUR_API_KEY&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export GEMINI_API_KEY=&quot;YOUR_API_KEY&quot;&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 代理配置（国内必需）</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置代理环境变量</span></span><br><span class="line"><span class="built_in">export</span> HTTP_PROXY=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> HTTPS_PROXY=http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证代理连接</span></span><br><span class="line">curl -I https://ai.google.dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Gemini CLI</span></span><br><span class="line">gemini</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 功能亮点</strong></p>
+<ul>
+<li><strong>处理大型代码库</strong>：超过100万token上下文长度</li>
+<li><strong>多模态应用生成</strong>：PDF&#x2F;草图快速原型</li>
+<li><strong>自动化运维</strong>：Git操作、PR查询等</li>
+<li><strong>媒体生成集成</strong>：Imagen、Veo、Lyria等</li>
+<li><strong>实时信息搜索</strong>：内置Google Search</li>
+</ul>
+<h4 id="其他优秀开发工具"><a href="#其他优秀开发工具" class="headerlink" title="其他优秀开发工具"></a>其他优秀开发工具</h4><p><strong>1. Cursor</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载安装</span></span><br><span class="line"><span class="comment"># https://cursor.sh/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主要特点：</span></span><br><span class="line"><span class="comment"># - 集成AI的代码编辑器</span></span><br><span class="line"><span class="comment"># - 支持多种大模型</span></span><br><span class="line"><span class="comment"># - 实时代码补全和解释</span></span><br><span class="line"><span class="comment"># - 支持自然语言编程</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. Windsurf</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新兴的AI编程环境</span></span><br><span class="line"><span class="comment"># https://codeium.com/windsurf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 特点：</span></span><br><span class="line"><span class="comment"># - AI原生的编程体验</span></span><br><span class="line"><span class="comment"># - 多文件代码理解</span></span><br><span class="line"><span class="comment"># - 智能重构和优化</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3. GitHub Copilot</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># VSCode扩展安装</span></span><br><span class="line"><span class="comment"># 在VSCode中搜索&quot;GitHub Copilot&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或通过CLI使用</span></span><br><span class="line">gh copilot suggest <span class="string">&quot;create a web server&quot;</span></span><br><span class="line">gh copilot explain <span class="string">&quot;complex regex pattern&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>4. TabbyML - 开源替代方案</strong></p>
+<p>自建AI编程助手：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Docker部署</span></span><br><span class="line">docker run -it \</span><br><span class="line">  --gpus all -p 8080:8080 -v ~/.tabby:/data \</span><br><span class="line">  tabbyml/tabby \</span><br><span class="line">  serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问 http://localhost:8080</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>配置要点：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 环境变量配置</span></span><br><span class="line"><span class="built_in">export</span> TABBY_MODEL_CACHE_ROOT=/path/to/models</span><br><span class="line"><span class="built_in">export</span> TABBY_HOST=0.0.0.0</span><br><span class="line"><span class="built_in">export</span> TABBY_PORT=8080</span><br><span class="line"></span><br><span class="line"><span class="comment"># GPU加速配置</span></span><br><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=0</span><br></pre></td></tr></table></figure>
+
+<h3 id="开发环境最佳实践"><a href="#开发环境最佳实践" class="headerlink" title="开发环境最佳实践"></a>开发环境最佳实践</h3><p><strong>1. 代理配置统一管理</strong></p>
+<p>创建代理配置脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.proxy_config.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置代理</span></span><br><span class="line"><span class="built_in">export</span> HTTP_PROXY=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> HTTPS_PROXY=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">export</span> ALL_PROXY=http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line"><span class="comment"># Git代理配置</span></span><br><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line"><span class="comment"># npm代理配置</span></span><br><span class="line">npm config <span class="built_in">set</span> proxy http://127.0.0.1:7890</span><br><span class="line">npm config <span class="built_in">set</span> https-proxy http://127.0.0.1:7890</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;代理配置已设置&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用代理</span></span><br><span class="line"><span class="built_in">source</span> ~/.proxy_config.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁用代理时</span></span><br><span class="line"><span class="built_in">unset</span> HTTP_PROXY HTTPS_PROXY ALL_PROXY</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line">npm config delete proxy</span><br><span class="line">npm config delete https-proxy</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. API Key管理</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建API Key配置文件</span></span><br><span class="line"><span class="comment"># ~/.api_keys</span></span><br><span class="line"><span class="built_in">export</span> ANTHROPIC_API_KEY=<span class="string">&quot;claude-api-key&quot;</span></span><br><span class="line"><span class="built_in">export</span> GEMINI_API_KEY=<span class="string">&quot;gemini-api-key&quot;</span></span><br><span class="line"><span class="built_in">export</span> OPENAI_API_KEY=<span class="string">&quot;openai-api-key&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在.zshrc或.zshrc中加载</span></span><br><span class="line"><span class="built_in">source</span> ~/.api_keys</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. Docker开发环境</strong></p>
+<p>创建统一的AI开发环境：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dockerfile</span></span><br><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">22.04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="language-bash">    curl \</span></span><br><span class="line"><span class="language-bash">    git \</span></span><br><span class="line"><span class="language-bash">    nodejs \</span></span><br><span class="line"><span class="language-bash">    npm \</span></span><br><span class="line"><span class="language-bash">    python3 \</span></span><br><span class="line"><span class="language-bash">    python3-pip \</span></span><br><span class="line"><span class="language-bash">    docker.io</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装AI工具</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm install -g @anthropic-ai/claude-code @google/gemini-cli</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> pip3 install ollama</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /workspace</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动脚本</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> start.sh /start.sh</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;/start.sh&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.anthropic.com/claude/docs/claude-code">Claude Code官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://ai.google.dev/gemini-api/docs/cli">Gemini CLI文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://cursor.sh/">Cursor官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/copilot">GitHub Copilot文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/TabbyML/tabby">TabbyML项目</a></li>
+</ul>
+<h2 id="技术生态与未来展望"><a href="#技术生态与未来展望" class="headerlink" title="技术生态与未来展望"></a>技术生态与未来展望</h2><h3 id="AI技术栈整体架构"><a href="#AI技术栈整体架构" class="headerlink" title="AI技术栈整体架构"></a>AI技术栈整体架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Ollama: 本地AI模型服务</span><br><span class="line">├── 提供各种开源模型  </span><br><span class="line">├── GPU加速推理</span><br><span class="line">└── API接口服务</span><br><span class="line"></span><br><span class="line">Open WebUI: 通用AI对话界面</span><br><span class="line">├── 友好的聊天体验</span><br><span class="line">├── 模型切换和管理</span><br><span class="line">├── 历史对话记录</span><br><span class="line">└── 插件扩展支持</span><br><span class="line"></span><br><span class="line">Dify: 企业级AI应用平台</span><br><span class="line">├── RAG应用构建</span><br><span class="line">├── Agent开发</span><br><span class="line">├── 工作流编排</span><br><span class="line">├── API生成</span><br><span class="line">└── 复杂业务逻辑</span><br><span class="line"></span><br><span class="line">MaxKB: 专业知识库系统</span><br><span class="line">├── 结构化知识管理</span><br><span class="line">├── 企业级权限控制</span><br><span class="line">├── 多租户支持</span><br><span class="line">└── 客服场景优化</span><br></pre></td></tr></table></figure>
+
+<h3 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h3><p>对于不同规模的应用场景：</p>
+<ol>
+<li><strong>新手学习</strong>：建议使用Ollama+AnythingLLM&#x2F;MaxKB架构，逐步摸索实践</li>
+<li><strong>小型单位</strong>：可选择Ollama+MaxKB&#x2F;Dify架构进行私有化部署</li>
+<li><strong>企业级应用</strong>：建议选择HiAgent等大型智能体平台，提供定制化解决方案</li>
+</ol>
+<h3 id="技术发展趋势"><a href="#技术发展趋势" class="headerlink" title="技术发展趋势"></a>技术发展趋势</h3><ul>
+<li><strong>模型能力持续提升</strong>：从GPT到Claude到DeepSeek，推理能力不断增强</li>
+<li><strong>部署成本持续降低</strong>：本地化部署方案日趋成熟</li>
+<li><strong>工具集成日益丰富</strong>：MCP协议推动了工具生态的标准化</li>
+<li><strong>应用场景不断扩展</strong>：从聊天机器人到复杂业务流程自动化</li>
+</ul>
+<h2 id="其他技术领域探索"><a href="#其他技术领域探索" class="headerlink" title="其他技术领域探索"></a>其他技术领域探索</h2><h3 id="工作流自动化：n8n"><a href="#工作流自动化：n8n" class="headerlink" title="工作流自动化：n8n"></a>工作流自动化：n8n</h3><p>n8n是一个开源的工作流自动化工具，可以与AI平台无缝集成，实现复杂的业务流程自动化。</p>
+<h4 id="n8n部署与配置"><a href="#n8n部署与配置" class="headerlink" title="n8n部署与配置"></a>n8n部署与配置</h4><p><strong>1. Docker快速部署</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建数据卷</span></span><br><span class="line">docker volume create n8n_data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基础部署</span></span><br><span class="line">docker run -it --<span class="built_in">rm</span> --name n8n -p 5678:5678 \</span><br><span class="line">  -v n8n_data:/home/node/.n8n \</span><br><span class="line">  docker.n8n.io/n8nio/n8n</span><br><span class="line"></span><br><span class="line"><span class="comment"># 持久化部署</span></span><br><span class="line">docker run -d --name n8n --restart always \</span><br><span class="line">  -p 5678:5678 \</span><br><span class="line">  -v n8n_data:/home/node/.n8n \</span><br><span class="line">  -e N8N_BASIC_AUTH_ACTIVE=<span class="literal">true</span> \</span><br><span class="line">  -e N8N_BASIC_AUTH_USER=admin \</span><br><span class="line">  -e N8N_BASIC_AUTH_PASSWORD=password \</span><br><span class="line">  docker.n8n.io/n8nio/n8n</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 环境变量配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建.env文件</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; n8n.env</span></span><br><span class="line"><span class="string">N8N_BASIC_AUTH_ACTIVE=true</span></span><br><span class="line"><span class="string">N8N_BASIC_AUTH_USER=admin</span></span><br><span class="line"><span class="string">N8N_BASIC_AUTH_PASSWORD=your_secure_password</span></span><br><span class="line"><span class="string">N8N_HOST=0.0.0.0</span></span><br><span class="line"><span class="string">N8N_PORT=5678</span></span><br><span class="line"><span class="string">N8N_PROTOCOL=http</span></span><br><span class="line"><span class="string">WEBHOOK_URL=http://localhost:5678/</span></span><br><span class="line"><span class="string">DB_TYPE=sqlite</span></span><br><span class="line"><span class="string">DB_SQLITE_DATABASE=/home/node/.n8n/database.sqlite</span></span><br><span class="line"><span class="string">N8N_ENCRYPTION_KEY=your_encryption_key</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用环境变量启动</span></span><br><span class="line">docker run -d --name n8n --restart always \</span><br><span class="line">  -p 5678:5678 \</span><br><span class="line">  -v n8n_data:/home/node/.n8n \</span><br><span class="line">  --env-file n8n.env \</span><br><span class="line">  docker.n8n.io/n8nio/n8n</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 与AI平台集成</strong></p>
+<p>n8n可以通过HTTP请求节点与Dify、Ollama等AI平台集成：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Trigger&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;n8n-nodes-base.webhook&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Call Dify API&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;n8n-nodes-base.httpRequest&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;parameters&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost/v1/chat-messages&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span> <span class="string">&quot;POST&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;headers&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;Authorization&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Bearer your-api-key&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;Content-Type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;application/json&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;body&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;inputs&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;query&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;&#123;$json.message&#125;&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;response_mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;blocking&quot;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user-123&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>访问地址：</strong> <a target="_blank" rel="noopener" href="http://localhost:5678/">http://localhost:5678</a></p>
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.n8n.io/">n8n官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.n8n.io/hosting/installation/docker/">n8n Docker部署</a></li>
+</ul>
+<h3 id="大数据技术栈"><a href="#大数据技术栈" class="headerlink" title="大数据技术栈"></a>大数据技术栈</h3><p>虽然不是AI智能体的核心内容，但在数据处理和分析方面，大数据技术仍有重要价值：</p>
+<h4 id="Hadoop生态系统"><a href="#Hadoop生态系统" class="headerlink" title="Hadoop生态系统"></a>Hadoop生态系统</h4><p><strong>核心组件：</strong></p>
+<ul>
+<li><strong>HDFS</strong>：分布式文件系统，负责存储</li>
+<li><strong>YARN</strong>：资源管理器，负责资源调度  </li>
+<li><strong>MapReduce</strong>：计算引擎，负责数据处理</li>
+</ul>
+<p><strong>快速体验部署：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用Docker快速搭建Hadoop环境</span></span><br><span class="line">docker run -it --name hadoop-test \</span><br><span class="line">  -p 9870:9870 -p 8088:8088 \</span><br><span class="line">  sequenceiq/hadoop-docker:2.7.0 \</span><br><span class="line">  /etc/bootstrap.sh -bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问Web界面</span></span><br><span class="line"><span class="comment"># HDFS: http://localhost:9870</span></span><br><span class="line"><span class="comment"># YARN: http://localhost:8088</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Spark计算引擎"><a href="#Spark计算引擎" class="headerlink" title="Spark计算引擎"></a>Spark计算引擎</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Docker部署Spark</span></span><br><span class="line">docker run -it --<span class="built_in">rm</span> \</span><br><span class="line">  -p 4040:4040 -p 8080:8080 \</span><br><span class="line">  -v $(<span class="built_in">pwd</span>):/workspace \</span><br><span class="line">  apache/spark:3.5.0 \</span><br><span class="line">  /opt/spark/bin/spark-shell</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问Spark Web UI: http://localhost:4040</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>特点：</strong></p>
+<ul>
+<li>替代MapReduce，基于内存计算，处理速度更快</li>
+<li>支持多种工作负载：批处理、流处理、机器学习</li>
+<li>包含Spark Core、Spark SQL、Spark Streaming、Spark MLlib等组件</li>
+</ul>
+<h4 id="Apache-Flink流处理"><a href="#Apache-Flink流处理" class="headerlink" title="Apache Flink流处理"></a>Apache Flink流处理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Docker部署Flink</span></span><br><span class="line">docker run -d --name flink-jobmanager \</span><br><span class="line">  -p 8081:8081 \</span><br><span class="line">  flink:1.17.0 jobmanager</span><br><span class="line"></span><br><span class="line">docker run -d --name flink-taskmanager \</span><br><span class="line">  --<span class="built_in">link</span> flink-jobmanager:jobmanager \</span><br><span class="line">  flink:1.17.0 taskmanager</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问Web界面: http://localhost:8081</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>专门为实时数据处理设计的流处理计算引擎</li>
+<li>通常与Kafka配合使用进行实时数据处理</li>
+</ul>
+<p><strong>学习路径建议：</strong></p>
+<ol>
+<li><strong>本地环境</strong>：使用Docker简化搭建过程</li>
+<li><strong>云平台体验</strong>：使用阿里云、腾讯云、AWS免费试用</li>
+<li><strong>在线平台</strong>：Databricks Community Edition</li>
+<li><strong>实践项目</strong>：从词频统计开始，逐步进阶</li>
+<li><strong>学习顺序</strong>：建议从Spark开始，相对简单且应用广泛</li>
+</ol>
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hadoop.apache.org/">Hadoop官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/">Spark官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://flink.apache.org/">Flink官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://community.cloud.databricks.com/">Databricks Community Edition</a></li>
+</ul>
+<h3 id="内网开发环境配置"><a href="#内网开发环境配置" class="headerlink" title="内网开发环境配置"></a>内网开发环境配置</h3><p>在纯内网环境下开发智能体应用时，需要特殊的配置方法：</p>
+<h4 id="Node-js离线环境配置"><a href="#Node-js离线环境配置" class="headerlink" title="Node.js离线环境配置"></a>Node.js离线环境配置</h4><p><strong>1. 手动路径配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Windows环境</span></span><br><span class="line"><span class="comment"># 手动指定命令路径</span></span><br><span class="line">C:\Users\username\nodejs\node.exe</span><br><span class="line">C:\Users\username\nodejs\npm.cmd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建批处理文件</span></span><br><span class="line"><span class="comment"># node.bat</span></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">C:\Users\username\nodejs\node.exe %*</span><br><span class="line"></span><br><span class="line"><span class="comment"># npm.bat  </span></span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">C:\Users\username\nodejs\npm.cmd %*</span><br></pre></td></tr></table></figure>
+
+<p>假设你下载了一个名为<code>my-package.zip</code>的zip包，解压后目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my-package/</span><br><span class="line">├── package.json</span><br><span class="line">├── index.js</span><br><span class="line">└── node_modules/</span><br><span class="line">    └── ... (已安装的依赖项)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>my-package</code>目录下，运行<code>npm install</code>，npm会读取<code>package.json</code>文件，安装其中的依赖项。如果<code>package.json</code>中定义了依赖<code>lodash</code>，那么npm会安装<code>lodash</code>到<code>my-package/node_modules</code>目录。</p>
+<p>查看 <code>node_modules/@playwright/mcp/package.json</code> 文件，找到 <code>&quot;bin&quot;</code> 部分，看看实际的可执行文件路径是什么，然后直接运行那个文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node node_modules/@playwright/mcp/cli.js --port 8931</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>AI智能体技术正在快速发展，从底层的大语言模型到上层的应用平台，整个技术栈日趋完善。在选择技术方案时，需要根据具体的业务需求、技术能力和安全要求进行综合考虑：很多公司因为数据安全的考虑会选择私有化部署方案。但在部署落地过程中可能遇到很多网络相关的报错问题。</p>
+<p>未来，随着MCP协议等标准的推广，AI智能体将能够更好地集成各种外部工具和系统，真正成为企业数字化转型的重要助力。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io">h4m5t</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://h4m5t.github.io/2025/07/23/AI-Agent/">http://h4m5t.github.io/2025/07/23/AI-Agent/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://h4m5t.github.io" target="_blank">h4m5t's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/MCP/">MCP</a><a class="post-meta__tags" href="/tags/Dify/">Dify</a><a class="post-meta__tags" href="/tags/LLM/">LLM</a></div><div class="post-share"><div class="social-share" data-image="https://tt3.pages.dev/img/de/de_3.jpg" data-sites="wechat,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://tt3.pages.dev/img/de/de_8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">博客更新记录 - stylus乌龙事件</div></div><div class="info-2"><div class="info-item-1"> 最近对博客进行了一次较大规模的更新，将整个系统从 Hexo 6 升级到了 Hexo 7，同时升级了 Butterfly 主题和相关依赖包。这个过程中遇到了不少问题，还有碰巧遇到stylus乌龙事件，在此记录整个更新过程和解决方案。  更新概览本次更新涉及的主要组件：  Hexo 框架：6.3.0 → 7.3.0 Butterfly 主题：升级到最新版本 Node.js 环境：16 → 18 数学公式支持：配置 MathJax 图表支持：配置 Mermaid  问题1：GitHub Actions 工作流报错问题描述升级后，GitHub Actions 自动部署工作流开始报错，检查发现是 Node.js 版本过低导致的。 解决方案修改 hexo-deploy-github-pages-action 中的 Dockerfile，将 Node.js 版本从 16 升级到 18： 1FROM node:18  这个简单的修改就解决了工作流问题。 问题2：软件供应链问题 - Stylus 包不可用问题描述在升级依赖包时遇到了令人啼笑皆非的问题： 1234npm list# 显示多个包版本...</div></div></div></a><a class="pagination-related" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/014.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Buffer Overflow Attack</div></div><div class="info-2"><div class="info-item-1">Buffer Overflow AttackBuffer overflow vulnerabilities are among the most notorious and exploited weaknesses in software security. They allow attackers to overwrite critical areas of memory, such as the return address (eip), enabling the execution of arbitrary code. In this blog post, we’ll walk through a practical demonstration of exploiting a buffer overflow vulnerability using GDB (GNU Debugger) to overwrite eip and redirect program execution to a target function.  Environment SetupBefore d...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">h4m5t</div><div class="author-info-description">人生得意需尽欢</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/h4m5t"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/h4m5t" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.linkedin.com/in/yuduo-ding-943824202" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a class="social-icon" href="https://twitter.com/h4m5t" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a><a class="social-icon" href="https://www.zhihu.com/people/h4m5t" target="_blank" title="ZhiHu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome! <br>      
+安全技术交流群753267126 <br>   
+网安考研交流群244768497 <br>   
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">智能体技术概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E6%B5%81%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text">主流智能体开发平台对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dify%EF%BC%9A%E5%BC%80%E6%BA%90%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.1.</span> <span class="toc-text">Dify：开源企业级解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dify%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2"><span class="toc-number">2.1.1.</span> <span class="toc-text">Dify详细安装部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dify%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%8D%87%E7%BA%A7"><span class="toc-number">2.1.2.</span> <span class="toc-text">Dify系统更新升级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E7%BA%BF%E6%8F%92%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.3.</span> <span class="toc-text">离线插件打包与安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A3%E5%AD%90%EF%BC%88Coze%EF%BC%89%EF%BC%9A%E5%AD%97%E8%8A%82%E7%94%9F%E6%80%81%E6%99%BA%E8%83%BD%E4%BD%93%E5%B9%B3%E5%8F%B0"><span class="toc-number">2.2.</span> <span class="toc-text">扣子（Coze）：字节生态智能体平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HiAgent%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%A7%81%E6%9C%89%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">2.3.</span> <span class="toc-text">HiAgent：企业级私有化方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text">大语言模型与本地部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DeepSeek%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">DeepSeek系列模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88"><span class="toc-number">3.2.</span> <span class="toc-text">本地模型部署方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ollama%E8%AF%A6%E7%BB%86%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97"><span class="toc-number">3.2.1.</span> <span class="toc-text">Ollama详细部署指南</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Open-WebUI%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">3.2.2.</span> <span class="toc-text">Open WebUI前端部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dify%E9%9B%86%E6%88%90Ollama%E9%85%8D%E7%BD%AE"><span class="toc-number">3.2.3.</span> <span class="toc-text">Dify集成Ollama配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RAG%E4%B8%8E%E7%9F%A5%E8%AF%86%E5%BA%93%E6%9E%84%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text">RAG与知识库构建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RAG%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">RAG技术原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5"><span class="toc-number">4.2.</span> <span class="toc-text">知识库构建实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF"><span class="toc-number">4.3.</span> <span class="toc-text">向量数据库技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">智能体应用架构设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%9E%8B%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="toc-number">5.1.</span> <span class="toc-text">应用类型与选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent%E6%89%A7%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">Agent执行模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E6%9E%B6%E6%9E%84"><span class="toc-number">5.3.</span> <span class="toc-text">文件处理架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MCP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90"><span class="toc-number">6.</span> <span class="toc-text">MCP协议与工具集成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0"><span class="toc-number">6.1.</span> <span class="toc-text">MCP协议概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2"><span class="toc-number">6.2.</span> <span class="toc-text">MCP服务器部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dify%E9%9B%86%E6%88%90MCP"><span class="toc-number">6.3.</span> <span class="toc-text">Dify集成MCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96MCP%E5%B7%A5%E5%85%B7"><span class="toc-number">6.4.</span> <span class="toc-text">其他MCP工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%B5%8B%E8%AF%95%E5%8A%A9%E6%89%8B%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-number">7.</span> <span class="toc-text">实践案例：测试助手智能体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-number">7.1.</span> <span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.2.</span> <span class="toc-text">架构设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">7.3.</span> <span class="toc-text">工作流设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5"><span class="toc-number">7.4.</span> <span class="toc-text">数据库集成实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E4%B8%8E%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-number">8.</span> <span class="toc-text">AI编程助手与开发工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%B5%81%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E5%B7%A5%E5%85%B7"><span class="toc-number">8.1.</span> <span class="toc-text">主流编程助手工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Claude-Code%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE"><span class="toc-number">8.1.1.</span> <span class="toc-text">Claude Code详细配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gemini-CLI%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE"><span class="toc-number">8.1.2.</span> <span class="toc-text">Gemini CLI部署配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%BC%98%E7%A7%80%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-number">8.1.3.</span> <span class="toc-text">其他优秀开发工具</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">8.2.</span> <span class="toc-text">开发环境最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E7%94%9F%E6%80%81%E4%B8%8E%E6%9C%AA%E6%9D%A5%E5%B1%95%E6%9C%9B"><span class="toc-number">9.</span> <span class="toc-text">技术生态与未来展望</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AI%E6%8A%80%E6%9C%AF%E6%A0%88%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84"><span class="toc-number">9.1.</span> <span class="toc-text">AI技术栈整体架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="toc-number">9.2.</span> <span class="toc-text">学习建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF"><span class="toc-number">9.3.</span> <span class="toc-text">技术发展趋势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E9%A2%86%E5%9F%9F%E6%8E%A2%E7%B4%A2"><span class="toc-number">10.</span> <span class="toc-text">其他技术领域探索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9An8n"><span class="toc-number">10.1.</span> <span class="toc-text">工作流自动化：n8n</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#n8n%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">10.1.1.</span> <span class="toc-text">n8n部署与配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-number">10.2.</span> <span class="toc-text">大数据技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hadoop%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F"><span class="toc-number">10.2.1.</span> <span class="toc-text">Hadoop生态系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spark%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E"><span class="toc-number">10.2.2.</span> <span class="toc-text">Spark计算引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-Flink%E6%B5%81%E5%A4%84%E7%90%86"><span class="toc-number">10.2.3.</span> <span class="toc-text">Apache Flink流处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">10.3.</span> <span class="toc-text">内网开发环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-js%E7%A6%BB%E7%BA%BF%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">10.3.1.</span> <span class="toc-text">Node.js离线环境配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">11.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/24/blog-upgrade/" title="博客更新记录 - stylus乌龙事件">博客更新记录 - stylus乌龙事件</a><time datetime="2025-07-24T02:31:59.000Z" title="发表于 2025-07-24 10:31:59">2025-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/23/AI-Agent/" title="AI智能体工作流和MCP配置">AI智能体工作流和MCP配置</a><time datetime="2025-07-23T07:38:59.000Z" title="发表于 2025-07-23 15:38:59">2025-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/15/buffer-overflow/" title="Buffer Overflow Attack">Buffer Overflow Attack</a><time datetime="2024-10-15T15:55:23.000Z" title="发表于 2024-10-15 23:55:23">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/Telstra-Cybersecurity/" title="Telstra_Cybersecurity">Telstra_Cybersecurity</a><time datetime="2024-10-13T09:23:23.000Z" title="发表于 2024-10-13 17:23:23">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/apps/" title="移动应用的静态动态分析">移动应用的静态动态分析</a><time datetime="2024-10-12T12:03:10.000Z" title="发表于 2024-10-12 20:03:10">2024-10-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://tt3.pages.dev/img/de/de_3.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2020 - 2025 By h4m5t</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
